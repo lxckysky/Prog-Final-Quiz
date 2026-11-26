@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>ComProg Final Preparation โ€” เธเธฅเธฑเธเธเนเธญเธชเธญเธเธงเธดเธเธฒเน€เธเธตเธขเธเนเธเธฃเนเธเธฃเธก (45 เธเนเธญ)</title>
+  <title>ComProg Final Preparation — คลังข้อสอบวิชาเขียนโปรแกรม (61 ข้อ)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* โ”€โ”€โ”€ Design Tokens: Warm Paper & Ink โ”€โ”€โ”€ */
+    /* ─── Design Tokens: Warm Paper & Ink ─── */
     :root {
-      /* Palette โ€” warm paper ramp */
+      /* Palette — warm paper ramp */
       --bg:             #f5f1ea;
       --surface:        #fdfbf7;
       --surface-subtle: #e8e3da;
@@ -70,7 +70,7 @@
       overflow-wrap: break-word;
     }
 
-    /* โ”€โ”€โ”€ Sticky Header โ”€โ”€โ”€ */
+    /* ─── Sticky Header ─── */
     .site-header {
       background: rgba(253,251,247,0.96);
       backdrop-filter: blur(8px);
@@ -126,7 +126,7 @@
       transition: width 300ms var(--ease);
     }
 
-    /* โ”€โ”€โ”€ Category Tabs โ”€โ”€โ”€ */
+    /* ─── Category Tabs ─── */
     .tab-section {
       max-width: var(--container-max);
       margin: 20px auto 0;
@@ -182,7 +182,7 @@
       color: #fff;
     }
 
-    /* โ”€โ”€โ”€ Summary Banner โ”€โ”€โ”€ */
+    /* ─── Summary Banner ─── */
     .summary-card {
       max-width: var(--container-max);
       margin: 12px auto 0;
@@ -228,7 +228,7 @@
     .dot-wrong   { background: var(--red);   }
     .dot-pending { background: var(--text-subtle); }
 
-    /* โ”€โ”€โ”€ Quiz Card Flow โ”€โ”€โ”€ */
+    /* ─── Quiz Card Flow ─── */
     .quiz-flow {
       max-width: var(--container-max);
       margin: 16px auto 0;
@@ -238,7 +238,7 @@
       gap: 16px;
     }
 
-    /* โ”€โ”€โ”€ Question Card โ”€โ”€โ”€ */
+    /* ─── Question Card ─── */
     .question-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -305,7 +305,7 @@
       border: 1px solid var(--red-border);
     }
 
-    /* โ”€โ”€โ”€ Question Text โ”€โ”€โ”€ */
+    /* ─── Question Text ─── */
     .q-content {
       margin-bottom: 14px;
     }
@@ -317,7 +317,7 @@
       padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
     }
-    /* เธเธณเธ–เธฒเธกเธซเธฅเธฑเธ โ€” เธเธฅเนเธญเธเนเธฎเนเธฅเธ—เนเน€เธเธฒเน เน€เธเธทเนเธญเนเธขเธเธเธฑเธ”เธเธฒเธ premise */
+    /* คำถามหลัก — กล่องไฮไลท์เบาๆ เพื่อแยกชัดจาก premise */
     .q-ask {
       font-size: 1.01rem;
       font-weight: 600;
@@ -330,13 +330,13 @@
       padding: 10px 13px;
       margin-top: 2px;
     }
-    /* เธเธณเธ–เธฒเธกเธ—เธตเนเธญเธขเธนเนเธซเธฅเธฑเธ code block */
+    /* คำถามที่อยู่หลัง code block */
     .q-ask-after-code {
       margin-top: 0;
       border-top: none;
       border-radius: 0 0 var(--radius-sm) var(--radius-sm);
     }
-    /* keyword เนเธเนเธเธ—เธขเน โ€” highlighter เธชเธตเน€เธซเธฅเธทเธญเธเธญเนเธญเธ */
+    /* keyword ในโจทย์ — highlighter สีเหลืองอ่อน */
     .q-ask strong {
       background: #fef08a;
       color: #422006;
@@ -345,7 +345,7 @@
       border-radius: 2px;
     }
 
-    /* โ”€โ”€โ”€ Inline Code โ”€โ”€โ”€ */
+    /* ─── Inline Code ─── */
     code {
       font-family: var(--font-code);
       font-size: 0.86em;
@@ -356,7 +356,7 @@
       color: #18140f;
     }
 
-    /* โ”€โ”€โ”€ Code Block โ”€โ”€โ”€ */
+    /* ─── Code Block ─── */
     .code-block {
       background: var(--code-bg);
       color: var(--code-text);
@@ -371,7 +371,7 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    /* โ”€โ”€โ”€ Choices โ”€โ”€โ”€ */
+    /* ─── Choices ─── */
     .choices-list {
       display: flex;
       flex-direction: column;
@@ -435,7 +435,7 @@
       font-size: 0.86em;
     }
 
-    /* โ”€โ”€โ”€ Choice States โ”€โ”€โ”€ */
+    /* ─── Choice States ─── */
     .choice-btn.is-correct {
       background: var(--green-bg) !important;
       border-color: var(--green-border) !important;
@@ -461,7 +461,7 @@
       opacity: 0.38;
     }
 
-    /* โ”€โ”€โ”€ Explanation Box โ”€โ”€โ”€ */
+    /* ─── Explanation Box ─── */
     .explanation-box {
       margin-top: 14px;
       padding: 14px 16px;
@@ -500,7 +500,7 @@
     }
     .explanation-box li { margin-bottom: 4px; }
 
-    /* โ”€โ”€โ”€ Bottom Footer โ”€โ”€โ”€ */
+    /* ─── Bottom Footer ─── */
     .quiz-footer {
       position: fixed;
       bottom: 0;
@@ -541,7 +541,7 @@
       background: #3a3028;
     }
 
-    /* โ”€โ”€โ”€ Modal โ”€โ”€โ”€ */
+    /* ─── Modal ─── */
     .modal-backdrop {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -609,7 +609,7 @@
       justify-content: center;
     }
 
-    /* โ”€โ”€โ”€ Mobile โ”€โ”€โ”€ */
+    /* ─── Mobile ─── */
     @media (max-width: 640px) {
       body {
         font-size: 14.5px;
@@ -705,11 +705,11 @@
     <div class="header-inner">
       <div class="brand-title">
         <span>ComProg Final</span>
-        <span class="badge-course">45 เธเนเธญ</span>
+        <span class="badge-course">61 ข้อ</span>
       </div>
       <div class="header-stats">
-        <span>เธ—เธณเนเธฅเนเธง <strong id="stat-answered">0</strong>/<span id="stat-total">61</span></span>
-        <div class="progress-bar-container" title="เธเธงเธฒเธกเธเธทเธเธซเธเนเธฒ">
+        <span>ทำแล้ว <strong id="stat-answered">0</strong>/<span id="stat-total">61</span></span>
+        <div class="progress-bar-container" title="ความคืบหน้า">
           <div class="progress-bar-fill" id="stat-progress-bar"></div>
         </div>
       </div>
@@ -717,22 +717,22 @@
   </header>
 
   <!-- Category Filter Tabs -->
-  <nav class="tab-section" aria-label="เธซเธกเธงเธ”เธซเธกเธนเนเธเนเธญเธชเธญเธ">
+  <nav class="tab-section" aria-label="หมวดหมู่ข้อสอบ">
     <div class="tab-list">
       <button class="tab-btn active" type="button" onclick="filterCategory('all', this)">
-        เธ—เธฑเนเธเธซเธกเธ” <span class="tab-count" id="badge-count-all">61</span>
+        ทั้งหมด <span class="tab-count" id="badge-count-all">61</span>
       </button>
       <button class="tab-btn" type="button" onclick="filterCategory('tuple_dict', this)">
-        Tuple & Dict <span class="tab-count" id="badge-count-tuple_dict">0</span>
+        Tuple &amp; Dict <span class="tab-count" id="badge-count-tuple_dict">24</span>
       </button>
       <button class="tab-btn" type="button" onclick="filterCategory('oop', this)">
-        🏗️ OOP <span class="tab-count" id="badge-count-oop">0</span>
+        OOP <span class="tab-count" id="badge-count-oop">6</span>
       </button>
       <button class="tab-btn" type="button" onclick="filterCategory('pygame', this)">
-        🎮 Pygame <span class="tab-count" id="badge-count-pygame">0</span>
+        Pygame <span class="tab-count" id="badge-count-pygame">16</span>
       </button>
       <button class="tab-btn" type="button" onclick="filterCategory('ai', this)">
-        Artificial Intelligence <span class="tab-count" id="badge-count-ai">0</span>
+        Artificial Intelligence <span class="tab-count" id="badge-count-ai">15</span>
       </button>
     </div>
   </nav>
@@ -741,21 +741,21 @@
   <section class="summary-card">
     <div class="summary-box">
       <div class="summary-info">
-        <h1 id="summary-category-title">เธเธฅเธฑเธเธเนเธญเธชเธญเธเธฃเธงเธกเธ—เธฑเนเธเธซเธกเธ” (45 เธเนเธญ)</h1>
-        <p>เนเธ•เธฐเน€เธฅเธทเธญเธเธเธณเธ•เธญเธเน€เธเธทเนเธญเธ•เธฃเธงเธเธ—เธฑเธเธ—เธต เธเธฃเนเธญเธกเธเธณเธญเธเธดเธเธฒเธขเน€เธเธฅเธขเธญเธขเนเธฒเธเธฅเธฐเน€เธญเธตเธขเธ”</p>
+        <h1 id="summary-category-title">คลังข้อสอบรวมทั้งหมด (61 ข้อ)</h1>
+        <p>แตะเลือกคำตอบเพื่อตรวจทันที พร้อมคำอธิบายเฉลยอย่างละเอียด</p>
       </div>
       <div class="score-counts">
         <div class="score-item">
           <span class="dot dot-correct"></span>
-          <span>เธ–เธนเธ: <strong id="count-correct">0</strong></span>
+          <span>ถูก: <strong id="count-correct">0</strong></span>
         </div>
         <div class="score-item">
           <span class="dot dot-wrong"></span>
-          <span>เธเธดเธ”: <strong id="count-wrong">0</strong></span>
+          <span>ผิด: <strong id="count-wrong">0</strong></span>
         </div>
         <div class="score-item">
           <span class="dot dot-pending"></span>
-          <span>เน€เธซเธฅเธทเธญ: <strong id="count-remaining">45</strong></span>
+          <span>เหลือ: <strong id="count-remaining">61</strong></span>
         </div>
       </div>
     </div>
@@ -768,22 +768,22 @@
 
   <!-- Bottom Fixed Footer -->
   <footer class="quiz-footer">
-    <button class="btn-action" type="button" onclick="resetQuiz()">เธ—เธณเนเธซเธกเนเธ—เธฑเนเธเธซเธกเธ”</button>
-    <button class="btn-action btn-primary" type="button" onclick="openResultsModal()">เธ”เธนเธชเธฃเธธเธเธเธฐเนเธเธเธฃเธงเธก</button>
+    <button class="btn-action" type="button" onclick="resetQuiz()">ทำใหม่ทั้งหมด</button>
+    <button class="btn-action btn-primary" type="button" onclick="openResultsModal()">ดูสรุปคะแนนรวม</button>
   </footer>
 
   <!-- Results Modal -->
   <div class="modal-backdrop" id="modal-summary" role="dialog" aria-modal="true">
     <div class="modal-box">
-      <h3 class="modal-title">เธชเธฃเธธเธเธเธฅเธเธฒเธฃเธ—เธณเนเธเธเธ—เธ”เธชเธญเธ</h3>
-      <div class="modal-score" id="modal-score-display">0 / 45</div>
-      <p class="modal-sub" id="modal-sub-display">เธ•เธญเธเธ–เธนเธ 0 เธเนเธญ เธเธฒเธเธ—เธฑเนเธเธซเธกเธ” 45 เธเนเธญ</p>
+      <h3 class="modal-title">สรุปผลการทำแบบทดสอบ</h3>
+      <div class="modal-score" id="modal-score-display">0 / 61</div>
+      <p class="modal-sub" id="modal-sub-display">ตอบถูก 0 ข้อ จากทั้งหมด 61 ข้อ</p>
       <div class="cat-breakdown" id="modal-cat-breakdown">
         <!-- Injected by script -->
       </div>
       <div class="modal-btns">
-        <button class="btn-action btn-primary" type="button" onclick="closeResultsModal()">เธเธฅเธฑเธเนเธเธ—เธเธ—เธงเธ</button>
-        <button class="btn-action" type="button" onclick="resetQuiz()">เน€เธฃเธดเนเธกเธ—เธณเนเธซเธกเน</button>
+        <button class="btn-action btn-primary" type="button" onclick="closeResultsModal()">กลับไปทบทวน</button>
+        <button class="btn-action" type="button" onclick="resetQuiz()">เริ่มทำใหม่</button>
       </div>
     </div>
   </div>
@@ -798,23 +798,23 @@
         id: 1,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: `เน€เธกเธทเนเธญเธฃเธฑเธเธชเนเธงเธเธเธญเธเนเธเธฃเนเธเธฃเธกเนเธเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เนเธฅเนเธงเน€เธเธดเธ” Error`,
+        ask: `เมื่อรันส่วนของโปรแกรมในตัวเลือกใดแล้วเกิด Error`,
         choices: [
           { key: 'A', text: `x = tuple([1,2,3])` },
           { key: 'B', text: `x = tuple([[1,2],3])` },
           { key: 'C', text: `x = tuple(1,2,3)` },
           { key: 'D', text: `x = tuple((1,2,3))` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เน€เธเธดเธ” Error` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดเกิด Error` }
         ],
         answer: 'C',
         explanation: `
-          <p><code>tuple()</code> เธฃเธฑเธ argument เนเธ”เนเธ•เธฑเธงเน€เธ”เธตเธขเธง เนเธฅเธฐเธ•เนเธญเธเน€เธเนเธ iterable เน€เธเนเธ list, tuple, string โ€” เธเธฒเธฃเธชเนเธ 1,2,3 เนเธขเธเธเธฑเธ 3 เธ•เธฑเธงเธเธถเธ error</p>
+          <p><code>tuple()</code> รับ argument ได้ตัวเดียว และต้องเป็น iterable เช่น list, tuple, string — การส่ง 1,2,3 แยกกัน 3 ตัวจึง error</p>
           <ul>
-            <li><strong>A:</strong> เธชเนเธ list 1 เธ•เธฑเธง โ’ <code>(1, 2, 3)</code> เนเธกเน error</li>
-            <li><strong>B:</strong> list เธเนเธญเธ list เธเนเน€เธเนเธ iterable โ’ <code>([1,2], 3)</code> เนเธกเน error</li>
-            <li><strong>C:</strong> <strong>เธชเนเธ 3 argument เนเธขเธเธเธฑเธ</strong> โ€” <code>tuple()</code> เธฃเธฑเธเนเธ”เนเนเธเน 1 เธ•เธฑเธง โ’ <code>TypeError</code></li>
-            <li><strong>D:</strong> เธชเนเธ tuple 1 เธ•เธฑเธง โ’ เนเธ”เน tuple เน€เธ”เธดเธก เนเธกเน error</li>
-            <li><strong>E:</strong> เธเนเธญ C เน€เธเธดเธ” error</li>
+            <li><strong>A:</strong> ส่ง list 1 ตัว → <code>(1, 2, 3)</code> ไม่ error</li>
+            <li><strong>B:</strong> list ซ้อน list ก็เป็น iterable → <code>([1,2], 3)</code> ไม่ error</li>
+            <li><strong>C:</strong> <strong>ส่ง 3 argument แยกกัน</strong> — <code>tuple()</code> รับได้แค่ 1 ตัว → <code>TypeError</code></li>
+            <li><strong>D:</strong> ส่ง tuple 1 ตัว → ได้ tuple เดิม ไม่ error</li>
+            <li><strong>E:</strong> ข้อ C เกิด error</li>
           </ul>
         `
       },
@@ -822,26 +822,26 @@
         id: 2,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ”เธ•เธฑเธงเนเธเธฃ <code>dancers</code> เน€เธเนเธ dictionary เธ—เธตเนเธกเธตเธเธทเนเธญเธเธนเนเน€เธ•เนเธเธฃเธณเธเธฒเธขเนเธฅเธฐเธซเธเธดเธเน€เธเนเธ key เนเธฅเธฐเธเธณเธเธงเธเธเธฃเธฑเนเธเธ—เธตเนเนเธเนเธเธเธฑเธเน€เธเนเธ value`,
+        premise: `กำหนดตัวแปร <code>dancers</code> เป็น dictionary ที่มีชื่อคู่เต้นรำชายและหญิงเป็น key และจำนวนครั้งที่แข่งขันเป็น value`,
         code: `dancers = {('Harry', 'Megan'):4, ('Henry', 'Carol'):5,
            ('Ken', 'Lucy'):3, ('Mike', 'Jane'):0}`,
-        ask2: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ” <strong>เนเธกเนเนเธเน</strong> เธเธณเธชเธฑเนเธเธชเธฃเนเธฒเธ list เธ—เธตเนเน€เธเนเธเน€เธเธเธฒเธฐเธเธทเนเธญเธเธนเนเน€เธ•เนเธเธฃเธณ<strong>เธเนเธฒเธขเธเธฒเธข</strong>?`,
+        ask2: `ตัวเลือกใด <strong>ไม่ใช่</strong> คำสั่งสร้าง list ที่เก็บเฉพาะชื่อคู่เต้นรำ<strong>ฝ่ายชาย</strong>?`,
         choices: [
           { key: 'A', text: `gentlemen = [a for a, b in dancers]` },
           { key: 'B', text: `gentlemen = [x[0] for x in dancers]` },
           { key: 'C', text: `gentlemen = [a for (a, b),c in dancers.items()]` },
           { key: 'D', text: `gentlemen = [a[0] for a, b in dancers.items()]` },
-          { key: 'E', text: `เธ—เธธเธเธ•เธฑเธงเน€เธฅเธทเธญเธเน€เธเนเธเธเธณเธชเธฑเนเธเธชเธฃเนเธฒเธ list เธ—เธตเนเธ–เธนเธเธ•เนเธญเธ` }
+          { key: 'E', text: `ทุกตัวเลือกเป็นคำสั่งสร้าง list ที่ถูกต้อง` }
         ],
         answer: 'E',
         explanation: `
-          <p>เธงเธ dictionary เธ•เธฃเธเน เนเธ”เน key; <code>items()</code> เนเธ”เนเธเธนเน (key, value); key เธ—เธตเนเน€เธเนเธ tuple เนเธ•เธเธเนเธฒเธญเธญเธเธกเธฒเนเธ”เน โ€” เธ—เธธเธเธงเธดเธเธตเนเธซเนเธเธฅเน€เธซเธกเธทเธญเธเธเธฑเธ</p>
+          <p>วน dictionary ตรงๆ ได้ key; <code>items()</code> ได้คู่ (key, value); key ที่เป็น tuple แตกค่าออกมาได้ — ทุกวิธีให้ผลเหมือนกัน</p>
           <ul>
-            <li><strong>A:</strong> เธงเธ dict เธ•เธฃเธเน เนเธ”เน key (tuple) เนเธ•เธ a, b โ’ a = เธเธฒเธข โ“ เนเธเนเนเธ”เน</li>
-            <li><strong>B:</strong> x เธเธทเธญ key tuple, x[0] = เธเธฒเธข โ“ เนเธเนเนเธ”เน</li>
-            <li><strong>C:</strong> <code>items()</code> เนเธซเน ((เธเธฒเธข,เธซเธเธดเธ), เธเธณเธเธงเธ) เนเธ•เธ (a,b),c โ’ a = เธเธฒเธข โ“ เนเธเนเนเธ”เน</li>
-            <li><strong>D:</strong> <code>items()</code> เนเธซเน (key, value) โ’ a เธเธทเธญ key tuple โ’ a[0] = เธเธฒเธข โ“ เนเธเนเนเธ”เน</li>
-            <li><strong>E:</strong> <strong>เธ—เธธเธเธเนเธญ Aโ€“D เนเธเนเนเธ”เนเธ—เธฑเนเธเธซเธกเธ”</strong> เนเธ”เน ['Harry','Henry','Ken','Mike'] เน€เธซเธกเธทเธญเธเธเธฑเธ เธเธถเธเนเธกเนเธกเธตเธเนเธญเธ—เธตเน "เนเธกเนเนเธเน"</li>
+            <li><strong>A:</strong> วน dict ตรงๆ ได้ key (tuple) แตก a, b → a = ชาย ✓ ใช้ได้</li>
+            <li><strong>B:</strong> x คือ key tuple, x[0] = ชาย ✓ ใช้ได้</li>
+            <li><strong>C:</strong> <code>items()</code> ให้ ((ชาย,หญิง), จำนวน) แตก (a,b),c → a = ชาย ✓ ใช้ได้</li>
+            <li><strong>D:</strong> <code>items()</code> ให้ (key, value) → a คือ key tuple → a[0] = ชาย ✓ ใช้ได้</li>
+            <li><strong>E:</strong> <strong>ทุกข้อ A–D ใช้ได้ทั้งหมด</strong> ได้ ['Harry','Henry','Ken','Mike'] เหมือนกัน จึงไม่มีข้อที่ "ไม่ใช่"</li>
           </ul>
         `
       },
@@ -849,13 +849,13 @@
         id: 3,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ”เนเธซเนเธ•เธฑเธงเนเธเธฃ <code>sports</code> เน€เธเนเธเธเธทเนเธญเธเธตเธฌเธฒเน€เธเนเธ key เนเธฅเธฐเธเธณเธเธงเธเธเธนเนเน€เธฅเนเธเน€เธเนเธ value`,
+        premise: `กำหนดให้ตัวแปร <code>sports</code> เก็บชื่อกีฬาเป็น key และจำนวนผู้เล่นเป็น value`,
         code: `total = 0
 sports = {'Football':11, 'Basketball':5, 'Double tennis': 2}
 ______(I)______
     ______(II)______
 print(total)`,
-        ask2: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธเธทเธญเธชเนเธงเธเธ—เธตเนเธ•เนเธญเธเน€เธ•เธดเธกเนเธ <strong>(I) เนเธฅเธฐ (II)</strong> เน€เธเธทเนเธญเธซเธฒเธเธฅเธฃเธงเธกเธเธญเธเธเธณเธเธงเธเธเธนเนเน€เธฅเนเธเธเธญเธเธ—เธธเธเธเธตเธฌเธฒ?`,
+        ask2: `ตัวเลือกใดคือส่วนที่ต้องเติมใน <strong>(I) และ (II)</strong> เพื่อหาผลรวมของจำนวนผู้เล่นของทุกกีฬา?`,
         choices: [
           { key: 'A', text: `for s in sports.keys():
     total = total + s` },
@@ -865,17 +865,17 @@ print(total)`,
     total = total + t` },
           { key: 'D', text: `for s,t in sports.items():
     total = total + s` },
-          { key: 'E', text: `เธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเธ–เธนเธเธกเธฒเธเธเธงเนเธฒเธซเธเธถเนเธเธ•เธฑเธงเน€เธฅเธทเธญเธ` }
+          { key: 'E', text: `มีตัวเลือกถูกมากกว่าหนึ่งตัวเลือก` }
         ],
         answer: 'E',
         explanation: `
-          <p>เธเธฅเธฃเธงเธกเธ•เนเธญเธเธเธงเธ value (11+5+2=18) เนเธกเนเนเธเน key (string) โ€” B เธงเธ values(), C เธงเธ items() เธเธงเธ t (value) เธ–เธนเธเธ—เธฑเนเธเธเธนเน</p>
+          <p>ผลรวมต้องบวก value (11+5+2=18) ไม่ใช่ key (string) — B วน values(), C วน items() บวก t (value) ถูกทั้งคู่</p>
           <ul>
-            <li><strong>A:</strong> s = key (เธเธทเนเธญเธเธตเธฌเธฒ เน€เธเนเธ str) เธเธงเธเธเธฑเธ int โ’ <code>TypeError</code> โ—</li>
-            <li><strong>B:</strong> <strong>values()</strong> เนเธซเน 11, 5, 2 โ’ <code>total = total + s</code> เนเธ”เน 18 โ“</li>
-            <li><strong>C:</strong> <strong>items()</strong> เนเธ•เธ s=เธเธทเนเธญ, t=เธเธณเธเธงเธ โ’ <code>total = total + t</code> เนเธ”เน 18 โ“</li>
-            <li><strong>D:</strong> s = key (str) เธเธงเธ int โ’ <code>TypeError</code> โ—</li>
-            <li><strong>E:</strong> <strong>เธเนเธญ B เนเธฅเธฐ C เธ–เธนเธเธ—เธฑเนเธเธเธนเน</strong> เธเธถเธเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเธ–เธนเธเธกเธฒเธเธเธงเนเธฒเธซเธเธถเนเธ</li>
+            <li><strong>A:</strong> s = key (ชื่อกีฬา เป็น str) บวกกับ int → <code>TypeError</code> ✗</li>
+            <li><strong>B:</strong> <strong>values()</strong> ให้ 11, 5, 2 → <code>total = total + s</code> ได้ 18 ✓</li>
+            <li><strong>C:</strong> <strong>items()</strong> แตก s=ชื่อ, t=จำนวน → <code>total = total + t</code> ได้ 18 ✓</li>
+            <li><strong>D:</strong> s = key (str) บวก int → <code>TypeError</code> ✗</li>
+            <li><strong>E:</strong> <strong>ข้อ B และ C ถูกทั้งคู่</strong> จึงมีตัวเลือกถูกมากกว่าหนึ่ง</li>
           </ul>
         `
       },
@@ -883,10 +883,10 @@ print(total)`,
         id: 4,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ” <code>x = 'a1b2c3'</code>`,
+        premise: `กำหนด <code>x = 'a1b2c3'</code>`,
         code: `x = 'a1b2c3'
 y = ______(I)______`,
-        ask2: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธเธทเธญเธชเนเธงเธเธ—เธตเนเธ•เนเธญเธเน€เธ•เธดเธกเนเธ <strong>(I)</strong> เน€เธเธทเนเธญเนเธซเน <code>y = {'a': '1', 'b': '2', 'c': '3'}</code>?`,
+        ask2: `ตัวเลือกใดคือส่วนที่ต้องเติมใน <strong>(I)</strong> เพื่อให้ <code>y = {'a': '1', 'b': '2', 'c': '3'}</code>?`,
         choices: [
           { key: 'A', text: `{x:x+1 for i in x}` },
           { key: 'B', text: `{x[i]:x[i+1] for i in x}` },
@@ -896,13 +896,13 @@ y = ______(I)______`,
         ],
         answer: 'E',
         explanation: `
-          <p>len(x)=6 โ’ range(5,0,-2) เนเธ”เน i=5,3,1 (เธ•เธณเนเธซเธเนเธเธ•เธฑเธงเน€เธฅเธ) เธ•เธฑเธงเธญเธฑเธเธฉเธฃเธญเธขเธนเนเธเนเธญเธเธซเธเนเธฒ 1 เธ•เธณเนเธซเธเนเธเธเธทเธญ x[i-1]</p>
+          <p>len(x)=6 → range(5,0,-2) ได้ i=5,3,1 (ตำแหน่งตัวเลข) ตัวอักษรอยู่ก่อนหน้า 1 ตำแหน่งคือ x[i-1]</p>
           <ul>
-            <li><strong>A:</strong> เนเธเน x เธ—เธฑเนเธเธชเธ•เธฃเธดเธเน€เธเนเธ key เนเธฅเธฐ x+1 (str+int) โ’ <code>TypeError</code></li>
-            <li><strong>B:</strong> i เน€เธเนเธเธ•เธฑเธงเธญเธฑเธเธฉเธฃ (str) เนเธเนเน€เธเนเธ index เนเธกเนเนเธ”เน โ’ <code>TypeError</code></li>
-            <li><strong>C:</strong> เนเธ”เน key, value เน€เธเนเธเธ•เธฑเธงเน€เธฅเธ เน€เธเนเธ {5:6, 3:4, 1:2} เนเธกเนเธ•เธฃเธเธเธฑเธเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ</li>
-            <li><strong>D:</strong> key เธเธฑเธ value เธชเธฅเธฑเธเธเธฑเธ เนเธ”เน {'3':'c', '2':'b', '1':'a'}</li>
-            <li><strong>E:</strong> <strong>range(5,0,-2) เนเธ”เน i = 5,3,1</strong> โ’ x[4]:x[5]='c':'3', x[2]:x[3]='b':'2', x[0]:x[1]='a':'1' โ“</li>
+            <li><strong>A:</strong> ใช้ x ทั้งสตริงเป็น key และ x+1 (str+int) → <code>TypeError</code></li>
+            <li><strong>B:</strong> i เป็นตัวอักษร (str) ใช้เป็น index ไม่ได้ → <code>TypeError</code></li>
+            <li><strong>C:</strong> ได้ key, value เป็นตัวเลข เช่น {5:6, 3:4, 1:2} ไม่ตรงกับที่ต้องการ</li>
+            <li><strong>D:</strong> key กับ value สลับกัน ได้ {'3':'c', '2':'b', '1':'a'}</li>
+            <li><strong>E:</strong> <strong>range(5,0,-2) ได้ i = 5,3,1</strong> → x[4]:x[5]='c':'3', x[2]:x[3]='b':'2', x[0]:x[1]='a':'1' ✓</li>
           </ul>
         `
       },
@@ -910,23 +910,23 @@ y = ______(I)______`,
         id: 5,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”<strong>เน€เธเธดเธ” error</strong>?`,
+        ask: `ตัวเลือกใด<strong>เกิด error</strong>?`,
         choices: [
           { key: 'A', text: `x = (1,3)+(4,5,6)` },
           { key: 'B', text: `x = 1,` },
           { key: 'C', text: `{['10.0145','11.354']:'Bangkok', ['11.325','12.855']:'Tokyo'}` },
           { key: 'D', text: `{('10.0145','11.354'):'Bangkok', ('11.325','12.855'):'Tokyo'}` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เน€เธเธดเธ” error` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดเกิด error` }
         ],
         answer: 'C',
         explanation: `
-          <p>key เธเธญเธ dictionary เธ•เนเธญเธ hashable โ€” tuple เนเธเนเนเธ”เน เนเธ•เน list เนเธเนเนเธกเนเนเธ”เน</p>
+          <p>key ของ dictionary ต้อง hashable — tuple ใช้ได้ แต่ list ใช้ไม่ได้</p>
           <ul>
-            <li><strong>A:</strong> เธ•เนเธญ tuple เธ”เนเธงเธข + เนเธ”เน (1,3,4,5,6) เนเธกเน error</li>
-            <li><strong>B:</strong> <code>x = 1,</code> เธเธทเธญ tuple 1 เธ•เธฑเธง <code>(1,)</code> เนเธกเน error</li>
-            <li><strong>C:</strong> <strong>list เน€เธเนเธ key เนเธกเนเนเธ”เน</strong> (unhashable) โ’ <code>TypeError</code></li>
-            <li><strong>D:</strong> tuple เน€เธเนเธ key เนเธ”เนเน€เธเธฃเธฒเธฐเน€เธเธฅเธตเนเธขเธเนเธเธฅเธเนเธกเนเนเธ”เน เนเธกเน error</li>
-            <li><strong>E:</strong> เธเนเธญ C เน€เธเธดเธ” error</li>
+            <li><strong>A:</strong> ต่อ tuple ด้วย + ได้ (1,3,4,5,6) ไม่ error</li>
+            <li><strong>B:</strong> <code>x = 1,</code> คือ tuple 1 ตัว <code>(1,)</code> ไม่ error</li>
+            <li><strong>C:</strong> <strong>list เป็น key ไม่ได้</strong> (unhashable) → <code>TypeError</code></li>
+            <li><strong>D:</strong> tuple เป็น key ได้เพราะเปลี่ยนแปลงไม่ได้ ไม่ error</li>
+            <li><strong>E:</strong> ข้อ C เกิด error</li>
           </ul>
         `
       },
@@ -934,7 +934,7 @@ y = ______(I)______`,
         id: 6,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธเธทเธญ<strong>เธเธฅเธฅเธฑเธเธเน</strong>เธเธญเธเธชเนเธงเธเธเธญเธเนเธเธฃเนเธเธฃเธกเธ”เนเธฒเธเธฅเนเธฒเธ?`,
+        ask: `ตัวเลือกใดคือ<strong>ผลลัพธ์</strong>ของส่วนของโปรแกรมด้านล่าง?`,
         code: `d1 = {}
 d1['one'] = 1
 d1['two'] = 2
@@ -946,17 +946,17 @@ print(d1)`,
           { key: 'B', text: `{'one':1, 'one':'I', 'two':2, 'three':'III', 'four':'IV'}` },
           { key: 'C', text: `{'one':1, 'two':2}` },
           { key: 'D', text: `{'one':'I', 'two':2, 'three':'III', 'four':'IV'}` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ–เธนเธ` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
         ],
         answer: 'D',
         explanation: `
-          <p><code>update()</code> เธ—เธฑเธเธเนเธฒเธเธญเธ key เน€เธ”เธดเธก ('one' เน€เธเธฅเธตเนเธขเธเธเธฒเธ 1 เน€เธเนเธ 'I') เนเธฅเธฐเน€เธเธดเนเธก key เนเธซเธกเนเน€เธเนเธฒเนเธ</p>
+          <p><code>update()</code> ทับค่าของ key เดิม ('one' เปลี่ยนจาก 1 เป็น 'I') และเพิ่ม key ใหม่เข้าไป</p>
           <ul>
-            <li><strong>A:</strong> 'one' เธ–เธนเธเธ—เธฑเธเธ”เนเธงเธข 'I' เนเธฅเนเธง เธเนเธฒเธ•เนเธญเธเนเธกเนเนเธเน 1 โ—</li>
-            <li><strong>B:</strong> dictionary เธกเธต key เธเนเธณเธเธฑเธเนเธกเนเนเธ”เน 'one' เธ•เนเธญเธเน€เธซเธฅเธทเธญเธ•เธฑเธงเน€เธ”เธตเธขเธง โ—</li>
-            <li><strong>C:</strong> update เน€เธเธดเนเธก 'three' เธเธฑเธ 'four' เน€เธเนเธฒเธกเธฒเธ”เนเธงเธข เธเธถเธเนเธกเนเนเธ”เนเธกเธตเนเธเน 2 key โ—</li>
-            <li><strong>D:</strong> <strong>'one' เธ–เธนเธเธ—เธฑเธเน€เธเนเธ 'I'</strong> เธเธ 'two':2 เนเธงเน เนเธฅเธฐเน€เธเธดเนเธก three, four โ“</li>
-            <li><strong>E:</strong> เธเนเธญ D เธ–เธนเธ</li>
+            <li><strong>A:</strong> 'one' ถูกทับด้วย 'I' แล้ว ค่าต้องไม่ใช่ 1 ✗</li>
+            <li><strong>B:</strong> dictionary มี key ซ้ำกันไม่ได้ 'one' ต้องเหลือตัวเดียว ✗</li>
+            <li><strong>C:</strong> update เพิ่ม 'three' กับ 'four' เข้ามาด้วย จึงไม่ได้มีแค่ 2 key ✗</li>
+            <li><strong>D:</strong> <strong>'one' ถูกทับเป็น 'I'</strong> คง 'two':2 ไว้ และเพิ่ม three, four ✓</li>
+            <li><strong>E:</strong> ข้อ D ถูก</li>
           </ul>
         `
       },
@@ -964,27 +964,27 @@ print(d1)`,
         id: 7,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ”เธเธณเธชเธฑเนเธ <code>d</code> เธ”เธฑเธเธเธตเน`,
+        premise: `กำหนดคำสั่ง <code>d</code> ดังนี้`,
         code: `d = {'2301172': {'Grade': 'A', 'Credit': 2},
      '2301170': {'Grade': 'C+', 'Credit': 3},
      '2301117': {'Grade': 'B+', 'Credit': 4}}`,
-        ask2: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เนเธซเนเธเธฅเธฅเธฑเธเธเนเน€เธเนเธ <code>{'2301172': 2, '2301170': 3, '2301117': 4}</code>?`,
+        ask2: `ตัวเลือกใดให้ผลลัพธ์เป็น <code>{'2301172': 2, '2301170': 3, '2301117': 4}</code>?`,
         choices: [
           { key: 'A', text: `print({k:v for k,v in d.items()})` },
           { key: 'B', text: `print({i:d[i]['Credit'] for i in d})` },
           { key: 'C', text: `print({i:d['Credit'] for i in d})` },
           { key: 'D', text: `print({i[0]:d[i[0]] for i in d.items()})` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ–เธนเธ` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
         ],
         answer: 'B',
         explanation: `
-          <p>d เน€เธเนเธ dictionary เธเนเธญเธ dictionary เธ•เนเธญเธเน€เธเนเธฒเธ–เธถเธเธชเธญเธเธเธฑเนเธ: d[เธฃเธซเธฑเธชเธงเธดเธเธฒ]['Credit']</p>
+          <p>d เป็น dictionary ซ้อน dictionary ต้องเข้าถึงสองชั้น: d[รหัสวิชา]['Credit']</p>
           <ul>
-            <li><strong>A:</strong> เธเธฑเธ”เธฅเธญเธ d เธ—เธฑเนเธเธเนเธญเธ value เธขเธฑเธเน€เธเนเธ dict เธเนเธญเธ เนเธกเนเนเธเนเธ•เธฑเธงเน€เธฅเธเธซเธเนเธงเธขเธเธดเธ• โ—</li>
-            <li><strong>B:</strong> <strong>เธงเธ key i เนเธฅเนเธงเธ”เธถเธ d[i]['Credit']</strong> เนเธ”เนเธ•เธฑเธงเน€เธฅเธเธซเธเนเธงเธขเธเธดเธ•เธ•เธฃเธเน โ“</li>
-            <li><strong>C:</strong> d['Credit'] เนเธกเนเธกเธต key 'Credit' เนเธเธเธฑเนเธเธเธญเธ โ’ <code>KeyError</code> โ—</li>
-            <li><strong>D:</strong> i เธเธฒเธ items() เน€เธเนเธ tuple (key,value), i[0] = key, d[i[0]] เธขเธฑเธเน€เธเนเธ dict เธเนเธญเธ โ—</li>
-            <li><strong>E:</strong> เธเนเธญ B เธ–เธนเธ</li>
+            <li><strong>A:</strong> คัดลอก d ทั้งก้อน value ยังเป็น dict ซ้อน ไม่ใช่ตัวเลขหน่วยกิต ✗</li>
+            <li><strong>B:</strong> <strong>วน key i แล้วดึง d[i]['Credit']</strong> ได้ตัวเลขหน่วยกิตตรงๆ ✓</li>
+            <li><strong>C:</strong> d['Credit'] ไม่มี key 'Credit' ในชั้นนอก → <code>KeyError</code> ✗</li>
+            <li><strong>D:</strong> i จาก items() เป็น tuple (key,value), i[0] = key, d[i[0]] ยังเป็น dict ซ้อน ✗</li>
+            <li><strong>E:</strong> ข้อ B ถูก</li>
           </ul>
         `
       },
@@ -992,23 +992,23 @@ print(d1)`,
         id: 8,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”<strong>เนเธกเนเนเธเน</strong> tuple?`,
+        ask: `ตัวเลือกใด<strong>ไม่ใช่</strong> tuple?`,
         choices: [
           { key: 'A', text: `(3,4)` },
           { key: 'B', text: `3,4` },
           { key: 'C', text: `(3,)` },
           { key: 'D', text: `(3)` },
-          { key: 'E', text: `เน€เธเนเธ tuple เธ—เธธเธเธเนเธญ` }
+          { key: 'E', text: `เป็น tuple ทุกข้อ` }
         ],
         answer: 'D',
         explanation: `
-          <p>tuple เธ–เธนเธเธชเธฃเนเธฒเธเธเธฒเธเน€เธเธฃเธทเนเธญเธเธซเธกเธฒเธขเธเธญเธกเธกเธฒ เนเธกเนเนเธเนเธงเธเน€เธฅเนเธ โ€” tuple เธชเธกเธฒเธเธดเธเธ•เธฑเธงเน€เธ”เธตเธขเธงเธ•เนเธญเธเธกเธตเธเธญเธกเธกเธฒเธ—เนเธฒเธข (3,)</p>
+          <p>tuple ถูกสร้างจากเครื่องหมายคอมมา ไม่ใช่วงเล็บ — tuple สมาชิกตัวเดียวต้องมีคอมมาท้าย (3,)</p>
           <ul>
-            <li><strong>A:</strong> tuple 2 เธ•เธฑเธง โ“</li>
-            <li><strong>B:</strong> 3,4 เนเธกเนเธกเธตเธงเธเน€เธฅเนเธเธเนเน€เธเนเธ tuple เนเธ”เน โ“</li>
-            <li><strong>C:</strong> (3,) tuple 1 เธ•เธฑเธง โ€” เธกเธตเธเธญเธกเธกเธฒเธ—เนเธฒเธข โ“</li>
-            <li><strong>D:</strong> <strong>(3) เธเธทเธญ integer 3 เนเธเธงเธเน€เธฅเนเธ</strong> เนเธกเนเนเธเน tuple โ€” เธ•เนเธญเธเน€เธเธตเธขเธ (3,) เธเธถเธเธเธฐเน€เธเนเธ tuple</li>
-            <li><strong>E:</strong> เธเนเธญ D เนเธกเนเนเธเน tuple</li>
+            <li><strong>A:</strong> tuple 2 ตัว ✓</li>
+            <li><strong>B:</strong> 3,4 ไม่มีวงเล็บก็เป็น tuple ได้ ✓</li>
+            <li><strong>C:</strong> (3,) tuple 1 ตัว — มีคอมมาท้าย ✓</li>
+            <li><strong>D:</strong> <strong>(3) คือ integer 3 ในวงเล็บ</strong> ไม่ใช่ tuple — ต้องเขียน (3,) จึงจะเป็น tuple</li>
+            <li><strong>E:</strong> ข้อ D ไม่ใช่ tuple</li>
           </ul>
         `
       },
@@ -1016,25 +1016,25 @@ print(d1)`,
         id: 9,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ” <code>D = {}</code>`,
+        premise: `กำหนด <code>D = {}</code>`,
         code: `D = {}`,
-        ask2: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”<strong>เธ—เธณเนเธซเนเน€เธเธดเธ” error</strong>?`,
+        ask2: `ตัวเลือกใด<strong>ทำให้เกิด error</strong>?`,
         choices: [
           { key: 'A', text: `D[1]=7.5` },
           { key: 'B', text: `D[7.5]=(1,2,3)` },
           { key: 'C', text: `D[(3,5)]=7` },
           { key: 'D', text: `D[[3,5]]=7` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เน€เธเธดเธ” error` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดเกิด error` }
         ],
         answer: 'D',
         explanation: `
-          <p>key เธ•เนเธญเธ hashable: int, float, str, tuple เนเธเนเนเธ”เน โ€” list เนเธเนเนเธกเนเนเธ”เน (unhashable)</p>
+          <p>key ต้อง hashable: int, float, str, tuple ใช้ได้ — list ใช้ไม่ได้ (unhashable)</p>
           <ul>
-            <li><strong>A:</strong> key เน€เธเนเธ int โ“ เนเธเนเนเธ”เน</li>
-            <li><strong>B:</strong> key เน€เธเนเธ float, value เน€เธเนเธ tuple โ“ เนเธเนเนเธ”เน</li>
-            <li><strong>C:</strong> key เน€เธเนเธ tuple (3,5) โ“ เนเธเนเนเธ”เน</li>
-            <li><strong>D:</strong> <strong>key เน€เธเนเธ list [3,5]</strong> โ’ unhashable โ’ <code>TypeError</code></li>
-            <li><strong>E:</strong> เธเนเธญ D เน€เธเธดเธ” error</li>
+            <li><strong>A:</strong> key เป็น int ✓ ใช้ได้</li>
+            <li><strong>B:</strong> key เป็น float, value เป็น tuple ✓ ใช้ได้</li>
+            <li><strong>C:</strong> key เป็น tuple (3,5) ✓ ใช้ได้</li>
+            <li><strong>D:</strong> <strong>key เป็น list [3,5]</strong> → unhashable → <code>TypeError</code></li>
+            <li><strong>E:</strong> ข้อ D เกิด error</li>
           </ul>
         `
       },
@@ -1042,28 +1042,28 @@ print(d1)`,
         id: 10,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เน€เธเนเธ<strong>เธ•เธฑเธงเน€เธฅเธทเธญเธเธ—เธตเนเธ–เธนเธเธ•เนเธญเธ</strong>เธซเธฅเธฑเธเธเธฒเธเธเธเธชเนเธงเธเธเธญเธเนเธเธฃเนเธเธฃเธกเธเธตเน?`,
+        ask: `ตัวเลือกใดเป็น<strong>ตัวเลือกที่ถูกต้อง</strong>หลังจากจบส่วนของโปรแกรมนี้?`,
         code: `D1 = {'emp1': {'name': 'Bob', 'job': 'Mgr'},
       'emp2': {'name': 'Kim', 'job': 'Dev'}}
 D2 = {'emp2': {'name': 'Sam', 'job': 'Dev'},
       'emp3': {'name': 'Max', 'job': 'Janitor'}}
 D1.update(D2)`,
         choices: [
-          { key: 'A', text: `D1 เธกเธตเธเนเธฒ {'emp1':{'name':'Bob','job':'Mgr'}, 'emp2':{'name':'Kim','job':'Dev'}}` },
-          { key: 'B', text: `D2 เธกเธตเธเนเธฒ {'emp2':{'name':'Sam','job':'Dev'}, 'emp3':{'name':'Max','job':'Janitor'}}` },
-          { key: 'C', text: `D1 เธกเธตเธเนเธฒ {'emp1':{'name':'Bob','job':'Mgr'}, 'emp2':{'name':'Sam','job':'Dev'}, 'emp3':{'name':'Max','job':'Janitor'}}` },
-          { key: 'D', text: `เธ–เธนเธเธกเธฒเธเธเธงเนเธฒ 1 เธ•เธฑเธงเน€เธฅเธทเธญเธ` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ–เธนเธ` }
+          { key: 'A', text: `D1 มีค่า {'emp1':{'name':'Bob','job':'Mgr'}, 'emp2':{'name':'Kim','job':'Dev'}}` },
+          { key: 'B', text: `D2 มีค่า {'emp2':{'name':'Sam','job':'Dev'}, 'emp3':{'name':'Max','job':'Janitor'}}` },
+          { key: 'C', text: `D1 มีค่า {'emp1':{'name':'Bob','job':'Mgr'}, 'emp2':{'name':'Sam','job':'Dev'}, 'emp3':{'name':'Max','job':'Janitor'}}` },
+          { key: 'D', text: `ถูกมากกว่า 1 ตัวเลือก` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
         ],
         answer: 'D',
         explanation: `
-          <p>D1.update(D2) เนเธเนเน€เธเธเธฒเธฐ D1 (emp2 เธ–เธนเธเธ—เธฑเธ, emp3 เธ–เธนเธเน€เธเธดเนเธก) เธชเนเธงเธ D2 เนเธกเนเน€เธเธฅเธตเนเธขเธ</p>
+          <p>D1.update(D2) แก้เฉพาะ D1 (emp2 ถูกทับ, emp3 ถูกเพิ่ม) ส่วน D2 ไม่เปลี่ยน</p>
           <ul>
-            <li><strong>A:</strong> emp2 เธ–เธนเธเธ—เธฑเธเธ”เนเธงเธขเธเนเธฒเธเธฒเธ D2 เน€เธเนเธ Sam เนเธฅเธฐเธกเธต emp3 เน€เธเธดเนเธกเธกเธฒ โ€” D1 เนเธกเนเนเธ”เนเน€เธซเธกเธทเธญเธเน€เธ”เธดเธก โ—</li>
-            <li><strong>B:</strong> <strong>D1.update(D2) เนเธเนเน€เธเธเธฒเธฐ D1</strong> โ€” D2 เนเธกเนเน€เธเธฅเธตเนเธขเธ โ“</li>
-            <li><strong>C:</strong> D1 เธซเธฅเธฑเธ update: emp1 Bob (เธเธเน€เธ”เธดเธก), emp2 Sam (เธ–เธนเธเธ—เธฑเธ), emp3 Max (เน€เธเธดเนเธกเนเธซเธกเน) โ“</li>
-            <li><strong>D:</strong> <strong>เธเนเธญ B เนเธฅเธฐ C เธ–เธนเธเธ—เธฑเนเธเธเธนเน</strong> เธเธถเธเธ–เธนเธเธกเธฒเธเธเธงเนเธฒ 1 เธ•เธฑเธงเน€เธฅเธทเธญเธ</li>
-            <li><strong>E:</strong> เธกเธตเธเนเธญเธ—เธตเนเธ–เธนเธ</li>
+            <li><strong>A:</strong> emp2 ถูกทับด้วยค่าจาก D2 เป็น Sam และมี emp3 เพิ่มมา — D1 ไม่ได้เหมือนเดิม ✗</li>
+            <li><strong>B:</strong> <strong>D1.update(D2) แก้เฉพาะ D1</strong> — D2 ไม่เปลี่ยน ✓</li>
+            <li><strong>C:</strong> D1 หลัง update: emp1 Bob (คงเดิม), emp2 Sam (ถูกทับ), emp3 Max (เพิ่มใหม่) ✓</li>
+            <li><strong>D:</strong> <strong>ข้อ B และ C ถูกทั้งคู่</strong> จึงถูกมากกว่า 1 ตัวเลือก</li>
+            <li><strong>E:</strong> มีข้อที่ถูก</li>
           </ul>
         `
       },
@@ -1071,7 +1071,7 @@ D1.update(D2)`,
         id: 11,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เน€เธเนเธ<strong>เธเธฅเธฅเธฑเธเธเน</strong>เธ—เธตเนเธเธดเธกเธเนเธเธฒเธเนเธเธฃเนเธเธฃเธกเธ•เนเธญเนเธเธเธตเน?`,
+        ask: `ตัวเลือกใดเป็น<strong>ผลลัพธ์</strong>ที่พิมพ์จากโปรแกรมต่อไปนี้?`,
         code: `fruits = {'mango': 40, 'banana': 10, 'cherry': 20}
 new_fruits = {fruit: price*2
               for (fruit, price) in fruits.items()
@@ -1082,17 +1082,17 @@ print(new_fruits)`,
           { key: 'B', text: `{'mango': 80, 'banana': 20}` },
           { key: 'C', text: `{'mango': 80, 'banana': 20, 'cherry': 40}` },
           { key: 'D', text: `{'mango': 4040, 'cherry': 2020}` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ–เธนเธ` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
         ],
         answer: 'A',
         explanation: `
-          <p>dict comprehension เธเธฃเธญเธเน€เธเธทเนเธญเธเนเธ if price &gt; 15 เธเนเธญเธ เนเธฅเนเธงเธเธณเธเธงเธ“ price*2</p>
+          <p>dict comprehension กรองเงื่อนไข if price &gt; 15 ก่อน แล้วคำนวณ price*2</p>
           <ul>
-            <li><strong>A:</strong> <strong>mango (40&gt;15) โ“ โ’ 80, cherry (20&gt;15) โ“ โ’ 40</strong>, banana (10&gt;15) โ— เธ–เธนเธเธเธฃเธญเธเธญเธญเธ โ“</li>
-            <li><strong>B:</strong> banana (10&gt;15 เน€เธเนเธเน€เธ—เนเธ) เธ–เธนเธเธเธฃเธญเธเธญเธญเธ เนเธฅเธฐ cherry เธเนเธฒเธเธ•เนเธญเธเธญเธขเธนเนเธ”เนเธงเธข โ—</li>
-            <li><strong>C:</strong> banana (10&gt;15 เน€เธเนเธเน€เธ—เนเธ) เธ–เธนเธเธเธฃเธญเธเธญเธญเธ เนเธกเนเธกเธตเนเธเธเธฅ โ—</li>
-            <li><strong>D:</strong> price เน€เธเนเธเธ•เธฑเธงเน€เธฅเธ ร—2 เนเธ”เน 80 เนเธกเนเนเธเน 4040 (4040 เน€เธเธดเธ”เธเธฒเธ string '40'ร—2) โ—</li>
-            <li><strong>E:</strong> เธเนเธญ A เธ–เธนเธ</li>
+            <li><strong>A:</strong> <strong>mango (40&gt;15) ✓ → 80, cherry (20&gt;15) ✓ → 40</strong>, banana (10&gt;15) ✗ ถูกกรองออก ✓</li>
+            <li><strong>B:</strong> banana (10&gt;15 เป็นเท็จ) ถูกกรองออก และ cherry ผ่านต้องอยู่ด้วย ✗</li>
+            <li><strong>C:</strong> banana (10&gt;15 เป็นเท็จ) ถูกกรองออก ไม่มีในผล ✗</li>
+            <li><strong>D:</strong> price เป็นตัวเลข ×2 ได้ 80 ไม่ใช่ 4040 (4040 เกิดจาก string '40'×2) ✗</li>
+            <li><strong>E:</strong> ข้อ A ถูก</li>
           </ul>
         `
       },
@@ -1100,24 +1100,24 @@ print(new_fruits)`,
         id: 12,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ” <code>x = (1,[2,3],4)</code> เนเธฅเธฐ <code>y = (5,6,7)</code>`,
-        ask: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”<strong>เน€เธเธดเธ” error</strong>?`,
+        premise: `กำหนด <code>x = (1,[2,3],4)</code> และ <code>y = (5,6,7)</code>`,
+        ask: `ตัวเลือกใด<strong>เกิด error</strong>?`,
         choices: [
           { key: 'A', text: `x[1][1] = 5` },
           { key: 'B', text: `x + y` },
           { key: 'C', text: `print(x[0])` },
           { key: 'D', text: `print(x[1:])` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เน€เธเธดเธ” error` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดเกิด error` }
         ],
         answer: 'E',
         explanation: `
-          <p>tuple เน€เธเธฅเธตเนเธขเธเธชเธกเธฒเธเธดเธเนเธกเนเนเธ”เน เนเธ•เนเธ–เนเธฒเธชเธกเธฒเธเธดเธเน€เธเนเธ list เธเธฐเนเธเนเธเนเธฒเธเนเธฒเธเนเธเนเธ”เน</p>
+          <p>tuple เปลี่ยนสมาชิกไม่ได้ แต่ถ้าสมาชิกเป็น list จะแก้ค่าข้างในได้</p>
           <ul>
-            <li><strong>A:</strong> x[1] เน€เธเนเธ list โ€” เนเธเน x[1][1] เนเธ”เนเน€เธเธฃเธฒเธฐ tuple เนเธกเนเนเธ”เนเธ–เธนเธเนเธเน เนเธกเน error โ“</li>
-            <li><strong>B:</strong> เธ•เนเธญ tuple เธ”เนเธงเธข + เนเธ”เน tuple เนเธซเธกเน เนเธกเน error โ“</li>
-            <li><strong>C:</strong> print(x[0]) เนเธ”เน 1 เนเธกเน error โ“</li>
-            <li><strong>D:</strong> print(x[1:]) เนเธ”เน ([2,3], 4) เนเธกเน error โ“</li>
-            <li><strong>E:</strong> <strong>เธ—เธธเธเธเนเธญ Aโ€“D เนเธกเนเธกเธต error</strong> เน€เธเธฃเธฒเธฐ x[1] เน€เธเนเธ list เธเธถเนเธเนเธเนเนเธเนเธ”เน</li>
+            <li><strong>A:</strong> x[1] เป็น list — แก้ x[1][1] ได้เพราะ tuple ไม่ได้ถูกแก้ ไม่ error ✓</li>
+            <li><strong>B:</strong> ต่อ tuple ด้วย + ได้ tuple ใหม่ ไม่ error ✓</li>
+            <li><strong>C:</strong> print(x[0]) ได้ 1 ไม่ error ✓</li>
+            <li><strong>D:</strong> print(x[1:]) ได้ ([2,3], 4) ไม่ error ✓</li>
+            <li><strong>E:</strong> <strong>ทุกข้อ A–D ไม่มี error</strong> เพราะ x[1] เป็น list ซึ่งแก้ไขได้</li>
           </ul>
         `
       },
@@ -1125,25 +1125,25 @@ print(new_fruits)`,
         id: 13,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ” <code>m</code> เธ”เธฑเธเธเธตเน`,
+        premise: `กำหนด <code>m</code> ดังนี้`,
         code: `m = {(1,2):3, (3,4):7, (5,6):8}`,
-        ask2: `เธซเธฅเธฑเธเธเธฒเธเธฃเธฑเธเธเธณเธชเธฑเนเธเนเธเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ” เธ—เธณเนเธซเน <code>len(m)</code> เธกเธตเธเนเธฒเน€เธเนเธ <strong>4</strong>?`,
+        ask2: `หลังจากรันคำสั่งในตัวเลือกใด ทำให้ <code>len(m)</code> มีค่าเป็น <strong>4</strong>?`,
         choices: [
           { key: 'A', text: `m[(5,6)] = 1` },
           { key: 'B', text: `m.update({(1,2):1})` },
           { key: 'C', text: `{(1,2):1}.update(m)` },
           { key: 'D', text: `m[(7,8)] = 15` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เนเธซเนเธเนเธฒ len(m) เน€เธเนเธ 4` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดให้ค่า len(m) เป็น 4` }
         ],
         answer: 'D',
         explanation: `
-          <p>len(m) = เธเธณเธเธงเธ key เธเธฐเน€เธเธดเนเธกเธเนเธ•เนเธญเน€เธกเธทเนเธญเน€เธเธดเนเธก key เนเธซเธกเนเธ—เธตเนเธขเธฑเธเนเธกเนเธกเธตเนเธ m</p>
+          <p>len(m) = จำนวน key จะเพิ่มก็ต่อเมื่อเพิ่ม key ใหม่ที่ยังไม่มีใน m</p>
           <ul>
-            <li><strong>A:</strong> (5,6) เธกเธตเธญเธขเธนเนเนเธฅเนเธง โ’ เธ—เธฑเธเธเนเธฒ len(m) เธขเธฑเธเน€เธเนเธ 3 โ—</li>
-            <li><strong>B:</strong> (1,2) เธกเธตเธญเธขเธนเนเนเธฅเนเธง โ’ เธ—เธฑเธเธเนเธฒ len(m) เธขเธฑเธเน€เธเนเธ 3 โ—</li>
-            <li><strong>C:</strong> update เนเธชเนเธเนเธญเธกเธนเธฅเธฅเธ dict เธเธฑเนเธงเธเธฃเธฒเธง {(1,2):1} โ€” m เนเธกเนเน€เธเธฅเธตเนเธขเธ โ—</li>
-            <li><strong>D:</strong> <strong>(7,8) เน€เธเนเธ key เนเธซเธกเน</strong> โ’ เน€เธเธดเนเธกเน€เธเนเธฒ m โ’ len(m) = 4 โ“</li>
-            <li><strong>E:</strong> เธเนเธญ D เธ—เธณเนเธซเนเนเธ”เน 4</li>
+            <li><strong>A:</strong> (5,6) มีอยู่แล้ว → ทับค่า len(m) ยังเป็น 3 ✗</li>
+            <li><strong>B:</strong> (1,2) มีอยู่แล้ว → ทับค่า len(m) ยังเป็น 3 ✗</li>
+            <li><strong>C:</strong> update ใส่ข้อมูลลง dict ชั่วคราว {(1,2):1} — m ไม่เปลี่ยน ✗</li>
+            <li><strong>D:</strong> <strong>(7,8) เป็น key ใหม่</strong> → เพิ่มเข้า m → len(m) = 4 ✓</li>
+            <li><strong>E:</strong> ข้อ D ทำให้ได้ 4</li>
           </ul>
         `
       },
@@ -1151,28 +1151,28 @@ print(new_fruits)`,
         id: 14,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ” <code>info</code> เธ”เธฑเธเธเธตเน`,
+        premise: `กำหนด <code>info</code> ดังนี้`,
         code: `info = {'2301170':('Comp prog',3),
         '2301172':('Comp prog lab',1),
         '2301260':('Prog tech',4)}`,
-        ask2: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธชเธฃเนเธฒเธ dictionary เธ—เธตเนเธกเธต key เน€เธเนเธ<strong>เธฃเธซเธฑเธชเธงเธดเธเธฒ</strong> เนเธฅเธฐ value เน€เธเนเธ<strong>เธเธทเนเธญเธงเธดเธเธฒ</strong>?
-เธเธฅเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ: <code>{'2301170':'Comp prog','2301172':'Comp prog lab','2301260':'Prog tech'}</code>`,
+        ask2: `ตัวเลือกใดสร้าง dictionary ที่มี key เป็น<strong>รหัสวิชา</strong> และ value เป็น<strong>ชื่อวิชา</strong>?
+ผลที่ต้องการ: <code>{'2301170':'Comp prog','2301172':'Comp prog lab','2301260':'Prog tech'}</code>`,
         choices: [
           { key: 'A', text: `{k:v[0] for k,v in info.items()}` },
           { key: 'B', text: `{k:v[1] for k,v in info.items()}` },
           { key: 'C', text: `{i:info[i][1] for i in info.keys()}` },
           { key: 'D', text: `{i[0]:i[1] for i in info.values()}` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ–เธนเธ` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
         ],
         answer: 'A',
         explanation: `
-          <p>value เนเธ•เนเธฅเธฐเธ•เธฑเธงเธเธทเธญ tuple (เธเธทเนเธญเธงเธดเธเธฒ, เธซเธเนเธงเธขเธเธดเธ•) โ€” เธเธทเนเธญเธงเธดเธเธฒเธญเธขเธนเน index 0</p>
+          <p>value แต่ละตัวคือ tuple (ชื่อวิชา, หน่วยกิต) — ชื่อวิชาอยู่ index 0</p>
           <ul>
-            <li><strong>A:</strong> <strong>k = เธฃเธซเธฑเธชเธงเธดเธเธฒ, v[0] = เธเธทเนเธญเธงเธดเธเธฒ</strong> โ“</li>
-            <li><strong>B:</strong> v[1] = เธซเธเนเธงเธขเธเธดเธ• โ’ เนเธ”เน {'2301170':3,...} เนเธกเนเนเธเนเธเธทเนเธญเธงเธดเธเธฒ โ—</li>
-            <li><strong>C:</strong> info[i][1] เธเนเธเธทเธญเธซเธเนเธงเธขเธเธดเธ•เน€เธเนเธเธเธฑเธ โ—</li>
-            <li><strong>D:</strong> info.values() เนเธซเน tuple โ’ i[0]:i[1] เธ—เธณเนเธซเนเธเธทเนเธญเธงเธดเธเธฒเน€เธเนเธ key เนเธกเนเนเธเนเธฃเธซเธฑเธช โ—</li>
-            <li><strong>E:</strong> เธเนเธญ A เธ–เธนเธ</li>
+            <li><strong>A:</strong> <strong>k = รหัสวิชา, v[0] = ชื่อวิชา</strong> ✓</li>
+            <li><strong>B:</strong> v[1] = หน่วยกิต → ได้ {'2301170':3,...} ไม่ใช่ชื่อวิชา ✗</li>
+            <li><strong>C:</strong> info[i][1] ก็คือหน่วยกิตเช่นกัน ✗</li>
+            <li><strong>D:</strong> info.values() ให้ tuple → i[0]:i[1] ทำให้ชื่อวิชาเป็น key ไม่ใช่รหัส ✗</li>
+            <li><strong>E:</strong> ข้อ A ถูก</li>
           </ul>
         `
       },
@@ -1180,26 +1180,26 @@ print(new_fruits)`,
         id: 15,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        premise: `เธเธณเธซเธเธ” dictionary เธเธทเนเธญ <code>regist</code> เธ—เธตเนเน€เธเนเธ เธฃเธซเธฑเธชเธงเธดเธเธฒ เน€เธเนเธ key เนเธฅเธฐ เธเธณเธเธงเธเธซเธเนเธงเธขเธเธดเธ• เน€เธเนเธ value`,
+        premise: `กำหนด dictionary ชื่อ <code>regist</code> ที่เก็บ รหัสวิชา เป็น key และ จำนวนหน่วยกิต เป็น value`,
         code: `regist = {2301170:3, 2301172:1, 2301117:4, 2301104:3}`,
-        ask2: `เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เน€เธเนเธเธเธณเธชเธฑเนเธ<strong>เธฅเธ</strong>เธชเธกเธฒเธเธดเธเธ—เธตเนเธกเธต key เน€เธเนเธ <code>2301170</code>?
-เธเธฅเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃ: <code>{2301172:1, 2301117:4, 2301104:3}</code>`,
+        ask2: `ตัวเลือกใดเป็นคำสั่ง<strong>ลบ</strong>สมาชิกที่มี key เป็น <code>2301170</code>?
+ผลที่ต้องการ: <code>{2301172:1, 2301117:4, 2301104:3}</code>`,
         choices: [
           { key: 'A', text: `del(regist[2301170])` },
           { key: 'B', text: `del(regist[0])` },
           { key: 'C', text: `regist.del(2301170)` },
           { key: 'D', text: `remove(regist[2301170])` },
-          { key: 'E', text: `เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ–เธนเธ` }
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
         ],
         answer: 'A',
         explanation: `
-          <p>เธฅเธเธชเธกเธฒเธเธดเธเนเธ dictionary เนเธเน del dict[key] เธซเธฃเธทเธญ dict.pop(key)</p>
+          <p>ลบสมาชิกใน dictionary ใช้ del dict[key] หรือ dict.pop(key)</p>
           <ul>
-            <li><strong>A:</strong> <strong>del(regist[2301170])</strong> = del regist[2301170] โ€” เธงเธเน€เธฅเนเธเนเธกเนเธกเธตเธเธฅเธ•เนเธญเธเธฒเธฃเธ—เธณเธเธฒเธ โ“</li>
-            <li><strong>B:</strong> เนเธกเนเธกเธต key 0 เนเธ regist (เนเธกเนเนเธเน index) โ’ <code>KeyError</code> โ—</li>
-            <li><strong>C:</strong> dictionary เนเธกเนเธกเธตเน€เธกเธเธญเธ” <code>.del()</code> โ’ <code>AttributeError</code> โ—</li>
-            <li><strong>D:</strong> Python เนเธกเนเธกเธตเธเธฑเธเธเนเธเธฑเธ <code>remove()</code> เนเธเธเธเธตเน โ’ <code>NameError</code> โ—</li>
-            <li><strong>E:</strong> เธเนเธญ A เธ–เธนเธ</li>
+            <li><strong>A:</strong> <strong>del(regist[2301170])</strong> = del regist[2301170] — วงเล็บไม่มีผลต่อการทำงาน ✓</li>
+            <li><strong>B:</strong> ไม่มี key 0 ใน regist (ไม่ใช่ index) → <code>KeyError</code> ✗</li>
+            <li><strong>C:</strong> dictionary ไม่มีเมธอด <code>.del()</code> → <code>AttributeError</code> ✗</li>
+            <li><strong>D:</strong> Python ไม่มีฟังก์ชัน <code>remove()</code> แบบนี้ → <code>NameError</code> ✗</li>
+            <li><strong>E:</strong> ข้อ A ถูก</li>
           </ul>
         `
       },
@@ -1208,24 +1208,24 @@ print(new_fruits)`,
         id: 16,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธฅเธฅเธฑเธเธเนเธ—เธตเน<strong>เธเธดเธกเธเนเธญเธญเธเธกเธฒ</strong>เธเธฒเธเนเธเธฃเนเธเธฃเธกเธ•เนเธญเนเธเธเธตเนเธเธทเธญเธเนเธญเนเธ”?',
+        ask: 'ผลลัพธ์ที่<strong>พิมพ์ออกมา</strong>จากโปรแกรมต่อไปนี้คือข้อใด?',
         code: `dd = {x: len(x) for x in 'Hello my students'.split()}\nprint(dd)`,
         choices: [
           { key: 'A', text: `{'Hello': 5, 'my': 2, 'students': 8}` },
           { key: 'B', text: `{'H': 1, 'e': 1, 'l': 2, 'o': 1}` },
           { key: 'C', text: `['Hello', 'my', 'students']` },
           { key: 'D', text: `{'Hello': 'my', 'students': 8}` },
-          { key: 'E', text: 'เน€เธเธดเธ” Error' }
+          { key: 'E', text: 'เกิด Error' }
         ],
         answer: 'A',
         explanation: `
-          <p><code>split()</code> เนเธขเธ string <code>'Hello my students'</code> เธญเธญเธเน€เธเนเธ 3 เธเธณ เนเธฅเนเธงเธชเธฃเนเธฒเธ dict comprehension เนเธ”เธขเนเธเนเธเธณเน€เธเนเธ <strong>key</strong> เนเธฅเธฐ <code>len(เธเธณ)</code> เน€เธเนเธ <strong>value</strong></p>
+          <p><code>split()</code> แยก string <code>'Hello my students'</code> ออกเป็น 3 คำ แล้วสร้าง dict comprehension โดยใช้คำเป็น <strong>key</strong> และ <code>len(คำ)</code> เป็น <strong>value</strong></p>
           <ul>
-            <li><strong>A: โ“</strong> <code>{'Hello': 5, 'my': 2, 'students': 8}</code> โ€” 'Hello' เธกเธต 5 เธ•เธฑเธง, 'my' เธกเธต 2 เธ•เธฑเธง, 'students' เธกเธต 8 เธ•เธฑเธง</li>
-            <li><strong>B โ—:</strong> เธเธฐเนเธ”เนเนเธเธเธเธตเนเธ–เนเธฒเธงเธเธฅเธนเธเธ—เธตเธฅเธฐ <em>เธ•เธฑเธงเธญเธฑเธเธฉเธฃ</em> เนเธกเนเนเธเนเธ—เธตเธฅเธฐเธเธณ</li>
-            <li><strong>C โ—:</strong> <code>split()</code> เธเธทเธ list เนเธ•เน dict comprehension <code>{...}</code> เธชเธฃเนเธฒเธ dict เนเธกเนเนเธเน list</li>
-            <li><strong>D โ—:</strong> value เธเธดเธ” เนเธกเนเนเธเนเธเธทเนเธญเธเธณเธ–เธฑเธ”เนเธ</li>
-            <li><strong>E โ—:</strong> เนเธเนเธ”เธ–เธนเธเธ•เนเธญเธ เนเธกเนเน€เธเธดเธ” Error</li>
+            <li><strong>A: ✓</strong> <code>{'Hello': 5, 'my': 2, 'students': 8}</code> — 'Hello' มี 5 ตัว, 'my' มี 2 ตัว, 'students' มี 8 ตัว</li>
+            <li><strong>B ✗:</strong> จะได้แบบนี้ถ้าวนลูปทีละ <em>ตัวอักษร</em> ไม่ใช่ทีละคำ</li>
+            <li><strong>C ✗:</strong> <code>split()</code> คืน list แต่ dict comprehension <code>{...}</code> สร้าง dict ไม่ใช่ list</li>
+            <li><strong>D ✗:</strong> value ผิด ไม่ใช่ชื่อคำถัดไป</li>
+            <li><strong>E ✗:</strong> โค้ดถูกต้อง ไม่เกิด Error</li>
           </ul>
         `
       },
@@ -1237,22 +1237,22 @@ print(new_fruits)`,
         id: 17,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เนเธเธฃเธฐเธเธเธเธดเธเธฑเธ”เธซเธเนเธฒเธเธญ (Display Coordinates) เธเธญเธ Pygame',
-        ask: '<strong>เธเธธเธ”เธเธณเน€เธเธดเธ” (0, 0)</strong> เนเธฅเธฐ <strong>เธ—เธดเธจเธ—เธฒเธเธเธฒเธฃเน€เธเธดเนเธกเธเธถเนเธเธเธญเธเนเธเธ X เนเธฅเธฐ Y</strong> เธ–เธนเธเธเธณเธซเธเธ”เนเธงเนเธญเธขเนเธฒเธเนเธฃ?',
+        premise: 'ในระบบพิกัดหน้าจอ (Display Coordinates) ของ Pygame',
+        ask: '<strong>จุดกำเนิด (0, 0)</strong> และ <strong>ทิศทางการเพิ่มขึ้นของแกน X และ Y</strong> ถูกกำหนดไว้อย่างไร?',
         choices: [
-          { key: 'A', text: 'เธเธธเธ” (0, 0) เธญเธขเธนเนเธ•เธฃเธเธเธฅเธฒเธเธซเธเนเธฒเธเธญ | เนเธเธ X เนเธเธ—เธฒเธเธเธงเธฒ (+), เนเธเธ Y เธเธตเนเธเธถเนเธเธเธ (+)' },
-          { key: 'B', text: 'เธเธธเธ” (0, 0) เธญเธขเธนเนเธ—เธตเนเธกเธธเธกเธเนเธฒเธขเธฅเนเธฒเธ | เนเธเธ X เนเธเธ—เธฒเธเธเธงเธฒ (+), เนเธเธ Y เธเธตเนเธเธถเนเธเธเธ (+)' },
-          { key: 'C', text: 'เธเธธเธ” (0, 0) เธญเธขเธนเนเธ—เธตเนเธกเธธเธกเธเนเธฒเธขเธเธ | เนเธเธ X เนเธเธ—เธฒเธเธเธงเธฒ (+), เนเธเธ Y เธเธตเนเธฅเธเธฅเนเธฒเธ (+)' },
-          { key: 'D', text: 'เธเธธเธ” (0, 0) เธญเธขเธนเนเธ—เธตเนเธกเธธเธกเธเธงเธฒเธเธ | เนเธเธ X เนเธเธ—เธฒเธเธเนเธฒเธข (+), เนเธเธ Y เธเธตเนเธฅเธเธฅเนเธฒเธ (+)' },
-          { key: 'E', text: 'เธเธธเธ” (0, 0) เธเธณเธซเธเธ”เน€เธญเธเนเธ”เนเธ•เธฒเธกเธเธเธฒเธ”เธซเธเนเธฒเธ•เนเธฒเธเธเธญเธ Section 3' }
+          { key: 'A', text: 'จุด (0, 0) อยู่ตรงกลางหน้าจอ | แกน X ไปทางขวา (+), แกน Y ชี้ขึ้นบน (+)' },
+          { key: 'B', text: 'จุด (0, 0) อยู่ที่มุมซ้ายล่าง | แกน X ไปทางขวา (+), แกน Y ชี้ขึ้นบน (+)' },
+          { key: 'C', text: 'จุด (0, 0) อยู่ที่มุมซ้ายบน | แกน X ไปทางขวา (+), แกน Y ชี้ลงล่าง (+)' },
+          { key: 'D', text: 'จุด (0, 0) อยู่ที่มุมขวาบน | แกน X ไปทางซ้าย (+), แกน Y ชี้ลงล่าง (+)' },
+          { key: 'E', text: 'จุด (0, 0) กำหนดเองได้ตามขนาดหน้าต่างของ Section 3' }
         ],
         answer: 'C',
         explanation: `
-          <p>เธฃเธฐเธเธเธเธดเธเธฑเธ”เธเธญเธเธเธญเธกเธเธดเธงเน€เธ•เธญเธฃเนเธเธฃเธฒเธเธดเธเธชเนเนเธฅเธฐ Pygame เธกเธตเธกเธฒเธ•เธฃเธเธฒเธเธ”เธฑเธเธเธตเน:</p>
+          <p>ระบบพิกัดของคอมพิวเตอร์กราฟิกส์และ Pygame มีมาตรฐานดังนี้:</p>
           <ul>
-            <li><strong>เธเธธเธ”เธเธณเน€เธเธดเธ” (0, 0):</strong> เธญเธขเธนเนเธ—เธตเนเธกเธธเธกเธเนเธฒเธขเธเธเธชเธธเธ”เธเธญเธเธซเธเนเธฒเธ•เนเธฒเธเน€เธเธก (Top-Left Corner)</li>
-            <li><strong>เนเธเธ X:</strong> เธกเธตเธเนเธฒเน€เธเธดเนเธกเธเธถเนเธเน€เธกเธทเนเธญเน€เธฅเธทเนเธญเธเนเธเธ—เธฒเธเธเธงเธฒ (+X)</li>
-            <li><strong>เนเธเธ Y:</strong> เธกเธตเธเนเธฒเน€เธเธดเนเธกเธเธถเนเธเน€เธกเธทเนเธญเน€เธฅเธทเนเธญเธเธฅเธเธ”เนเธฒเธเธฅเนเธฒเธ (+Y) เธเธถเนเธเธ•เนเธฒเธเธเธฒเธเนเธเธเธเธฒเธฃเนเธ—เธตเน€เธเธตเธขเธเนเธเธเธ“เธดเธ•เธจเธฒเธชเธ•เธฃเน</li>
+            <li><strong>จุดกำเนิด (0, 0):</strong> อยู่ที่มุมซ้ายบนสุดของหน้าต่างเกม (Top-Left Corner)</li>
+            <li><strong>แกน X:</strong> มีค่าเพิ่มขึ้นเมื่อเลื่อนไปทางขวา (+X)</li>
+            <li><strong>แกน Y:</strong> มีค่าเพิ่มขึ้นเมื่อเลื่อนลงด้านล่าง (+Y) ซึ่งต่างจากแกนคาร์ทีเซียนในคณิตศาสตร์</li>
           </ul>
         `
       },
@@ -1260,21 +1260,21 @@ print(new_fruits)`,
         id: 18,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เนเธเธชเธ–เธฒเธเธฑเธ•เธขเธเธฃเธฃเธก 12 เธเธฑเนเธเธ•เธญเธเธกเธฒเธ•เธฃเธเธฒเธเธเธญเธ Pygame',
-        ask: 'เน€เธเธฃเธฒเธฐเน€เธซเธ•เธธเนเธ”เธเธถเธเธ•เนเธญเธเนเธซเธฅเธ”เธฃเธนเธเธ เธฒเธเนเธฅเธฐเน€เธชเธตเธขเธ (Assets) เนเธ <strong>เธชเนเธงเธเธ—เธตเน 4 (เธเนเธญเธเน€เธเนเธฒเธฅเธนเธเธซเธฅเธฑเธ while True:)</strong> เนเธ—เธเธ—เธตเนเธเธฐเนเธซเธฅเธ”เธ เธฒเธขเนเธเธฅเธนเธ?',
+        premise: 'ในสถาปัตยกรรม 12 ขั้นตอนมาตรฐานของ Pygame',
+        ask: 'เพราะเหตุใดจึงต้องโหลดรูปภาพและเสียง (Assets) ใน <strong>ส่วนที่ 4 (ก่อนเข้าลูปหลัก while True:)</strong> แทนที่จะโหลดภายในลูป?',
         choices: [
-          { key: 'A', text: 'เน€เธเธฃเธฒเธฐ Pygame เนเธกเนเธญเธเธธเธเธฒเธ•เนเธซเนเน€เธฃเธตเธขเธเธเธณเธชเธฑเนเธ <code>pygame.image.load</code> เธ เธฒเธขเนเธเธฅเธนเธ while' },
-          { key: 'B', text: 'เน€เธเธทเนเธญเธเธฃเธฐเธซเธขเธฑเธ”เธซเธเนเธงเธขเธเธงเธฒเธกเธเธณ เนเธฅเธฐเธเนเธญเธเธเธฑเธเน€เธเธกเธเธฃเธฐเธ•เธธเธเธเธฒเธเธเธฒเธฃเธญเนเธฒเธเนเธเธฅเนเธเธฒเธเธ”เธดเธชเธเนเธเนเธณเน เธ—เธธเธเน เน€เธเธฃเธก' },
-          { key: 'C', text: 'เน€เธเธฃเธฒเธฐเธ•เธฑเธงเนเธเธฃ <code>window</code> เธเธฐเนเธกเนเธฃเธนเนเธเธฑเธเธ•เธณเนเธซเธเนเธเธเธญเธเนเธเธฅเนเธซเธฒเธเนเธกเนเนเธซเธฅเธ”เนเธ Section 4' },
-          { key: 'D', text: 'เน€เธเธทเนเธญเนเธซเนเธฃเธฐเธเธเน€เธชเธตเธขเธเธ—เธณเธเธฒเธเนเธเธ Asynchronous เนเธ”เนเนเธ”เธขเธญเธฑเธ•เนเธเธกเธฑเธ•เธด' },
-          { key: 'E', text: 'เน€เธเธทเนเธญเนเธซเนเธงเธฑเธ•เธ–เธธ Rect เธเธณเธเธงเธ“เธ•เธณเนเธซเธเนเธเน€เธฃเธดเนเธกเธ•เนเธเธ—เธตเนเธเธธเธ”เธเธถเนเธเธเธฅเธฒเธเนเธ”เนเธ—เธฑเธเธ—เธต' }
+          { key: 'A', text: 'เพราะ Pygame ไม่อนุญาตให้เรียกคำสั่ง <code>pygame.image.load</code> ภายในลูป while' },
+          { key: 'B', text: 'เพื่อประหยัดหน่วยความจำ และป้องกันเกมกระตุกจากการอ่านไฟล์จากดิสก์ซ้ำๆ ทุกๆ เฟรม' },
+          { key: 'C', text: 'เพราะตัวแปร <code>window</code> จะไม่รู้จักตำแหน่งของไฟล์หากไม่โหลดใน Section 4' },
+          { key: 'D', text: 'เพื่อให้ระบบเสียงทำงานแบบ Asynchronous ได้โดยอัตโนมัติ' },
+          { key: 'E', text: 'เพื่อให้วัตถุ Rect คำนวณตำแหน่งเริ่มต้นที่จุดกึ่งกลางได้ทันที' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธเธฒเธฃเนเธซเธฅเธ”เนเธเธฅเนเธ เธฒเธเธซเธฃเธทเธญเน€เธชเธตเธขเธ (I/O Operation) เธเธฒเธ Hard Drive เธฅเธ RAM เนเธเนเน€เธงเธฅเธฒเธเธฃเธฐเธกเธงเธฅเธเธฅเธชเธนเธ:</p>
+          <p>การโหลดไฟล์ภาพหรือเสียง (I/O Operation) จาก Hard Drive ลง RAM ใช้เวลาประมวลผลสูง:</p>
           <ul>
-            <li>เธซเธฒเธเธเธณเธเธณเธชเธฑเนเธ <code>pygame.image.load()</code> เนเธเนเธชเนเนเธงเนเนเธเธฅเธนเธเธซเธฅเธฑเธ เนเธเธฃเนเธเธฃเธกเธเธฐเธญเนเธฒเธเนเธเธฅเนเธเธฒเธเธ”เธดเธชเธเนเธเนเธณเน 30-60 เธเธฃเธฑเนเธเธ•เนเธญเธงเธดเธเธฒเธ—เธต เธ—เธณเนเธซเนเน€เธเธกเธเธฃเธฐเธ•เธธเธเธญเธขเนเธฒเธเธซเธเธฑเธ (Frame Drop) เนเธฅเธฐเน€เธเธดเธ”เธเธฑเธเธซเธฒ Memory Leak</li>
-            <li>เธ”เธฑเธเธเธฑเนเธเธเธเน€เธซเธฅเนเธเธเธทเธญ: <strong>เนเธซเธฅเธ”เธ—เธฃเธฑเธเธขเธฒเธเธฃเธ—เธธเธเธเธดเนเธเน€เธเธตเธขเธเธเธฃเธฑเนเธเน€เธ”เธตเธขเธง (Load Once) เธเนเธญเธเน€เธฃเธดเนเธกเธฅเธนเธเน€เธเธกเน€เธชเธกเธญ</strong></li>
+            <li>หากนำคำสั่ง <code>pygame.image.load()</code> ไปใส่ไว้ในลูปหลัก โปรแกรมจะอ่านไฟล์จากดิสก์ซ้ำๆ 30-60 ครั้งต่อวินาที ทำให้เกมกระตุกอย่างหนัก (Frame Drop) และเกิดปัญหา Memory Leak</li>
+            <li>ดังนั้นกฎเหล็กคือ: <strong>โหลดทรัพยากรทุกชิ้นเพียงครั้งเดียว (Load Once) ก่อนเริ่มลูปเกมเสมอ</strong></li>
           </ul>
         `
       },
@@ -1282,21 +1282,21 @@ print(new_fruits)`,
         id: 19,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เนเธเธฅเธนเธเนเธชเธ”เธเธเธฅเธเธฃเธฒเธเธดเธเธชเนเธเธญเธเน€เธเธก (Section 11)',
-        ask: 'เธซเธฒเธเธฅเธทเธกเน€เธฃเธตเธขเธเธเธณเธชเธฑเนเธ <code>window.fill(BLACK)</code> เธเนเธญเธเธ—เธตเนเธเธฐเธงเธฒเธ”เธงเธฑเธ•เธ–เธธเธ—เธตเนเธเธณเธฅเธฑเธเน€เธเธฅเธทเนเธญเธเธ—เธตเน เธเธฐเธชเนเธเธเธฅเนเธซเนเน€เธเธดเธ”เธเธฃเธฒเธเธเธเธฒเธฃเธ“เนเนเธ”เธเธถเนเธเธเธเธซเธเนเธฒเธเธญ?',
+        premise: 'ในลูปแสดงผลกราฟิกส์ของเกม (Section 11)',
+        ask: 'หากลืมเรียกคำสั่ง <code>window.fill(BLACK)</code> ก่อนที่จะวาดวัตถุที่กำลังเคลื่อนที่ จะส่งผลให้เกิดปรากฏการณ์ใดขึ้นบนหน้าจอ?',
         choices: [
-          { key: 'A', text: 'เนเธเธฃเนเธเธฃเธกเธเธฐเธซเธขเธธเธ”เธ—เธณเธเธฒเธเนเธฅเธฐเนเธเนเธเน€เธ•เธทเธญเธ <code>PygameError: display not cleared</code>' },
-          { key: 'B', text: 'เธงเธฑเธ•เธ–เธธเธเธฐเนเธกเนเธเธฃเธฒเธเธเธเธเธซเธเนเธฒเธเธญเน€เธฅเธข เน€เธเธฃเธฒเธฐเธซเธเนเธฒเธเธญเธเธฐเธเธฅเธฒเธขเน€เธเนเธเธชเธตเธ”เธณเธ—เธฑเนเธเธซเธกเธ”' },
-          { key: 'C', text: 'เธงเธฑเธ•เธ–เธธเธเธฐเน€เธเธฅเธทเนเธญเธเธ—เธตเนเธ•เธฒเธกเธเธเธ•เธด เนเธ•เนเธเธฐเธ—เธดเนเธเธฃเธญเธขเธ เธฒเธเธเธญเธเน€เธเธฃเธกเธเนเธญเธเธซเธเนเธฒเธฅเธฒเธเธขเธฒเธงเน€เธเนเธเธ—เธฒเธ (Smearing / Ghosting)' },
-          { key: 'D', text: 'เน€เธเธฃเธกเน€เธฃเธ•เธเธญเธเน€เธเธกเธเธฐเธ•เธเธฅเธเธเธเธเธฅเธฒเธขเน€เธเนเธ 0 FPS' },
-          { key: 'E', text: 'เธฃเธฐเธเธเธเธฐเธชเธฅเธฑเธเธชเธตเธเธญเธเธงเธฑเธ•เธ–เธธเน€เธเนเธเธชเธตเธ•เธฃเธเธเนเธฒเธกเนเธ”เธขเธญเธฑเธ•เนเธเธกเธฑเธ•เธด' }
+          { key: 'A', text: 'โปรแกรมจะหยุดทำงานและแจ้งเตือน <code>PygameError: display not cleared</code>' },
+          { key: 'B', text: 'วัตถุจะไม่ปรากฏบนหน้าจอเลย เพราะหน้าจอจะกลายเป็นสีดำทั้งหมด' },
+          { key: 'C', text: 'วัตถุจะเคลื่อนที่ตามปกติ แต่จะทิ้งรอยภาพของเฟรมก่อนหน้าลากยาวเป็นทาง (Smearing / Ghosting)' },
+          { key: 'D', text: 'เฟรมเรตของเกมจะตกลงจนกลายเป็น 0 FPS' },
+          { key: 'E', text: 'ระบบจะสลับสีของวัตถุเป็นสีตรงข้ามโดยอัตโนมัติ' }
         ],
         answer: 'C',
         explanation: `
-          <p>เธซเธเนเธฒเธ•เนเธฒเธเธเธญเธ Pygame เธ—เธณเธเธฒเธเนเธเธเนเธเนเธเธเนเธฒเนเธ (Canvas):</p>
+          <p>หน้าต่างของ Pygame ทำงานแบบแผ่นผ้าใบ (Canvas):</p>
           <ul>
-            <li>เน€เธกเธทเนเธญเน€เธฃเธฒเธงเธฒเธ”เธงเธฑเธ•เธ–เธธเธฅเธเนเธ เธเธดเธเน€เธเธฅเธชเธตเธเธฐเธ–เธนเธเน€เธเธตเธขเธเธ—เธฑเธเธฅเธเธเธเธเธฑเธเน€เธเธญเธฃเนเธซเธเนเธฒเธเธญ</li>
-            <li>เธซเธฒเธเนเธเน€เธเธฃเธกเธ–เธฑเธ”เธกเธฒ เธงเธฑเธ•เธ–เธธเธเธขเธฑเธเนเธเธเธดเธเธฑเธ”เนเธซเธกเนเนเธ•เนเน€เธฃเธฒเนเธกเนเนเธ”เนเธฅเนเธฒเธเธซเธเนเธฒเธเธญเธ”เนเธงเธข <code>window.fill()</code> เธฃเธนเธเธ เธฒเธเนเธเธ•เธณเนเธซเธเนเธเน€เธ”เธดเธกเธเธฐเนเธกเนเธ–เธนเธเธฅเธเธญเธญเธ เธ—เธณเนเธซเนเน€เธเธดเธ”เธฃเธญเธขเธ เธฒเธเธเนเธญเธเธฅเธฒเธเธขเธฒเธงเธ•เธฒเธกเธ—เธดเธจเธ—เธฒเธเธเธฒเธฃเน€เธเธฅเธทเนเธญเธเธ—เธตเน (Ghosting Artifact)</li>
+            <li>เมื่อเราวาดวัตถุลงไป พิกเซลสีจะถูกเขียนทับลงบนบัฟเฟอร์หน้าจอ</li>
+            <li>หากในเฟรมถัดมา วัตถุขยับไปพิกัดใหม่แต่เราไม่ได้ล้างหน้าจอด้วย <code>window.fill()</code> รูปภาพในตำแหน่งเดิมจะไม่ถูกลบออก ทำให้เกิดรอยภาพซ้อนลากยาวตามทิศทางการเคลื่อนที่ (Ghosting Artifact)</li>
           </ul>
         `
       },
@@ -1304,21 +1304,21 @@ print(new_fruits)`,
         id: 20,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เนเธเธเธฒเธฃเธเธฑเธ’เธเธฒเน€เธเธกเธ”เนเธงเธข Pygame เธกเธตเธเธฒเธฃเน€เธฃเธตเธขเธเนเธเน <code>clock = pygame.time.Clock()</code>',
-        ask: 'เธงเธฑเธ•เธ–เธธเธเธฃเธฐเธชเธเธเนเธซเธฅเธฑเธเธเธญเธเธเธฒเธฃเน€เธฃเธตเธขเธเธเธณเธชเธฑเนเธ <code>clock.tick(FRAMES_PER_SECOND)</code> เนเธเนเธ•เนเธฅเธฐเธฃเธญเธเธเธญเธเธฅเธนเธเน€เธเธกเธเธทเธญเธเนเธญเนเธ”?',
+        premise: 'ในการพัฒนาเกมด้วย Pygame มีการเรียกใช้ <code>clock = pygame.time.Clock()</code>',
+        ask: 'วัตถุประสงค์หลักของการเรียกคำสั่ง <code>clock.tick(FRAMES_PER_SECOND)</code> ในแต่ละรอบของลูปเกมคือข้อใด?',
         choices: [
-          { key: 'A', text: 'เธเธฑเธเน€เธงเธฅเธฒเธ–เธญเธขเธซเธฅเธฑเธเน€เธเธทเนเธญเธเธฑเธเน€เธงเธฅเธฒเนเธเธเธฒเธฃเน€เธฅเนเธเน€เธเธก' },
-          { key: 'B', text: 'เธเธงเธเธเธธเธกเธญเธฑเธ•เธฃเธฒเธเธฒเธฃเธฃเธตเน€เธเธฃเธเธซเธเนเธฒเธเธญเนเธซเนเธเธเธ—เธตเน (เน€เธเนเธ 30 FPS) เน€เธเธทเนเธญเนเธซเนเน€เธเธกเธงเธดเนเธเธ”เนเธงเธขเธเธงเธฒเธกเน€เธฃเนเธงเธชเธกเนเธณเน€เธชเธกเธญเธเธเธ—เธธเธเน€เธเธฃเธทเนเธญเธ' },
-          { key: 'C', text: 'เธเธดเธเนเธเธฃเนเธเธเนเธเธฑเธเธซเธงเธฐเน€เธชเธตเธขเธเธ”เธเธ•เธฃเธตเธเธฃเธฐเธเธญเธเนเธซเนเธ•เธฃเธเธเธฑเธเธเธฒเธฃเธเธ”เธเธธเนเธกเธเธญเธเธเธนเนเน€เธฅเนเธ' },
-          { key: 'D', text: 'เธเนเธญเธเธเธฑเธเนเธกเนเนเธซเนเนเธเธฃเนเธเธฃเธกเนเธเนเธชเธฑเธเธเธฒเธ“เธญเธดเธเน€เธ—เธญเธฃเนเน€เธเนเธ•เธกเธฒเธเน€เธเธดเธเนเธ' },
-          { key: 'E', text: 'เธเธฑเธเธ—เธถเธเน€เธงเธฅเธฒเธ—เธตเนเธเธนเนเน€เธฅเนเธเธ—เธณเธเธฐเนเธเธเธชเธนเธเธชเธธเธ”เธฅเธเนเธเธฅเน' }
+          { key: 'A', text: 'นับเวลาถอยหลังเพื่อจับเวลาในการเล่นเกม' },
+          { key: 'B', text: 'ควบคุมอัตราการรีเฟรชหน้าจอให้คงที่ (เช่น 30 FPS) เพื่อให้เกมวิ่งด้วยความเร็วสม่ำเสมอบนทุกเครื่อง' },
+          { key: 'C', text: 'ซิงโครไนซ์จังหวะเสียงดนตรีประกอบให้ตรงกับการกดปุ่มของผู้เล่น' },
+          { key: 'D', text: 'ป้องกันไม่ให้โปรแกรมใช้สัญญาณอินเทอร์เน็ตมากเกินไป' },
+          { key: 'E', text: 'บันทึกเวลาที่ผู้เล่นทำคะแนนสูงสุดลงไฟล์' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธซเธฒเธเนเธกเนเธกเธต <code>clock.tick()</code> เธฅเธนเธ <code>while True:</code> เธเธฐเธ—เธณเธเธฒเธเน€เธฃเนเธงเธ—เธตเนเธชเธธเธ”เน€เธ—เนเธฒเธ—เธตเน CPU เน€เธเธฃเธทเนเธญเธเธเธฑเนเธเธเธฐเธฃเธฑเธเนเธ”เน:</p>
+          <p>หากไม่มี <code>clock.tick()</code> ลูป <code>while True:</code> จะทำงานเร็วที่สุดเท่าที่ CPU เครื่องนั้นจะรันได้:</p>
           <ul>
-            <li>เน€เธเธฃเธทเนเธญเธเธเธญเธกเธเธดเธงเน€เธ•เธญเธฃเนเธ—เธตเนเน€เธฃเนเธงเธกเธฒเธ เน€เธเธกเธเธฐเธงเธดเนเธเน€เธฃเนเธงเน€เธเธดเธเธเธเธเธนเนเน€เธฅเนเธเธกเธญเธเนเธกเนเธ—เธฑเธ</li>
-            <li><code>clock.tick(FRAMES_PER_SECOND)</code> เธ—เธณเธซเธเนเธฒเธ—เธตเนเธซเธเนเธงเธเน€เธงเธฅเธฒเธชเธฅเธตเธเนเธซเนเธเธงเธฒเธกเน€เธฃเนเธงเนเธเนเธ•เนเธฅเธฐเธฃเธญเธเธเธญเธเธฅเธนเธเธกเธตเธญเธฑเธ•เธฃเธฒเธเธเธ—เธตเน เธ—เธณเนเธซเนเธเธฒเธฃเน€เธเธฅเธทเนเธญเธเธ—เธตเนเธเธญเธเธ•เธฑเธงเธฅเธฐเธเธฃเธกเธตเธเธงเธฒเธกเน€เธฃเนเธงเน€เธ—เนเธฒเธเธฑเธเธ—เธธเธเน€เธเธฃเธทเนเธญเธเธเธญเธกเธเธดเธงเน€เธ•เธญเธฃเน</li>
+            <li>เครื่องคอมพิวเตอร์ที่เร็วมาก เกมจะวิ่งเร็วเกินจนผู้เล่นมองไม่ทัน</li>
+            <li><code>clock.tick(FRAMES_PER_SECOND)</code> ทำหน้าที่หน่วงเวลาสลีปให้ความเร็วในแต่ละรอบของลูปมีอัตราคงที่ ทำให้การเคลื่อนที่ของตัวละครมีความเร็วเท่ากันทุกเครื่องคอมพิวเตอร์</li>
           </ul>
         `
       },
@@ -1326,21 +1326,21 @@ print(new_fruits)`,
         id: 21,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เธเธฒเธฃเธ•เธฃเธงเธเธเธฑเธเธญเธดเธเธเธธเธ•เธเธตเธขเนเธเธญเธฃเนเธ”เธเธฒเธเธเธนเนเน€เธฅเนเธ',
-        ask: 'เธซเธฒเธเธ•เนเธญเธเธเธฒเธฃเธ•เธฃเธงเธเธเธฑเธ <strong>"เธเธฒเธฃเธเธ” Spacebar 1 เธเธฃเธฑเนเธ เน€เธเธทเนเธญเธเธฃเธฐเนเธ”เธ” (Single Trigger)"</strong> เธเธงเธฃเน€เธฅเธทเธญเธเนเธเนเธเธณเธชเธฑเนเธเนเธเธเนเธญเนเธ”?',
+        premise: 'การตรวจจับอินพุตคีย์บอร์ดจากผู้เล่น',
+        ask: 'หากต้องการตรวจจับ <strong>"การกด Spacebar 1 ครั้ง เพื่อกระโดด (Single Trigger)"</strong> ควรเลือกใช้คำสั่งในข้อใด?',
         choices: [
           { key: 'A', text: '<code>keys = pygame.key.get_pressed(); if keys[pygame.K_SPACE]:</code>' },
-          { key: 'B', text: 'เนเธ event loop: <code>if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:</code>' },
-          { key: 'C', text: 'เนเธ event loop: <code>if event.type == pygame.MOUSEBUTTONDOWN:</code>' },
+          { key: 'B', text: 'ใน event loop: <code>if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:</code>' },
+          { key: 'C', text: 'ใน event loop: <code>if event.type == pygame.MOUSEBUTTONDOWN:</code>' },
           { key: 'D', text: '<code>if pygame.key.get_focused() == pygame.K_SPACE:</code>' },
           { key: 'E', text: '<code>if clock.tick() == pygame.K_SPACE:</code>' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธญเธดเธเธเธธเธ•เธเธตเธขเนเธเธญเธฃเนเธ”เนเธ Pygame เธกเธต 2 เนเธเธเธชเธณเธเธฑเธ:</p>
+          <p>การจัดการอินพุตคีย์บอร์ดใน Pygame มี 2 แบบสำคัญ:</p>
           <ul>
-            <li><strong>Event Queue (เธเนเธญ B):</strong> เธ•เธฃเธงเธเธเธฑเธเน€เธซเธ•เธธเธเธฒเธฃเธ“เน <code>event.type == pygame.KEYDOWN</code> เน€เธซเธกเธฒเธฐเธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธ” "เธเธฃเธฑเนเธเน€เธ”เธตเธขเธงเธ•เนเธญเธเธฒเธฃเธเธฃเธฐเธ—เธณ" เน€เธเนเธ เธเธฒเธฃเธขเธดเธเธเธฃเธฐเธชเธธเธ 1 เธเธฑเธ”, เธเธฒเธฃเธเธฃเธฐเนเธ”เธ”, เธเธฒเธฃเน€เธเธดเธ”เน€เธกเธเธน</li>
-            <li><strong>State Polling (เธเนเธญ A):</strong> เนเธเน <code>pygame.key.get_pressed()</code> เน€เธเธทเนเธญเธ•เธฃเธงเธเธงเนเธฒเธเธธเนเธก "เธเธณเธฅเธฑเธเธ–เธนเธเธเธ”เธเนเธฒเธเธญเธขเธนเนเธซเธฃเธทเธญเนเธกเน" เน€เธซเธกเธฒเธฐเธชเธณเธซเธฃเธฑเธเธเธฒเธฃเน€เธ”เธดเธเธ•เนเธญเน€เธเธทเนเธญเธเธเธญเธเธ•เธฑเธงเธฅเธฐเธเธฃ</li>
+            <li><strong>Event Queue (ข้อ B):</strong> ตรวจจับเหตุการณ์ <code>event.type == pygame.KEYDOWN</code> เหมาะสำหรับการกด "ครั้งเดียวต่อการกระทำ" เช่น การยิงกระสุน 1 นัด, การกระโดด, การเปิดเมนู</li>
+            <li><strong>State Polling (ข้อ A):</strong> ใช้ <code>pygame.key.get_pressed()</code> เพื่อตรวจว่าปุ่ม "กำลังถูกกดค้างอยู่หรือไม่" เหมาะสำหรับการเดินต่อเนื่องของตัวละคร</li>
           </ul>
         `
       },
@@ -1348,8 +1348,8 @@ print(new_fruits)`,
         id: 22,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เธกเธตเธ•เธณเนเธซเธเนเธเธเธฅเธดเธเน€เธกเธฒเธชเน <code>event.pos</code> เนเธฅเธฐเธชเธตเนเน€เธซเธฅเธตเนเธขเธกเธเธญเธเธเธธเนเธก <code>targetRect</code>',
-        ask: 'เน€เธกเธเธญเธ”เนเธ”เธเธญเธ <code>pygame.Rect</code> เธ—เธตเนเนเธเนเธ•เธฃเธงเธเธชเธญเธเธงเนเธฒ <strong>"เธเธธเธ”เธเธดเธเธฑเธ”เน€เธกเธฒเธชเนเธเธฅเธดเธเนเธ”เธเธเธทเนเธเธ—เธตเนเธเธธเนเธกเธซเธฃเธทเธญเนเธกเน"</strong> เนเธ”เนเธ–เธนเธเธ•เนเธญเธ?',
+        premise: 'มีตำแหน่งคลิกเมาส์ <code>event.pos</code> และสี่เหลี่ยมของปุ่ม <code>targetRect</code>',
+        ask: 'เมธอดใดของ <code>pygame.Rect</code> ที่ใช้ตรวจสอบว่า <strong>"จุดพิกัดเมาส์คลิกโดนพื้นที่ปุ่มหรือไม่"</strong> ได้ถูกต้อง?',
         choices: [
           { key: 'A', text: '<code>targetRect.colliderect(event.pos)</code>' },
           { key: 'B', text: '<code>targetRect.collidepoint(event.pos)</code>' },
@@ -1359,10 +1359,10 @@ print(new_fruits)`,
         ],
         answer: 'B',
         explanation: `
-          <p>เน€เธกเธเธญเธ”เธ•เธฃเธงเธเธชเธญเธเธเธฒเธฃเธเธเธเธญเธ <code>pygame.Rect</code>:</p>
+          <p>เมธอดตรวจสอบการชนของ <code>pygame.Rect</code>:</p>
           <ul>
-            <li><code>rect.collidepoint((x, y))</code>: เนเธเนเธ•เธฃเธงเธเธชเธญเธเธงเนเธฒ "เธเธธเธ”เธเธดเธเธฑเธ”เน€เธ”เธตเนเธขเธง (Point)" เธญเธขเธนเนเธ เธฒเธขเนเธเธเธทเนเธเธ—เธตเนเธชเธตเนเน€เธซเธฅเธตเนเธขเธกเธซเธฃเธทเธญเนเธกเน เธเธดเธขเธกเนเธเนเธ•เธฃเธงเธเธชเธญเธเธเธฒเธฃเธเธฅเธดเธเน€เธกเธฒเธชเนเธเธเธเธธเนเธก</li>
-            <li><code>rect.colliderect(anotherRect)</code>: เนเธเนเธ•เธฃเธงเธเธชเธญเธเธเธฒเธฃเธ—เธฑเธเธเนเธญเธเธเธฑเธเธฃเธฐเธซเธงเนเธฒเธ "เธชเธตเนเน€เธซเธฅเธตเนเธขเธก 2 เธฃเธนเธ (Rect เธเธฑเธ Rect)" เธเธดเธขเธกเนเธเนเธ•เธฃเธงเธเธเธฒเธฃเธเธเธเธฑเธเธเธญเธ Sprite เธซเธฃเธทเธญเธเธฃเธฐเธชเธธเธเธเธฑเธเธจเธฑเธ•เธฃเธน</li>
+            <li><code>rect.collidepoint((x, y))</code>: ใช้ตรวจสอบว่า "จุดพิกัดเดี่ยว (Point)" อยู่ภายในพื้นที่สี่เหลี่ยมหรือไม่ นิยมใช้ตรวจสอบการคลิกเมาส์บนปุ่ม</li>
+            <li><code>rect.colliderect(anotherRect)</code>: ใช้ตรวจสอบการทับซ้อนกันระหว่าง "สี่เหลี่ยม 2 รูป (Rect กับ Rect)" นิยมใช้ตรวจการชนกันของ Sprite หรือกระสุนกับศัตรู</li>
           </ul>
         `
       },
@@ -1370,20 +1370,20 @@ print(new_fruits)`,
         id: 23,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เธเธดเธเธฒเธฃเธ“เธฒเธเธธเธ“เธชเธกเธเธฑเธ•เธดเธเธญเธเธญเธญเธเน€เธเธเธ•เน <code>pygame.Rect</code>',
-        ask: 'เธเนเธญเนเธ”เธญเธเธดเธเธฒเธขเธเธธเธ“เธชเธกเธเธฑเธ•เธด <strong>"Virtual Attributes"</strong> (เน€เธเนเธ <code>right</code>, <code>bottom</code>, <code>center</code>) เนเธ”เนเธ–เธนเธเธ•เนเธญเธเธ—เธตเนเธชเธธเธ”?',
+        premise: 'พิจารณาคุณสมบัติของออบเจกต์ <code>pygame.Rect</code>',
+        ask: 'ข้อใดอธิบายคุณสมบัติ <strong>"Virtual Attributes"</strong> (เช่น <code>right</code>, <code>bottom</code>, <code>center</code>) ได้ถูกต้องที่สุด?',
         choices: [
-          { key: 'A', text: 'เน€เธกเธทเนเธญเธเธฃเธฑเธเธเนเธฒ <code>rect.right = 600</code> เธ•เธฑเธง Rect เธเธฐเธเธฃเธฑเธเน€เธเธฅเธตเนเธขเธเธเนเธฒ <code>rect.left</code> เนเธซเนเนเธ”เธขเธญเธฑเธ•เนเธเธกเธฑเธ•เธดเน€เธเธทเนเธญเธเธเธเธงเธฒเธกเธเธงเนเธฒเธเน€เธ”เธดเธกเนเธงเน' },
-          { key: 'B', text: 'เน€เธเนเธเนเธญเธ•เธ—เธฃเธดเธเธดเธงเธ•เนเธ—เธตเนเธกเธญเธเนเธกเนเน€เธซเนเธเธเธเธซเธเนเธฒเธเธญ เนเธฅเธฐเนเธกเนเธชเธฒเธกเธฒเธฃเธ–เธญเนเธฒเธเธเนเธฒเธญเธญเธเธกเธฒเน€เธเนเธเธ•เธฑเธงเน€เธฅเธเนเธ”เน' },
-          { key: 'C', text: 'เธ•เนเธญเธเธเธฃเธฐเธเธฒเธจเธเธณเธชเธฑเนเธ <code>import virtual</code> เธเนเธญเธเธเธถเธเธเธฐเธชเธฒเธกเธฒเธฃเธ–เนเธเนเธเธฒเธเนเธ”เน' },
-          { key: 'D', text: 'เธเนเธฒเธเธดเธเธฑเธ”เน€เธชเธกเธทเธญเธเธเธฐเธฃเธตเน€เธเนเธ•เธเธฅเธฑเธเนเธเธ—เธตเน (0, 0) เน€เธชเธกเธญเธซเธฅเธฑเธเธเธเธฅเธนเธ while True' },
-          { key: 'E', text: 'เนเธเนเธชเธณเธซเธฃเธฑเธเน€เธเนเธเธฃเธนเธเธ เธฒเธเน€เธชเธกเธทเธญเธเธ—เธตเนเธขเธฑเธเนเธกเนเนเธ”เนเนเธซเธฅเธ”เธฅเธเธซเธเนเธงเธขเธเธงเธฒเธกเธเธณ' }
+          { key: 'A', text: 'เมื่อปรับค่า <code>rect.right = 600</code> ตัว Rect จะปรับเปลี่ยนค่า <code>rect.left</code> ให้โดยอัตโนมัติเพื่อคงความกว้างเดิมไว้' },
+          { key: 'B', text: 'เป็นแอตทริบิวต์ที่มองไม่เห็นบนหน้าจอ และไม่สามารถอ่านค่าออกมาเป็นตัวเลขได้' },
+          { key: 'C', text: 'ต้องประกาศคำสั่ง <code>import virtual</code> ก่อนจึงจะสามารถใช้งานได้' },
+          { key: 'D', text: 'ค่าพิกัดเสมือนจะรีเซ็ตกลับไปที่ (0, 0) เสมอหลังจบลูป while True' },
+          { key: 'E', text: 'ใช้สำหรับเก็บรูปภาพเสมือนที่ยังไม่ได้โหลดลงหน่วยความจำ' }
         ],
         answer: 'A',
         explanation: `
-          <p>เธงเธฑเธ•เธ–เธธ <code>pygame.Rect</code> เธกเธตเธเธธเธ“เธชเธกเธเธฑเธ•เธดเธเธดเน€เธจเธฉเน€เธฃเธตเธขเธเธงเนเธฒ Virtual Attributes เน€เธเนเธ <code>right</code>, <code>bottom</code>, <code>center</code>, <code>centerx</code>, <code>topleft</code>:</p>
+          <p>วัตถุ <code>pygame.Rect</code> มีคุณสมบัติพิเศษเรียกว่า Virtual Attributes เช่น <code>right</code>, <code>bottom</code>, <code>center</code>, <code>centerx</code>, <code>topleft</code>:</p>
           <ul>
-            <li>เน€เธกเธทเนเธญเน€เธฃเธฒเธเธณเธซเธเธ”เธเนเธฒเนเธซเธกเนเนเธซเนเนเธญเธ•เธ—เธฃเธดเธเธดเธงเธ•เนเน€เธซเธฅเนเธฒเธเธตเน เน€เธเนเธ <code>rect.right = 600</code> เธงเธฑเธ•เธ–เธธ Rect เธเธฐเธเธณเธเธงเธ“เนเธฅเธฐเน€เธฅเธทเนเธญเธเธเนเธฒ <code>left</code> เนเธซเนเธชเธญเธ”เธเธฅเนเธญเธเธเธฑเธเธเธเธฒเธ”เธเธงเธฒเธกเธเธงเนเธฒเธเน€เธ”เธดเธกเธเธญเธเธฃเธนเธเธ—เธฑเธเธ—เธตเนเธ”เธขเธญเธฑเธ•เนเธเธกเธฑเธ•เธด เธเนเธงเธขเธฅเธ”เธเธงเธฒเธกเธขเธธเนเธเธขเธฒเธเนเธเธเธฒเธฃเธเธณเธเธงเธ“เธ•เธณเนเธซเธเนเธ</li>
+            <li>เมื่อเรากำหนดค่าใหม่ให้แอตทริบิวต์เหล่านี้ เช่น <code>rect.right = 600</code> วัตถุ Rect จะคำนวณและเลื่อนค่า <code>left</code> ให้สอดคล้องกับขนาดความกว้างเดิมของรูปทันทีโดยอัตโนมัติ ช่วยลดความยุ่งยากในการคำนวณตำแหน่ง</li>
           </ul>
         `
       },
@@ -1391,21 +1391,21 @@ print(new_fruits)`,
         id: 24,
         cat: 'oop',
         catLabel: 'OOP',
-        premise: 'เนเธเธเธฒเธฃเธเธฃเธฐเธเธฒเธจเธเธฅเธฒเธชเธเธญเธเธ เธฒเธฉเธฒ Python เน€เธกเธเธญเธ”เธเธญเธเธชเธ•เธฃเธฑเธเน€เธ•เธญเธฃเนเธกเธฑเธเน€เธเธตเธขเธเน€เธเนเธ <code>def __init__(self, ...):</code>',
-        ask: 'เธเธฒเธฃเธฒเธกเธดเน€เธ•เธญเธฃเน <code>self</code> เธ—เธตเนเธเธฃเธฒเธเธเน€เธเนเธเธ•เธฑเธงเนเธฃเธ เธกเธตเธเธ—เธเธฒเธ—เนเธฅเธฐเธเธงเธฒเธกเธชเธณเธเธฑเธเธญเธขเนเธฒเธเนเธฃ?',
+        premise: 'ในการประกาศคลาสของภาษา Python เมธอดคอนสตรักเตอร์มักเขียนเป็น <code>def __init__(self, ...):</code>',
+        ask: 'พารามิเตอร์ <code>self</code> ที่ปรากฏเป็นตัวแรก มีบทบาทและความสำคัญอย่างไร?',
         choices: [
-          { key: 'A', text: 'เน€เธเนเธเธเธณเธชเธเธงเธเธ—เธตเนเนเธเนเธเธตเนเนเธเธขเธฑเธเธเธฅเธฒเธชเนเธกเน (Superclass)' },
-          { key: 'B', text: 'เน€เธเนเธเธ•เธฑเธงเนเธ—เธเธญเนเธฒเธเธญเธดเธเธ–เธถเธ Instance เธเธฑเธเธเธธเธเธฑเธเธ—เธตเนเธเธณเธฅเธฑเธเธ–เธนเธเธชเธฃเนเธฒเธเธเธถเนเธ เน€เธเธทเนเธญเนเธเนเธเธณเธซเธเธ”เนเธฅเธฐเน€เธเนเธฒเธ–เธถเธเนเธญเธ•เธ—เธฃเธดเธเธดเธงเธ•เนเน€เธเธเธฒเธฐเธ•เธฑเธง' },
-          { key: 'C', text: 'เธ—เธณเธซเธเนเธฒเธ—เธตเนเธเธทเธเธเนเธฒเธเธฅเธฅเธฑเธเธเนเธเธญเธเธเธฅเธฒเธชเธเธฅเธฑเธเนเธเธขเธฑเธเนเธเธฃเนเธเธฃเธกเธซเธฅเธฑเธเนเธเธเน€เธ”เธตเธขเธงเธเธฑเธเธเธณเธชเธฑเนเธ return' },
-          { key: 'D', text: 'เธเธณเธซเธเธ”เนเธซเนเธเธฅเธฒเธชเธเธฑเนเธเธ—เธณเธเธฒเธเนเธเธ Private เน€เธเธทเนเธญเนเธกเนเนเธซเนเนเธเธฅเนเธญเธทเนเธเน€เธเนเธฒเธ–เธถเธเธเนเธญเธกเธนเธฅเนเธ”เน' },
-          { key: 'E', text: 'เน€เธเนเธเธเธฑเธเธเนเธเธฑเธเธเธดเน€เธจเธฉเธชเธณเธซเธฃเธฑเธเธฅเธเธซเธเนเธงเธขเธเธงเธฒเธกเธเธณเน€เธกเธทเนเธญเธญเธญเธเน€เธเธเธ•เนเธ–เธนเธเธ—เธณเธฅเธฒเธข' }
+          { key: 'A', text: 'เป็นคำสงวนที่ใช้ชี้ไปยังคลาสแม่ (Superclass)' },
+          { key: 'B', text: 'เป็นตัวแทนอ้างอิงถึง Instance ปัจจุบันที่กำลังถูกสร้างขึ้น เพื่อใช้กำหนดและเข้าถึงแอตทริบิวต์เฉพาะตัว' },
+          { key: 'C', text: 'ทำหน้าที่คืนค่าผลลัพธ์ของคลาสกลับไปยังโปรแกรมหลักแบบเดียวกับคำสั่ง return' },
+          { key: 'D', text: 'กำหนดให้คลาสนั้นทำงานแบบ Private เพื่อไม่ให้ไฟล์อื่นเข้าถึงข้อมูลได้' },
+          { key: 'E', text: 'เป็นฟังก์ชันพิเศษสำหรับลบหน่วยความจำเมื่อออบเจกต์ถูกทำลาย' }
         ],
         answer: 'B',
         explanation: `
-          <p>เนเธ Python <code>self</code> เธเธทเธญเธ•เธฑเธงเนเธเธฃเธญเนเธฒเธเธญเธดเธเธ–เธถเธเธญเธญเธเน€เธเธเธ•เนเธ•เธฑเธงเธเธฑเนเธเน เนเธ”เธขเธ•เธฃเธ:</p>
+          <p>ใน Python <code>self</code> คือตัวแปรอ้างอิงถึงออบเจกต์ตัวนั้นๆ โดยตรง:</p>
           <ul>
-            <li>เน€เธกเธทเนเธญเน€เธฃเธตเธขเธเธชเธฃเนเธฒเธ <code>b = Ball(window)</code> Python เธเธฐเธชเนเธเธญเธดเธเธชเนเธ•เธเธเนเธเธญเธ Ball เธ•เธฑเธงเธเธฑเนเธเน€เธเนเธฒเนเธเน€เธเนเธเธญเธฒเธฃเนเธเธดเธงเน€เธกเธเธ•เนเธ•เธฑเธงเนเธฃเธเนเธเธเธทเนเธญ <code>self</code> เน€เธชเธกเธญ</li>
-            <li>เธเธณเธชเธฑเนเธเน€เธเนเธ <code>self.x = 100</code> เธเธถเธเน€เธเนเธเธเธฒเธฃเธชเธฃเนเธฒเธเนเธญเธ•เธ—เธฃเธดเธเธดเธงเธ•เน <code>x</code> เนเธซเนเธเธฑเธเธญเธญเธเน€เธเธเธ•เนเธ•เธฑเธงเธเธฑเนเธเน เธญเธขเนเธฒเธเน€เธเนเธเธญเธดเธชเธฃเธฐเธเธฒเธเธญเธญเธเน€เธเธเธ•เนเธ•เธฑเธงเธญเธทเนเธ</li>
+            <li>เมื่อเรียกสร้าง <code>b = Ball(window)</code> Python จะส่งอินสแตนซ์ของ Ball ตัวนั้นเข้าไปเป็นอาร์กิวเมนต์ตัวแรกในชื่อ <code>self</code> เสมอ</li>
+            <li>คำสั่งเช่น <code>self.x = 100</code> จึงเป็นการสร้างแอตทริบิวต์ <code>x</code> ให้กับออบเจกต์ตัวนั้นๆ อย่างเป็นอิสระจากออบเจกต์ตัวอื่น</li>
           </ul>
         `
       },
@@ -1413,21 +1413,21 @@ print(new_fruits)`,
         id: 25,
         cat: 'oop',
         catLabel: 'OOP',
-        premise: 'เธเธดเธเธฒเธฃเธ“เธฒ Special / Dunder Method เนเธเธ เธฒเธฉเธฒ Python',
-        ask: 'เน€เธกเธเธญเธ”เธเธดเน€เธจเธฉ <code>__str__(self)</code> เนเธเธเธฅเธฒเธชเธเธญเธ Python เธเธฐเธ–เธนเธเน€เธฃเธตเธขเธเนเธซเนเธ—เธณเธเธฒเธเนเธ”เธขเธญเธฑเธ•เนเธเธกเธฑเธ•เธดเนเธเธชเธ–เธฒเธเธเธฒเธฃเธ“เนเนเธ”?',
+        premise: 'พิจารณา Special / Dunder Method ในภาษา Python',
+        ask: 'เมธอดพิเศษ <code>__str__(self)</code> ในคลาสของ Python จะถูกเรียกให้ทำงานโดยอัตโนมัติในสถานการณ์ใด?',
         choices: [
-          { key: 'A', text: 'เน€เธกเธทเนเธญเธ•เนเธญเธเธเธฒเธฃเน€เธเธฃเธตเธขเธเน€เธ—เธตเธขเธเธเธเธฒเธ”เธเธญเธเธญเธญเธเน€เธเธเธ•เน 2 เธ•เธฑเธง' },
-          { key: 'B', text: 'เน€เธกเธทเนเธญเธกเธตเธเธฒเธฃเธชเธฑเนเธ <code>print(obj)</code> เธซเธฃเธทเธญเนเธเธฅเธเธญเธญเธเน€เธเธเธ•เนเน€เธเนเธเธชเธ•เธฃเธดเธเธ”เนเธงเธข <code>str(obj)</code>' },
-          { key: 'C', text: 'เน€เธกเธทเนเธญเนเธเธฃเนเธเธฃเธกเน€เธเธดเธ” Error เนเธฅเธฐเธ•เนเธญเธเธเธฒเธฃเนเธชเธ”เธเธเนเธญเธเธงเธฒเธกเน€เธ•เธทเธญเธ' },
-          { key: 'D', text: 'เน€เธกเธทเนเธญเธ•เนเธญเธเธเธฒเธฃเธ•เนเธญเธเนเธญเธเธงเธฒเธกเธชเธ•เธฃเธดเธ 2 เธเนเธญเธเธงเธฒเธกเธ”เนเธงเธขเน€เธเธฃเธทเนเธญเธเธซเธกเธฒเธข +' },
-          { key: 'E', text: 'เน€เธกเธทเนเธญเธชเนเธเธญเธญเธเน€เธเธเธ•เนเน€เธเนเธฒเธเธฑเธเธเนเธเธฑเธ <code>len()</code>' }
+          { key: 'A', text: 'เมื่อต้องการเปรียบเทียบขนาดของออบเจกต์ 2 ตัว' },
+          { key: 'B', text: 'เมื่อมีการสั่ง <code>print(obj)</code> หรือแปลงออบเจกต์เป็นสตริงด้วย <code>str(obj)</code>' },
+          { key: 'C', text: 'เมื่อโปรแกรมเกิด Error และต้องการแสดงข้อความเตือน' },
+          { key: 'D', text: 'เมื่อต้องการต่อข้อความสตริง 2 ข้อความด้วยเครื่องหมาย +' },
+          { key: 'E', text: 'เมื่อส่งออบเจกต์เข้าฟังก์ชัน <code>len()</code>' }
         ],
         answer: 'B',
         explanation: `
-          <p><code>__str__(self)</code> เน€เธเนเธ Special/Dunder Method เธเธญเธ Python:</p>
+          <p><code>__str__(self)</code> เป็น Special/Dunder Method ของ Python:</p>
           <ul>
-            <li>เธกเธตเธซเธเนเธฒเธ—เธตเนเธเธทเธเธเนเธฒเธเนเธญเธเธงเธฒเธกเธชเธ•เธฃเธดเธ (Readable representation) เธ—เธตเนเธญเธเธดเธเธฒเธขเธชเธ–เธฒเธเธฐเธเธญเธเธญเธญเธเน€เธเธเธ•เนเธเธฑเนเธ</li>
-            <li>เธเธฐเธ–เธนเธเน€เธฃเธตเธขเธเธญเธฑเธ•เนเธเธกเธฑเธ•เธดเน€เธกเธทเนเธญเน€เธฃเธฒเธชเนเธเธญเธญเธเน€เธเธเธ•เนเน€เธเนเธฒเธเธฑเธเธเนเธเธฑเธ <code>print()</code> เธซเธฃเธทเธญ <code>str()</code> เน€เธเนเธ <code>print(my_account)</code> เธเธฐเนเธชเธ”เธเธเธฅเธ•เธฒเธกเธ—เธตเนเธฃเธตเน€เธ—เธดเธฃเนเธเธเธฒเธ <code>__str__</code></li>
+            <li>มีหน้าที่คืนค่าข้อความสตริง (Readable representation) ที่อธิบายสถานะของออบเจกต์นั้น</li>
+            <li>จะถูกเรียกอัตโนมัติเมื่อเราส่งออบเจกต์เข้าฟังก์ชัน <code>print()</code> หรือ <code>str()</code> เช่น <code>print(my_account)</code> จะแสดงผลตามที่รีเทิร์นจาก <code>__str__</code></li>
           </ul>
         `
       },
@@ -1435,21 +1435,21 @@ print(new_fruits)`,
         id: 26,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เธเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธเธฅเธธเนเธกเธงเธฑเธ•เธ–เธธเนเธ Pygame',
-        ask: 'เธเนเธญเนเธ”เธเธทเธญเธเธฃเธฐเนเธขเธเธเนเธซเธฅเธฑเธเธเธญเธเธเธฒเธฃเธชเธฃเนเธฒเธเธเธฅเธฒเธชเธชเธทเธเธ—เธญเธ”เธเธฒเธ <code>pygame.sprite.Sprite</code> เนเธฅเนเธงเธเธณเนเธเนเธชเนเนเธงเนเนเธ <code>pygame.sprite.Group</code>?',
+        premise: 'การจัดการกลุ่มวัตถุใน Pygame',
+        ask: 'ข้อใดคือประโยชน์หลักของการสร้างคลาสสืบทอดจาก <code>pygame.sprite.Sprite</code> แล้วนำไปใส่ไว้ใน <code>pygame.sprite.Group</code>?',
         choices: [
-          { key: 'A', text: 'เธ—เธณเนเธซเนเน€เธเธกเธชเธฒเธกเธฒเธฃเธ–เธฃเธฑเธเนเธ”เนเนเธ”เธขเนเธกเนเธ•เนเธญเธเนเธเนเนเธกเธ”เธนเธฅ <code>pygame.display</code>' },
-          { key: 'B', text: 'เธชเธฒเธกเธฒเธฃเธ–เน€เธฃเธตเธขเธ <code>group.update()</code> เนเธฅเธฐ <code>group.draw(window)</code> เน€เธเธทเนเธญเธชเธฑเนเธเธเธฒเธฃเธงเธฑเธ•เธ–เธธเธ—เธฑเนเธเธซเธกเธ”เธเธฃเนเธญเธกเธเธฑเธเนเธ”เนเนเธเธเธฃเธฃเธ—เธฑเธ”เน€เธ”เธตเธขเธง' },
-          { key: 'C', text: 'เธเนเธงเธขเนเธเธฅเธเธ เธฒเธ 2 เธกเธดเธ•เธดเนเธซเนเธเธฅเธฒเธขเน€เธเนเธเธ เธฒเธ 3 เธกเธดเธ•เธดเนเธ”เธขเธญเธฑเธ•เนเธเธกเธฑเธ•เธด' },
-          { key: 'D', text: 'เธเนเธญเธเธเธฑเธเนเธกเนเนเธซเนเน€เธเธดเธ”เธเธฒเธฃเธเธเธเธฑเธเธฃเธฐเธซเธงเนเธฒเธเธ•เธฑเธงเธฅเธฐเธเธฃ' },
-          { key: 'E', text: 'เธ—เธณเนเธซเนเนเธกเนเธ•เนเธญเธเธเธณเธซเธเธ”เธเนเธฒ <code>self.image</code> เนเธฅเธฐ <code>self.rect</code> เนเธเธเธฅเธฒเธชเธฅเธนเธ' }
+          { key: 'A', text: 'ทำให้เกมสามารถรันได้โดยไม่ต้องใช้โมดูล <code>pygame.display</code>' },
+          { key: 'B', text: 'สามารถเรียก <code>group.update()</code> และ <code>group.draw(window)</code> เพื่อสั่งการวัตถุทั้งหมดพร้อมกันได้ในบรรทัดเดียว' },
+          { key: 'C', text: 'ช่วยแปลงภาพ 2 มิติให้กลายเป็นภาพ 3 มิติโดยอัตโนมัติ' },
+          { key: 'D', text: 'ป้องกันไม่ให้เกิดการชนกันระหว่างตัวละคร' },
+          { key: 'E', text: 'ทำให้ไม่ต้องกำหนดค่า <code>self.image</code> และ <code>self.rect</code> ในคลาสลูก' }
         ],
         answer: 'B',
         explanation: `
-          <p><code>pygame.sprite.Group</code> เน€เธเนเธเธเธญเธเน€เธ—เธเน€เธเธญเธฃเนเธ—เธตเนเธ—เธฃเธเธเธฅเธฑเธเธกเธฒเธเนเธ Pygame:</p>
+          <p><code>pygame.sprite.Group</code> เป็นคอนเทนเนอร์ที่ทรงพลังมากใน Pygame:</p>
           <ul>
-            <li>เน€เธกเธทเนเธญเธเธฅเธฒเธชเธฅเธนเธเธกเธต <code>self.image</code> เนเธฅเธฐ <code>self.rect</code> เนเธฅเนเธงเนเธชเนเธฅเธเธเธฅเธธเนเธก เน€เธฃเธฒเธชเธฒเธกเธฒเธฃเธ–เธชเธฑเนเธ <code>group.update()</code> เน€เธเธทเนเธญเนเธซเนเธชเนเธเธฃเธ•เนเธ—เธธเธเธ•เธฑเธงเนเธเธเธฅเธธเนเธกเธเธขเธฑเธเธ•เธณเนเธซเธเนเธ เนเธฅเธฐเธชเธฑเนเธ <code>group.draw(window)</code> เน€เธเธทเนเธญเธงเธฒเธ”เธ—เธธเธเธ•เธฑเธงเธฅเธเธซเธเนเธฒเธ•เนเธฒเธเนเธ”เนเนเธเธเธณเธชเธฑเนเธเน€เธ”เธตเธขเธง</li>
-            <li>เธเธญเธเธเธฒเธเธเธตเนเธขเธฑเธเนเธเนเน€เธกเธเธญเธ” <code>pygame.sprite.groupcollide()</code> เน€เธเธทเนเธญเธ•เธฃเธงเธเธเธฑเธเธเธฒเธฃเธเธเธเธญเธเธเธฅเธธเนเธกเธงเธฑเธ•เธ–เธธเนเธ”เนเธญเธขเนเธฒเธเธชเธฐเธ”เธงเธเธฃเธงเธ”เน€เธฃเนเธง</li>
+            <li>เมื่อคลาสลูกมี <code>self.image</code> และ <code>self.rect</code> แล้วใส่ลงกลุ่ม เราสามารถสั่ง <code>group.update()</code> เพื่อให้สไปรต์ทุกตัวในกลุ่มขยับตำแหน่ง และสั่ง <code>group.draw(window)</code> เพื่อวาดทุกตัวลงหน้าต่างได้ในคำสั่งเดียว</li>
+            <li>นอกจากนี้ยังใช้เมธอด <code>pygame.sprite.groupcollide()</code> เพื่อตรวจจับการชนของกลุ่มวัตถุได้อย่างสะดวกรวดเร็ว</li>
           </ul>
         `
       },
@@ -1457,8 +1457,8 @@ print(new_fruits)`,
         id: 27,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เธ•เธฒเธกเธชเนเธฅเธ”เนเธเธฒเธฃเธญเธญเธเนเธเธ State Machine เธเธญเธ <code>SimpleButton</code>',
-        ask: 'เน€เธกเธทเนเธญเธเธนเนเนเธเนเธเธฅเธดเธเน€เธกเธฒเธชเนเธเนเธฒเธเธเธเธเธธเนเธก (State Armed) เนเธฅเนเธง <strong>เธฅเธฒเธเน€เธกเธฒเธชเนเน€เธฅเธทเนเธญเธเธญเธญเธเนเธเธเธญเธเธเธญเธเน€เธเธ•เธเธญเธเธเธธเนเธก</strong> เธเนเธญเธเธเธฅเนเธญเธขเธกเธทเธญ เธเธธเนเธกเธเธฐเน€เธเธฅเธตเนเธขเธเนเธเธญเธขเธนเนเนเธเธชเธ–เธฒเธเธฐเนเธ”?',
+        premise: 'ตามสไลด์การออกแบบ State Machine ของ <code>SimpleButton</code>',
+        ask: 'เมื่อผู้ใช้คลิกเมาส์ค้างบนปุ่ม (State Armed) แล้ว <strong>ลากเมาส์เลื่อนออกไปนอกขอบเขตของปุ่ม</strong> ก่อนปล่อยมือ ปุ่มจะเปลี่ยนไปอยู่ในสถานะใด?',
         choices: [
           { key: 'A', text: '<code>STATE_IDLE</code>' },
           { key: 'B', text: '<code>STATE_ARMED</code>' },
@@ -1468,11 +1468,11 @@ print(new_fruits)`,
         ],
         answer: 'C',
         explanation: `
-          <p>State Machine เธเธญเธ SimpleButton เธกเธตเธเธฒเธฃเธญเธญเธเนเธเธเธฃเธฑเธเธกเธทเธญเธเธคเธ•เธดเธเธฃเธฃเธกเธเธนเนเนเธเนเธ”เธฑเธเธเธตเน:</p>
+          <p>State Machine ของ SimpleButton มีการออกแบบรับมือพฤติกรรมผู้ใช้ดังนี้:</p>
           <ul>
-            <li><strong>STATE_IDLE:</strong> เธเธฅเนเธญเธขเน€เธกเธฒเธชเนเธเธเธ•เธด</li>
-            <li><strong>STATE_ARMED:</strong> เธเธ”เธเธฅเธดเธเน€เธกเธฒเธชเนเธเนเธฒเธเธญเธขเธนเนเธเธเธเธธเนเธก เธเธฃเนเธญเธกเธ—เธณเธเธฒเธเธซเธฒเธเธเธฅเนเธญเธขเธกเธทเธญ</li>
-            <li><strong>STATE_DISARMED:</strong> เธเธนเนเนเธเนเธเธ”เธเธฅเธดเธเธเนเธฒเธเนเธงเน เนเธฅเนเธงเน€เธเธฅเธตเนเธขเธเนเธเน€เธฅเธทเนเธญเธเน€เธกเธฒเธชเนเธซเธเธตเธญเธญเธเธเธญเธเธเธธเนเธก เธซเธฒเธเธเธฅเนเธญเธขเน€เธกเธฒเธชเนเธ•เธญเธเธญเธขเธนเนเธเธญเธเธเธธเนเธก เธเธฒเธฃเธเธ”เธเธฐเธ–เธนเธเธขเธเน€เธฅเธดเธ (เนเธกเนเน€เธเธดเธ” Action)</li>
+            <li><strong>STATE_IDLE:</strong> ปล่อยเมาส์ปกติ</li>
+            <li><strong>STATE_ARMED:</strong> กดคลิกเมาส์ค้างอยู่บนปุ่ม พร้อมทำงานหากปล่อยมือ</li>
+            <li><strong>STATE_DISARMED:</strong> ผู้ใช้กดคลิกค้างไว้ แล้วเปลี่ยนใจเลื่อนเมาส์หนีออกนอกปุ่ม หากปล่อยเมาส์ตอนอยู่นอกปุ่ม การกดจะถูกยกเลิก (ไม่เกิด Action)</li>
           </ul>
         `
       },
@@ -1480,21 +1480,21 @@ print(new_fruits)`,
         id: 28,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เนเธเธเธฒเธฃเธชเธฃเนเธฒเธเธเธธเนเธก <code>oButton = SimpleButton(..., callBack=myFunction)</code>',
-        ask: 'เน€เธเธฃเธฒเธฐเน€เธซเธ•เธธเนเธ”เน€เธฃเธฒเธเธถเธเธ•เนเธญเธเธชเนเธเธเธทเนเธญเธเธฑเธเธเนเธเธฑเธ <code>myFunction</code> เนเธ”เธข <strong>เนเธกเนเธกเธตเธงเธเน€เธฅเนเธ <code>()</code> เธ•เนเธญเธ—เนเธฒเธข</strong>?',
+        premise: 'ในการสร้างปุ่ม <code>oButton = SimpleButton(..., callBack=myFunction)</code>',
+        ask: 'เพราะเหตุใดเราจึงต้องส่งชื่อฟังก์ชัน <code>myFunction</code> โดย <strong>ไม่มีวงเล็บ <code>()</code> ต่อท้าย</strong>?',
         choices: [
-          { key: 'A', text: 'เน€เธเธฃเธฒเธฐเน€เธเนเธเธเธเธเธญเธเธ เธฒเธฉเธฒ Python เธ—เธตเนเธซเนเธฒเธกเนเธชเนเธงเธเน€เธฅเนเธเนเธเธเธฒเธฃเธชเนเธเธเธฒเธฃเธฒเธกเธดเน€เธ•เธญเธฃเน' },
-          { key: 'B', text: 'เน€เธเธทเนเธญเธชเนเธเธเธฒเธฃเธญเนเธฒเธเธญเธดเธ (Reference) เธเธญเธเธเธฑเธเธเนเธเธฑเธเนเธเนเธซเนเธเธธเนเธกเน€เธเนเธเนเธงเนเน€เธฃเธตเธขเธเนเธเนเธ•เธญเธเธเธฅเธดเธ เธซเธฒเธเนเธชเนเธงเธเน€เธฅเนเธเธเธฑเธเธเนเธเธฑเธเธเธฐเธ–เธนเธเธชเธฑเนเธเธฃเธฑเธเธ—เธฑเธเธ—เธตเธเธ“เธฐเธชเธฃเนเธฒเธเธเธธเนเธก' },
-          { key: 'C', text: 'เน€เธเธฃเธฒเธฐ SimpleButton เธฃเธฑเธเน€เธเธเธฒเธฐเธชเธ•เธฃเธดเธเธเธทเนเธญเธเธฑเธเธเนเธเธฑเธ เนเธกเนเธชเธฒเธกเธฒเธฃเธ–เธฃเธฑเธเธญเธญเธเน€เธเธเธ•เนเธเธฑเธเธเนเธเธฑเธเนเธ”เน' },
-          { key: 'D', text: 'เน€เธเธทเนเธญเธเนเธญเธเธเธฑเธเนเธกเนเนเธซเนเน€เธเธดเธ”เธเธงเธฒเธกเธชเธฑเธเธชเธเธเธฑเธเน€เธกเธเธญเธ” <code>__init__</code>' },
-          { key: 'E', text: 'เน€เธเธทเนเธญเนเธซเนเธเธฑเธเธเนเธเธฑเธเธ—เธณเธเธฒเธเนเธเธ Recursive' }
+          { key: 'A', text: 'เพราะเป็นกฎของภาษา Python ที่ห้ามใส่วงเล็บในการส่งพารามิเตอร์' },
+          { key: 'B', text: 'เพื่อส่งการอ้างอิง (Reference) ของฟังก์ชันไปให้ปุ่มเก็บไว้เรียกใช้ตอนคลิก หากใส่วงเล็บฟังก์ชันจะถูกสั่งรันทันทีขณะสร้างปุ่ม' },
+          { key: 'C', text: 'เพราะ SimpleButton รับเฉพาะสตริงชื่อฟังก์ชัน ไม่สามารถรับออบเจกต์ฟังก์ชันได้' },
+          { key: 'D', text: 'เพื่อป้องกันไม่ให้เกิดความสับสนกับเมธอด <code>__init__</code>' },
+          { key: 'E', text: 'เพื่อให้ฟังก์ชันทำงานแบบ Recursive' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธเธตเนเธเธทเธญเธซเธฑเธงเนเธเธเธญเธเนเธเธงเธเธดเธ” Callback Function:</p>
+          <p>นี่คือหัวใจของแนวคิด Callback Function:</p>
           <ul>
-            <li><code>myFunction</code> (เนเธกเนเธกเธตเธงเธเน€เธฅเนเธ) = เธเธฒเธฃเธชเนเธ <strong>เธ•เธฑเธงเธเธฑเธเธเนเธเธฑเธ (Function Object Reference)</strong> เนเธเน€เธเนเธเธเนเธญเธกเธนเธฅเนเธซเนเธเธธเนเธกเน€เธเนเธเนเธงเนเน€เธฃเธตเธขเธเนเธเนเนเธเธญเธเธฒเธเธ•เน€เธกเธทเนเธญเน€เธเธดเธ”เน€เธซเธ•เธธเธเธฒเธฃเธ“เนเธเธฅเธดเธ</li>
-            <li><code>myFunction()</code> (เธกเธตเธงเธเน€เธฅเนเธ) = เธเธฒเธฃเธชเธฑเนเธเนเธซเนเธเธฑเธเธเนเธเธฑเธเธเธฑเนเธ <strong>เธเธฃเธฐเธกเธงเธฅเธเธฅเธ—เธฑเธเธ—เธตเนเธเธเธฃเธฃเธ—เธฑเธ”เธเธฑเนเธ</strong> เนเธฅเธฐเธชเนเธเธเธฅเธฅเธฑเธเธเนเธ—เธตเนเนเธ”เน (เธกเธฑเธเน€เธเนเธ <code>None</code>) เนเธเนเธซเนเธเธธเนเธกเนเธ—เธ เธเธถเนเธเธเธฐเธ—เธณเธเธฒเธเธเธดเธ”เธงเธฑเธ•เธ–เธธเธเธฃเธฐเธชเธเธเน</li>
+            <li><code>myFunction</code> (ไม่มีวงเล็บ) = การส่ง <strong>ตัวฟังก์ชัน (Function Object Reference)</strong> ไปเป็นข้อมูลให้ปุ่มเก็บไว้เรียกใช้ในอนาคตเมื่อเกิดเหตุการณ์คลิก</li>
+            <li><code>myFunction()</code> (มีวงเล็บ) = การสั่งให้ฟังก์ชันนั้น <strong>ประมวลผลทันทีในบรรทัดนั้น</strong> และส่งผลลัพธ์ที่ได้ (มักเป็น <code>None</code>) ไปให้ปุ่มแทน ซึ่งจะทำงานผิดวัตถุประสงค์</li>
           </ul>
         `
       },
@@ -1502,21 +1502,21 @@ print(new_fruits)`,
         id: 29,
         cat: 'oop',
         catLabel: 'OOP',
-        premise: 'เธเธฒเธฃเธญเธญเธเนเธเธเธเธญเธเธ•เนเนเธงเธฃเนเธ”เนเธงเธขเนเธกเน€เธ”เธฅ UML (Unified Modeling Language)',
-        ask: 'เธเนเธญเนเธ”เธญเธเธดเธเธฒเธขเธเธงเธฒเธกเนเธ•เธเธ•เนเธฒเธเธฃเธฐเธซเธงเนเธฒเธ <strong>Class Diagram</strong> เนเธฅเธฐ <strong>Sequence Diagram</strong> เนเธ UML เนเธ”เนเธ–เธนเธเธ•เนเธญเธเธ—เธตเนเธชเธธเธ”?',
+        premise: 'การออกแบบซอฟต์แวร์ด้วยโมเดล UML (Unified Modeling Language)',
+        ask: 'ข้อใดอธิบายความแตกต่างระหว่าง <strong>Class Diagram</strong> และ <strong>Sequence Diagram</strong> ใน UML ได้ถูกต้องที่สุด?',
         choices: [
-          { key: 'A', text: 'Class Diagram เนเธชเธ”เธเนเธเธฃเธเธชเธฃเนเธฒเธเน€เธเธดเธเธชเธ–เธดเธ• (Static: เธเธฅเธฒเธชเนเธฅเธฐเธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเน) | Sequence Diagram เนเธชเธ”เธเธฅเธณเธ”เธฑเธเธเธฒเธฃเน€เธฃเธตเธขเธเน€เธกเธเธญเธ”เธ•เธฒเธกเน€เธงเธฅเธฒ (Dynamic)' },
-          { key: 'B', text: 'Class Diagram เนเธเนเธชเธณเธซเธฃเธฑเธเธ เธฒเธฉเธฒ C++ เน€เธ—เนเธฒเธเธฑเนเธ | Sequence Diagram เนเธเนเธชเธณเธซเธฃเธฑเธ Python' },
-          { key: 'C', text: 'Class Diagram เนเธชเธ”เธเน€เธเธเธฒเธฐเธเนเธญเธกเธนเธฅเธ•เธฑเธงเน€เธฅเธ | Sequence Diagram เนเธชเธ”เธเธฃเธนเธเธ เธฒเธเธเธฃเธฒเธเธดเธเธชเน' },
-          { key: 'D', text: 'เธ—เธฑเนเธเธชเธญเธเนเธ”เธญเธฐเนเธเธฃเธกเน€เธซเธกเธทเธญเธเธเธฑเธเธ—เธธเธเธเธฃเธฐเธเธฒเธฃ เธ•เนเธฒเธเธเธฑเธเนเธเนเธชเธตเธเธญเธเน€เธชเนเธเธ—เธตเนเนเธเนเน€เธเธตเธขเธ' },
-          { key: 'E', text: 'Sequence Diagram เน€เธเธตเธขเธเธเนเธญเธเน€เธฃเธดเนเธกเน€เธเธตเธขเธเนเธเนเธ” | Class Diagram เน€เธเธตเธขเธเธซเธฅเธฑเธเธ—เธณเนเธเธฃเนเธเธฃเธกเน€เธชเธฃเนเธเนเธฅเนเธงเน€เธ—เนเธฒเธเธฑเนเธ' }
+          { key: 'A', text: 'Class Diagram แสดงโครงสร้างเชิงสถิต (Static: คลาสและความสัมพันธ์) | Sequence Diagram แสดงลำดับการเรียกเมธอดตามเวลา (Dynamic)' },
+          { key: 'B', text: 'Class Diagram ใช้สำหรับภาษา C++ เท่านั้น | Sequence Diagram ใช้สำหรับ Python' },
+          { key: 'C', text: 'Class Diagram แสดงเฉพาะข้อมูลตัวเลข | Sequence Diagram แสดงรูปภาพกราฟิกส์' },
+          { key: 'D', text: 'ทั้งสองไดอะแกรมเหมือนกันทุกประการ ต่างกันแค่สีของเส้นที่ใช้เขียน' },
+          { key: 'E', text: 'Sequence Diagram เขียนก่อนเริ่มเขียนโค้ด | Class Diagram เขียนหลังทำโปรแกรมเสร็จแล้วเท่านั้น' }
         ],
         answer: 'A',
         explanation: `
-          <p>เธเธงเธฒเธกเนเธ•เธเธ•เนเธฒเธเธเธญเธเนเธเธเธเธณเธฅเธญเธ UML เนเธเธงเธดเธเธฒเน€เธเธตเธขเธเนเธเธฃเนเธเธฃเธก:</p>
+          <p>ความแตกต่างของแบบจำลอง UML ในวิชาเขียนโปรแกรม:</p>
           <ul>
-            <li><strong>Class Diagram:</strong> เนเธชเธ”เธเนเธเธฃเธเธชเธฃเนเธฒเธเนเธเธเธชเธ–เธดเธ• (Static Model) เน€เธเนเธ เธฃเธฒเธขเธเธทเนเธญ Attribute, Method, เนเธฅเธฐเธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเน เน€เธเนเธ เธเธฒเธฃเธชเธทเธเธ—เธญเธ” (is-a) เธซเธฃเธทเธญเธเธฒเธฃเธเธฃเธฐเธเธญเธเน€เธเนเธฒเธ”เนเธงเธขเธเธฑเธ (has-a)</li>
-            <li><strong>Sequence Diagram:</strong> เนเธชเธ”เธเธเธคเธ•เธดเธเธฃเธฃเธกเนเธเธเธเธฅเธงเธฑเธ• (Dynamic Interaction) เนเธ”เธขเธฃเธฐเธเธธเธงเนเธฒเธญเธญเธเน€เธเธเธ•เนเนเธ•เนเธฅเธฐเธ•เธฑเธงเธชเนเธเธเนเธญเธเธงเธฒเธกเธซเธฃเธทเธญเน€เธฃเธตเธขเธเน€เธกเธเธญเธ”เธ•เธญเธเนเธ•เนเธเธฑเธเนเธเธฅเธณเธ”เธฑเธเธเนเธญเธเธซเธฅเธฑเธเธญเธขเนเธฒเธเนเธฃเธ•เธฒเธกเนเธเธเน€เธงเธฅเธฒเนเธเธงเธ•เธฑเนเธ</li>
+            <li><strong>Class Diagram:</strong> แสดงโครงสร้างแบบสถิต (Static Model) เช่น รายชื่อ Attribute, Method, และความสัมพันธ์ เช่น การสืบทอด (is-a) หรือการประกอบเข้าด้วยกัน (has-a)</li>
+            <li><strong>Sequence Diagram:</strong> แสดงพฤติกรรมแบบพลวัต (Dynamic Interaction) โดยระบุว่าออบเจกต์แต่ละตัวส่งข้อความหรือเรียกเมธอดตอบโต้กันในลำดับก่อนหลังอย่างไรตามแกนเวลาแนวตั้ง</li>
           </ul>
         `
       },
@@ -1524,21 +1524,21 @@ print(new_fruits)`,
         id: 30,
         cat: 'oop',
         catLabel: 'OOP',
-        premise: 'เนเธเนเธเธฃเธเธชเธฃเนเธฒเธเธชเธ–เธฒเธเธฑเธ•เธขเธเธฃเธฃเธก OOP เธเธญเธเน€เธเธก (เน€เธเนเธ Dodge the Asteroids เธซเธฃเธทเธญ Higher-Lower)',
-        ask: 'เธเธฅเธฒเธชเธฃเธฐเธ”เธฑเธเธเธญเธเธชเธธเธ”เธญเธขเนเธฒเธ <code>Main</code> เธ—เธณเธซเธเนเธฒเธ—เธตเนเธญเธฐเนเธฃเธ•เธฒเธกเธซเธฅเธฑเธเธเธฒเธฃ <strong>Delegation Pattern</strong>?',
+        premise: 'ในโครงสร้างสถาปัตยกรรม OOP ของเกม (เช่น Dodge the Asteroids หรือ Higher-Lower)',
+        ask: 'คลาสระดับนอกสุดอย่าง <code>Main</code> ทำหน้าที่อะไรตามหลักการ <strong>Delegation Pattern</strong>?',
         choices: [
-          { key: 'A', text: 'เธเธณเธเธงเธ“เนเธ•เนเธกเนเธฅเธฐเธ•เธฑเธ”เธชเธดเธเธเธฅเนเธเนเธเธเธฐเธ—เธฑเนเธเธซเธกเธ”เธ เธฒเธขเนเธเธ•เธฑเธงเธเธเน€เธ”เธตเธขเธง' },
-          { key: 'B', text: 'เธฃเธฑเธ Event เธเธฒเธ Pygame เนเธฅเนเธงเธชเนเธเธ•เนเธญ (Delegate) เนเธซเนเธญเธญเธเน€เธเธเธ•เนเธเธนเนเธเธฑเธ”เธเธฒเธฃเน€เธเธก (Game Object) เธเธฑเธ”เธเธฒเธฃเธ•เธฃเธฃเธเธฐ เนเธ”เธข Main เนเธกเนเธฅเธเนเธเธขเธธเนเธเธเธฑเธเธเธ•เธดเธเธฒเธเธญเธเน€เธเธก' },
-          { key: 'C', text: 'เธเธญเธขเธเธฑเธเธ—เธถเธเนเธเธฅเนเธ เธฒเธเธซเธเนเธฒเธเธญเธฅเธเธ”เธดเธชเธเนเธ—เธธเธเธเธฃเธฑเนเธเธ—เธตเนเธ•เธฑเธงเธฅเธฐเธเธฃเน€เธ”เธดเธ' },
-          { key: 'D', text: 'เธชเธฃเนเธฒเธเธเธธเธ”เธเนเธญเธกเธนเธฅ List เธชเธธเนเธกเธ•เธฑเธงเน€เธฅเธเนเธฅเนเธงเธชเนเธเนเธซเนเธญเธดเธเน€เธ—เธญเธฃเนเน€เธเนเธ•เน€เธเธดเธฃเนเธเน€เธงเธญเธฃเน' },
-          { key: 'E', text: 'เน€เธเธตเธขเธเนเธเนเธ”เนเธ—เธเธเธฅเธฒเธชเธฅเธนเธเธ—เธฑเนเธเธซเธกเธ”เน€เธเธทเนเธญเธฅเธ”เธเธณเธเธงเธเนเธเธฅเน' }
+          { key: 'A', text: 'คำนวณแต้มและตัดสินผลแพ้ชนะทั้งหมดภายในตัวคนเดียว' },
+          { key: 'B', text: 'รับ Event จาก Pygame แล้วส่งต่อ (Delegate) ให้ออบเจกต์ผู้จัดการเกม (Game Object) จัดการตรรกะ โดย Main ไม่ลงไปยุ่งกับกติกาของเกม' },
+          { key: 'C', text: 'คอยบันทึกไฟล์ภาพหน้าจอลงดิสก์ทุกครั้งที่ตัวละครเดิน' },
+          { key: 'D', text: 'สร้างชุดข้อมูล List สุ่มตัวเลขแล้วส่งให้อินเทอร์เน็ตเซิร์ฟเวอร์' },
+          { key: 'E', text: 'เขียนโค้ดแทนคลาสลูกทั้งหมดเพื่อลดจำนวนไฟล์' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธซเธฅเธฑเธเธเธฒเธฃ Delegation (เธเธฒเธฃเธกเธญเธเธซเธกเธฒเธขเธซเธเนเธฒเธ—เธตเน) เนเธเธเธฒเธฃเธญเธญเธเนเธเธ OOP:</p>
+          <p>หลักการ Delegation (การมอบหมายหน้าที่) ในการออกแบบ OOP:</p>
           <ul>
-            <li>เธเธฅเธฒเธช <code>Main</code> เธเธฐเธ—เธณเธซเธเนเธฒเธ—เธตเนเน€เธเธตเธขเธเน€เธเนเธเธเธนเนเธเธฃเธฐเธชเธฒเธเธเธฒเธเธฃเธฐเธ”เธฑเธเธเธญเธเธชเธธเธ” (Coordinator) เธเธญเธขเธ”เธฑเธเธฃเธฑเธเธญเธตเน€เธงเธเธ•เนเธเธฒเธเธซเธเนเธฒเธ•เนเธฒเธ Pygame เนเธฅเนเธงเธชเนเธเธ•เนเธญเนเธซเนเธญเธญเธเน€เธเธเธ•เนเน€เธเธก เน€เธเนเธ <code>oGame.handleEvent(event)</code> เนเธฅเธฐ <code>oGame.draw()</code></li>
-            <li>เธเธฒเธฃเนเธขเธเธซเธเนเธฒเธ—เธตเนเน€เธเนเธเธเธตเนเธ—เธณเนเธซเนเนเธเนเธ”เน€เธเนเธเธฃเธฐเน€เธเธตเธขเธ (Separation of Concerns) เธซเธฒเธเธ•เนเธญเธเธเธฒเธฃเน€เธเธฅเธตเนเธขเธเธเธ•เธดเธเธฒเน€เธเธก เธเนเนเธเนเน€เธเธเธฒเธฐเนเธเธเธฅเธฒเธช Game เนเธ”เธขเนเธกเนเธ•เนเธญเธเนเธ•เธฐเธ•เนเธญเธเนเธเธฅเน Main</li>
+            <li>คลาส <code>Main</code> จะทำหน้าที่เพียงเป็นผู้ประสานงานระดับนอกสุด (Coordinator) คอยดักรับอีเวนต์จากหน้าต่าง Pygame แล้วส่งต่อให้ออบเจกต์เกม เช่น <code>oGame.handleEvent(event)</code> และ <code>oGame.draw()</code></li>
+            <li>การแยกหน้าที่เช่นนี้ทำให้โค้ดเป็นระเบียบ (Separation of Concerns) หากต้องการเปลี่ยนกติกาเกม ก็แก้เฉพาะในคลาส Game โดยไม่ต้องแตะต้องไฟล์ Main</li>
           </ul>
         `
       },
@@ -1546,19 +1546,19 @@ print(new_fruits)`,
         id: 31,
         cat: 'pygame',
         catLabel: 'Pygame',
-        premise: 'เธเธณเธซเธเธ”เธฅเธดเธชเธ•เนเน€เธเนเธเธงเธดเธ”เน€เธเนเธ• <code>widgets = [button1, slider1, checkbox1]</code> เนเธฅเนเธงเธงเธเธฅเธนเธเธชเธฑเนเธ <code>for w in widgets: w.handleEvent(event); w.draw()</code>',
-        ask: 'เธฃเธนเธเนเธเธเธเธฒเธฃเธ—เธณเธเธฒเธเธเธตเนเธชเธฐเธ—เนเธญเธเธ–เธถเธเธซเธฅเธฑเธเธเธฒเธฃเธเธทเนเธเธเธฒเธเธเนเธญเนเธ”เธเธญเธ <strong>Object-Oriented Programming (OOP)</strong>?',
+        premise: 'กำหนดลิสต์เก็บวิดเจ็ต <code>widgets = [button1, slider1, checkbox1]</code> แล้ววนลูปสั่ง <code>for w in widgets: w.handleEvent(event); w.draw()</code>',
+        ask: 'รูปแบบการทำงานนี้สะท้อนถึงหลักการพื้นฐานข้อใดของ <strong>Object-Oriented Programming (OOP)</strong>?',
         choices: [
-          { key: 'A', text: '<strong>Polymorphism</strong> (เธ เธฒเธงเธฐเธเธซเธธเธชเธฑเธ“เธเธฒเธ)' },
-          { key: 'B', text: '<strong>Inheritance</strong> เน€เธ—เนเธฒเธเธฑเนเธ' },
-          { key: 'C', text: '<strong>Encapsulation</strong> เน€เธเธตเธขเธเธญเธขเนเธฒเธเน€เธ”เธตเธขเธง' },
+          { key: 'A', text: '<strong>Polymorphism</strong> (ภาวะพหุสัณฐาน)' },
+          { key: 'B', text: '<strong>Inheritance</strong> เท่านั้น' },
+          { key: 'C', text: '<strong>Encapsulation</strong> เพียงอย่างเดียว' },
           { key: 'D', text: '<strong>Recursion</strong>' },
           { key: 'E', text: '<strong>Data Hiding</strong>' }
         ],
         answer: 'A',
         explanation: `
-          <p><strong>Polymorphism (เธ เธฒเธงเธฐเธเธซเธธเธชเธฑเธ“เธเธฒเธ):</strong> เธเธทเธญเธเธงเธฒเธกเธชเธฒเธกเธฒเธฃเธ–เธเธญเธเธญเธญเธเน€เธเธเธ•เนเธ•เนเธฒเธเธเธฅเธฒเธชเธเธฑเธเนเธเธเธฒเธฃเธ•เธญเธเธชเธเธญเธเธ•เนเธญเธเธณเธชเธฑเนเธเธซเธฃเธทเธญเธเธทเนเธญเน€เธกเธเธญเธ”เน€เธ”เธตเธขเธงเธเธฑเธ (<code>handleEvent</code>, <code>draw</code>) เนเธเนเธเธเธเธเธฑเธเธเธญเธเธ•เธฑเธงเน€เธญเธ</p>
-          <p>เนเธเธฃเนเธเธฃเธกเธซเธฅเธฑเธเนเธกเนเธเธณเน€เธเนเธเธ•เนเธญเธเน€เธเธตเธขเธ <code>if type == button: ... elif type == slider: ...</code> เนเธ•เนเธชเธฒเธกเธฒเธฃเธ–เธชเธฑเนเธ <code>w.draw()</code> เธเธเธงเธดเธ”เน€เธเนเธ•เธ—เธธเธเธเธเธดเธ”เนเธ”เนเธญเธขเนเธฒเธเธชเธกเนเธณเน€เธชเธกเธญเนเธฅเธฐเธขเธทเธ”เธซเธขเธธเนเธ</p>
+          <p><strong>Polymorphism (ภาวะพหุสัณฐาน):</strong> คือความสามารถของออบเจกต์ต่างคลาสกันในการตอบสนองต่อคำสั่งหรือชื่อเมธอดเดียวกัน (<code>handleEvent</code>, <code>draw</code>) ในแบบฉบับของตัวเอง</p>
+          <p>โปรแกรมหลักไม่จำเป็นต้องเขียน <code>if type == button: ... elif type == slider: ...</code> แต่สามารถสั่ง <code>w.draw()</code> บนวิดเจ็ตทุกชนิดได้อย่างสม่ำเสมอและยืดหยุ่น</p>
         `
       },
 
@@ -1566,22 +1566,22 @@ print(new_fruits)`,
         id: 47,
         cat: 'oop',
         catLabel: 'OOP',
-        ask: 'เธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเนเนเธเธ <strong>is-a</strong> เธฃเธฐเธซเธงเนเธฒเธเธเธฅเธฒเธช เธ•เธฃเธเธเธฑเธเนเธเธงเธเธดเธ”เนเธ”เนเธเน€เธเธดเธ OOP?',
+        ask: 'ความสัมพันธ์แบบ <strong>is-a</strong> ระหว่างคลาส ตรงกับแนวคิดใดในเชิง OOP?',
         choices: [
           { key: 'A', text: 'Inheritance' },
           { key: 'B', text: 'Composition' },
           { key: 'C', text: 'Aggregation' },
           { key: 'D', text: 'Encapsulation' },
-          { key: 'E', text: 'เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ–เธนเธ' }
+          { key: 'E', text: 'ไม่มีตัวเลือกใดถูก' }
         ],
         answer: 'A',
         explanation: `
-          <p>เธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเนเนเธ OOP เธกเธตเธชเธญเธเนเธเธเธซเธฅเธฑเธ:</p>
+          <p>ความสัมพันธ์ใน OOP มีสองแบบหลัก:</p>
           <ul>
-            <li><strong>A: โ“ Inheritance</strong> โ€” <em>is-a</em> เน€เธเนเธ Dog is-a Animal เธซเธกเธฒเธขเธ–เธถเธ Dog เธชเธทเธเธ—เธญเธ” (inherit) เธเธฒเธ Animal</li>
-            <li><strong>B โ— Composition</strong> โ€” เธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเนเนเธเธ <em>has-a</em> เนเธเธเน€เธเนเธกเธเนเธ เน€เธเนเธ Engine เน€เธเนเธเธชเนเธงเธเธซเธเธถเนเธเธเธญเธ Car</li>
-            <li><strong>C โ— Aggregation</strong> โ€” เธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเนเนเธเธ <em>has-a</em> เนเธเธเธซเธฅเธงเธก เน€เธเนเธ Team เธกเธต Player เนเธ•เน Player เธญเธขเธนเนเนเธ”เนเนเธ”เธขเนเธกเนเธกเธต Team</li>
-            <li><strong>D โ— Encapsulation</strong> โ€” เธเธฒเธฃเธเนเธญเธเธเนเธญเธกเธนเธฅ (private/public) เนเธกเนเน€เธเธตเนเธขเธงเธเธฑเธเธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเนเธฃเธฐเธซเธงเนเธฒเธเธเธฅเธฒเธช</li>
+            <li><strong>A: ✓ Inheritance</strong> — <em>is-a</em> เช่น Dog is-a Animal หมายถึง Dog สืบทอด (inherit) จาก Animal</li>
+            <li><strong>B ✗ Composition</strong> — ความสัมพันธ์แบบ <em>has-a</em> แบบเข้มข้น เช่น Engine เป็นส่วนหนึ่งของ Car</li>
+            <li><strong>C ✗ Aggregation</strong> — ความสัมพันธ์แบบ <em>has-a</em> แบบหลวม เช่น Team มี Player แต่ Player อยู่ได้โดยไม่มี Team</li>
+            <li><strong>D ✗ Encapsulation</strong> — การซ่อนข้อมูล (private/public) ไม่เกี่ยวกับความสัมพันธ์ระหว่างคลาส</li>
           </ul>
         `
       },
@@ -1589,7 +1589,7 @@ print(new_fruits)`,
         id: 48,
         cat: 'oop',
         catLabel: 'OOP',
-        ask: 'เธเธฅเธฅเธฑเธเธเนเธ—เธตเน<strong>เธเธดเธกเธเนเธญเธญเธเธกเธฒ</strong>เธเธฒเธเนเธเธฃเนเธเธฃเธกเธ•เนเธญเนเธเธเธตเนเธเธทเธญเธเนเธญเนเธ”?',
+        ask: 'ผลลัพธ์ที่<strong>พิมพ์ออกมา</strong>จากโปรแกรมต่อไปนี้คือข้อใด?',
         code: `import math
 class Point:
     def __init__(self, x, y):
@@ -1606,18 +1606,18 @@ print(p1.distance_to(p2))`,
           { key: 'B', text: '2.8284271247461903' },
           { key: 'C', text: '4' },
           { key: 'D', text: '2.0' },
-          { key: 'E', text: 'เน€เธเธดเธ” Error' }
+          { key: 'E', text: 'เกิด Error' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธเธณเธเธงเธ“เธฃเธฐเธขเธฐเธซเนเธฒเธเนเธเธ Euclidean Distance:</p>
+          <p>คำนวณระยะห่างแบบ Euclidean Distance:</p>
           <ul>
-            <li><code>(otherP.x - self.x)**2</code> = (2-0)ยฒ = 4</li>
-            <li><code>(otherP.y - self.y)**2</code> = (2-0)ยฒ = 4</li>
+            <li><code>(otherP.x - self.x)**2</code> = (2-0)² = 4</li>
+            <li><code>(otherP.y - self.y)**2</code> = (2-0)² = 4</li>
             <li><code>math.sqrt(4 + 4)</code> = <code>math.sqrt(8)</code> = <strong>2.8284271247461903</strong></li>
-            <li><strong>A โ—:</strong> 8 เธเธทเธญเธเนเธฒเธเนเธญเธ sqrt</li>
-            <li><strong>C โ—:</strong> 4 เธเธทเธญ (2ยฒ) เธเนเธฒเน€เธ”เธตเธขเธง</li>
-            <li><strong>D โ—:</strong> sqrt(4) เนเธกเนเนเธเน sqrt(8)</li>
+            <li><strong>A ✗:</strong> 8 คือค่าก่อน sqrt</li>
+            <li><strong>C ✗:</strong> 4 คือ (2²) ค่าเดียว</li>
+            <li><strong>D ✗:</strong> sqrt(4) ไม่ใช่ sqrt(8)</li>
           </ul>
         `
       },
@@ -1625,21 +1625,21 @@ print(p1.distance_to(p2))`,
         id: 49,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธณเธซเธเธ” <code>d = 2301170,</code> เธ•เธฑเธงเนเธเธฃ <code>d</code> เธกเธตเธเธเธดเธ”เธเนเธญเธกเธนเธฅเน€เธเนเธเธญเธฐเนเธฃ?',
+        ask: 'กำหนด <code>d = 2301170,</code> ตัวแปร <code>d</code> มีชนิดข้อมูลเป็นอะไร?',
         choices: [
           { key: 'A', text: 'int' },
           { key: 'B', text: 'str' },
           { key: 'C', text: 'tuple' },
           { key: 'D', text: 'list' },
-          { key: 'E', text: 'เน€เธเธดเธ” SyntaxError' }
+          { key: 'E', text: 'เกิด SyntaxError' }
         ],
         answer: 'C',
         explanation: `
-          <p>เนเธ Python <strong>เน€เธเธฃเธทเนเธญเธเธซเธกเธฒเธขเธเธธเธฅเธ เธฒเธ (comma)</strong> เธ•เนเธญเธ—เนเธฒเธขเธ•เธฑเธงเน€เธฅเธเธซเธฃเธทเธญเธเนเธฒเนเธ”เน เธเธฐเธชเธฃเนเธฒเธ <strong>tuple</strong> เนเธกเนเนเธกเนเธกเธตเธงเธเน€เธฅเนเธ</p>
+          <p>ใน Python <strong>เครื่องหมายจุลภาค (comma)</strong> ต่อท้ายตัวเลขหรือค่าใดๆ จะสร้าง <strong>tuple</strong> แม้ไม่มีวงเล็บ</p>
           <ul>
-            <li><code>d = 2301170,</code> โ’ <code>d</code> เน€เธเนเธ <code>(2301170,)</code> เธเธถเนเธเน€เธเนเธ tuple 1 เธชเธกเธฒเธเธดเธ โ“</li>
-            <li><code>d = 2301170</code> (เนเธกเนเธกเธตเธเธธเธฅเธ เธฒเธ) โ’ เน€เธเนเธ int</li>
-            <li><code>d = ('2')</code> (เนเธกเนเธกเธตเธเธธเธฅเธ เธฒเธ) โ’ เน€เธเนเธ str เนเธกเนเนเธเน tuple</li>
+            <li><code>d = 2301170,</code> → <code>d</code> เป็น <code>(2301170,)</code> ซึ่งเป็น tuple 1 สมาชิก ✓</li>
+            <li><code>d = 2301170</code> (ไม่มีจุลภาค) → เป็น int</li>
+            <li><code>d = ('2')</code> (ไม่มีจุลภาค) → เป็น str ไม่ใช่ tuple</li>
           </ul>
         `
       },
@@ -1647,21 +1647,21 @@ print(p1.distance_to(p2))`,
         id: 50,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธณเธซเธเธ” <code>x = (1, 2, 3, 4, 5)</code> เธเธฅเธฅเธฑเธเธเนเธเธญเธ <code>print(x[1:4])</code> เธเธทเธญเธเนเธญเนเธ”?',
+        ask: 'กำหนด <code>x = (1, 2, 3, 4, 5)</code> ผลลัพธ์ของ <code>print(x[1:4])</code> คือข้อใด?',
         choices: [
           { key: 'A', text: '(1, 2, 3)' },
           { key: 'B', text: '(2, 3, 4)' },
           { key: 'C', text: '(2, 3, 4, 5)' },
           { key: 'D', text: '(1, 2, 3, 4)' },
-          { key: 'E', text: 'เน€เธเธดเธ” IndexError' }
+          { key: 'E', text: 'เกิด IndexError' }
         ],
         answer: 'B',
         explanation: `
-          <p>Slicing เนเธ Python: <code>x[start:stop]</code> โ€” เน€เธฃเธดเนเธกเธ—เธตเน index <code>start</code> เนเธฅเธฐ<strong>เนเธกเนเธฃเธงเธก</strong> index <code>stop</code></p>
+          <p>Slicing ใน Python: <code>x[start:stop]</code> — เริ่มที่ index <code>start</code> และ<strong>ไม่รวม</strong> index <code>stop</code></p>
           <ul>
-            <li><code>x[1:4]</code> โ’ index 1, 2, 3 โ’ เธเนเธฒ <strong>2, 3, 4</strong> โ’ <code>(2, 3, 4)</code> โ“</li>
-            <li><strong>A โ—:</strong> x[0:3] เธเธถเธเนเธ”เน (1,2,3)</li>
-            <li><strong>C โ—:</strong> x[1:5] เธเธถเธเนเธ”เน (2,3,4,5)</li>
+            <li><code>x[1:4]</code> → index 1, 2, 3 → ค่า <strong>2, 3, 4</strong> → <code>(2, 3, 4)</code> ✓</li>
+            <li><strong>A ✗:</strong> x[0:3] จึงได้ (1,2,3)</li>
+            <li><strong>C ✗:</strong> x[1:5] จึงได้ (2,3,4,5)</li>
           </ul>
         `
       },
@@ -1669,21 +1669,21 @@ print(p1.distance_to(p2))`,
         id: 51,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธณเธซเธเธ” <code>a = (10, 20, 30, 20, 10)</code> เธเธฅเธฅเธฑเธเธเนเธเธญเธ <code>print(a.count(20), a.index(30))</code> เธเธทเธญเธเนเธญเนเธ”?',
+        ask: 'กำหนด <code>a = (10, 20, 30, 20, 10)</code> ผลลัพธ์ของ <code>print(a.count(20), a.index(30))</code> คือข้อใด?',
         choices: [
           { key: 'A', text: '1 2' },
           { key: 'B', text: '2 2' },
           { key: 'C', text: '2 3' },
           { key: 'D', text: '1 3' },
-          { key: 'E', text: 'เน€เธเธดเธ” Error' }
+          { key: 'E', text: 'เกิด Error' }
         ],
         answer: 'B',
         explanation: `
           <p><code>a = (10, 20, 30, 20, 10)</code></p>
           <ul>
-            <li><code>a.count(20)</code> โ’ เธเธฑเธเธเธณเธเธงเธเธเธฃเธฑเนเธเธ—เธตเนเธเนเธฒ 20 เธเธฃเธฒเธเธ = <strong>2</strong> (index 1 เนเธฅเธฐ 3)</li>
-            <li><code>a.index(30)</code> โ’ เธซเธฒ index เนเธฃเธเธ—เธตเนเธเนเธฒ 30 เธเธฃเธฒเธเธ = <strong>2</strong></li>
-            <li>Output: <code>2 2</code> โ“</li>
+            <li><code>a.count(20)</code> → นับจำนวนครั้งที่ค่า 20 ปรากฏ = <strong>2</strong> (index 1 และ 3)</li>
+            <li><code>a.index(30)</code> → หา index แรกที่ค่า 30 ปรากฏ = <strong>2</strong></li>
+            <li>Output: <code>2 2</code> ✓</li>
           </ul>
         `
       },
@@ -1691,22 +1691,22 @@ print(p1.distance_to(p2))`,
         id: 52,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธณเธซเธเธ” <code>accDict = {(123,"ABC"):2000, (144,"XXX"):500, (200,"BaD"):4000}</code> เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ”เธถเธเน€เธเธเธฒเธฐ <strong>ID (เธ•เธฑเธงเน€เธฅเธ)</strong> เธญเธญเธเธกเธฒเน€เธเนเธ list?',
+        ask: 'กำหนด <code>accDict = {(123,"ABC"):2000, (144,"XXX"):500, (200,"BaD"):4000}</code> ตัวเลือกใดดึงเฉพาะ <strong>ID (ตัวเลข)</strong> ออกมาเป็น list?',
         choices: [
           { key: 'A', text: '[x for x in accDict]' },
           { key: 'B', text: '[x for (x, y) in accDict]' },
           { key: 'C', text: '[accDict[k] for k in accDict]' },
           { key: 'D', text: '[x[1] for x in accDict]' },
-          { key: 'E', text: 'เนเธกเนเธกเธตเธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธ–เธนเธ' }
+          { key: 'E', text: 'ไม่มีตัวเลือกใดถูก' }
         ],
         answer: 'B',
         explanation: `
-          <p><code>accDict</code> เธกเธต key เน€เธเนเธ tuple <code>(id, pin)</code></p>
+          <p><code>accDict</code> มี key เป็น tuple <code>(id, pin)</code></p>
           <ul>
-            <li><strong>A โ—:</strong> <code>[x for x in accDict]</code> โ’ เนเธ”เน list เธเธญเธ key เธ—เธฑเนเธเธซเธกเธ”เธ—เธตเนเน€เธเนเธ tuple เน€เธเนเธ <code>[(123,'ABC'), ...]</code></li>
-            <li><strong>B โ“:</strong> <code>[x for (x, y) in accDict]</code> โ’ unpack tuple key เนเธ•เนเธฅเธฐเธญเธฑเธ เน€เธญเธฒเนเธเน x (เธ•เธฑเธงเน€เธฅเธ) โ’ <code>[123, 144, 200]</code></li>
-            <li><strong>C โ—:</strong> เนเธ”เน value (เน€เธเธดเธ) เนเธกเนเนเธเน id</li>
-            <li><strong>D โ—:</strong> <code>x[1]</code> เธเธฐเนเธ”เน 'ABC' เนเธกเนเนเธเน id</li>
+            <li><strong>A ✗:</strong> <code>[x for x in accDict]</code> → ได้ list ของ key ทั้งหมดที่เป็น tuple เช่น <code>[(123,'ABC'), ...]</code></li>
+            <li><strong>B ✓:</strong> <code>[x for (x, y) in accDict]</code> → unpack tuple key แต่ละอัน เอาแค่ x (ตัวเลข) → <code>[123, 144, 200]</code></li>
+            <li><strong>C ✗:</strong> ได้ value (เงิน) ไม่ใช่ id</li>
+            <li><strong>D ✗:</strong> <code>x[1]</code> จะได้ 'ABC' ไม่ใช่ id</li>
           </ul>
         `
       },
@@ -1714,22 +1714,22 @@ print(p1.distance_to(p2))`,
         id: 53,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธณเธซเธเธ” <code>accDict = {(123,"ABC"):2000, (144,"XXX"):500, (200,"BaD"):4000}</code> เธ•เธฑเธงเน€เธฅเธทเธญเธเนเธ”เธชเธฃเนเธฒเธ dict เธ—เธตเนเธกเธต id เน€เธเนเธ key เนเธฅเธฐ balance เน€เธเนเธ value?',
+        ask: 'กำหนด <code>accDict = {(123,"ABC"):2000, (144,"XXX"):500, (200,"BaD"):4000}</code> ตัวเลือกใดสร้าง dict ที่มี id เป็น key และ balance เป็น value?',
         choices: [
           { key: 'A', text: '{x:accDict[(x,y)] for (x, y) in accDict}' },
           { key: 'B', text: '{x:y for (x, y) in accDict}' },
           { key: 'C', text: '{x:accDict[x] for x in accDict}' },
           { key: 'D', text: '{k[0]:v for k,v in accDict}' },
-          { key: 'E', text: 'เธ–เธนเธเธกเธฒเธเธเธงเนเธฒเธซเธเธถเนเธเธ•เธฑเธงเน€เธฅเธทเธญเธ' }
+          { key: 'E', text: 'ถูกมากกว่าหนึ่งตัวเลือก' }
         ],
         answer: 'A',
         explanation: `
-          <p>เธ•เนเธญเธเธเธฒเธฃ dict เธฃเธนเธเนเธเธ <code>{123: 2000, 144: 500, 200: 4000}</code></p>
+          <p>ต้องการ dict รูปแบบ <code>{123: 2000, 144: 500, 200: 4000}</code></p>
           <ul>
-            <li><strong>A โ“:</strong> unpack key เน€เธเนเธ (x, y) เนเธฅเนเธงเนเธเน <code>accDict[(x,y)]</code> เน€เธเนเธ value โ’ เธ–เธนเธเธ•เนเธญเธ</li>
-            <li><strong>B โ—:</strong> y เธ—เธตเนเนเธ”เนเธเธฒเธเธเธฒเธฃ unpack key เธเธทเธญ pin ('ABC') เนเธกเนเนเธเน balance</li>
-            <li><strong>C โ—:</strong> <code>accDict[x]</code> เธเธฐ KeyError เน€เธเธฃเธฒเธฐ key เธเธฃเธดเธเน เน€เธเนเธ tuple (x,y)</li>
-            <li><strong>D โ—:</strong> <code>for k,v in accDict</code> เนเธกเนเธ–เธนเธเธ•เนเธญเธ เธ•เนเธญเธเนเธเน <code>accDict.items()</code></li>
+            <li><strong>A ✓:</strong> unpack key เป็น (x, y) แล้วใช้ <code>accDict[(x,y)]</code> เป็น value → ถูกต้อง</li>
+            <li><strong>B ✗:</strong> y ที่ได้จากการ unpack key คือ pin ('ABC') ไม่ใช่ balance</li>
+            <li><strong>C ✗:</strong> <code>accDict[x]</code> จะ KeyError เพราะ key จริงๆ เป็น tuple (x,y)</li>
+            <li><strong>D ✗:</strong> <code>for k,v in accDict</code> ไม่ถูกต้อง ต้องใช้ <code>accDict.items()</code></li>
           </ul>
         `
       },
@@ -1737,7 +1737,7 @@ print(p1.distance_to(p2))`,
         id: 54,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธฅเธฅเธฑเธเธเนเธเธญเธเนเธเธฃเนเธเธฃเธกเธ•เนเธญเนเธเธเธตเนเธเธทเธญเธเนเธญเนเธ”?',
+        ask: 'ผลลัพธ์ของโปรแกรมต่อไปนี้คือข้อใด?',
         code: `t = (3, 1, 4, 1, 5, 9)
 print(len(t), sum(t), min(t), max(t))`,
         choices: [
@@ -1745,18 +1745,18 @@ print(len(t), sum(t), min(t), max(t))`,
           { key: 'B', text: '5 23 1 9' },
           { key: 'C', text: '6 22 1 9' },
           { key: 'D', text: '6 23 3 9' },
-          { key: 'E', text: 'เน€เธเธดเธ” Error เน€เธเธฃเธฒเธฐ tuple เนเธกเนเธฃเธญเธเธฃเธฑเธ sum()' }
+          { key: 'E', text: 'เกิด Error เพราะ tuple ไม่รองรับ sum()' }
         ],
         answer: 'A',
         explanation: `
-          <p><code>t = (3, 1, 4, 1, 5, 9)</code> เธกเธต 6 เธชเธกเธฒเธเธดเธ</p>
+          <p><code>t = (3, 1, 4, 1, 5, 9)</code> มี 6 สมาชิก</p>
           <ul>
             <li><code>len(t)</code> = <strong>6</strong></li>
             <li><code>sum(t)</code> = 3+1+4+1+5+9 = <strong>23</strong></li>
             <li><code>min(t)</code> = <strong>1</strong></li>
             <li><code>max(t)</code> = <strong>9</strong></li>
-            <li>Output: <code>6 23 1 9</code> โ“</li>
-            <li><strong>E โ—:</strong> tuple เธฃเธญเธเธฃเธฑเธ sum(), min(), max() เนเธ”เนเธเธเธ•เธด</li>
+            <li>Output: <code>6 23 1 9</code> ✓</li>
+            <li><strong>E ✗:</strong> tuple รองรับ sum(), min(), max() ได้ปกติ</li>
           </ul>
         `
       },
@@ -1764,7 +1764,7 @@ print(len(t), sum(t), min(t), max(t))`,
         id: 55,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธณเธซเธเธ” <code>d = {"theme": "dark", "lang": "th"}</code> เธเธฅเธฅเธฑเธเธเนเธเธญเธ <code>print(d.get("font", "Arial"))</code> เธเธทเธญเธเนเธญเนเธ”?',
+        ask: 'กำหนด <code>d = {"theme": "dark", "lang": "th"}</code> ผลลัพธ์ของ <code>print(d.get("font", "Arial"))</code> คือข้อใด?',
         choices: [
           { key: 'A', text: 'None' },
           { key: 'B', text: 'Arial' },
@@ -1774,11 +1774,11 @@ print(len(t), sum(t), min(t), max(t))`,
         ],
         answer: 'B',
         explanation: `
-          <p><code>dict.get(key, default)</code> โ€” เธ–เนเธฒเนเธกเนเธกเธต key เธเธฐเธเธทเธเธเนเธฒ default เนเธ—เธเธ—เธตเนเธเธฐ raise KeyError</p>
+          <p><code>dict.get(key, default)</code> — ถ้าไม่มี key จะคืนค่า default แทนที่จะ raise KeyError</p>
           <ul>
-            <li>key <code>"font"</code> <strong>เนเธกเนเธกเธต</strong>เนเธ d โ’ เธเธทเธเธเนเธฒ default เธเธทเธญ <code>"Arial"</code> โ“</li>
-            <li><strong>A โ—:</strong> None เธเธฐเนเธ”เนเธ–เนเธฒเนเธกเนเธฃเธฐเธเธธ default เน€เธเนเธ <code>d.get("font")</code></li>
-            <li><strong>C โ—:</strong> <code>d["font"]</code> (เนเธเน [] เนเธกเนเนเธเน .get) เธ–เธถเธเธเธฐ raise KeyError</li>
+            <li>key <code>"font"</code> <strong>ไม่มี</strong>ใน d → คืนค่า default คือ <code>"Arial"</code> ✓</li>
+            <li><strong>A ✗:</strong> None จะได้ถ้าไม่ระบุ default เช่น <code>d.get("font")</code></li>
+            <li><strong>C ✗:</strong> <code>d["font"]</code> (ใช้ [] ไม่ใช่ .get) ถึงจะ raise KeyError</li>
           </ul>
         `
       },
@@ -1786,7 +1786,7 @@ print(len(t), sum(t), min(t), max(t))`,
         id: 56,
         cat: 'tuple_dict',
         catLabel: 'Tuple & Dict',
-        ask: 'เธเธฅเธฅเธฑเธเธเนเธเธญเธเนเธเธฃเนเธเธฃเธกเธ•เนเธญเนเธเธเธตเนเธเธทเธญเธเนเธญเนเธ”?',
+        ask: 'ผลลัพธ์ของโปรแกรมต่อไปนี้คือข้อใด?',
         code: `original = {"a": 1, "b": 2}
 copy = original
 copy["a"] = 999
@@ -1795,16 +1795,16 @@ print(original["a"])`,
           { key: 'A', text: '1' },
           { key: 'B', text: '999' },
           { key: 'C', text: 'None' },
-          { key: 'D', text: 'เน€เธเธดเธ” KeyError' },
-          { key: 'E', text: 'เน€เธเธดเธ” TypeError' }
+          { key: 'D', text: 'เกิด KeyError' },
+          { key: 'E', text: 'เกิด TypeError' }
         ],
         answer: 'B',
         explanation: `
-          <p><code>copy = original</code> เนเธกเนเนเธ”เนเธชเธฃเนเธฒเธ copy เนเธซเธกเน โ€” เน€เธเนเธเธเธฒเธฃ<strong>เธญเนเธฒเธเธญเธดเธเนเธเธขเธฑเธ object เน€เธ”เธตเธขเธงเธเธฑเธ</strong></p>
+          <p><code>copy = original</code> ไม่ได้สร้าง copy ใหม่ — เป็นการ<strong>อ้างอิงไปยัง object เดียวกัน</strong></p>
           <ul>
-            <li><code>copy["a"] = 999</code> โ’ เน€เธเธฅเธตเนเธขเธ dict เธ—เธตเน original เนเธฅเธฐ copy เธเธตเนเนเธเธ”เนเธงเธขเธเธฑเธ</li>
-            <li><code>print(original["a"])</code> โ’ <strong>999</strong> โ“</li>
-            <li>เธ–เนเธฒเธ•เนเธญเธเธเธฒเธฃ copy เธเธฃเธดเธเน เธ•เนเธญเธเนเธเน <code>original.copy()</code> เธซเธฃเธทเธญ <code>dict(original)</code></li>
+            <li><code>copy["a"] = 999</code> → เปลี่ยน dict ที่ original และ copy ชี้ไปด้วยกัน</li>
+            <li><code>print(original["a"])</code> → <strong>999</strong> ✓</li>
+            <li>ถ้าต้องการ copy จริงๆ ต้องใช้ <code>original.copy()</code> หรือ <code>dict(original)</code></li>
           </ul>
         `
       },
@@ -1812,7 +1812,7 @@ print(original["a"])`,
         id: 57,
         cat: 'pygame',
         catLabel: 'Pygame',
-        ask: 'เธเธฒเธเธเธฅเธฒเธช <code>Ball</code> เนเธเนเธเธฅเน Ball.py เน€เธกเธทเนเธญเธฅเธนเธเธเธญเธฅเธเธเธเธญเธเธเนเธฒเธขเธซเธฃเธทเธญเธเธญเธเธเธงเธฒ เนเธเนเธ”เนเธ”เธ—เธณเนเธซเนเธเธญเธฅ<strong>เน€เธ”เนเธเธเธฅเธฑเธ</strong>?',
+        ask: 'จากคลาส <code>Ball</code> ในไฟล์ Ball.py เมื่อลูกบอลชนขอบซ้ายหรือขอบขวา โค้ดใดทำให้บอล<strong>เด้งกลับ</strong>?',
         choices: [
           { key: 'A', text: 'self.x = -self.x' },
           { key: 'B', text: 'self.xSpeed = -self.xSpeed' },
@@ -1822,13 +1822,13 @@ print(original["a"])`,
         ],
         answer: 'B',
         explanation: `
-          <p>เนเธเธเธฅเธฒเธช Ball เน€เธกเธเธญเธ” <code>update()</code> เธ•เธฃเธงเธเธชเธญเธเธเธญเธเนเธฅเนเธงเธชเธฅเธฑเธเธ—เธดเธจ:</p>
+          <p>ในคลาส Ball เมธอด <code>update()</code> ตรวจสอบขอบแล้วสลับทิศ:</p>
           <pre style="background:var(--code-bg);padding:8px;border-radius:4px;font-size:0.85em">if (self.x < 0) or (self.x >= self.maxWidth):
     self.xSpeed = -self.xSpeed</pre>
           <ul>
-            <li><strong>B โ“:</strong> เธเธฒเธฃเธเธนเธ“ -1 เธเธฑเธ speed เธ—เธณเนเธซเนเธ—เธดเธจเธ—เธฒเธเธเธฅเธฑเธ</li>
-            <li><strong>A โ—:</strong> เน€เธเธฅเธตเนเธขเธเธ•เธณเนเธซเธเนเธ x เนเธกเนเนเธเนเธ—เธดเธจเธ—เธฒเธ</li>
-            <li><strong>D โ—:</strong> abs() เธ—เธณเนเธซเน speed เน€เธเนเธเธเธงเธเน€เธชเธกเธญ โ€” เธเธญเธฅเธเธฐเนเธกเนเน€เธ”เนเธเธเธฅเธฑเธเธเนเธฒเธข</li>
+            <li><strong>B ✓:</strong> การคูณ -1 กับ speed ทำให้ทิศทางกลับ</li>
+            <li><strong>A ✗:</strong> เปลี่ยนตำแหน่ง x ไม่ใช่ทิศทาง</li>
+            <li><strong>D ✗:</strong> abs() ทำให้ speed เป็นบวกเสมอ — บอลจะไม่เด้งกลับซ้าย</li>
           </ul>
         `
       },
@@ -1836,7 +1836,7 @@ print(original["a"])`,
         id: 58,
         cat: 'pygame',
         catLabel: 'Pygame',
-        ask: 'เธเธฒเธเนเธเธฃเธเธชเธฃเนเธฒเธ 12 เธเธฑเนเธเธ•เธญเธเธเธญเธ Pygame (Listing5-1.py) <strong>เธเธฑเนเธเธ•เธญเธเนเธ”</strong>เธ—เธณเธซเธเนเธฒเธ—เธตเนเธเธงเธเธเธธเธก Frame Rate?',
+        ask: 'จากโครงสร้าง 12 ขั้นตอนของ Pygame (Listing5-1.py) <strong>ขั้นตอนใด</strong>ทำหน้าที่ควบคุม Frame Rate?',
         choices: [
           { key: 'A', text: 'pygame.display.update()' },
           { key: 'B', text: 'pygame.init()' },
@@ -1846,13 +1846,13 @@ print(original["a"])`,
         ],
         answer: 'C',
         explanation: `
-          <p>เนเธ Pygame loop 12 เธเธฑเนเธเธ•เธญเธ:</p>
+          <p>ใน Pygame loop 12 ขั้นตอน:</p>
           <ul>
-            <li>เธเธฑเนเธเธ—เธตเน 11: <code>pygame.display.update()</code> โ’ เธญเธฑเธเน€เธ”เธ•เธซเธเนเธฒเธเธญ</li>
-            <li>เธเธฑเนเธเธ—เธตเน 12: <code>clock.tick(FPS)</code> โ’ <strong>เธซเธเนเธงเธเน€เธงเธฅเธฒเนเธซเน loop เนเธกเนเน€เธฃเนเธงเน€เธเธดเธ FPS เธ—เธตเนเธเธณเธซเธเธ”</strong> โ“</li>
-            <li><strong>A โ—:</strong> เนเธเนเนเธชเธ”เธเธเธฅเธเธเธซเธเนเธฒเธเธญ เนเธกเนเนเธ”เนเธเธธเธก speed</li>
-            <li><strong>B โ—:</strong> เน€เธฃเธดเนเธกเธ•เนเธ pygame เธเธฃเธฑเนเธเน€เธ”เธตเธขเธงเธเนเธญเธ loop</li>
-            <li><strong>D โ—:</strong> เธฅเนเธฒเธเธซเธเนเธฒเธเธญ (clear) เนเธกเนเนเธเน control speed</li>
+            <li>ขั้นที่ 11: <code>pygame.display.update()</code> → อัปเดตหน้าจอ</li>
+            <li>ขั้นที่ 12: <code>clock.tick(FPS)</code> → <strong>หน่วงเวลาให้ loop ไม่เร็วเกิน FPS ที่กำหนด</strong> ✓</li>
+            <li><strong>A ✗:</strong> แค่แสดงผลบนหน้าจอ ไม่ได้คุม speed</li>
+            <li><strong>B ✗:</strong> เริ่มต้น pygame ครั้งเดียวก่อน loop</li>
+            <li><strong>D ✗:</strong> ล้างหน้าจอ (clear) ไม่ใช่ control speed</li>
           </ul>
         `
       },
@@ -1860,26 +1860,26 @@ print(original["a"])`,
         id: 59,
         cat: 'pygame',
         catLabel: 'Pygame',
-        ask: 'เธเธฒเธ Listing6-3.py เธเธฒเธฃเธชเธฃเนเธฒเธเธฅเธนเธเธเธญเธฅ 3 เธฅเธนเธเนเธฅเธฐเน€เธเนเธเนเธ list เนเธเนเนเธเนเธ”เนเธ”?',
+        ask: 'จาก Listing6-3.py การสร้างลูกบอล 3 ลูกและเก็บใน list ใช้โค้ดใด?',
         code: `N_BALLS = 3
 ballList = []
 for oBall in range(0, N_BALLS):
     oBall = Ball(window, WINDOW_WIDTH, WINDOW_HEIGHT)
     ballList.append(oBall)`,
-        ask2: 'เธเธฃเธฃเธ—เธฑเธ”เนเธ”<strong>เธญเธฒเธเธ—เธณเนเธซเนเธชเธฑเธเธชเธ</strong>เน€เธเธฃเธฒเธฐเนเธเนเธเธทเนเธญเธ•เธฑเธงเนเธเธฃเธเนเธณเธเธฑเธ?',
+        ask2: 'บรรทัดใด<strong>อาจทำให้สับสน</strong>เพราะใช้ชื่อตัวแปรซ้ำกัน?',
         choices: [
           { key: 'A', text: 'ballList = []' },
-          { key: 'B', text: 'for oBall in range(0, N_BALLS): (เธ•เธฑเธงเนเธเธฃ oBall เธ–เธนเธ overwrite เนเธ loop body)' },
+          { key: 'B', text: 'for oBall in range(0, N_BALLS): (ตัวแปร oBall ถูก overwrite ใน loop body)' },
           { key: 'C', text: 'oBall = Ball(window, WINDOW_WIDTH, WINDOW_HEIGHT)' },
           { key: 'D', text: 'ballList.append(oBall)' },
-          { key: 'E', text: 'เนเธกเนเธกเธตเธเธฃเธฃเธ—เธฑเธ”เนเธ”เธชเธฑเธเธชเธ เนเธเนเธ”เธ–เธนเธเธ•เนเธญเธเธชเธกเธเธนเธฃเธ“เน' }
+          { key: 'E', text: 'ไม่มีบรรทัดใดสับสน โค้ดถูกต้องสมบูรณ์' }
         ],
         answer: 'B',
         explanation: `
-          <p>เนเธเนเธเนเธ” <code>for oBall in range(0, N_BALLS):</code> เธ•เธฑเธงเนเธเธฃ <code>oBall</code> เธ–เธนเธเธเธณเธซเธเธ”เน€เธเนเธเธ•เธฑเธงเน€เธฅเธ 0,1,2 เนเธ•เนเนเธ loop body เธเธฃเธฃเธ—เธฑเธ” <code>oBall = Ball(...)</code> เธเธณเธซเธเธ”เธเนเธฒเนเธซเธกเนเธ—เธฑเธ</p>
+          <p>ในโค้ด <code>for oBall in range(0, N_BALLS):</code> ตัวแปร <code>oBall</code> ถูกกำหนดเป็นตัวเลข 0,1,2 แต่ใน loop body บรรทัด <code>oBall = Ball(...)</code> กำหนดค่าใหม่ทับ</p>
           <ul>
-            <li><strong>B โ“:</strong> เธเธฒเธฃเนเธเนเธเธทเนเธญ <code>oBall</code> เธเนเธณเธชเธฃเนเธฒเธเธเธงเธฒเธกเธชเธฑเธเธชเธ เนเธกเนเนเธเนเธ”เธเธฐเธ—เธณเธเธฒเธเธ–เธนเธเธ•เนเธญเธเน€เธเธฃเธฒเธฐ range() value เนเธกเนเนเธ”เนเนเธเน</li>
-            <li>เธ—เธฒเธเธ—เธตเนเธ”เธตเธเธงเธฃเน€เธเธตเธขเธ <code>for _ in range(N_BALLS):</code> เน€เธเธทเนเธญเธเธญเธเธงเนเธฒเนเธกเนเนเธเนเธเนเธฒ loop variable</li>
+            <li><strong>B ✓:</strong> การใช้ชื่อ <code>oBall</code> ซ้ำสร้างความสับสน แม้โค้ดจะทำงานถูกต้องเพราะ range() value ไม่ได้ใช้</li>
+            <li>ทางที่ดีควรเขียน <code>for _ in range(N_BALLS):</code> เพื่อบอกว่าไม่ใช้ค่า loop variable</li>
           </ul>
         `
       },
@@ -1887,7 +1887,7 @@ for oBall in range(0, N_BALLS):
         id: 60,
         cat: 'pygame',
         catLabel: 'Pygame',
-        ask: 'เธเธฒเธเธเธฅเธฒเธช <code>SimpleButton</code> เน€เธกเธทเนเธญเธเธนเนเนเธเนเธเธฅเธดเธเธฅเธเธเธเธเธธเนเธก (MOUSEBUTTONDOWN) state เธเธญเธเธเธธเนเธกเน€เธเธฅเธตเนเธขเธเน€เธเนเธเธญเธฐเนเธฃ?',
+        ask: 'จากคลาส <code>SimpleButton</code> เมื่อผู้ใช้คลิกลงบนปุ่ม (MOUSEBUTTONDOWN) state ของปุ่มเปลี่ยนเป็นอะไร?',
         choices: [
           { key: 'A', text: 'STATE_IDLE' },
           { key: 'B', text: 'STATE_DISARMED' },
@@ -1897,12 +1897,12 @@ for oBall in range(0, N_BALLS):
         ],
         answer: 'C',
         explanation: `
-          <p>State machine เธเธญเธ SimpleButton:</p>
+          <p>State machine ของ SimpleButton:</p>
           <ul>
-            <li><strong>STATE_IDLE</strong> โ’ เน€เธกเธฒเธชเนเนเธกเนเนเธ”เนเธญเธขเธนเนเธเธเธเธธเนเธก</li>
-            <li>MOUSEBUTTONDOWN เธเธเธเธธเนเธก โ’ เน€เธเธฅเธตเนเธขเธเน€เธเนเธ <strong>STATE_ARMED</strong> โ“ (เธเธ”เธเนเธฒเธเธเธเธเธธเนเธก)</li>
-            <li>STATE_ARMED + MOUSEBUTTONUP เธเธเธเธธเนเธก โ’ เธเธฅเธฑเธ STATE_IDLE เนเธฅเธฐ return True (เธ–เธทเธญเธงเนเธฒ "เธเธฅเธดเธ")</li>
-            <li>STATE_ARMED + เน€เธกเธฒเธชเนเธญเธญเธเธเธญเธเธเธธเนเธก โ’ เน€เธเธฅเธตเนเธขเธเน€เธเนเธ STATE_DISARMED</li>
+            <li><strong>STATE_IDLE</strong> → เมาส์ไม่ได้อยู่บนปุ่ม</li>
+            <li>MOUSEBUTTONDOWN บนปุ่ม → เปลี่ยนเป็น <strong>STATE_ARMED</strong> ✓ (กดค้างบนปุ่ม)</li>
+            <li>STATE_ARMED + MOUSEBUTTONUP บนปุ่ม → กลับ STATE_IDLE และ return True (ถือว่า "คลิก")</li>
+            <li>STATE_ARMED + เมาส์ออกนอกปุ่ม → เปลี่ยนเป็น STATE_DISARMED</li>
           </ul>
         `
       },
@@ -1910,7 +1910,7 @@ for oBall in range(0, N_BALLS):
         id: 61,
         cat: 'pygame',
         catLabel: 'Pygame',
-        ask: 'เธเธฒเธเธเธฅเธฒเธช <code>Deck</code> เนเธเนเธเธฅเน Deck.py เธเนเธฒเธเธเธ—เธตเน <code>SUIT_TUPLE</code> เธ–เธนเธเธเธณเธซเธเธ”เน€เธเนเธเธญเธฐเนเธฃ?',
+        ask: 'จากคลาส <code>Deck</code> ในไฟล์ Deck.py ค่าคงที่ <code>SUIT_TUPLE</code> ถูกกำหนดเป็นอะไร?',
         choices: [
           { key: 'A', text: "['Diamonds', 'Clubs', 'Hearts', 'Spades']" },
           { key: 'B', text: "('Diamonds', 'Clubs', 'Hearts', 'Spades')" },
@@ -1920,14 +1920,14 @@ for oBall in range(0, N_BALLS):
         ],
         answer: 'B',
         explanation: `
-          <p>เนเธเนเธเธฅเน Deck.py:</p>
+          <p>ในไฟล์ Deck.py:</p>
           <pre style="background:var(--code-bg);padding:8px;border-radius:4px;font-size:0.85em">SUIT_TUPLE = ('Diamonds', 'Clubs', 'Hearts', 'Spades')</pre>
           <ul>
-            <li><strong>B โ“:</strong> เน€เธเนเธ <strong>tuple</strong> (เนเธเน () เธงเธเน€เธฅเนเธ) เนเธกเนเนเธเน list</li>
-            <li>เธเธฒเธฃเนเธเน tuple เนเธ—เธ list เน€เธเธฃเธฒเธฐเธเนเธฒเนเธกเนเธเธงเธฃเน€เธเธฅเธตเนเธขเธเนเธเธฅเธ (immutable)</li>
-            <li><strong>A โ—:</strong> [] เธเธทเธญ list</li>
-            <li><strong>C โ—:</strong> {} เธเธทเธญ set</li>
-            <li><strong>E โ—:</strong> เธฅเธณเธ”เธฑเธเนเธกเนเธ–เธนเธ (เน€เธฃเธตเธขเธ alphabetically เนเธกเนเนเธเนเธ•เธฒเธกเนเธเนเธ”)</li>
+            <li><strong>B ✓:</strong> เป็น <strong>tuple</strong> (ใช้ () วงเล็บ) ไม่ใช่ list</li>
+            <li>การใช้ tuple แทน list เพราะค่าไม่ควรเปลี่ยนแปลง (immutable)</li>
+            <li><strong>A ✗:</strong> [] คือ list</li>
+            <li><strong>C ✗:</strong> {} คือ set</li>
+            <li><strong>E ✗:</strong> ลำดับไม่ถูก (เรียง alphabetically ไม่ใช่ตามโค้ด)</li>
           </ul>
         `
       },
@@ -1938,22 +1938,22 @@ for oBall in range(0, N_BALLS):
         id: 32,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธเธฒเธฃเธเธฑเธ”เธซเธกเธงเธ”เธซเธกเธนเนเธงเธดเธ—เธขเธฒเธเธฒเธฃเธ”เนเธฒเธเธเธฑเธเธเธฒเธเธฃเธฐเธ”เธดเธฉเธเน',
-        ask: 'เธเนเธญเนเธ”เธญเธเธดเธเธฒเธขเธเธญเธเน€เธเธ•เนเธฅเธฐเธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเนเธฃเธฐเธซเธงเนเธฒเธ <strong>AI</strong>, <strong>Machine Learning (ML)</strong>, เนเธฅเธฐ <strong>Deep Learning (DL)</strong> เธ•เธฒเธกเนเธเธเธ เธฒเธเน€เธงเธเธเนเนเธ”เนเธ–เธนเธเธ•เนเธญเธเธ—เธตเนเธชเธธเธ”?',
+        premise: 'การจัดหมวดหมู่วิทยาการด้านปัญญาประดิษฐ์',
+        ask: 'ข้อใดอธิบายขอบเขตและความสัมพันธ์ระหว่าง <strong>AI</strong>, <strong>Machine Learning (ML)</strong>, และ <strong>Deep Learning (DL)</strong> ตามแผนภาพเวนน์ได้ถูกต้องที่สุด?',
         choices: [
-          { key: 'A', text: 'AI, ML, เนเธฅเธฐ DL เน€เธเนเธเน€เธ—เธเนเธเนเธฅเธขเธตเธ—เธตเนเนเธขเธเธเธฒเธ”เธเธฒเธเธเธฑเธเนเธ”เธขเธชเธดเนเธเน€เธเธดเธ เนเธกเนเธกเธตเธชเนเธงเธเนเธ”เธเนเธญเธเธ—เธฑเธเธเธฑเธ' },
-          { key: 'B', text: 'Deep Learning เน€เธเนเธเธชเธฑเธเน€เธเธ•เธเธญเธ Machine Learning เนเธฅเธฐ Machine Learning เน€เธเนเธเธชเธฑเธเน€เธเธ•เธเธญเธ AI (DL โ ML โ AI)' },
-          { key: 'C', text: 'Machine Learning เน€เธเนเธเธเธณเธเธฃเธญเธเธเธฅเธธเธกเธเธงเนเธฒเธเธชเธธเธ” เนเธ”เธขเธกเธต AI เน€เธเนเธเธชเธฑเธเน€เธเธ•เธขเนเธญเธขเธญเธขเธนเนเธ เธฒเธขเนเธ' },
-          { key: 'D', text: 'Deep Learning เธเธทเธญเธเธฒเธฃเน€เธเธตเธขเธเนเธเธฃเนเธเธฃเธกเนเธเธ Rule-based เธชเนเธงเธ AI เธเธทเธญเนเธเธฃเธเธเนเธฒเธขเธเธฃเธฐเธชเธฒเธ—เน€เธ—เธตเธขเธก' },
-          { key: 'E', text: 'AI เธเธทเธญเธเธญเธเธ•เนเนเธงเธฃเนเธเธฃเธฐเธกเธงเธฅเธเธฅเธเธณ เธชเนเธงเธ Machine Learning เธเธทเธญเธฎเธฒเธฃเนเธ”เนเธงเธฃเนเธเธฃเธฒเธเธดเธเธเธฒเธฃเนเธ”' }
+          { key: 'A', text: 'AI, ML, และ DL เป็นเทคโนโลยีที่แยกขาดจากกันโดยสิ้นเชิง ไม่มีส่วนใดซ้อนทับกัน' },
+          { key: 'B', text: 'Deep Learning เป็นสับเซตของ Machine Learning และ Machine Learning เป็นสับเซตของ AI (DL ⊂ ML ⊂ AI)' },
+          { key: 'C', text: 'Machine Learning เป็นคำครอบคลุมกว้างสุด โดยมี AI เป็นสับเซตย่อยอยู่ภายใน' },
+          { key: 'D', text: 'Deep Learning คือการเขียนโปรแกรมแบบ Rule-based ส่วน AI คือโครงข่ายประสาทเทียม' },
+          { key: 'E', text: 'AI คือซอฟต์แวร์ประมวลผลคำ ส่วน Machine Learning คือฮาร์ดแวร์กราฟิกการ์ด' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเนเนเธเธเธฅเธณเธ”เธฑเธเธเธฑเนเธ (Venn Diagram) เธเธญเธเธงเธดเธ—เธขเธฒเธเธฒเธฃ AI:</p>
+          <p>ความสัมพันธ์แบบลำดับขั้น (Venn Diagram) ของวิทยาการ AI:</p>
           <ul>
-            <li><strong>Artificial Intelligence (AI):</strong> เธเธญเธเน€เธเธ•เธ—เธตเนเธเธงเนเธฒเธเธ—เธตเนเธชเธธเธ” เธเธฃเธญเธเธเธฅเธธเธกเธฃเธฐเธเธเธเธญเธกเธเธดเธงเน€เธ•เธญเธฃเนเธ—เธตเนเน€เธฅเธตเธขเธเนเธเธเธชเธ•เธดเธเธฑเธเธเธฒเธเธญเธเธกเธเธธเธฉเธขเน (เธฃเธงเธกเธ—เธฑเนเธ Rule-based เนเธฅเธฐ Expert Systems)</li>
-            <li><strong>Machine Learning (ML):</strong> เธชเธฒเธเธฒเธขเนเธญเธขเธเธญเธ AI เธ—เธตเนเน€เธฃเธตเธขเธเธฃเธนเนเนเธเธ—เน€เธ—เธดเธฃเนเธเธเธฒเธเธเนเธญเธกเธนเธฅเนเธ”เธขเนเธกเนเธ•เนเธญเธเธฎเธฒเธฃเนเธ”เนเธเนเธ”เธเธเน€เธเธ“เธ‘เนเธ—เธฑเนเธเธซเธกเธ”</li>
-            <li><strong>Deep Learning (DL):</strong> เธชเธฒเธเธฒเธขเนเธญเธขเธเธญเธ ML เธ—เธตเนเน€เธเนเธเธเธฒเธฃเนเธเน Deep Artificial Neural Networks (เนเธเธฃเธเธเนเธฒเธขเธเธฃเธฐเธชเธฒเธ—เน€เธ—เธตเธขเธกเธซเธฅเธฒเธขเธเธฑเนเธเธฅเธถเธ) เน€เธเธทเนเธญเธงเธดเน€เธเธฃเธฒเธฐเธซเนเธเนเธญเธกเธนเธฅเธเธฑเธเธเนเธญเธ เน€เธเนเธ เธ เธฒเธเนเธฅเธฐเน€เธชเธตเธขเธ</li>
+            <li><strong>Artificial Intelligence (AI):</strong> ขอบเขตที่กว้างที่สุด ครอบคลุมระบบคอมพิวเตอร์ที่เลียนแบบสติปัญญาของมนุษย์ (รวมทั้ง Rule-based และ Expert Systems)</li>
+            <li><strong>Machine Learning (ML):</strong> สาขาย่อยของ AI ที่เรียนรู้แพทเทิร์นจากข้อมูลโดยไม่ต้องฮาร์ดโค้ดกฎเกณฑ์ทั้งหมด</li>
+            <li><strong>Deep Learning (DL):</strong> สาขาย่อยของ ML ที่เน้นการใช้ Deep Artificial Neural Networks (โครงข่ายประสาทเทียมหลายชั้นลึก) เพื่อวิเคราะห์ข้อมูลซับซ้อน เช่น ภาพและเสียง</li>
           </ul>
         `
       },
@@ -1961,22 +1961,22 @@ for oBall in range(0, N_BALLS):
         id: 33,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธฃเธฐเธ”เธฑเธเธงเธดเธงเธฑเธ’เธเธฒเธเธฒเธฃเธเธญเธเธฃเธฐเธเธเธเธฑเธเธเธฒเธเธฃเธฐเธ”เธดเธฉเธเน (Evolution Stages of AI)',
-        ask: 'เนเธเธเธฑเธเธเธธเธเธฑเธ (เธเธต 2024-2026) เธเธฑเธเธเธฒเธเธฃเธฐเธ”เธดเธฉเธเนเธ—เธตเนเน€เธฃเธฒเนเธเนเธเธฒเธเธ—เธฑเนเธงเนเธ เน€เธเนเธ ChatGPT, Gemini, Siri, Claude เธซเธฃเธทเธญ AlphaGo เธเธฑเธ”เธญเธขเธนเนเนเธ <strong>เธฃเธฐเธ”เธฑเธเธเธฑเธ’เธเธฒเธเธฒเธฃเนเธ”เธเธญเธ AI</strong>?',
+        premise: 'ระดับวิวัฒนาการของระบบปัญญาประดิษฐ์ (Evolution Stages of AI)',
+        ask: 'ในปัจจุบัน (ปี 2024-2026) ปัญญาประดิษฐ์ที่เราใช้งานทั่วไป เช่น ChatGPT, Gemini, Siri, Claude หรือ AlphaGo จัดอยู่ใน <strong>ระดับพัฒนาการใดของ AI</strong>?',
         choices: [
-          { key: 'A', text: '<strong>Artificial General Intelligence (AGI)</strong> เธซเธฃเธทเธญ Strong AI' },
+          { key: 'A', text: '<strong>Artificial General Intelligence (AGI)</strong> หรือ Strong AI' },
           { key: 'B', text: '<strong>Artificial Super Intelligence (ASI)</strong>' },
-          { key: 'C', text: '<strong>Artificial Narrow Intelligence (ANI)</strong> เธซเธฃเธทเธญ Weak AI' },
-          { key: 'D', text: '<strong>Conscious AI</strong> (เธเธฑเธเธเธฒเธเธฃเธฐเธ”เธดเธฉเธเนเธ—เธตเนเธกเธตเธเธดเธ•เธชเธณเธเธถเธเธฃเธฑเธเธฃเธนเนเธ•เธเน€เธญเธ)' },
+          { key: 'C', text: '<strong>Artificial Narrow Intelligence (ANI)</strong> หรือ Weak AI' },
+          { key: 'D', text: '<strong>Conscious AI</strong> (ปัญญาประดิษฐ์ที่มีจิตสำนึกรับรู้ตนเอง)' },
           { key: 'E', text: '<strong>Biological AI</strong>' }
         ],
         answer: 'C',
         explanation: `
-          <p>เธฃเธฐเธ”เธฑเธเธเธฑเธ’เธเธฒเธเธฒเธฃเธเธญเธเธเธฑเธเธเธฒเธเธฃเธฐเธ”เธดเธฉเธเนเนเธเนเธเน€เธเนเธ 3 เธเธฑเนเธ:</p>
+          <p>ระดับพัฒนาการของปัญญาประดิษฐ์แบ่งเป็น 3 ขั้น:</p>
           <ul>
-            <li><strong>1. Artificial Narrow Intelligence (ANI / Weak AI):</strong> เธเธทเธญเธฃเธฐเธ”เธฑเธเธเธญเธ AI เธ—เธฑเนเธเธซเธกเธ”เนเธเธเธฑเธเธเธธเธเธฑเธ เธกเธตเธเธงเธฒเธกเน€เธเธตเนเธขเธงเธเธฒเธเน€เธเธเธฒเธฐเธ”เนเธฒเธเธ•เธฒเธกเธ—เธตเนเธ–เธนเธเน€เธ—เธฃเธเธกเธฒ (เน€เธเนเธ เน€เธฅเนเธเธซเธกเธฒเธเธฃเธธเธ, เธชเธฃเนเธฒเธเธ เธฒเธ, เนเธเธฅเธเธ เธฒเธฉเธฒ) เนเธ•เนเนเธกเนเธชเธฒเธกเธฒเธฃเธ–เธเธดเธ”เธงเธดเน€เธเธฃเธฒเธฐเธซเนเธเนเธฒเธกเธจเธฒเธชเธ•เธฃเนเนเธ”เนเน€เธซเธกเธทเธญเธเธกเธเธธเธฉเธขเน</li>
-            <li><strong>2. Artificial General Intelligence (AGI):</strong> AI เธ—เธตเนเธกเธตเธชเธ•เธดเธเธฑเธเธเธฒเนเธฅเธฐเธเธงเธฒเธกเธขเธทเธ”เธซเธขเธธเนเธเน€เธ—เธตเธขเธเน€เธ—เนเธฒเธกเธเธธเธฉเธขเนเนเธเธ—เธธเธเธ—เธฑเธเธฉเธฐ (เธขเธฑเธเธญเธขเธนเนเนเธเธเธฑเนเธเธงเธดเธเธฑเธข)</li>
-            <li><strong>3. Artificial Super Intelligence (ASI):</strong> AI เธ—เธตเนเธกเธตเธชเธ•เธดเธเธฑเธเธเธฒเน€เธซเธเธทเธญเธเธงเนเธฒเธกเธเธธเธฉเธขเนเธ—เธธเธเธเธเธฃเธงเธกเธเธฑเธเนเธเธ—เธธเธเธกเธดเธ•เธด (เธขเธฑเธเน€เธเนเธเนเธเธงเธเธดเธ”เนเธเธญเธเธฒเธเธ•)</li>
+            <li><strong>1. Artificial Narrow Intelligence (ANI / Weak AI):</strong> คือระดับของ AI ทั้งหมดในปัจจุบัน มีความเชี่ยวชาญเฉพาะด้านตามที่ถูกเทรนมา (เช่น เล่นหมากรุก, สร้างภาพ, แปลงภาษา) แต่ไม่สามารถคิดวิเคราะห์ข้ามศาสตร์ได้เหมือนมนุษย์</li>
+            <li><strong>2. Artificial General Intelligence (AGI):</strong> AI ที่มีสติปัญญาและความยืดหยุ่นเทียบเท่ามนุษย์ในทุกทักษะ (ยังอยู่ในขั้นวิจัย)</li>
+            <li><strong>3. Artificial Super Intelligence (ASI):</strong> AI ที่มีสติปัญญาเหนือกว่ามนุษย์ทุกคนรวมกันในทุกมิติ (ยังเป็นแนวคิดในอนาคต)</li>
           </ul>
         `
       },
@@ -1984,8 +1984,8 @@ for oBall in range(0, N_BALLS):
         id: 34,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธชเธ–เธฒเธเธฑเธเธเธฒเธฃเน€เธเธดเธเธ•เนเธญเธเธเธฒเธฃเธชเธฃเนเธฒเธเนเธกเน€เธ”เธฅเธ—เธณเธเธฒเธขเธงเนเธฒเธเธนเนเธเธญเธเธนเนเธเธฐ <strong>"เธเธดเธ”เธเธฑเธ”เธเธณเธฃเธฐเธซเธเธตเนเธซเธฃเธทเธญเนเธกเน" (Default / No Default)</strong> เนเธ”เธขเธกเธตเธเนเธญเธกเธนเธฅเธเธฃเธฐเธงเธฑเธ•เธดเนเธฅเธฐเธเธฅเธฅเธฑเธเธเนเนเธเธญเธ”เธตเธ•เธกเธฒเนเธซเนเนเธเนเน€เธ—เธฃเธ',
-        ask: 'เธเธฒเธเธเธตเนเธเธฑเธ”เน€เธเนเธเธเธฒเธฃเน€เธฃเธตเธขเธเธฃเธนเนเธเธญเธ Machine Learning เนเธเธฃเธนเธเนเธเธเนเธ”?',
+        premise: 'สถาบันการเงินต้องการสร้างโมเดลทำนายว่าผู้ขอกู้จะ <strong>"ผิดนัดชำระหนี้หรือไม่" (Default / No Default)</strong> โดยมีข้อมูลประวัติและผลลัพธ์ในอดีตมาให้ใช้เทรน',
+        ask: 'งานนี้จัดเป็นการเรียนรู้ของ Machine Learning ในรูปแบบใด?',
         choices: [
           { key: 'A', text: 'Unsupervised Learning (Clustering)' },
           { key: 'B', text: 'Supervised Learning (Classification)' },
@@ -1995,11 +1995,11 @@ for oBall in range(0, N_BALLS):
         ],
         answer: 'B',
         explanation: `
-          <p><strong>Supervised Learning (เธเธฒเธฃเน€เธฃเธตเธขเธเธฃเธนเนเนเธเธเธกเธตเธเธนเนเธชเธญเธ):</strong></p>
+          <p><strong>Supervised Learning (การเรียนรู้แบบมีผู้สอน):</strong></p>
           <ul>
-            <li>เธฅเธฑเธเธฉเธ“เธฐเน€เธ”เนเธเธเธทเธญเธเธธเธ”เธเนเธญเธกเธนเธฅเธกเธต <strong>Label (เธเนเธฒเธขเธเธณเธเธฑเธเธเธณเธ•เธญเธเน€เธเนเธฒเธซเธกเธฒเธข)</strong> เนเธเธญเธ”เธตเธ•เนเธซเนเนเธกเน€เธ”เธฅเน€เธฃเธตเธขเธเธฃเธนเน</li>
-            <li>เนเธเธ—เธขเนเธเธตเนเธ•เนเธญเธเธเธฒเธฃเธ—เธณเธเธฒเธขเธเธณเธ•เธญเธเน€เธเนเธเธเธฅเธธเนเธกเธเธฃเธฐเน€เธ เธ— (เธเธดเธ”เธเธฑเธ” เธซเธฃเธทเธญ เนเธกเนเธเธดเธ”เธเธฑเธ”) เธเธถเธเธเธฑเธ”เน€เธเนเธเธเธฒเธเธเธฃเธฐเน€เธ เธ— <strong>Classification (เธเธฒเธฃเธเธณเนเธเธเธเธฃเธฐเน€เธ เธ—)</strong></li>
-            <li>(เธซเธฒเธเธ—เธณเธเธฒเธขเธเนเธฒเธ•เธฑเธงเน€เธฅเธเธ•เนเธญเน€เธเธทเนเธญเธ เน€เธเนเธ เธขเธญเธ”เน€เธเธดเธเธเธนเน เธเธฐเน€เธฃเธตเธขเธเธงเนเธฒ Regression)</li>
+            <li>ลักษณะเด่นคือชุดข้อมูลมี <strong>Label (ป้ายกำกับคำตอบเป้าหมาย)</strong> ในอดีตให้โมเดลเรียนรู้</li>
+            <li>โจทย์นี้ต้องการทำนายคำตอบเป็นกลุ่มประเภท (ผิดนัด หรือ ไม่ผิดนัด) จึงจัดเป็นงานประเภท <strong>Classification (การจำแนกประเภท)</strong></li>
+            <li>(หากทำนายค่าตัวเลขต่อเนื่อง เช่น ยอดเงินกู้ จะเรียกว่า Regression)</li>
           </ul>
         `
       },
@@ -2007,8 +2007,8 @@ for oBall in range(0, N_BALLS):
         id: 35,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธซเธเนเธงเธขเธเธฒเธเธเธฃเธฐเธเธฒเธ•เนเธญเธเธเธฒเธฃเธเธฑเธ”เธเธฅเธธเนเธกเธเธคเธ•เธดเธเธฃเธฃเธกเธเธฒเธฃเนเธเนเธเนเธณเธเธญเธเธเธนเนเนเธเนเธ—เธฑเนเธงเธเธฃเธฐเน€เธ—เธจ เนเธ”เธข <strong>เนเธกเนเธกเธตเธเธฒเธฃเธเธณเธซเธเธ”เธเธทเนเธญเธเธฅเธธเนเธกเธฅเนเธงเธเธซเธเนเธฒเนเธฅเธฐเนเธกเนเธกเธตเธเธณเธ•เธญเธเน€เธเธฅเธข (Unlabeled)</strong>',
-        ask: 'เธเธฒเธเธฅเธฑเธเธฉเธ“เธฐเธเธตเนเธเธฑเธ”เน€เธเนเธ Machine Learning เนเธเธเนเธ”?',
+        premise: 'หน่วยงานประปาต้องการจัดกลุ่มพฤติกรรมการใช้น้ำของผู้ใช้ทั่วประเทศ โดย <strong>ไม่มีการกำหนดชื่อกลุ่มล่วงหน้าและไม่มีคำตอบเฉลย (Unlabeled)</strong>',
+        ask: 'งานลักษณะนี้จัดเป็น Machine Learning แบบใด?',
         choices: [
           { key: 'A', text: 'Supervised Learning' },
           { key: 'B', text: 'Unsupervised Learning (Clustering)' },
@@ -2018,10 +2018,10 @@ for oBall in range(0, N_BALLS):
         ],
         answer: 'B',
         explanation: `
-          <p><strong>Unsupervised Learning (เธเธฒเธฃเน€เธฃเธตเธขเธเธฃเธนเนเนเธเธเนเธกเนเธกเธตเธเธนเนเธชเธญเธ):</strong></p>
+          <p><strong>Unsupervised Learning (การเรียนรู้แบบไม่มีผู้สอน):</strong></p>
           <ul>
-            <li>เธเนเธญเธกเธนเธฅเนเธกเนเธกเธต Label เธซเธฃเธทเธญเธเธณเธ•เธญเธเน€เธเธฅเธขเธฅเนเธงเธเธซเธเนเธฒ</li>
-            <li>เนเธกเน€เธ”เธฅเธเธฐเธ—เธณเธซเธเนเธฒเธ—เธตเนเธเนเธเธซเธฒเธเธงเธฒเธกเธเธฅเนเธฒเธขเธเธฅเธถเธ เนเธเธฃเธเธชเธฃเนเธฒเธ เธซเธฃเธทเธญเธฃเธนเธเนเธเธเธ—เธตเนเธเนเธญเธเธญเธขเธนเน (Hidden Pattern) เน€เธเธทเนเธญเธเธฑเธ”เธเธฅเธธเนเธกเธเนเธญเธกเธนเธฅเธ—เธตเนเธกเธตเธเธคเธ•เธดเธเธฃเธฃเธกเนเธเธฅเนเน€เธเธตเธขเธเธเธฑเธ เน€เธฃเธตเธขเธเธงเนเธฒ <strong>Clustering (เธเธฒเธฃเนเธเนเธเธเธฅเธธเนเธก)</strong> เน€เธเนเธ เธญเธฑเธฅเธเธญเธฃเธดเธ—เธถเธก K-Means</li>
+            <li>ข้อมูลไม่มี Label หรือคำตอบเฉลยล่วงหน้า</li>
+            <li>โมเดลจะทำหน้าที่ค้นหาความคล้ายคลึง โครงสร้าง หรือรูปแบบที่ซ่อนอยู่ (Hidden Pattern) เพื่อจัดกลุ่มข้อมูลที่มีพฤติกรรมใกล้เคียงกัน เรียกว่า <strong>Clustering (การแบ่งกลุ่ม)</strong> เช่น อัลกอริทึม K-Means</li>
           </ul>
         `
       },
@@ -2029,11 +2029,11 @@ for oBall in range(0, N_BALLS):
         id: 36,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธฃเธฐเธเธเธเธงเธเธเธธเธกเธชเธเธฃเธดเธเน€เธเธฅเธญเธฃเนเธฃเธ”เธเนเธณเธญเธฑเธ•เนเธเธกเธฑเธ•เธด เธ—เธตเนเน€เธฃเธตเธขเธเธฃเธนเนเธเนเธฒเธเธเธฒเธฃเนเธ”เนเธฃเธฑเธเนเธ•เนเธกเธเธงเธ (Reward) เน€เธกเธทเนเธญเธ”เธดเธเธเธธเนเธกเธเธญเธ”เธต เนเธฅเธฐเนเธ”เธเธซเธฑเธเนเธ•เนเธก (Penalty) เน€เธกเธทเนเธญเนเธเนเธเนเธณเธชเธดเนเธเน€เธเธฅเธทเธญเธ',
-        ask: 'เธฃเธฐเธเธเธเธตเนเธ—เธณเธเธฒเธเธ•เธฒเธกเนเธเธงเธเธดเธ”เธเธฒเธฃเน€เธฃเธตเธขเธเธฃเธนเนเธเธญเธ Machine Learning เนเธเธเนเธญเนเธ”?',
+        premise: 'ระบบควบคุมสปริงเกลอร์รดน้ำอัตโนมัติ ที่เรียนรู้ผ่านการได้รับแต้มบวก (Reward) เมื่อดินชุ่มพอดี และโดนหักแต้ม (Penalty) เมื่อใช้น้ำสิ้นเปลือง',
+        ask: 'ระบบนี้ทำงานตามแนวคิดการเรียนรู้ของ Machine Learning ในข้อใด?',
         choices: [
           { key: 'A', text: 'Supervised Learning' },
-          { key: 'B', text: 'Reinforcement Learning (เธเธฒเธฃเน€เธฃเธตเธขเธเธฃเธนเนเนเธเธเน€เธชเธฃเธดเธกเธเธณเธฅเธฑเธ)' },
+          { key: 'B', text: 'Reinforcement Learning (การเรียนรู้แบบเสริมกำลัง)' },
           { key: 'C', text: 'Unsupervised Learning' },
           { key: 'D', text: 'Prompt Engineering' },
           { key: 'E', text: 'Rule-based Expert System' }
@@ -2042,9 +2042,9 @@ for oBall in range(0, N_BALLS):
         explanation: `
           <p><strong>Reinforcement Learning (RL):</strong></p>
           <ul>
-            <li>เธญเธฒเธจเธฑเธขเธเธงเธฒเธกเธชเธฑเธกเธเธฑเธเธเนเธฃเธฐเธซเธงเนเธฒเธ <strong>Agent (เธ•เธฑเธงเนเธ—เธ)</strong> เธเธฑเธ <strong>Environment (เธชเธ เธฒเธเนเธงเธ”เธฅเนเธญเธก)</strong></li>
-            <li>Agent เธ—เธณเธเธฒเธฃเธ—เธ”เธฅเธญเธเธเธเธดเธเธฑเธ•เธดเธเธฒเธฃ (Action) เน€เธเธทเนเธญเธชเธฑเธเน€เธเธ•เธชเธ–เธฒเธเธฐเนเธซเธกเน (State) เนเธฅเธฐเธฃเธฑเธเธเธฅเธ•เธญเธเธฃเธฑเธเน€เธเนเธเธฃเธฒเธเธงเธฑเธฅเธซเธฃเธทเธญเธเธฒเธฃเธฅเธเนเธ—เธฉ (Reward / Penalty)</li>
-            <li>เน€เธเนเธฒเธซเธกเธฒเธขเธเธทเธญเธเธฒเธฃเน€เธฃเธตเธขเธเธฃเธนเนเธเธฅเธขเธธเธ—เธเน (Policy) เธ—เธตเนเธชเธฐเธชเธกเธฃเธฒเธเธงเธฑเธฅเธฃเธงเธกเนเธซเนเนเธ”เนเธกเธฒเธเธ—เธตเนเธชเธธเธ” เน€เธเนเธเน€เธ”เธตเธขเธงเธเธฑเธเธฃเธฐเธเธเธเธถเธเน€เธฅเนเธเน€เธเธก AlphaGo เธซเธฃเธทเธญเธฃเธฐเธเธเธซเธธเนเธเธขเธเธ•เนเธญเธฑเธ•เนเธเธกเธฑเธ•เธด</li>
+            <li>อาศัยความสัมพันธ์ระหว่าง <strong>Agent (ตัวแทน)</strong> กับ <strong>Environment (สภาพแวดล้อม)</strong></li>
+            <li>Agent ทำการทดลองปฏิบัติการ (Action) เพื่อสังเกตสถานะใหม่ (State) และรับผลตอบรับเป็นรางวัลหรือการลงโทษ (Reward / Penalty)</li>
+            <li>เป้าหมายคือการเรียนรู้กลยุทธ์ (Policy) ที่สะสมรางวัลรวมให้ได้มากที่สุด เช่นเดียวกับระบบฝึกเล่นเกม AlphaGo หรือระบบหุ่นยนต์อัตโนมัติ</li>
           </ul>
         `
       },
@@ -2052,21 +2052,21 @@ for oBall in range(0, N_BALLS):
         id: 37,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธเธฒเธฃเน€เธเธฃเธตเธขเธเน€เธ—เธตเธขเธเธเธฃเธฐเธเธงเธเธ—เธฑเธจเธเนเธฃเธฐเธซเธงเนเธฒเธเนเธเธเธเธณเธฅเธญเธเธเธฑเธเธเธฒเธเธฃเธฐเธ”เธดเธฉเธเน 2 เธเธฅเธธเนเธกเนเธซเธเน',
-        ask: 'เธเนเธญเนเธ”เน€เธเธฃเธตเธขเธเน€เธ—เธตเธขเธเธเธงเธฒเธกเนเธ•เธเธ•เนเธฒเธเธฃเธฐเธซเธงเนเธฒเธ <strong>Discriminative AI</strong> เนเธฅเธฐ <strong>Generative AI</strong> เนเธ”เนเธญเธขเนเธฒเธเธ–เธนเธเธ•เนเธญเธเธ•เธฒเธกเธซเธฅเธฑเธเธเธฒเธฃ?',
+        premise: 'การเปรียบเทียบกระบวนทัศน์ระหว่างแบบจำลองปัญญาประดิษฐ์ 2 กลุ่มใหญ่',
+        ask: 'ข้อใดเปรียบเทียบความแตกต่างระหว่าง <strong>Discriminative AI</strong> และ <strong>Generative AI</strong> ได้อย่างถูกต้องตามหลักการ?',
         choices: [
-          { key: 'A', text: 'Discriminative AI เธกเธธเนเธเน€เธเนเธเธเธฒเธฃเธเธณเนเธเธ/เธ—เธณเธเธฒเธขเธเนเธญเธกเธนเธฅเน€เธ”เธดเธก | Generative AI เธกเธธเนเธเน€เธเนเธเธเธฒเธฃเธชเธฃเนเธฒเธเธชเธฃเธฃเธเนเธเนเธญเธกเธนเธฅเน€เธเธทเนเธญเธซเธฒเธเธถเนเธเธกเธฒเนเธซเธกเน' },
-          { key: 'B', text: 'Discriminative AI เนเธเนเธเธฑเธเธเนเธญเธเธงเธฒเธกเน€เธ—เนเธฒเธเธฑเนเธ | Generative AI เนเธเนเธเธฑเธเนเธเธฅเนเน€เธชเธตเธขเธเน€เธ—เนเธฒเธเธฑเนเธ' },
-          { key: 'C', text: 'Discriminative AI เธกเธตเธเธงเธฒเธกเธเธดเธ”เธชเธฃเนเธฒเธเธชเธฃเธฃเธเนเธกเธฒเธเธเธงเนเธฒ Generative AI' },
-          { key: 'D', text: 'Discriminative AI เธ—เธณเธเธฒเธเนเธ”เธขเนเธกเนเธ•เนเธญเธเนเธเนเธเธธเธ”เธเนเธญเธกเธนเธฅเน€เธ—เธฃเธ' },
-          { key: 'E', text: 'Generative AI เนเธกเนเธชเธฒเธกเธฒเธฃเธ–เธ—เธณเนเธซเนเน€เธเธดเธ”เธ เธฒเธเธซเธฃเธทเธญเธเนเธญเธเธงเธฒเธกเนเธ”เน' }
+          { key: 'A', text: 'Discriminative AI มุ่งเน้นการจำแนก/ทำนายข้อมูลเดิม | Generative AI มุ่งเน้นการสร้างสรรค์ข้อมูลเนื้อหาขึ้นมาใหม่' },
+          { key: 'B', text: 'Discriminative AI ใช้กับข้อความเท่านั้น | Generative AI ใช้กับไฟล์เสียงเท่านั้น' },
+          { key: 'C', text: 'Discriminative AI มีความคิดสร้างสรรค์มากกว่า Generative AI' },
+          { key: 'D', text: 'Discriminative AI ทำงานโดยไม่ต้องใช้ชุดข้อมูลเทรน' },
+          { key: 'E', text: 'Generative AI ไม่สามารถทำให้เกิดภาพหรือข้อความได้' }
         ],
         answer: 'A',
         explanation: `
-          <p>เธเธงเธฒเธกเนเธ•เธเธ•เนเธฒเธเน€เธเธดเธเธฃเธฒเธเธเธฒเธเธเธญเธเนเธกเน€เธ”เธฅ AI เธ—เธฑเนเธเธชเธญเธเนเธเธ:</p>
+          <p>ความแตกต่างเชิงรากฐานของโมเดล AI ทั้งสองแบบ:</p>
           <ul>
-            <li><strong>Discriminative AI:</strong> เน€เธฃเธตเธขเธเธฃเธนเนเน€เธชเนเธเนเธเนเธเธเธฒเธฃเธ•เธฑเธ”เธชเธดเธเนเธเน€เธเธทเนเธญเธ—เธณเธเธฒเธขเธซเธฃเธทเธญเนเธขเธเนเธขเธฐ เน€เธเนเธ เธ•เธฃเธงเธเธงเนเธฒเธ เธฒเธเธเธตเนเน€เธเนเธเธซเธกเธฒเธซเธฃเธทเธญเนเธกเธง, เธญเธตเน€เธกเธฅเธเธตเนเน€เธเนเธเธชเนเธเธกเธซเธฃเธทเธญเนเธกเน ($P(Y|X)$)</li>
-            <li><strong>Generative AI:</strong> เน€เธฃเธตเธขเธเธฃเธนเนเธเธฒเธฃเธเธฃเธฐเธเธฒเธขเธเธญเธเธเนเธญเธกเธนเธฅเน€เธเธทเนเธญเธชเธฑเธเน€เธเธฃเธฒเธฐเธซเนเธชเธดเนเธเนเธซเธกเนเธ—เธตเนเธเธฅเนเธฒเธขเธเธฅเธถเธเธเธฑเธเธเธธเธ”เธเนเธญเธกเธนเธฅเน€เธ”เธดเธก เน€เธเนเธ เธชเธฃเนเธฒเธเธ เธฒเธเนเธซเธกเน เนเธ•เนเธเน€เธเธฅเธ เน€เธเธตเธขเธเธเธ—เธเธงเธฒเธก ($P(X, Y)$ เธซเธฃเธทเธญ $P(X)$)</li>
+            <li><strong>Discriminative AI:</strong> เรียนรู้เส้นแบ่งการตัดสินใจเพื่อทำนายหรือแยกแยะ เช่น ตรวจว่าภาพนี้เป็นหมาหรือแมว, อีเมลนี้เป็นสแปมหรือไม่ ($P(Y|X)$)</li>
+            <li><strong>Generative AI:</strong> เรียนรู้การกระจายของข้อมูลเพื่อสังเคราะห์สิ่งใหม่ที่คล้ายคลึงกับชุดข้อมูลเดิม เช่น สร้างภาพใหม่ แต่งเพลง เขียนบทความ ($P(X, Y)$ หรือ $P(X)$)</li>
           </ul>
         `
       },
@@ -2074,21 +2074,21 @@ for oBall in range(0, N_BALLS):
         id: 38,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธงเธดเธงเธฑเธ’เธเธฒเธเธฒเธฃเธเธญเธเนเธเธเธเธณเธฅเธญเธเธ เธฒเธฉเธฒเนเธฅเธฐเธกเธฑเธฅเธ•เธดเธกเธตเน€เธ”เธตเธขเนเธเธขเธธเธเนเธซเธกเน',
-        ask: 'เธเธณเธงเนเธฒ <strong>"Multimodal AI"</strong> (เน€เธเนเธ GPT-4o, Gemini 1.5/2.0) เธกเธตเธเธงเธฒเธกเธซเธกเธฒเธขเธ•เธฃเธเธเธฑเธเธเนเธญเนเธ”เธกเธฒเธเธ—เธตเนเธชเธธเธ”?',
+        premise: 'วิวัฒนาการของแบบจำลองภาษาและมัลติมีเดียในยุคใหม่',
+        ask: 'คำว่า <strong>"Multimodal AI"</strong> (เช่น GPT-4o, Gemini 1.5/2.0) มีความหมายตรงกับข้อใดมากที่สุด?',
         choices: [
-          { key: 'A', text: 'เนเธกเน€เธ”เธฅเธ—เธตเนเธ—เธณเธเธฒเธเธเธเธเธญเธกเธเธดเธงเน€เธ•เธญเธฃเนเธซเธฅเธฒเธขเน€เธเธฃเธทเนเธญเธเธเธฃเนเธญเธกเธเธฑเธเธเนเธฒเธเธฃเธฐเธเธเธเธฅเธฒเธงเธ”เน' },
-          { key: 'B', text: 'เนเธกเน€เธ”เธฅเธ—เธตเนเธชเธฒเธกเธฒเธฃเธ–เธฃเธฑเธเธญเธดเธเธเธธเธ•เนเธฅเธฐเธชเธฃเนเธฒเธเน€เธญเธฒเธ•เนเธเธธเธ•เนเธ”เนเธซเธฅเธฒเธเธซเธฅเธฒเธขเธฃเธนเธเนเธเธเธชเธทเนเธญ (เธเนเธญเธเธงเธฒเธก, เธ เธฒเธ, เน€เธชเธตเธขเธ, เธงเธดเธ”เธตเนเธญ) เธฃเนเธงเธกเธเธฑเธเนเธเนเธกเน€เธ”เธฅเน€เธ”เธตเธขเธง' },
-          { key: 'C', text: 'เนเธกเน€เธ”เธฅเธ—เธตเนเธกเธตเธเธฒเธฃเน€เธเธฅเธตเนเธขเธเนเธซเธกเธ”เธเธฃเธฐเธซเธขเธฑเธ”เธเธฅเธฑเธเธเธฒเธเนเธเธ•เน€เธ•เธญเธฃเธตเนเนเธ”เนเธญเธฑเธ•เนเธเธกเธฑเธ•เธด' },
-          { key: 'D', text: 'เนเธกเน€เธ”เธฅเธ—เธตเนเนเธกเนเธเธณเน€เธเนเธเธ•เนเธญเธเธเนเธฒเธเธเธฑเนเธเธ•เธญเธเธเธฒเธฃ Fine-tuning' },
-          { key: 'E', text: 'เนเธกเน€เธ”เธฅเธ—เธตเนเธชเธฒเธกเธฒเธฃเธ–เน€เธเธตเธขเธเนเธเนเธ”เนเธ”เนเน€เธเธตเธขเธเธ เธฒเธฉเธฒเน€เธ”เธตเธขเธง' }
+          { key: 'A', text: 'โมเดลที่ทำงานบนคอมพิวเตอร์หลายเครื่องพร้อมกันผ่านระบบคลาวด์' },
+          { key: 'B', text: 'โมเดลที่สามารถรับอินพุตและสร้างเอาต์พุตได้หลากหลายรูปแบบสื่อ (ข้อความ, ภาพ, เสียง, วิดีโอ) ร่วมกันในโมเดลเดียว' },
+          { key: 'C', text: 'โมเดลที่มีการเปลี่ยนโหมดประหยัดพลังงานแบตเตอรี่ได้อัตโนมัติ' },
+          { key: 'D', text: 'โมเดลที่ไม่จำเป็นต้องผ่านขั้นตอนการ Fine-tuning' },
+          { key: 'E', text: 'โมเดลที่สามารถเขียนโค้ดได้เพียงภาษาเดียว' }
         ],
         answer: 'B',
         explanation: `
           <p><strong>Multimodal AI:</strong></p>
           <ul>
-            <li>เธเธณเธงเนเธฒ "Modality" เธซเธกเธฒเธขเธ–เธถเธเธฃเธนเธเนเธเธเธเธญเธเธชเธทเนเธญเธซเธฃเธทเธญเธเนเธญเธกเธนเธฅ เน€เธเนเธ เธเนเธญเธเธงเธฒเธก (Text), เธฃเธนเธเธ เธฒเธ (Image), เน€เธชเธตเธขเธเธเธนเธ” (Audio), เธซเธฃเธทเธญเธงเธดเธ”เธตเนเธญ (Video)</li>
-            <li>เนเธกเน€เธ”เธฅเนเธเธ Multimodal เนเธ”เนเธฃเธฑเธเธเธฒเธฃเธญเธญเธเนเธเธเนเธซเนเธชเธฒเธกเธฒเธฃเธ–เธเธฃเธฐเธกเธงเธฅเธเธฅ เธ—เธณเธเธงเธฒเธกเน€เธเนเธฒเนเธ เนเธฅเธฐเน€เธเธทเนเธญเธกเนเธขเธเธเนเธญเธกเธนเธฅเธเธฒเธเธชเธทเนเธญเธซเธฅเธฒเธขเธเธฃเธฐเน€เธ เธ—เธเธฃเนเธญเธกเธเธฑเธเนเธ”เนเธญเธขเนเธฒเธเธฅเธทเนเธเนเธซเธฅเธ เธฒเธขเนเธเนเธเธฃเธเธชเธฃเนเธฒเธเนเธกเน€เธ”เธฅเธ•เธฑเธงเน€เธ”เธตเธขเธง</li>
+            <li>คำว่า "Modality" หมายถึงรูปแบบของสื่อหรือข้อมูล เช่น ข้อความ (Text), รูปภาพ (Image), เสียงพูด (Audio), หรือวิดีโอ (Video)</li>
+            <li>โมเดลแบบ Multimodal ได้รับการออกแบบให้สามารถประมวลผล ทำความเข้าใจ และเชื่อมโยงข้อมูลจากสื่อหลายประเภทพร้อมกันได้อย่างลื่นไหลภายในโครงสร้างโมเดลตัวเดียว</li>
           </ul>
         `
       },
@@ -2096,21 +2096,21 @@ for oBall in range(0, N_BALLS):
         id: 39,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เนเธเนเธเธงเธเธดเธ”เธฃเธฐเธเธเธเธฑเธเธเธฒเธเธฃเธฐเธ”เธดเธฉเธเนเธขเธธเธเนเธซเธกเน (Agentic Workflows)',
-        ask: 'เธเธณเธงเนเธฒ <strong>"Multi-Agent Systems" (Agentic AI)</strong> เธซเธกเธฒเธขเธ–เธถเธเธฃเธฐเธเธเนเธเธเนเธญเนเธ”?',
+        premise: 'ในแนวคิดระบบปัญญาประดิษฐ์ยุคใหม่ (Agentic Workflows)',
+        ask: 'คำว่า <strong>"Multi-Agent Systems" (Agentic AI)</strong> หมายถึงระบบในข้อใด?',
         choices: [
-          { key: 'A', text: 'เธเธฒเธฃเน€เธเธดเนเธกเธเธณเธเธงเธเธซเธเนเธฒเธเธญเธเธญเธกเธเธดเธงเน€เธ•เธญเธฃเนเนเธซเนเนเธเธฃเนเธเธฃเธกเน€เธกเธญเธฃเนเธ—เธณเธเธฒเธเน€เธฃเนเธงเธเธถเนเธ' },
-          { key: 'B', text: 'เธเธฒเธฃเธฃเธงเธกเธ•เธฑเธงเธเธฑเธเธเธญเธ AI เธซเธฅเธฒเธขเน€เธญเน€เธเธเธ•เนเธ—เธตเนเธกเธตเธซเธเนเธฒเธ—เธตเนเน€เธเธเธฒเธฐเธ—เธฒเธเธ•เนเธฒเธเธเธฑเธ เน€เธเธทเนเธญเนเธเนเธเธเธฒเธเนเธฅเธฐเธเนเธงเธขเธเธฑเธเนเธเนเนเธเธ—เธขเนเธ—เธตเนเธเธฑเธเธเนเธญเธ' },
-          { key: 'C', text: 'เธเธฒเธฃเนเธเนเธญเธฑเธฅเธเธญเธฃเธดเธ—เธถเธกเน€เธเนเธฒเธฃเธซเธฑเธชเธฅเธฑเธเนเธเธเธฒเธฃเธฃเธฑเธเธฉเธฒเธเธงเธฒเธกเธเธฅเธญเธ”เธ เธฑเธขเธเธญเธเธเธฒเธเธเนเธญเธกเธนเธฅ' },
-          { key: 'D', text: 'เธเธฒเธฃเนเธเน AI เธ•เธฑเธงเน€เธ”เธตเธขเธงเธ•เธญเธเธเธณเธ–เธฒเธกเธเธนเนเนเธเนเธเธฃเนเธญเธกเธเธฑเธเธซเธฅเธฒเธขเธฅเนเธฒเธเธเธ' },
-          { key: 'E', text: 'เธฃเธฐเธเธเธ•เนเธญเธ•เนเธฒเธเนเธงเธฃเธฑเธชเธเธเธฃเธฐเธเธเธเธเธดเธเธฑเธ•เธดเธเธฒเธฃเธงเธดเธเนเธ”เธงเธชเน' }
+          { key: 'A', text: 'การเพิ่มจำนวนหน้าจอคอมพิวเตอร์ให้โปรแกรมเมอร์ทำงานเร็วขึ้น' },
+          { key: 'B', text: 'การรวมตัวกันของ AI หลายเอเจนต์ที่มีหน้าที่เฉพาะทางต่างกัน เพื่อแบ่งงานและช่วยกันแก้โจทย์ที่ซับซ้อน' },
+          { key: 'C', text: 'การใช้อัลกอริทึมเข้ารหัสลับในการรักษาความปลอดภัยของฐานข้อมูล' },
+          { key: 'D', text: 'การใช้ AI ตัวเดียวตอบคำถามผู้ใช้พร้อมกันหลายล้านคน' },
+          { key: 'E', text: 'ระบบต่อต้านไวรัสบนระบบปฏิบัติการวินโดวส์' }
         ],
         answer: 'B',
         explanation: `
           <p><strong>Multi-Agent Systems (MAS):</strong></p>
           <ul>
-            <li>เนเธ—เธเธ—เธตเนเธเธฐเนเธเน AI เธ•เธฑเธงเน€เธ”เธตเธขเธงเธ—เธณเธ—เธธเธเธญเธขเนเธฒเธ เธฃเธฐเธเธเธเธฐเนเธเนเธเธเธ—เธเธฒเธ—เนเธซเน AI เนเธ•เนเธฅเธฐเธ•เธฑเธงเธกเธตเธเธงเธฒเธกเน€เธเธตเนเธขเธงเธเธฒเธเน€เธเธเธฒเธฐ (เน€เธเนเธ Agent เธงเธฒเธเนเธเธ, Agent เธชเธฃเธธเธเธเนเธญเธกเธนเธฅ, Agent เน€เธเธตเธขเธเนเธเนเธ”, Agent เธ•เธฃเธงเธเธชเธญเธเธเธงเธฒเธกเธ–เธนเธเธ•เนเธญเธ)</li>
-            <li>AI เน€เธซเธฅเนเธฒเธเธตเนเธเธฐเธชเนเธเธ•เนเธญเธเนเธญเธกเธนเธฅ เธเธนเธ”เธเธธเธข เนเธฅเธฐเธ•เธฃเธงเธเธ—เธฒเธเธเธฒเธเธเธถเนเธเธเธฑเธเนเธฅเธฐเธเธฑเธเนเธเธเธกเธตเธเธฑเนเธเธ•เธญเธ (Autonomous Collaboration) เน€เธเธทเนเธญเนเธเนเธเธฑเธเธซเธฒเธ—เธตเนเธกเธตเธเธงเธฒเธกเธเธฑเธเธเนเธญเธเธชเธนเธ</li>
+            <li>แทนที่จะใช้ AI ตัวเดียวทำทุกอย่าง ระบบจะแบ่งบทบาทให้ AI แต่ละตัวมีความเชี่ยวชาญเฉพาะ (เช่น Agent วางแผน, Agent สรุปข้อมูล, Agent เขียนโค้ด, Agent ตรวจสอบความถูกต้อง)</li>
+            <li>AI เหล่านี้จะส่งต่อข้อมูล พูดคุย และตรวจทานงานซึ่งกันและกันแบบมีขั้นตอน (Autonomous Collaboration) เพื่อแก้ปัญหาที่มีความซับซ้อนสูง</li>
           </ul>
         `
       },
@@ -2118,21 +2118,21 @@ for oBall in range(0, N_BALLS):
         id: 40,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธเธฒเธฃเธเธณเน€เธ—เธเนเธเนเธฅเธขเธต Machine Learning เนเธเธเธฃเธฐเธขเธธเธเธ•เนเนเธเนเธเธฒเธเธเธฃเธดเธเนเธเธฃเธฐเธ”เธฑเธ Production',
-        ask: 'เธเนเธญเนเธ”เธเธฑเธ”เน€เธเนเธเธเธงเธฒเธกเน€เธเนเธฒเนเธเธเธดเธ”เธ—เธตเนเธญเธฑเธเธ•เธฃเธฒเธขเธ—เธตเนเธชเธธเธ” (<strong>Pitfall</strong>) เนเธเธเธฒเธฃเธเธณเนเธเธเธเธณเธฅเธญเธ Machine Learning เนเธเธเธฃเธฐเธขเธธเธเธ•เนเนเธเนเธเธฒเธเธเธฃเธดเธ?',
+        premise: 'การนำเทคโนโลยี Machine Learning ไปประยุกต์ใช้งานจริงในระดับ Production',
+        ask: 'ข้อใดจัดเป็นความเข้าใจผิดที่อันตรายที่สุด (<strong>Pitfall</strong>) ในการนำแบบจำลอง Machine Learning ไปประยุกต์ใช้งานจริง?',
         choices: [
-          { key: 'A', text: 'เธเธฒเธฃเธเธฒเธ”เธซเธงเธฑเธเธงเนเธฒเนเธกเน€เธ”เธฅ ML เธเธฐเธ•เนเธญเธเธกเธตเธเธงเธฒเธกเนเธกเนเธเธขเธณ 100% เธ•เธฅเธญเธ”เน€เธงเธฅเธฒ เนเธฅเธฐเนเธกเนเธ•เนเธญเธเธเธญเธขเธ•เธฃเธงเธเธชเธญเธเน€เธกเธทเนเธญเธเนเธญเธกเธนเธฅเธเธฃเธดเธเนเธเธญเธเธฒเธเธ•เน€เธเธฅเธตเนเธขเธเนเธเธฅเธ' },
-          { key: 'B', text: 'เธเธฒเธฃเธเธฑเธเธ—เธถเธ Log เธเธฒเธฃเธ•เธฑเธ”เธชเธดเธเนเธเธเธญเธเนเธกเน€เธ”เธฅเน€เธเนเธเนเธงเนเธ•เธฃเธงเธเธชเธญเธเธขเนเธญเธเธซเธฅเธฑเธ' },
-          { key: 'C', text: 'เธเธฒเธฃเธเธณเธเธนเนเน€เธเธตเนเธขเธงเธเธฒเธเธ—เธตเนเน€เธเนเธเธกเธเธธเธฉเธขเนเธกเธฒเธฃเนเธงเธกเธ•เธฃเธงเธเธชเธญเธเธเธงเธฒเธกเธ–เธนเธเธ•เนเธญเธเธเนเธญเธเธ•เธฑเธ”เธชเธดเธเนเธ' },
-          { key: 'D', text: 'เธเธฒเธฃเธ—เธ”เธชเธญเธเนเธกเน€เธ”เธฅเธเธฑเธเธเนเธญเธกเธนเธฅเธเธธเธ”เธ—เธ”เธชเธญเธ (Test set) เธ—เธตเนเนเธกเน€เธ”เธฅเนเธกเนเน€เธเธขเน€เธซเนเธเธกเธฒเธเนเธญเธ' },
-          { key: 'E', text: 'เธเธฒเธฃเธ—เธณเธเธงเธฒเธกเธชเธฐเธญเธฒเธ”เธเนเธญเธกเธนเธฅเน€เธเธทเนเธญเธฅเธ”เธเนเธฒเธเธดเธ”เธเธเธ•เธดเธเนเธญเธเธเธณเนเธเน€เธ—เธฃเธ' }
+          { key: 'A', text: 'การคาดหวังว่าโมเดล ML จะต้องมีความแม่นยำ 100% ตลอดเวลา และไม่ต้องคอยตรวจสอบเมื่อข้อมูลจริงในอนาคตเปลี่ยนแปลง' },
+          { key: 'B', text: 'การบันทึก Log การตัดสินใจของโมเดลเก็บไว้ตรวจสอบย้อนหลัง' },
+          { key: 'C', text: 'การนำผู้เชี่ยวชาญที่เป็นมนุษย์มาร่วมตรวจสอบความถูกต้องก่อนตัดสินใจ' },
+          { key: 'D', text: 'การทดสอบโมเดลกับข้อมูลชุดทดสอบ (Test set) ที่โมเดลไม่เคยเห็นมาก่อน' },
+          { key: 'E', text: 'การทำความสะอาดข้อมูลเพื่อลดค่าผิดปกติก่อนนำไปเทรน' }
         ],
         answer: 'A',
         explanation: `
-          <p>เธซเธฅเธธเธกเธเธฃเธฒเธเธชเธณเธเธฑเธเธเธญเธ Machine Learning:</p>
+          <p>หลุมพรางสำคัญของ Machine Learning:</p>
           <ul>
-            <li>เนเธกเน€เธ”เธฅ ML เธ—เธณเธเธฒเธเธเธเธเธทเนเธเธเธฒเธเธชเธ–เธดเธ•เธดเนเธฅเธฐเธเธงเธฒเธกเธเนเธฒเธเธฐเน€เธเนเธ <strong>เนเธกเนเธกเธตเนเธกเน€เธ”เธฅเนเธ”เธกเธตเธเธงเธฒเธกเนเธกเนเธเธขเธณ 100% เน€เธชเธกเธญเนเธ</strong></li>
-            <li>เธเนเธญเธกเธนเธฅเนเธเนเธฅเธเธเธงเธฒเธกเน€เธเนเธเธเธฃเธดเธเธกเธตเธเธฒเธฃเน€เธเธฅเธตเนเธขเธเนเธเธฅเธเธ•เธฅเธญเธ”เน€เธงเธฅเธฒ (Concept Drift / Distribution Shift) เธซเธฒเธเนเธกเนเธ•เธฃเธงเธเธชเธญเธเธญเธขเนเธฒเธเธชเธกเนเธณเน€เธชเธกเธญ เธเธฃเธฐเธชเธดเธ—เธเธดเธ เธฒเธเธเธญเธเนเธกเน€เธ”เธฅเธเธฐเธ•เธเธฅเธเนเธฅเธฐเธญเธฒเธเธเธณเนเธเธชเธนเนเธเธฒเธฃเธ•เธฑเธ”เธชเธดเธเนเธเธ—เธตเนเธเธดเธ”เธเธฅเธฒเธ”เธฃเนเธฒเธขเนเธฃเธ</li>
+            <li>โมเดล ML ทำงานบนพื้นฐานสถิติและความน่าจะเป็น <strong>ไม่มีโมเดลใดมีความแม่นยำ 100% เสมอไป</strong></li>
+            <li>ข้อมูลในโลกความเป็นจริงมีการเปลี่ยนแปลงตลอดเวลา (Concept Drift / Distribution Shift) หากไม่ตรวจสอบอย่างสม่ำเสมอ ประสิทธิภาพของโมเดลจะตกลงและอาจนำไปสู่การตัดสินใจที่ผิดพลาดร้ายแรง</li>
           </ul>
         `
       },
@@ -2140,21 +2140,21 @@ for oBall in range(0, N_BALLS):
         id: 41,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธ•เธฒเธกเน€เธญเธเธชเธฒเธฃเธเธฒเธฃเธเธฃเธฃเธขเธฒเธขเน€เธฃเธทเนเธญเธ AI Ethics & Governance',
-        ask: 'เธเนเธญเนเธ”เธญเธเธดเธเธฒเธขเธเธงเธฒเธกเนเธ•เธเธ•เนเธฒเธเธฃเธฐเธซเธงเนเธฒเธ <strong>"Ethical AI"</strong> เนเธฅเธฐ <strong>"Responsible AI"</strong> เนเธ”เนเธญเธขเนเธฒเธเธเธฑเธ”เน€เธเธเธ—เธตเนเธชเธธเธ”?',
+        premise: 'ตามเอกสารการบรรยายเรื่อง AI Ethics & Governance',
+        ask: 'ข้อใดอธิบายความแตกต่างระหว่าง <strong>"Ethical AI"</strong> และ <strong>"Responsible AI"</strong> ได้อย่างชัดเจนที่สุด?',
         choices: [
-          { key: 'A', text: 'Ethical AI เน€เธเนเธเธเธฃเธญเธเนเธเธงเธเธดเธ”เน€เธเธดเธเธเธฃเธฑเธเธเธฒเนเธฅเธฐเธเธธเธ“เธเนเธฒ ("เน€เธฃเธฒเธเธงเธฃเธ—เธณเธญเธฐเนเธฃ?") | Responsible AI เธเธทเธญเธเธฒเธฃเนเธเธฅเธเนเธเธงเธเธดเธ”เนเธเธชเธนเนเธเนเธขเธเธฒเธขเนเธฅเธฐเธเธฒเธฃเธเธเธดเธเธฑเธ•เธดเธเธฃเธดเธ ("เน€เธฃเธฒเธเธฐเธ—เธณเธญเธขเนเธฒเธเนเธฃเนเธซเนเธเธฅเธญเธ”เธ เธฑเธข?")' },
-          { key: 'B', text: 'Ethical AI เธชเธณเธซเธฃเธฑเธเธซเธเนเธงเธขเธเธฒเธเธฃเธฑเธเน€เธ—เนเธฒเธเธฑเนเธ | Responsible AI เธชเธณเธซเธฃเธฑเธเธเธฃเธดเธฉเธฑเธ—เน€เธญเธเธเธ' },
-          { key: 'C', text: 'Responsible AI เน€เธเนเธเน€เธฃเธทเนเธญเธเธเธญเธเธเธเธซเธกเธฒเธขเธฅเธดเธเธชเธดเธ—เธเธดเน | Ethical AI เน€เธเนเธเน€เธฃเธทเนเธญเธเธเธญเธเธเธงเธฒเธกเน€เธฃเนเธงเธญเธดเธเน€เธ—เธญเธฃเนเน€เธเนเธ•' },
-          { key: 'D', text: 'Ethical AI เน€เธฅเธดเธเนเธเนเนเธฅเนเธงเนเธเธเธฑเธเธเธธเธเธฑเธเนเธฅเธฐเธ–เธนเธเนเธ—เธเธ—เธตเนเธ”เนเธงเธข Responsible AI เธ—เธฑเนเธเธซเธกเธ”' },
-          { key: 'E', text: 'เธ—เธฑเนเธเธชเธญเธเธเธณเธกเธตเธเธงเธฒเธกเธซเธกเธฒเธขเน€เธ”เธตเธขเธงเธเธฑเธเธ—เธธเธเธเธฃเธฐเธเธฒเธฃเนเธฅเธฐเนเธกเนเธกเธตเธเธงเธฒเธกเนเธ•เธเธ•เนเธฒเธเนเธเธ—เธฒเธเธเธเธดเธเธฑเธ•เธด' }
+          { key: 'A', text: 'Ethical AI เป็นกรอบแนวคิดเชิงปรัชญาและคุณค่า ("เราควรทำอะไร?") | Responsible AI คือการแปลงแนวคิดไปสู่นโยบายและการปฏิบัติจริง ("เราจะทำอย่างไรให้ปลอดภัย?")' },
+          { key: 'B', text: 'Ethical AI สำหรับหน่วยงานรัฐเท่านั้น | Responsible AI สำหรับบริษัทเอกชน' },
+          { key: 'C', text: 'Responsible AI เป็นเรื่องของกฎหมายลิขสิทธิ์ | Ethical AI เป็นเรื่องของความเร็วอินเทอร์เน็ต' },
+          { key: 'D', text: 'Ethical AI เลิกใช้แล้วในปัจจุบันและถูกแทนที่ด้วย Responsible AI ทั้งหมด' },
+          { key: 'E', text: 'ทั้งสองคำมีความหมายเดียวกันทุกประการและไม่มีความแตกต่างในทางปฏิบัติ' }
         ],
         answer: 'A',
         explanation: `
-          <p>เธเธฒเธฃเน€เธเธฃเธตเธขเธเน€เธ—เธตเธขเธเธ•เธฒเธกเธเธฃเธญเธเธกเธฒเธ•เธฃเธเธฒเธ:</p>
+          <p>การเปรียบเทียบตามกรอบมาตรฐาน:</p>
           <ul>
-            <li><strong>Ethical AI (เน€เธเธดเธเธเธฃเธฑเธเธเธฒเนเธฅเธฐเธเธธเธ“เธเนเธฒ):</strong> เน€เธเนเธเธเธฒเธฃเธ•เธฑเนเธเธเธณเธ–เธฒเธกเน€เธเธดเธเธเธธเธ“เธเธฃเธฃเธก เน€เธเนเธ เธเธงเธฒเธกเน€เธเนเธเธเธฃเธฃเธก (Fairness), เธเธฒเธฃเน€เธเธฒเธฃเธเธชเธดเธ—เธเธดเธกเธเธธเธฉเธขเธเธ ("What should we do?")</li>
-            <li><strong>Responsible AI (เน€เธเธดเธเธเธเธดเธเธฑเธ•เธดเนเธฅเธฐเธเธฒเธฃเธเธณเธเธฑเธเธ”เธนเนเธฅ):</strong> เน€เธเนเธเธเธฒเธฃเธเธณเธซเธฅเธฑเธเธเธฒเธฃเธ—เธฒเธเธเธฃเธดเธขเธเธฃเธฃเธกเธกเธฒเนเธเธฅเธเน€เธเนเธเธเธฃเธฐเธเธงเธเธเธฒเธฃเธ•เธฃเธงเธเธชเธญเธเธ—เธตเนเน€เธเนเธเธฃเธนเธเธเธฃเธฃเธก (Governance, Audit, Risk Assessment, HITL) เนเธเธ—เธธเธเธเธฑเนเธเธ•เธญเธเธเธฒเธฃเธเธฑเธ’เธเธฒ ("How do we implement it responsibly?")</li>
+            <li><strong>Ethical AI (เชิงปรัชญาและคุณค่า):</strong> เน้นการตั้งคำถามเชิงคุณธรรม เช่น ความเป็นธรรม (Fairness), การเคารพสิทธิมนุษยชน ("What should we do?")</li>
+            <li><strong>Responsible AI (เชิงปฏิบัติและการกำกับดูแล):</strong> เน้นการนำหลักการทางจริยธรรมมาแปลงเป็นกระบวนการตรวจสอบที่เป็นรูปธรรม (Governance, Audit, Risk Assessment, HITL) ในทุกขั้นตอนการพัฒนา ("How do we implement it responsibly?")</li>
           </ul>
         `
       },
@@ -2162,21 +2162,21 @@ for oBall in range(0, N_BALLS):
         id: 42,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธฃเธฐเธเธ AI เธเธฑเธ”เธเธฃเธญเธเน€เธฃเธเธนเน€เธกเนเธเธญเธเธเธฃเธดเธฉเธฑเธ— เธ•เธฑเธ”เธชเธดเธ—เธเธดเนเนเธเธชเธกเธฑเธเธฃเธเธญเธเธเธนเนเธชเธกเธฑเธเธฃเธซเธเธดเธเธญเธญเธเธเธฒเธเธ•เธณเนเธซเธเนเธเธงเธดเธจเธงเธเธฃเนเธ”เธขเธญเธฑเธ•เนเธเธกเธฑเธ•เธด เธ—เธณเนเธซเนเน€เธชเธตเธขเนเธญเธเธฒเธชเนเธเธเธฒเธฃเนเธ”เนเธฃเธฑเธเธเธฒเธฃเธเนเธฒเธเธเธฒเธ',
-        ask: 'เน€เธซเธ•เธธเธเธฒเธฃเธ“เนเธเธตเนเธเธฑเธ”เน€เธเนเธเธญเธฑเธเธ•เธฃเธฒเธขเธเธญเธ AI (<strong>AI Harm</strong>) เนเธเธซเธกเธงเธ”เธซเธกเธนเนเนเธ”?',
+        premise: 'ระบบ AI คัดกรองเรซูเม่ของบริษัท ตัดสิทธิ์ใบสมัครของผู้สมัครหญิงออกจากตำแหน่งวิศวกรโดยอัตโนมัติ ทำให้เสียโอกาสในการได้รับการจ้างงาน',
+        ask: 'เหตุการณ์นี้จัดเป็นอันตรายของ AI (<strong>AI Harm</strong>) ในหมวดหมู่ใด?',
         choices: [
           { key: 'A', text: 'Quality-of-Service Harm' },
-          { key: 'B', text: 'Allocative Harm (เธญเธฑเธเธ•เธฃเธฒเธขเธเธฒเธเธเธฒเธฃเธเธฑเธ”เธชเธฃเธฃเนเธญเธเธฒเธชเนเธฅเธฐเธ—เธฃเธฑเธเธขเธฒเธเธฃ)' },
+          { key: 'B', text: 'Allocative Harm (อันตรายจากการจัดสรรโอกาสและทรัพยากร)' },
           { key: 'C', text: 'Interpersonal Harm' },
           { key: 'D', text: 'Social System Harm' },
           { key: 'E', text: 'Physical Harm' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธเธฃเธฐเน€เธ เธ—เธเธญเธเธเธงเธฒเธกเน€เธชเธตเธขเธซเธฒเธขเธเธฒเธ AI (Harms of AI):</p>
+          <p>ประเภทของความเสียหายจาก AI (Harms of AI):</p>
           <ul>
-            <li><strong>Allocative Harm:</strong> เน€เธเธดเธ”เธเธถเนเธเน€เธกเธทเนเธญเธฃเธฐเธเธ AI เธเธตเธ”เธเธฑเธเธซเธฃเธทเธญเธเธฑเธ”เธชเธฃเธฃเธ—เธฃเธฑเธเธขเธฒเธเธฃ เนเธญเธเธฒเธช เธซเธฃเธทเธญเธชเธดเธ—เธเธดเธเธฃเธฐเนเธขเธเธเนเธ—เธตเนเธชเธณเธเธฑเธเนเธเธเธตเธงเธดเธ•เธญเธขเนเธฒเธเนเธกเนเน€เธเนเธเธเธฃเธฃเธก เน€เธเนเธ เธเธฒเธฃเธฃเธฑเธเน€เธเนเธฒเธ—เธณเธเธฒเธ, เธเธฒเธฃเธญเธเธธเธกเธฑเธ•เธดเน€เธเธดเธเธเธนเน, เธซเธฃเธทเธญเธเธฒเธฃเนเธ”เนเธฃเธฑเธเธ—เธธเธเธเธฒเธฃเธจเธถเธเธฉเธฒ</li>
-            <li><strong>Quality-of-Service Harm:</strong> เน€เธเธดเธ”เธเธถเนเธเน€เธกเธทเนเธญเธฃเธฐเธเธเธ—เธณเธเธฒเธเนเธซเนเธเธเธเธฒเธเธเธฅเธธเนเธกเนเธ”เนเธกเธตเธเธฃเธฐเธชเธดเธ—เธเธดเธ เธฒเธเธ•เนเธณเธเธงเนเธฒเธเธฅเธธเนเธกเธญเธทเนเธ เน€เธเนเธ เธฃเธฐเธเธเธ•เธฃเธงเธเธเธฑเธเนเธเธซเธเนเธฒเธ—เธณเธเธฒเธเนเธ”เนเนเธขเนเธเธฑเธเธเธเธเธดเธงเธชเธต</li>
+            <li><strong>Allocative Harm:</strong> เกิดขึ้นเมื่อระบบ AI กีดกันหรือจัดสรรทรัพยากร โอกาส หรือสิทธิประโยชน์ที่สำคัญในชีวิตอย่างไม่เป็นธรรม เช่น การรับเข้าทำงาน, การอนุมัติเงินกู้, หรือการได้รับทุนการศึกษา</li>
+            <li><strong>Quality-of-Service Harm:</strong> เกิดขึ้นเมื่อระบบทำงานให้คนบางกลุ่มได้มีประสิทธิภาพต่ำกว่ากลุ่มอื่น เช่น ระบบตรวจจับใบหน้าทำงานได้แย่กับคนผิวสี</li>
           </ul>
         `
       },
@@ -2184,21 +2184,21 @@ for oBall in range(0, N_BALLS):
         id: 43,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธ—เธตเนเธกเธฒเธเธญเธเธเธงเธฒเธกเธฅเธณเน€เธญเธตเธขเธเนเธเธฃเธฐเธเธเธเธฑเธเธเธฒเธเธฃเธฐเธ”เธดเธฉเธเน (Sources of AI Bias)',
-        ask: 'เธเนเธญเนเธ”เธญเธเธดเธเธฒเธขเธเธงเธฒเธกเนเธ•เธเธ•เนเธฒเธเธฃเธฐเธซเธงเนเธฒเธ <strong>Systemic Bias (เธญเธเธ•เธดเน€เธเธดเธเธฃเธฐเธเธ)</strong> เธเธฑเธ <strong>Data Bias (เธญเธเธ•เธดเธเธฒเธเธเนเธญเธกเธนเธฅ)</strong> เนเธ”เนเธญเธขเนเธฒเธเธ–เธนเธเธ•เนเธญเธ?',
+        premise: 'ที่มาของความลำเอียงในระบบปัญญาประดิษฐ์ (Sources of AI Bias)',
+        ask: 'ข้อใดอธิบายความแตกต่างระหว่าง <strong>Systemic Bias (อคติเชิงระบบ)</strong> กับ <strong>Data Bias (อคติจากข้อมูล)</strong> ได้อย่างถูกต้อง?',
         choices: [
-          { key: 'A', text: 'Systemic Bias เน€เธเธดเธ”เธเธฒเธเธเนเธญเธเธดเธ”เธเธฅเธฒเธ”เธเธญเธเธเธตเธเธตเธขเธน | Data Bias เน€เธเธดเธ”เธเธฒเธเธฃเธฐเธเธเธเธเธดเธเธฑเธ•เธดเธเธฒเธฃ' },
-          { key: 'B', text: 'Systemic Bias เน€เธเธดเธ”เธเธฒเธเธเธงเธฒเธกเน€เธซเธฅเธทเนเธญเธกเธฅเนเธณเน€เธเธดเธเนเธเธฃเธเธชเธฃเนเธฒเธเนเธฅเธฐเธเธฃเธฐเธงเธฑเธ•เธดเธจเธฒเธชเธ•เธฃเนเนเธเธชเธฑเธเธเธก | Data Bias เน€เธเธดเธ”เธเธฒเธเธเธธเธ”เธเนเธญเธกเธนเธฅเธ—เธตเนเน€เธเนเธเธกเธฒเนเธกเนเธชเธกเธ”เธธเธฅเธซเธฃเธทเธญเนเธกเนเน€เธเนเธเธ•เธฑเธงเนเธ—เธเธ—เธตเนเธ”เธต' },
-          { key: 'C', text: 'Data Bias เนเธเนเนเธเนเธกเนเนเธ”เน เนเธ•เน Systemic Bias เธชเธฒเธกเธฒเธฃเธ–เนเธเนเนเธ”เนเธ”เนเธงเธขเธเธฒเธฃเธเธ”เธเธธเนเธก Restart' },
-          { key: 'D', text: 'Systemic Bias เน€เธเธดเธ”เธเธถเนเธเน€เธเธเธฒเธฐเธเธฑเธ Generative AI เน€เธ—เนเธฒเธเธฑเนเธ' },
-          { key: 'E', text: 'Data Bias เธเธทเธญเธเธฒเธฃเธ—เธตเน AI เธกเธตเธเธงเธฒเธกเธเธดเธ”เน€เธเนเธเธเธญเธเธ•เธฑเธงเน€เธญเธ' }
+          { key: 'A', text: 'Systemic Bias เกิดจากข้อผิดพลาดของซีพียู | Data Bias เกิดจากระบบปฏิบัติการ' },
+          { key: 'B', text: 'Systemic Bias เกิดจากความเหลื่อมล้ำเชิงโครงสร้างและประวัติศาสตร์ในสังคม | Data Bias เกิดจากชุดข้อมูลที่เก็บมาไม่สมดุลหรือไม่เป็นตัวแทนที่ดี' },
+          { key: 'C', text: 'Data Bias แก้ไขไม่ได้ แต่ Systemic Bias สามารถแก้ได้ด้วยการกดปุ่ม Restart' },
+          { key: 'D', text: 'Systemic Bias เกิดขึ้นเฉพาะกับ Generative AI เท่านั้น' },
+          { key: 'E', text: 'Data Bias คือการที่ AI มีความคิดเป็นของตัวเอง' }
         ],
         answer: 'B',
         explanation: `
-          <p>เธ—เธตเนเธกเธฒเธเธญเธเธญเธเธ•เธด (Sources of Bias):</p>
+          <p>ที่มาของอคติ (Sources of Bias):</p>
           <ul>
-            <li><strong>Systemic Bias (เธญเธเธ•เธดเน€เธเธดเธเธฃเธฐเธเธ):</strong> เธกเธฒเธเธฒเธเธเนเธฒเธเธดเธขเธก เธญเธเธ•เธด เธซเธฃเธทเธญเธเธงเธฒเธกเนเธกเนเน€เธ—เนเธฒเน€เธ—เธตเธขเธกเธ—เธตเนเธกเธตเธญเธขเธนเนเนเธเนเธเธฃเธเธชเธฃเนเธฒเธเธชเธฑเธเธเธกเนเธฅเธฐเธเธฃเธฐเธงเธฑเธ•เธดเธจเธฒเธชเธ•เธฃเนเธเธญเธเธกเธเธธเธฉเธขเนเธญเธขเธนเนเนเธฅเนเธง</li>
-            <li><strong>Data Bias (เธญเธเธ•เธดเธเธฒเธเธเนเธญเธกเธนเธฅ):</strong> เน€เธเธดเธ”เธเธฒเธเธเธฃเธฐเธเธงเธเธเธฒเธฃเน€เธเนเธเธฃเธงเธเธฃเธงเธกเธเนเธญเธกเธนเธฅเธ—เธตเนเนเธกเนเธฃเธญเธเธ”เนเธฒเธ เธ•เธฑเธงเธญเธขเนเธฒเธเนเธกเนเน€เธเนเธเธ•เธฑเธงเนเธ—เธเธเธญเธเธเธฃเธฐเธเธฒเธเธฃเธเธฃเธดเธ (Unrepresentative Sampling) เธซเธฃเธทเธญเธกเธตเธเธฒเธฃเธ•เธดเธ”เธเนเธฒเธขเธเธณเธเธฑเธเธ—เธตเนเนเธกเนเธ–เธนเธเธ•เนเธญเธ</li>
+            <li><strong>Systemic Bias (อคติเชิงระบบ):</strong> มาจากค่านิยม อคติ หรือความไม่เท่าเทียมที่มีอยู่ในโครงสร้างสังคมและประวัติศาสตร์ของมนุษย์อยู่แล้ว</li>
+            <li><strong>Data Bias (อคติจากข้อมูล):</strong> เกิดจากกระบวนการเก็บรวบรวมข้อมูลที่ไม่รอบด้าน ตัวอย่างไม่เป็นตัวแทนของประชากรจริง (Unrepresentative Sampling) หรือมีการติดป้ายกำกับที่ไม่ถูกต้อง</li>
           </ul>
         `
       },
@@ -2206,21 +2206,21 @@ for oBall in range(0, N_BALLS):
         id: 44,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เนเธเธเธฒเธฃเธเธณ AI เนเธเธเธฃเธฐเธขเธธเธเธ•เนเนเธเนเธเธฑเธเธเธฒเธเธ—เธตเนเธกเธตเธเธงเธฒเธกเน€เธชเธตเนเธขเธเธชเธนเธ (High-Stakes Applications) เน€เธเนเธ เธเธฒเธฃเธงเธดเธเธดเธเธเธฑเธขเนเธฃเธ เธซเธฃเธทเธญเธเธฒเธฃเธเธดเธเธฒเธฃเธ“เธฒเธเธ”เธตเนเธเธจเธฒเธฅ',
-        ask: 'เน€เธเธฃเธฒเธฐเน€เธซเธ•เธธเนเธ”เธเธถเธเธ•เนเธญเธเธเธณเนเธเธงเธเธดเธ” <strong>"Human-in-the-Loop" (HITL)</strong> เธกเธฒเธเธฑเธเธเธฑเธเนเธเนเน€เธชเธกเธญ?',
+        premise: 'ในการนำ AI ไปประยุกต์ใช้กับงานที่มีความเสี่ยงสูง (High-Stakes Applications) เช่น การวินิจฉัยโรค หรือการพิจารณาคดีในศาล',
+        ask: 'เพราะเหตุใดจึงต้องนำแนวคิด <strong>"Human-in-the-Loop" (HITL)</strong> มาบังคับใช้เสมอ?',
         choices: [
-          { key: 'A', text: 'เน€เธเธทเนเธญเธเนเธงเธขเนเธเธฅเธเธชเธเธธเธฅเนเธเธฅเนเธงเธดเธ”เธตเนเธญเธเธเนเธ—เธฃเธจเธฑเธเธ—เนเธกเธทเธญเธ–เธทเธญ' },
-          { key: 'B', text: 'เน€เธเธทเนเธญเนเธซเนเธกเธเธธเธฉเธขเนเธเธนเนเน€เธเธตเนเธขเธงเธเธฒเธเธขเธฑเธเธเธเธกเธตเธญเธณเธเธฒเธเธ•เธฃเธงเธเธชเธญเธ เน€เธเนเธเธเธนเนเธ•เธฑเธ”เธชเธดเธเนเธเธเธฑเนเธเธชเธธเธ”เธ—เนเธฒเธข เนเธฅเธฐเธฃเธฑเธเธเธดเธ”เธเธญเธเธ•เธฒเธกเธเธเธซเธกเธฒเธข' },
-          { key: 'C', text: 'เน€เธเธทเนเธญเธเนเธงเธขเธเธฑเธ”เน€เธฃเธตเธขเธเนเธญเธเธญเธเธเธเธซเธเนเธฒเธเธญเธเธญเธกเธเธดเธงเน€เธ•เธญเธฃเน' },
-          { key: 'D', text: 'เน€เธเธทเนเธญเธ•เธฑเนเธเน€เธงเธฅเธฒเธเธฒเธฌเธดเธเธฒเธเธฅเธธเธเธ•เธญเธเน€เธเนเธฒ' },
-          { key: 'E', text: 'เน€เธเธทเนเธญเธเนเธงเธขเธเธณเธเธงเธ“เธชเธนเธ•เธฃเธเธนเธ“เนเธกเน 2 เธ–เธถเธ 12' }
+          { key: 'A', text: 'เพื่อช่วยแปลงสกุลไฟล์วิดีโอบนโทรศัพท์มือถือ' },
+          { key: 'B', text: 'เพื่อให้มนุษย์ผู้เชี่ยวชาญยังคงมีอำนาจตรวจสอบ เป็นผู้ตัดสินใจขั้นสุดท้าย และรับผิดชอบตามกฎหมาย' },
+          { key: 'C', text: 'เพื่อช่วยจัดเรียงไอคอนบนหน้าจอคอมพิวเตอร์' },
+          { key: 'D', text: 'เพื่อตั้งเวลานาฬิกาปลุกตอนเช้า' },
+          { key: 'E', text: 'เพื่อช่วยคำนวณสูตรคูณแม่ 2 ถึง 12' }
         ],
         answer: 'B',
         explanation: `
           <p><strong>Human-in-the-Loop (HITL):</strong></p>
           <ul>
-            <li>เธเธทเธญเธเธฒเธฃเธเธณเธซเธเธ”เนเธซเนเธ•เนเธญเธเธกเธต "เธกเธเธธเธฉเธขเนเธเธนเนเน€เธเธตเนเธขเธงเธเธฒเธ" เธเธญเธขเธ•เธฃเธงเธเธชเธญเธ เธเธณเธเธฑเธเธ”เธนเนเธฅ เนเธฅเธฐเน€เธเนเธเธเธนเนเธ•เธฑเธ”เธชเธดเธเนเธเธเธฑเนเธเธชเธธเธ”เธ—เนเธฒเธข (Final Decision Maker)</li>
-            <li>เธกเธตเธเธงเธฒเธกเธเธณเน€เธเนเธเธญเธขเนเธฒเธเธขเธดเนเธเธขเธงเธ”เนเธเธเธฃเธดเธเธ—เธ—เธตเนเธกเธตเธเธงเธฒเธกเน€เธชเธตเนเธขเธเธชเธนเธ (High-Stakes Applications) เน€เธเนเธ เธเธฒเธฃเธงเธดเธเธดเธเธเธฑเธขเนเธฃเธเธเธนเนเธเนเธงเธข, เธเธฒเธฃเธเธดเธเธฒเธฃเธ“เธฒเธเธ”เธตเธเธงเธฒเธก, เธซเธฃเธทเธญเธฃเธฐเธเธเธเธตเธเธเธฒเธงเธธเธ เน€เธเธทเนเธญเธฃเธฑเธเธฉเธฒเธเธงเธฒเธกเธฃเธฑเธเธเธดเธ”เธเธญเธเธ—เธฒเธเธเธเธซเธกเธฒเธขเนเธฅเธฐเธเธฃเธดเธขเธเธฃเธฃเธก</li>
+            <li>คือการกำหนดให้ต้องมี "มนุษย์ผู้เชี่ยวชาญ" คอยตรวจสอบ กำกับดูแล และเป็นผู้ตัดสินใจขั้นสุดท้าย (Final Decision Maker)</li>
+            <li>มีความจำเป็นอย่างยิ่งยวดในบริบทที่มีความเสี่ยงสูง (High-Stakes Applications) เช่น การวินิจฉัยโรคผู้ป่วย, การพิจารณาคดีความ, หรือระบบขีปนาวุธ เพื่อรักษาความรับผิดชอบทางกฎหมายและจริยธรรม</li>
           </ul>
         `
       },
@@ -2228,23 +2228,23 @@ for oBall in range(0, N_BALLS):
         id: 45,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เธ•เธฒเธกเน€เธญเธเธชเธฒเธฃ Boost Productivity with AI Prompting',
-        ask: 'เธญเธเธเนเธเธฃเธฐเธเธญเธเธซเธฅเธฑเธ 4 เธเธฃเธฐเธเธฒเธฃเนเธเธเธฒเธฃเน€เธเธตเธขเธเธเธณเธชเธฑเนเธ (<strong>Anatomy of a Good Prompt</strong>) เน€เธเธทเนเธญเนเธซเนเนเธ”เนเธเธฅเธฅเธฑเธเธเนเนเธกเนเธเธขเธณเธ—เธตเนเธชเธธเธ” เธเธฃเธฐเธเธญเธเธ”เนเธงเธขเธญเธฐเนเธฃเธเนเธฒเธ?',
+        premise: 'ตามเอกสาร Boost Productivity with AI Prompting',
+        ask: 'องค์ประกอบหลัก 4 ประการในการเขียนคำสั่ง (<strong>Anatomy of a Good Prompt</strong>) เพื่อให้ได้ผลลัพธ์แม่นยำที่สุด ประกอบด้วยอะไรบ้าง?',
         choices: [
           { key: 'A', text: 'Username, Password, Token, Endpoint' },
-          { key: 'B', text: '<strong>Role</strong> (เธเธ—เธเธฒเธ—), <strong>Task</strong> (เธ เธฒเธฃเธเธดเธ), <strong>Context</strong> (เธเธฃเธดเธเธ—/เน€เธเธทเนเธญเธเนเธ), เนเธฅเธฐ <strong>Output Format</strong> (เธฃเธนเธเนเธเธเธเธฅเธฅเธฑเธเธเน)' },
+          { key: 'B', text: '<strong>Role</strong> (บทบาท), <strong>Task</strong> (ภารกิจ), <strong>Context</strong> (บริบท/เงื่อนไข), และ <strong>Output Format</strong> (รูปแบบผลลัพธ์)' },
           { key: 'C', text: 'Python, Pygame, NumPy, Pandas' },
           { key: 'D', text: 'Introduction, Body, Conclusion, Citation' },
           { key: 'E', text: 'Model, Temperature, Top-P, Frequency' }
         ],
         answer: 'B',
         explanation: `
-          <p>เนเธเธฃเธเธชเธฃเนเธฒเธ Prompt เธ—เธตเนเธกเธตเธเธฃเธฐเธชเธดเธ—เธเธดเธ เธฒเธเธชเธนเธเธชเธธเธ”เธเธฃเธฐเธเธญเธเธ”เนเธงเธข 4 เธชเนเธงเธเธชเธณเธเธฑเธ:</p>
+          <p>โครงสร้าง Prompt ที่มีประสิทธิภาพสูงสุดประกอบด้วย 4 ส่วนสำคัญ:</p>
           <ol>
-            <li><strong>Role:</strong> เธเธณเธซเธเธ”เธเธ—เธเธฒเธ—เธซเธฃเธทเธญเธเธงเธฒเธกเน€เธเธตเนเธขเธงเธเธฒเธเนเธซเน AI (เน€เธเนเธ "เธเธธเธ“เธเธทเธญเธงเธดเธจเธงเธเธฃเธเธญเธเธ•เนเนเธงเธฃเนเธเธนเนเน€เธเธตเนเธขเธงเธเธฒเธ")</li>
-            <li><strong>Task:</strong> เธเธญเธเธชเธดเนเธเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃเนเธซเนเธ—เธณเธญเธขเนเธฒเธเน€เธเธฒเธฐเธเธเธเธฑเธ”เน€เธเธ (Action Verb)</li>
-            <li><strong>Context:</strong> เนเธซเนเธเนเธญเธกเธนเธฅเธ เธนเธกเธดเธซเธฅเธฑเธ เน€เธเธทเนเธญเธเนเธ เธเนเธญเธเธณเธเธฑเธ” เธซเธฃเธทเธญเธเธฅเธธเนเธกเน€เธเนเธฒเธซเธกเธฒเธข</li>
-            <li><strong>Output Format:</strong> เธฃเธฐเธเธธเธฃเธนเธเนเธเธเธเธฒเธฃเนเธชเธ”เธเธเธฅเธ—เธตเนเธ•เนเธญเธเธเธฒเธฃเธญเธขเนเธฒเธเธเธฑเธ”เน€เธเธ (เน€เธเนเธ JSON, เธ•เธฒเธฃเธฒเธ Markdown, Bullet points)</li>
+            <li><strong>Role:</strong> กำหนดบทบาทหรือความเชี่ยวชาญให้ AI (เช่น "คุณคือวิศวกรซอฟต์แวร์ผู้เชี่ยวชาญ")</li>
+            <li><strong>Task:</strong> บอกสิ่งที่ต้องการให้ทำอย่างเจาะจงชัดเจน (Action Verb)</li>
+            <li><strong>Context:</strong> ให้ข้อมูลภูมิหลัง เงื่อนไข ข้อจำกัด หรือกลุ่มเป้าหมาย</li>
+            <li><strong>Output Format:</strong> ระบุรูปแบบการแสดงผลที่ต้องการอย่างชัดเจน (เช่น JSON, ตาราง Markdown, Bullet points)</li>
           </ol>
         `
       },
@@ -2252,21 +2252,21 @@ for oBall in range(0, N_BALLS):
         id: 46,
         cat: 'ai',
         catLabel: 'Artificial Intelligence',
-        premise: 'เน€เธ—เธเธเธดเธเธเธฒเธฃเน€เธเธตเธขเธเธเธณเธชเธฑเนเธเธ—เธตเนเธฃเธฐเธเธธเนเธซเนเนเธกเน€เธ”เธฅ AI <em>"เธเธเธเธดเธ”เนเธฅเธฐเนเธชเธ”เธเธเธฑเนเธเธ•เธญเธเธเธฒเธฃเนเธเนเธเธฑเธเธซเธฒเธ—เธตเธฅเธฐเธชเน€เธ•เนเธ (Think step by step)"</em>',
-        ask: 'เน€เธ—เธเธเธดเธเธเธตเนเธกเธตเธเธทเนเธญเน€เธฃเธตเธขเธเธงเนเธฒเธญเธฐเนเธฃ เนเธฅเธฐเธเนเธงเธขเน€เธเธดเนเธกเธเธฃเธฐเธชเธดเธ—เธเธดเธ เธฒเธเธ”เนเธฒเธเนเธ”เนเธซเนเนเธเน AI?',
+        premise: 'เทคนิคการเขียนคำสั่งที่ระบุให้โมเดล AI <em>"จงคิดและแสดงขั้นตอนการแก้ปัญหาทีละสเต็ป (Think step by step)"</em>',
+        ask: 'เทคนิคนี้มีชื่อเรียกว่าอะไร และช่วยเพิ่มประสิทธิภาพด้านใดให้แก่ AI?',
         choices: [
-          { key: 'A', text: 'Zero-shot Prompting เธเนเธงเธขเนเธซเน AI เธ•เธญเธเธชเธฑเนเธเธฅเธ' },
-          { key: 'B', text: '<strong>Chain-of-Thought (CoT) Prompting</strong> เธเนเธงเธขเนเธซเน AI เนเธฅเนเน€เธฃเธตเธขเธเธ•เธฃเธฃเธเธฐเธ—เธตเธฅเธฐเธเธฑเนเธ เธฅเธ”เธญเธฒเธเธฒเธฃเธซเธฅเธญเธ (Hallucination) เนเธฅเธฐเน€เธเธดเนเธกเธเธงเธฒเธกเนเธกเนเธเธขเธณเนเธเธเธฒเธฃเธเธณเธเธงเธ“' },
-          { key: 'C', text: 'Role-Playing Prompting เธเนเธงเธขเนเธซเน AI เธกเธตเธญเธฒเธฃเธกเธ“เนเธเธฑเธ' },
-          { key: 'D', text: 'Prompt Inversion เธเนเธงเธขเนเธเธเธฒเธฃเนเธฎเธเธฃเธฐเธเธเธฃเธฑเธเธฉเธฒเธเธงเธฒเธกเธเธฅเธญเธ”เธ เธฑเธข' },
-          { key: 'E', text: 'Negative Prompting เนเธเนเธฅเธเธเธณเธ—เธตเนเนเธกเนเธ•เนเธญเธเธเธฒเธฃเธญเธญเธเธเธฒเธเธฃเธนเธเธ เธฒเธเน€เธ—เนเธฒเธเธฑเนเธ' }
+          { key: 'A', text: 'Zero-shot Prompting ช่วยให้ AI ตอบสั้นลง' },
+          { key: 'B', text: '<strong>Chain-of-Thought (CoT) Prompting</strong> ช่วยให้ AI ไล่เรียงตรรกะทีละขั้น ลดอาการหลอน (Hallucination) และเพิ่มความแม่นยำในการคำนวณ' },
+          { key: 'C', text: 'Role-Playing Prompting ช่วยให้ AI มีอารมณ์ขัน' },
+          { key: 'D', text: 'Prompt Inversion ช่วยในการแฮกระบบรักษาความปลอดภัย' },
+          { key: 'E', text: 'Negative Prompting ใช้ลบคำที่ไม่ต้องการออกจากรูปภาพเท่านั้น' }
         ],
         answer: 'B',
         explanation: `
           <p><strong>Chain-of-Thought (CoT) Prompting:</strong></p>
           <ul>
-            <li>เน€เธเนเธเน€เธ—เธเธเธดเธเธ—เธตเนเธเธฃเธฐเธ•เธธเนเธเนเธซเนเนเธกเน€เธ”เธฅเธ เธฒเธฉเธฒเนเธเนเธเธเธฃเธฐเธเธงเธเธเธฒเธฃเธเธดเธ”เธญเธญเธเน€เธเนเธเธเธฑเนเธเธ•เธญเธเธขเนเธญเธขเน (Reasoning Steps) เธเนเธญเธเธเธฐเธชเธฃเธธเธเธเธณเธ•เธญเธเธชเธธเธ”เธ—เนเธฒเธข</li>
-            <li>เธเนเธงเธขเน€เธเธดเนเธกเธเธงเธฒเธกเนเธกเนเธเธขเธณเธญเธขเนเธฒเธเธกเธตเธเธฑเธขเธชเธณเธเธฑเธเนเธเธเธฒเธเธ—เธตเนเธ•เนเธญเธเนเธเนเธเธ“เธดเธ•เธจเธฒเธชเธ•เธฃเน เธ•เธฃเธฃเธเธจเธฒเธชเธ•เธฃเน เธซเธฃเธทเธญเธเธฒเธฃเธงเธดเน€เธเธฃเธฒเธฐเธซเนเนเธเนเธ”เธ—เธตเนเธเธฑเธเธเนเธญเธ เนเธฅเธฐเธเนเธงเธขเธฅเธ”เนเธญเธเธฒเธชเธ—เธตเน AI เธเธฐเธ”เนเธงเธเธชเธฃเธธเธเธเธณเธ•เธญเธเธ—เธตเนเธเธดเธ”เน€เธเธตเนเธขเธ (Hallucination)</li>
+            <li>เป็นเทคนิคที่กระตุ้นให้โมเดลภาษาแบ่งกระบวนการคิดออกเป็นขั้นตอนย่อยๆ (Reasoning Steps) ก่อนจะสรุปคำตอบสุดท้าย</li>
+            <li>ช่วยเพิ่มความแม่นยำอย่างมีนัยสำคัญในงานที่ต้องใช้คณิตศาสตร์ ตรรกศาสตร์ หรือการวิเคราะห์โค้ดที่ซับซ้อน และช่วยลดโอกาสที่ AI จะด่วนสรุปคำตอบที่ผิดเพี้ยน (Hallucination)</li>
           </ul>
         `
       }
@@ -2306,11 +2306,11 @@ for oBall in range(0, N_BALLS):
         metaDiv.className = 'q-meta';
         metaDiv.innerHTML = `
           <div class="q-tag-group">
-            <span class="q-num-tag">เธเนเธญเธ—เธตเน ${q.id}</span>
+            <span class="q-num-tag">ข้อที่ ${q.id}</span>
             <span class="q-cat-tag">${q.catLabel}</span>
           </div>
           <span class="q-status-badge ${isAnswered ? (answerInfo.isCorrect ? 'correct' : 'wrong') : ''}" id="badge-${q.id}">
-            ${isAnswered ? (answerInfo.isCorrect ? 'โ“ เธ•เธญเธเธ–เธนเธเธ•เนเธญเธ' : `โ— เธ•เธญเธเธเธดเธ” (เน€เธเธฅเธขเธเนเธญ ${q.answer})`) : ''}
+            ${isAnswered ? (answerInfo.isCorrect ? '✓ ตอบถูกต้อง' : `✗ ตอบผิด (เฉลยข้อ ${q.answer})`) : ''}
           </span>
         `;
         card.appendChild(metaDiv);
@@ -2403,7 +2403,7 @@ for oBall in range(0, N_BALLS):
         expDiv.className = `explanation-box ${isAnswered ? 'show' : ''}`;
         expDiv.id = `exp-${q.id}`;
         expDiv.innerHTML = `
-          <h4>เน€เธเธฅเธขเธฅเธฐเน€เธญเธตเธขเธ”เนเธฅเธฐเธซเธฅเธฑเธเธเธดเธ”:</h4>
+          <h4>เฉลยละเอียดและหลักคิด:</h4>
           ${q.explanation}
         `;
         card.appendChild(expDiv);
@@ -2412,17 +2412,6 @@ for oBall in range(0, N_BALLS):
       });
 
       updateStatsUI();
-      // Auto-update badge counts from QUIZ_DATA
-      (function updateBadgeCounts() {
-        const catCounts = {};
-        QUIZ_DATA.forEach(q => { catCounts[q.cat] = (catCounts[q.cat] || 0) + 1; });
-        const allBadge = document.getElementById('badge-count-all');
-        if (allBadge) allBadge.textContent = QUIZ_DATA.length;
-        Object.entries(catCounts).forEach(([cat, cnt]) => {
-          const el = document.getElementById('badge-count-' + cat);
-          if (el) el.textContent = cnt;
-        });
-      })();
     }
 
     // Handle User Click Option
@@ -2446,11 +2435,11 @@ for oBall in range(0, N_BALLS):
         if (isCorrect) {
           card.classList.add('status-correct');
           badge.className = 'q-status-badge correct';
-          badge.textContent = 'โ“ เธ•เธญเธเธ–เธนเธเธ•เนเธญเธ';
+          badge.textContent = '✓ ตอบถูกต้อง';
         } else {
           card.classList.add('status-wrong');
           badge.className = 'q-status-badge wrong';
-          badge.textContent = `โ— เธ•เธญเธเธเธดเธ” (เน€เธเธฅเธขเธเนเธญ ${correctKey})`;
+          badge.textContent = `✗ ตอบผิด (เฉลยข้อ ${correctKey})`;
         }
 
         const buttons = card.querySelectorAll('.choice-btn');
@@ -2483,17 +2472,35 @@ for oBall in range(0, N_BALLS):
         targetBtn.classList.add('active');
       }
 
+      const totalAll = QUIZ_DATA.length;
+      const countTD = QUIZ_DATA.filter(q => q.cat === 'tuple_dict').length;
+      const countOOP = QUIZ_DATA.filter(q => q.cat === 'oop').length;
+      const countPG = QUIZ_DATA.filter(q => q.cat === 'pygame').length;
+      const countAI = QUIZ_DATA.filter(q => q.cat === 'ai').length;
+
       const titles = {
-        'all': 'คลังข้อสอบรวมทั้งหมด (61 ข้อ)',
-        'tuple_dict': 'หมวดที่ 1: Tuple & Dictionary (24 ข้อ)',
-        'oop': 'หมวดที่ 2: OOP (6 ข้อ)',
-        'pygame': 'หมวดที่ 3: Pygame (16 ข้อ)',
-        'ai': 'หมวดที่ 4: AI (15 ข้อ)'
+        'all': `คลังข้อสอบรวมทั้งหมด (${totalAll} ข้อ)`,
+        'tuple_dict': `หมวดที่ 1: Tuple & Dictionary (${countTD} ข้อ)`,
+        'oop': `หมวดที่ 2: Object-Oriented Programming (${countOOP} ข้อ)`,
+        'pygame': `หมวดที่ 3: Pygame (${countPG} ข้อ)`,
+        'ai': `หมวดที่ 4: ปัญญาประดิษฐ์และจริยธรรม AI (${countAI} ข้อ)`
       };
-      document.getElementById('summary-category-title').textContent = titles[categoryKey] || 'เธเธฅเธฑเธเธเนเธญเธชเธญเธ';
+      document.getElementById('summary-category-title').textContent = titles[categoryKey] || 'คลังข้อสอบ';
 
       renderQuestions();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Update Tab Badges Dynamically
+    function updateBadgeCounts() {
+      const counts = { all: QUIZ_DATA.length };
+      QUIZ_DATA.forEach(q => {
+        counts[q.cat] = (counts[q.cat] || 0) + 1;
+      });
+      for (const [key, val] of Object.entries(counts)) {
+        const el = document.getElementById('badge-count-' + key);
+        if (el) el.textContent = val;
+      }
     }
 
     // Update Counter Stats
@@ -2509,6 +2516,8 @@ for oBall in range(0, N_BALLS):
       document.getElementById('count-correct').textContent = quizState.correctCount;
       document.getElementById('count-wrong').textContent = quizState.wrongCount;
       document.getElementById('count-remaining').textContent = totalOverall - answeredTotal;
+
+      updateBadgeCounts();
     }
 
     // Results Modal
@@ -2519,17 +2528,17 @@ for oBall in range(0, N_BALLS):
 
       document.getElementById('modal-score-display').textContent = `${quizState.correctCount} / ${total}`;
       
-      let subText = `เธ•เธญเธเธ–เธนเธ ${quizState.correctCount} เธเนเธญ เธเธดเธ”เน€เธเนเธ ${percent}%`;
+      let subText = `ตอบถูก ${quizState.correctCount} ข้อ คิดเป็น ${percent}%`;
       if (answered < total) {
-        subText += ` (เธขเธฑเธเธ—เธณเนเธกเนเธเธฃเธ เน€เธซเธฅเธทเธญเธญเธตเธ ${total - answered} เธเนเธญ)`;
+        subText += ` (ยังทำไม่ครบ เหลืออีก ${total - answered} ข้อ)`;
       }
       document.getElementById('modal-sub-display').textContent = subText;
 
       const cats = [
         { key: 'tuple_dict', label: 'Tuple & Dictionary' },
-        { key: 'oop', label: 'OOP' },
+        { key: 'oop', label: 'Object-Oriented Programming (OOP)' },
         { key: 'pygame', label: 'Pygame' },
-        { key: 'ai', label: 'Artificial Intelligence' }
+        { key: 'ai', label: 'Artificial Intelligence (AI)' }
       ];
 
       const breakdownContainer = document.getElementById('modal-cat-breakdown');
@@ -2550,8 +2559,8 @@ for oBall in range(0, N_BALLS):
         const row = document.createElement('div');
         row.className = 'cat-breakdown-row';
         row.innerHTML = `
-          <span>${c.label} (${catQuestions.length} เธเนเธญ):</span>
-          <strong>${correctInCat} / ${catQuestions.length} (เธ—เธณเนเธฅเนเธง ${answeredInCat})</strong>
+          <span>${c.label} (${catQuestions.length} ข้อ):</span>
+          <strong>${correctInCat} / ${catQuestions.length} (ทำแล้ว ${answeredInCat})</strong>
         `;
         breakdownContainer.appendChild(row);
       });
@@ -2564,7 +2573,7 @@ for oBall in range(0, N_BALLS):
     }
 
     function resetQuiz() {
-      if (confirm('เธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธฃเธตเน€เธเนเธ•เธเธณเธ•เธญเธเน€เธเธทเนเธญเน€เธฃเธดเนเธกเธ—เธณเนเธซเธกเนเธ—เธฑเนเธเธซเธกเธ”เนเธเนเธซเธฃเธทเธญเนเธกเน?')) {
+      if (confirm('คุณต้องการรีเซ็ตคำตอบเพื่อเริ่มทำใหม่ทั้งหมดใช่หรือไม่?')) {
         quizState.answers = {};
         quizState.correctCount = 0;
         quizState.wrongCount = 0;
@@ -2581,6 +2590,3 @@ for oBall in range(0, N_BALLS):
   </script>
 </body>
 </html>
-
-
-
