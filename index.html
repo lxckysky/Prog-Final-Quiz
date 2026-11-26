@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>ComProg Final Preparation — คลังข้อสอบวิชาเขียนโปรแกรม (45 ข้อ)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Design Tokens: Warm Paper & Ink ─── */
+    :root {
+      /* Palette — warm paper ramp */
+      --bg:             #f5f1ea;
+      --surface:        #fdfbf7;
+      --surface-subtle: #e8e3da;
+      --surface-hover:  #dedad0;
+      --border:         rgba(31,27,22,0.13);
+      --border-focus:   rgba(31,27,22,0.32);
+
+      --text-main:   #18140f;
+      --text-muted:  #3d3630;
+      --text-subtle: #5e554a;
+
+      --accent:        #1a56db;
+      --accent-soft:   #eff3ff;
+      --accent-border: #c3d2f5;
+
+      --green:        #166534;
+      --green-bg:     #f0fdf4;
+      --green-border: #86efac;
+      --green-text:   #14532d;
+
+      --red:        #991b1b;
+      --red-bg:     #fef2f2;
+      --red-border: #fca5a5;
+      --red-text:   #7f1d1d;
+
+      /* Code surfaces stay dark navy for contrast */
+      --code-bg:   #0f1117;
+      --code-text: #e4e8f0;
+
+      --font-body: 'IBM Plex Sans Thai', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-code: 'IBM Plex Mono', monospace;
+
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 10px;
+
+      --ease: cubic-bezier(0.22,1,0.36,1);
+
+      --container-max: 760px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 96px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* ─── Sticky Header ─── */
+    .site-header {
+      background: rgba(253,251,247,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .header-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-title {
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-course {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+    }
+    .header-stats {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .progress-bar-container {
+      width: 88px;
+      height: 5px;
+      background: var(--surface-subtle);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--text-main);
+      width: 0%;
+      transition: width 300ms var(--ease);
+    }
+
+    /* ─── Category Tabs ─── */
+    .tab-section {
+      max-width: var(--container-max);
+      margin: 20px auto 0;
+      padding: 0 16px;
+    }
+    .tab-list {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab-list::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      padding: 7px 13px;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 150ms, background-color 150ms, border-color 150ms;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
+      flex-shrink: 0;
+    }
+    .tab-btn:hover {
+      border-color: var(--border-focus);
+      color: var(--text-main);
+      background: var(--surface-hover);
+    }
+    .tab-btn.active {
+      background: var(--text-main);
+      color: #fff;
+      border-color: var(--text-main);
+    }
+    .tab-count {
+      font-size: 0.68rem;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: var(--surface-subtle);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-family: var(--font-code);
+    }
+    .tab-btn.active .tab-count {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+    }
+
+    /* ─── Summary Banner ─── */
+    .summary-card {
+      max-width: var(--container-max);
+      margin: 12px auto 0;
+      padding: 0 16px;
+    }
+    .summary-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .summary-info h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+    .summary-info p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .score-counts {
+      display: flex;
+      gap: 14px;
+      font-size: 0.82rem;
+    }
+    .score-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+    .dot-correct { background: var(--green); }
+    .dot-wrong   { background: var(--red);   }
+    .dot-pending { background: var(--text-subtle); }
+
+    /* ─── Quiz Card Flow ─── */
+    .quiz-flow {
+      max-width: var(--container-max);
+      margin: 16px auto 0;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* ─── Question Card ─── */
+    .question-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid transparent;
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      transition: border-color 200ms, border-left-color 200ms, background-color 200ms;
+    }
+    /* Correct / wrong: left-margin annotation stripe */
+    .question-card.status-correct {
+      border-left-color: var(--green);
+      background: #fbfef9;
+    }
+    .question-card.status-wrong {
+      border-left-color: var(--red);
+      background: #fffcfc;
+    }
+
+    .q-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .q-tag-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .q-num-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-subtle);
+      font-family: var(--font-code);
+    }
+    .q-cat-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 1px 6px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .q-status-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 3px;
+      display: none;
+    }
+    .q-status-badge.correct {
+      display: inline-block;
+      background: var(--green-bg);
+      color: var(--green);
+      border: 1px solid var(--green-border);
+    }
+    .q-status-badge.wrong {
+      display: inline-block;
+      background: var(--red-bg);
+      color: var(--red);
+      border: 1px solid var(--red-border);
+    }
+
+    /* ─── Question Text ─── */
+    .q-content {
+      margin-bottom: 14px;
+    }
+    .q-premise {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    /* คำถามหลัก — กล่องไฮไลท์เบาๆ เพื่อแยกชัดจาก premise */
+    .q-ask {
+      font-size: 1.01rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.65;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(31,27,22,0.12);
+      border-left: 3px solid var(--text-main);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 10px 13px;
+      margin-top: 2px;
+    }
+    /* คำถามที่อยู่หลัง code block */
+    .q-ask-after-code {
+      margin-top: 0;
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    }
+    /* keyword ในโจทย์ — highlighter สีเหลืองอ่อน */
+    .q-ask strong {
+      background: #fef08a;
+      color: #422006;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 2px;
+    }
+
+    /* ─── Inline Code ─── */
+    code {
+      font-family: var(--font-code);
+      font-size: 0.86em;
+      background: #e8e3da;
+      border: 1px solid rgba(31,27,22,0.22);
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: #18140f;
+    }
+
+    /* ─── Code Block ─── */
+    .code-block {
+      background: var(--code-bg);
+      color: var(--code-text);
+      font-family: var(--font-code);
+      font-size: 0.83rem;
+      line-height: 1.55;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      margin: 12px 0 16px;
+      border: 1px solid #1c2130;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* ─── Choices ─── */
+    .choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .choice-btn {
+      width: 100%;
+      text-align: left;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      font-family: var(--font-body);
+      font-size: 0.91rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: color 150ms, background-color 150ms, border-color 150ms;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.55;
+      min-height: 48px;
+    }
+    .choice-btn:hover:not(.locked) {
+      border-color: var(--border-focus);
+      background: var(--surface-hover);
+    }
+    .choice-btn:active:not(.locked) {
+      transform: scale(0.995);
+    }
+    .choice-btn.locked {
+      cursor: default;
+    }
+
+    .choice-key {
+      font-family: var(--font-code);
+      font-weight: 500;
+      font-size: 0.82rem;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .choice-text {
+      flex: 1;
+      padding-top: 1px;
+    }
+    .choice-text code {
+      background: var(--surface-subtle);
+      border-color: var(--border-focus);
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.86em;
+    }
+
+    /* ─── Choice States ─── */
+    .choice-btn.is-correct {
+      background: var(--green-bg) !important;
+      border-color: var(--green-border) !important;
+      color: var(--green-text) !important;
+      font-weight: 500;
+    }
+    .choice-btn.is-correct .choice-key {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+    .choice-btn.is-wrong {
+      background: var(--red-bg) !important;
+      border-color: var(--red-border) !important;
+      color: var(--red-text) !important;
+    }
+    .choice-btn.is-wrong .choice-key {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
+    }
+    .choice-btn.is-dimmed {
+      opacity: 0.38;
+    }
+
+    /* ─── Explanation Box ─── */
+    .explanation-box {
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: var(--surface-subtle);
+      border-left: 2px solid var(--border-focus);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.87rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      display: none;
+    }
+    .explanation-box.show {
+      display: block;
+      animation: fadeSlide 0.2s var(--ease) forwards;
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(-3px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+    .explanation-box h4 {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .explanation-box p { margin-bottom: 6px; }
+    .explanation-box p:last-child { margin-bottom: 0; }
+    .explanation-box ul,
+    .explanation-box ol {
+      margin-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    .explanation-box li { margin-bottom: 4px; }
+
+    /* ─── Bottom Footer ─── */
+    .quiz-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(253,251,247,0.95);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      z-index: 30;
+    }
+    .btn-action {
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.86rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      transition: color 150ms, background-color 150ms, border-color 150ms;
+      touch-action: manipulation;
+    }
+    .btn-action:hover {
+      background: var(--surface-hover);
+      border-color: var(--border-focus);
+    }
+    .btn-action.btn-primary {
+      background: var(--text-main);
+      color: #fff;
+      border-color: var(--text-main);
+    }
+    .btn-action.btn-primary:hover {
+      background: #3a3028;
+    }
+
+    /* ─── Modal ─── */
+    .modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15,10,5,0.52);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-box {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      max-width: 460px;
+      width: 100%;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 12px 32px -6px rgba(0,0,0,0.14);
+    }
+    .modal-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .modal-score {
+      font-size: 2.8rem;
+      font-weight: 700;
+      font-family: var(--font-code);
+      color: var(--text-main);
+      margin: 10px 0 4px;
+      letter-spacing: -0.02em;
+    }
+    .modal-sub {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .cat-breakdown {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      background: var(--surface-subtle);
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 0.82rem;
+    }
+    .cat-breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+    }
+    .cat-breakdown-row strong {
+      color: var(--text-main);
+      font-family: var(--font-code);
+    }
+    .modal-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 640px) {
+      body {
+        font-size: 14.5px;
+        padding-bottom: 84px;
+      }
+      .header-inner {
+        padding: 10px 14px;
+      }
+      .brand-title {
+        font-size: 0.86rem;
+      }
+      .header-stats {
+        font-size: 0.76rem;
+        gap: 8px;
+      }
+      .progress-bar-container {
+        width: 68px;
+      }
+      .tab-section {
+        padding: 0 12px;
+        margin-top: 12px;
+      }
+      .tab-btn {
+        padding: 6px 10px;
+        font-size: 0.78rem;
+      }
+      .summary-card {
+        padding: 0 12px;
+        margin-top: 10px;
+      }
+      .summary-box {
+        padding: 12px 14px;
+      }
+      .summary-info h1 {
+        font-size: 0.93rem;
+      }
+      .score-counts {
+        font-size: 0.78rem;
+        gap: 10px;
+      }
+      .quiz-flow {
+        padding: 0 12px;
+        margin-top: 14px;
+        gap: 12px;
+      }
+      .question-card {
+        padding: 16px 14px;
+        border-radius: var(--radius-md);
+      }
+      .q-premise {
+        font-size: 0.88rem;
+        margin-bottom: 4px;
+      }
+      .q-ask {
+        font-size: 0.95rem;
+      }
+      .code-block {
+        padding: 10px 12px;
+        font-size: 0.78rem;
+        margin: 10px 0 14px;
+      }
+      .choice-btn {
+        padding: 10px 12px;
+        font-size: 0.87rem;
+        gap: 10px;
+      }
+      .choice-key {
+        width: 22px;
+        height: 22px;
+        font-size: 0.78rem;
+      }
+      .explanation-box {
+        padding: 12px 13px;
+        font-size: 0.83rem;
+      }
+      .quiz-footer {
+        padding: 10px 12px;
+        gap: 8px;
+      }
+      .btn-action {
+        padding: 9px 12px;
+        font-size: 0.82rem;
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-title">
+        <span>ComProg Final</span>
+        <span class="badge-course">45 ข้อ</span>
+      </div>
+      <div class="header-stats">
+        <span>ทำแล้ว <strong id="stat-answered">0</strong>/<span id="stat-total">45</span></span>
+        <div class="progress-bar-container" title="ความคืบหน้า">
+          <div class="progress-bar-fill" id="stat-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Category Filter Tabs -->
+  <nav class="tab-section" aria-label="หมวดหมู่ข้อสอบ">
+    <div class="tab-list">
+      <button class="tab-btn active" type="button" onclick="filterCategory('all', this)">
+        ทั้งหมด <span class="tab-count" id="badge-count-all">45</span>
+      </button>
+      <button class="tab-btn" type="button" onclick="filterCategory('tuple_dict', this)">
+        Tuple & Dict <span class="tab-count" id="badge-count-tuple_dict">15</span>
+      </button>
+      <button class="tab-btn" type="button" onclick="filterCategory('pygame_oop', this)">
+        OOP & Pygame <span class="tab-count" id="badge-count-pygame_oop">15</span>
+      </button>
+      <button class="tab-btn" type="button" onclick="filterCategory('ai', this)">
+        Artificial Intelligence <span class="tab-count" id="badge-count-ai">15</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Summary Info Banner -->
+  <section class="summary-card">
+    <div class="summary-box">
+      <div class="summary-info">
+        <h1 id="summary-category-title">คลังข้อสอบรวมทั้งหมด (45 ข้อ)</h1>
+        <p>แตะเลือกคำตอบเพื่อตรวจทันที พร้อมคำอธิบายเฉลยอย่างละเอียด</p>
+      </div>
+      <div class="score-counts">
+        <div class="score-item">
+          <span class="dot dot-correct"></span>
+          <span>ถูก: <strong id="count-correct">0</strong></span>
+        </div>
+        <div class="score-item">
+          <span class="dot dot-wrong"></span>
+          <span>ผิด: <strong id="count-wrong">0</strong></span>
+        </div>
+        <div class="score-item">
+          <span class="dot dot-pending"></span>
+          <span>เหลือ: <strong id="count-remaining">45</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions Container -->
+  <main class="quiz-flow" id="quiz-flow-container">
+    <!-- Rendered dynamically by script -->
+  </main>
+
+  <!-- Bottom Fixed Footer -->
+  <footer class="quiz-footer">
+    <button class="btn-action" type="button" onclick="resetQuiz()">ทำใหม่ทั้งหมด</button>
+    <button class="btn-action btn-primary" type="button" onclick="openResultsModal()">ดูสรุปคะแนนรวม</button>
+  </footer>
+
+  <!-- Results Modal -->
+  <div class="modal-backdrop" id="modal-summary" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <h3 class="modal-title">สรุปผลการทำแบบทดสอบ</h3>
+      <div class="modal-score" id="modal-score-display">0 / 45</div>
+      <p class="modal-sub" id="modal-sub-display">ตอบถูก 0 ข้อ จากทั้งหมด 45 ข้อ</p>
+      <div class="cat-breakdown" id="modal-cat-breakdown">
+        <!-- Injected by script -->
+      </div>
+      <div class="modal-btns">
+        <button class="btn-action btn-primary" type="button" onclick="closeResultsModal()">กลับไปทบทวน</button>
+        <button class="btn-action" type="button" onclick="resetQuiz()">เริ่มทำใหม่</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 45 Questions Database with Structured Readable Formatting
+    const QUIZ_DATA = [
+      /* ========================================================
+         CATEGORY 1: TUPLE & DICTIONARY (Questions 1 - 15)
+         ======================================================== */
+      {
+        id: 1,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        ask: `เมื่อรันส่วนของโปรแกรมในตัวเลือกใดแล้วเกิด Error`,
+        choices: [
+          { key: 'A', text: `x = tuple([1,2,3])` },
+          { key: 'B', text: `x = tuple([[1,2],3])` },
+          { key: 'C', text: `x = tuple(1,2,3)` },
+          { key: 'D', text: `x = tuple((1,2,3))` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดเกิด Error` }
+        ],
+        answer: 'C',
+        explanation: `
+          <p><code>tuple()</code> รับ argument ได้ตัวเดียว และต้องเป็น iterable เช่น list, tuple, string — การส่ง 1,2,3 แยกกัน 3 ตัวจึง error</p>
+          <ul>
+            <li><strong>A:</strong> ส่ง list 1 ตัว → <code>(1, 2, 3)</code> ไม่ error</li>
+            <li><strong>B:</strong> list ซ้อน list ก็เป็น iterable → <code>([1,2], 3)</code> ไม่ error</li>
+            <li><strong>C:</strong> <strong>ส่ง 3 argument แยกกัน</strong> — <code>tuple()</code> รับได้แค่ 1 ตัว → <code>TypeError</code></li>
+            <li><strong>D:</strong> ส่ง tuple 1 ตัว → ได้ tuple เดิม ไม่ error</li>
+            <li><strong>E:</strong> ข้อ C เกิด error</li>
+          </ul>
+        `
+      },
+      {
+        id: 2,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนดตัวแปร <code>dancers</code> เป็น dictionary ที่มีชื่อคู่เต้นรำชายและหญิงเป็น key และจำนวนครั้งที่แข่งขันเป็น value`,
+        code: `dancers = {('Harry', 'Megan'):4, ('Henry', 'Carol'):5,
+           ('Ken', 'Lucy'):3, ('Mike', 'Jane'):0}`,
+        ask2: `ตัวเลือกใด <strong>ไม่ใช่</strong> คำสั่งสร้าง list ที่เก็บเฉพาะชื่อคู่เต้นรำ<strong>ฝ่ายชาย</strong>?`,
+        choices: [
+          { key: 'A', text: `gentlemen = [a for a, b in dancers]` },
+          { key: 'B', text: `gentlemen = [x[0] for x in dancers]` },
+          { key: 'C', text: `gentlemen = [a for (a, b),c in dancers.items()]` },
+          { key: 'D', text: `gentlemen = [a[0] for a, b in dancers.items()]` },
+          { key: 'E', text: `ทุกตัวเลือกเป็นคำสั่งสร้าง list ที่ถูกต้อง` }
+        ],
+        answer: 'E',
+        explanation: `
+          <p>วน dictionary ตรงๆ ได้ key; <code>items()</code> ได้คู่ (key, value); key ที่เป็น tuple แตกค่าออกมาได้ — ทุกวิธีให้ผลเหมือนกัน</p>
+          <ul>
+            <li><strong>A:</strong> วน dict ตรงๆ ได้ key (tuple) แตก a, b → a = ชาย ✓ ใช้ได้</li>
+            <li><strong>B:</strong> x คือ key tuple, x[0] = ชาย ✓ ใช้ได้</li>
+            <li><strong>C:</strong> <code>items()</code> ให้ ((ชาย,หญิง), จำนวน) แตก (a,b),c → a = ชาย ✓ ใช้ได้</li>
+            <li><strong>D:</strong> <code>items()</code> ให้ (key, value) → a คือ key tuple → a[0] = ชาย ✓ ใช้ได้</li>
+            <li><strong>E:</strong> <strong>ทุกข้อ A–D ใช้ได้ทั้งหมด</strong> ได้ ['Harry','Henry','Ken','Mike'] เหมือนกัน จึงไม่มีข้อที่ "ไม่ใช่"</li>
+          </ul>
+        `
+      },
+      {
+        id: 3,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนดให้ตัวแปร <code>sports</code> เก็บชื่อกีฬาเป็น key และจำนวนผู้เล่นเป็น value`,
+        code: `total = 0
+sports = {'Football':11, 'Basketball':5, 'Double tennis': 2}
+______(I)______
+    ______(II)______
+print(total)`,
+        ask2: `ตัวเลือกใดคือส่วนที่ต้องเติมใน <strong>(I) และ (II)</strong> เพื่อหาผลรวมของจำนวนผู้เล่นของทุกกีฬา?`,
+        choices: [
+          { key: 'A', text: `for s in sports.keys():
+    total = total + s` },
+          { key: 'B', text: `for s in sports.values():
+    total = total + s` },
+          { key: 'C', text: `for s,t in sports.items():
+    total = total + t` },
+          { key: 'D', text: `for s,t in sports.items():
+    total = total + s` },
+          { key: 'E', text: `มีตัวเลือกถูกมากกว่าหนึ่งตัวเลือก` }
+        ],
+        answer: 'E',
+        explanation: `
+          <p>ผลรวมต้องบวก value (11+5+2=18) ไม่ใช่ key (string) — B วน values(), C วน items() บวก t (value) ถูกทั้งคู่</p>
+          <ul>
+            <li><strong>A:</strong> s = key (ชื่อกีฬา เป็น str) บวกกับ int → <code>TypeError</code> ✗</li>
+            <li><strong>B:</strong> <strong>values()</strong> ให้ 11, 5, 2 → <code>total = total + s</code> ได้ 18 ✓</li>
+            <li><strong>C:</strong> <strong>items()</strong> แตก s=ชื่อ, t=จำนวน → <code>total = total + t</code> ได้ 18 ✓</li>
+            <li><strong>D:</strong> s = key (str) บวก int → <code>TypeError</code> ✗</li>
+            <li><strong>E:</strong> <strong>ข้อ B และ C ถูกทั้งคู่</strong> จึงมีตัวเลือกถูกมากกว่าหนึ่ง</li>
+          </ul>
+        `
+      },
+      {
+        id: 4,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนด <code>x = 'a1b2c3'</code>`,
+        code: `x = 'a1b2c3'
+y = ______(I)______`,
+        ask2: `ตัวเลือกใดคือส่วนที่ต้องเติมใน <strong>(I)</strong> เพื่อให้ <code>y = {'a': '1', 'b': '2', 'c': '3'}</code>?`,
+        choices: [
+          { key: 'A', text: `{x:x+1 for i in x}` },
+          { key: 'B', text: `{x[i]:x[i+1] for i in x}` },
+          { key: 'C', text: `{i:i+1 for i in range(len(x)-1,0,-2)}` },
+          { key: 'D', text: `{x[i]:x[i-1] for i in range(len(x)-1,0,-2)}` },
+          { key: 'E', text: `{x[i-1]:x[i] for i in range(len(x)-1,0,-2)}` }
+        ],
+        answer: 'E',
+        explanation: `
+          <p>len(x)=6 → range(5,0,-2) ได้ i=5,3,1 (ตำแหน่งตัวเลข) ตัวอักษรอยู่ก่อนหน้า 1 ตำแหน่งคือ x[i-1]</p>
+          <ul>
+            <li><strong>A:</strong> ใช้ x ทั้งสตริงเป็น key และ x+1 (str+int) → <code>TypeError</code></li>
+            <li><strong>B:</strong> i เป็นตัวอักษร (str) ใช้เป็น index ไม่ได้ → <code>TypeError</code></li>
+            <li><strong>C:</strong> ได้ key, value เป็นตัวเลข เช่น {5:6, 3:4, 1:2} ไม่ตรงกับที่ต้องการ</li>
+            <li><strong>D:</strong> key กับ value สลับกัน ได้ {'3':'c', '2':'b', '1':'a'}</li>
+            <li><strong>E:</strong> <strong>range(5,0,-2) ได้ i = 5,3,1</strong> → x[4]:x[5]='c':'3', x[2]:x[3]='b':'2', x[0]:x[1]='a':'1' ✓</li>
+          </ul>
+        `
+      },
+      {
+        id: 5,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        ask: `ตัวเลือกใด<strong>เกิด error</strong>?`,
+        choices: [
+          { key: 'A', text: `x = (1,3)+(4,5,6)` },
+          { key: 'B', text: `x = 1,` },
+          { key: 'C', text: `{['10.0145','11.354']:'Bangkok', ['11.325','12.855']:'Tokyo'}` },
+          { key: 'D', text: `{('10.0145','11.354'):'Bangkok', ('11.325','12.855'):'Tokyo'}` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดเกิด error` }
+        ],
+        answer: 'C',
+        explanation: `
+          <p>key ของ dictionary ต้อง hashable — tuple ใช้ได้ แต่ list ใช้ไม่ได้</p>
+          <ul>
+            <li><strong>A:</strong> ต่อ tuple ด้วย + ได้ (1,3,4,5,6) ไม่ error</li>
+            <li><strong>B:</strong> <code>x = 1,</code> คือ tuple 1 ตัว <code>(1,)</code> ไม่ error</li>
+            <li><strong>C:</strong> <strong>list เป็น key ไม่ได้</strong> (unhashable) → <code>TypeError</code></li>
+            <li><strong>D:</strong> tuple เป็น key ได้เพราะเปลี่ยนแปลงไม่ได้ ไม่ error</li>
+            <li><strong>E:</strong> ข้อ C เกิด error</li>
+          </ul>
+        `
+      },
+      {
+        id: 6,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        ask: `ตัวเลือกใดคือ<strong>ผลลัพธ์</strong>ของส่วนของโปรแกรมด้านล่าง?`,
+        code: `d1 = {}
+d1['one'] = 1
+d1['two'] = 2
+d2 = {'one':'I','three':'III','four':'IV'}
+d1.update(d2)
+print(d1)`,
+        choices: [
+          { key: 'A', text: `{'one':1, 'two':2, 'three':'III', 'four':'IV'}` },
+          { key: 'B', text: `{'one':1, 'one':'I', 'two':2, 'three':'III', 'four':'IV'}` },
+          { key: 'C', text: `{'one':1, 'two':2}` },
+          { key: 'D', text: `{'one':'I', 'two':2, 'three':'III', 'four':'IV'}` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
+        ],
+        answer: 'D',
+        explanation: `
+          <p><code>update()</code> ทับค่าของ key เดิม ('one' เปลี่ยนจาก 1 เป็น 'I') และเพิ่ม key ใหม่เข้าไป</p>
+          <ul>
+            <li><strong>A:</strong> 'one' ถูกทับด้วย 'I' แล้ว ค่าต้องไม่ใช่ 1 ✗</li>
+            <li><strong>B:</strong> dictionary มี key ซ้ำกันไม่ได้ 'one' ต้องเหลือตัวเดียว ✗</li>
+            <li><strong>C:</strong> update เพิ่ม 'three' กับ 'four' เข้ามาด้วย จึงไม่ได้มีแค่ 2 key ✗</li>
+            <li><strong>D:</strong> <strong>'one' ถูกทับเป็น 'I'</strong> คง 'two':2 ไว้ และเพิ่ม three, four ✓</li>
+            <li><strong>E:</strong> ข้อ D ถูก</li>
+          </ul>
+        `
+      },
+      {
+        id: 7,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนดคำสั่ง <code>d</code> ดังนี้`,
+        code: `d = {'2301172': {'Grade': 'A', 'Credit': 2},
+     '2301170': {'Grade': 'C+', 'Credit': 3},
+     '2301117': {'Grade': 'B+', 'Credit': 4}}`,
+        ask2: `ตัวเลือกใดให้ผลลัพธ์เป็น <code>{'2301172': 2, '2301170': 3, '2301117': 4}</code>?`,
+        choices: [
+          { key: 'A', text: `print({k:v for k,v in d.items()})` },
+          { key: 'B', text: `print({i:d[i]['Credit'] for i in d})` },
+          { key: 'C', text: `print({i:d['Credit'] for i in d})` },
+          { key: 'D', text: `print({i[0]:d[i[0]] for i in d.items()})` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>d เป็น dictionary ซ้อน dictionary ต้องเข้าถึงสองชั้น: d[รหัสวิชา]['Credit']</p>
+          <ul>
+            <li><strong>A:</strong> คัดลอก d ทั้งก้อน value ยังเป็น dict ซ้อน ไม่ใช่ตัวเลขหน่วยกิต ✗</li>
+            <li><strong>B:</strong> <strong>วน key i แล้วดึง d[i]['Credit']</strong> ได้ตัวเลขหน่วยกิตตรงๆ ✓</li>
+            <li><strong>C:</strong> d['Credit'] ไม่มี key 'Credit' ในชั้นนอก → <code>KeyError</code> ✗</li>
+            <li><strong>D:</strong> i จาก items() เป็น tuple (key,value), i[0] = key, d[i[0]] ยังเป็น dict ซ้อน ✗</li>
+            <li><strong>E:</strong> ข้อ B ถูก</li>
+          </ul>
+        `
+      },
+      {
+        id: 8,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        ask: `ตัวเลือกใด<strong>ไม่ใช่</strong> tuple?`,
+        choices: [
+          { key: 'A', text: `(3,4)` },
+          { key: 'B', text: `3,4` },
+          { key: 'C', text: `(3,)` },
+          { key: 'D', text: `(3)` },
+          { key: 'E', text: `เป็น tuple ทุกข้อ` }
+        ],
+        answer: 'D',
+        explanation: `
+          <p>tuple ถูกสร้างจากเครื่องหมายคอมมา ไม่ใช่วงเล็บ — tuple สมาชิกตัวเดียวต้องมีคอมมาท้าย (3,)</p>
+          <ul>
+            <li><strong>A:</strong> tuple 2 ตัว ✓</li>
+            <li><strong>B:</strong> 3,4 ไม่มีวงเล็บก็เป็น tuple ได้ ✓</li>
+            <li><strong>C:</strong> (3,) tuple 1 ตัว — มีคอมมาท้าย ✓</li>
+            <li><strong>D:</strong> <strong>(3) คือ integer 3 ในวงเล็บ</strong> ไม่ใช่ tuple — ต้องเขียน (3,) จึงจะเป็น tuple</li>
+            <li><strong>E:</strong> ข้อ D ไม่ใช่ tuple</li>
+          </ul>
+        `
+      },
+      {
+        id: 9,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนด <code>D = {}</code>`,
+        code: `D = {}`,
+        ask2: `ตัวเลือกใด<strong>ทำให้เกิด error</strong>?`,
+        choices: [
+          { key: 'A', text: `D[1]=7.5` },
+          { key: 'B', text: `D[7.5]=(1,2,3)` },
+          { key: 'C', text: `D[(3,5)]=7` },
+          { key: 'D', text: `D[[3,5]]=7` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดเกิด error` }
+        ],
+        answer: 'D',
+        explanation: `
+          <p>key ต้อง hashable: int, float, str, tuple ใช้ได้ — list ใช้ไม่ได้ (unhashable)</p>
+          <ul>
+            <li><strong>A:</strong> key เป็น int ✓ ใช้ได้</li>
+            <li><strong>B:</strong> key เป็น float, value เป็น tuple ✓ ใช้ได้</li>
+            <li><strong>C:</strong> key เป็น tuple (3,5) ✓ ใช้ได้</li>
+            <li><strong>D:</strong> <strong>key เป็น list [3,5]</strong> → unhashable → <code>TypeError</code></li>
+            <li><strong>E:</strong> ข้อ D เกิด error</li>
+          </ul>
+        `
+      },
+      {
+        id: 10,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        ask: `ตัวเลือกใดเป็น<strong>ตัวเลือกที่ถูกต้อง</strong>หลังจากจบส่วนของโปรแกรมนี้?`,
+        code: `D1 = {'emp1': {'name': 'Bob', 'job': 'Mgr'},
+      'emp2': {'name': 'Kim', 'job': 'Dev'}}
+D2 = {'emp2': {'name': 'Sam', 'job': 'Dev'},
+      'emp3': {'name': 'Max', 'job': 'Janitor'}}
+D1.update(D2)`,
+        choices: [
+          { key: 'A', text: `D1 มีค่า {'emp1':{'name':'Bob','job':'Mgr'}, 'emp2':{'name':'Kim','job':'Dev'}}` },
+          { key: 'B', text: `D2 มีค่า {'emp2':{'name':'Sam','job':'Dev'}, 'emp3':{'name':'Max','job':'Janitor'}}` },
+          { key: 'C', text: `D1 มีค่า {'emp1':{'name':'Bob','job':'Mgr'}, 'emp2':{'name':'Sam','job':'Dev'}, 'emp3':{'name':'Max','job':'Janitor'}}` },
+          { key: 'D', text: `ถูกมากกว่า 1 ตัวเลือก` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
+        ],
+        answer: 'D',
+        explanation: `
+          <p>D1.update(D2) แก้เฉพาะ D1 (emp2 ถูกทับ, emp3 ถูกเพิ่ม) ส่วน D2 ไม่เปลี่ยน</p>
+          <ul>
+            <li><strong>A:</strong> emp2 ถูกทับด้วยค่าจาก D2 เป็น Sam และมี emp3 เพิ่มมา — D1 ไม่ได้เหมือนเดิม ✗</li>
+            <li><strong>B:</strong> <strong>D1.update(D2) แก้เฉพาะ D1</strong> — D2 ไม่เปลี่ยน ✓</li>
+            <li><strong>C:</strong> D1 หลัง update: emp1 Bob (คงเดิม), emp2 Sam (ถูกทับ), emp3 Max (เพิ่มใหม่) ✓</li>
+            <li><strong>D:</strong> <strong>ข้อ B และ C ถูกทั้งคู่</strong> จึงถูกมากกว่า 1 ตัวเลือก</li>
+            <li><strong>E:</strong> มีข้อที่ถูก</li>
+          </ul>
+        `
+      },
+      {
+        id: 11,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        ask: `ตัวเลือกใดเป็น<strong>ผลลัพธ์</strong>ที่พิมพ์จากโปรแกรมต่อไปนี้?`,
+        code: `fruits = {'mango': 40, 'banana': 10, 'cherry': 20}
+new_fruits = {fruit: price*2
+              for (fruit, price) in fruits.items()
+              if price > 15}
+print(new_fruits)`,
+        choices: [
+          { key: 'A', text: `{'mango': 80, 'cherry': 40}` },
+          { key: 'B', text: `{'mango': 80, 'banana': 20}` },
+          { key: 'C', text: `{'mango': 80, 'banana': 20, 'cherry': 40}` },
+          { key: 'D', text: `{'mango': 4040, 'cherry': 2020}` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
+        ],
+        answer: 'A',
+        explanation: `
+          <p>dict comprehension กรองเงื่อนไข if price &gt; 15 ก่อน แล้วคำนวณ price*2</p>
+          <ul>
+            <li><strong>A:</strong> <strong>mango (40&gt;15) ✓ → 80, cherry (20&gt;15) ✓ → 40</strong>, banana (10&gt;15) ✗ ถูกกรองออก ✓</li>
+            <li><strong>B:</strong> banana (10&gt;15 เป็นเท็จ) ถูกกรองออก และ cherry ผ่านต้องอยู่ด้วย ✗</li>
+            <li><strong>C:</strong> banana (10&gt;15 เป็นเท็จ) ถูกกรองออก ไม่มีในผล ✗</li>
+            <li><strong>D:</strong> price เป็นตัวเลข ×2 ได้ 80 ไม่ใช่ 4040 (4040 เกิดจาก string '40'×2) ✗</li>
+            <li><strong>E:</strong> ข้อ A ถูก</li>
+          </ul>
+        `
+      },
+      {
+        id: 12,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนด <code>x = (1,[2,3],4)</code> และ <code>y = (5,6,7)</code>`,
+        ask: `ตัวเลือกใด<strong>เกิด error</strong>?`,
+        choices: [
+          { key: 'A', text: `x[1][1] = 5` },
+          { key: 'B', text: `x + y` },
+          { key: 'C', text: `print(x[0])` },
+          { key: 'D', text: `print(x[1:])` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดเกิด error` }
+        ],
+        answer: 'E',
+        explanation: `
+          <p>tuple เปลี่ยนสมาชิกไม่ได้ แต่ถ้าสมาชิกเป็น list จะแก้ค่าข้างในได้</p>
+          <ul>
+            <li><strong>A:</strong> x[1] เป็น list — แก้ x[1][1] ได้เพราะ tuple ไม่ได้ถูกแก้ ไม่ error ✓</li>
+            <li><strong>B:</strong> ต่อ tuple ด้วย + ได้ tuple ใหม่ ไม่ error ✓</li>
+            <li><strong>C:</strong> print(x[0]) ได้ 1 ไม่ error ✓</li>
+            <li><strong>D:</strong> print(x[1:]) ได้ ([2,3], 4) ไม่ error ✓</li>
+            <li><strong>E:</strong> <strong>ทุกข้อ A–D ไม่มี error</strong> เพราะ x[1] เป็น list ซึ่งแก้ไขได้</li>
+          </ul>
+        `
+      },
+      {
+        id: 13,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนด <code>m</code> ดังนี้`,
+        code: `m = {(1,2):3, (3,4):7, (5,6):8}`,
+        ask2: `หลังจากรันคำสั่งในตัวเลือกใด ทำให้ <code>len(m)</code> มีค่าเป็น <strong>4</strong>?`,
+        choices: [
+          { key: 'A', text: `m[(5,6)] = 1` },
+          { key: 'B', text: `m.update({(1,2):1})` },
+          { key: 'C', text: `{(1,2):1}.update(m)` },
+          { key: 'D', text: `m[(7,8)] = 15` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดให้ค่า len(m) เป็น 4` }
+        ],
+        answer: 'D',
+        explanation: `
+          <p>len(m) = จำนวน key จะเพิ่มก็ต่อเมื่อเพิ่ม key ใหม่ที่ยังไม่มีใน m</p>
+          <ul>
+            <li><strong>A:</strong> (5,6) มีอยู่แล้ว → ทับค่า len(m) ยังเป็น 3 ✗</li>
+            <li><strong>B:</strong> (1,2) มีอยู่แล้ว → ทับค่า len(m) ยังเป็น 3 ✗</li>
+            <li><strong>C:</strong> update ใส่ข้อมูลลง dict ชั่วคราว {(1,2):1} — m ไม่เปลี่ยน ✗</li>
+            <li><strong>D:</strong> <strong>(7,8) เป็น key ใหม่</strong> → เพิ่มเข้า m → len(m) = 4 ✓</li>
+            <li><strong>E:</strong> ข้อ D ทำให้ได้ 4</li>
+          </ul>
+        `
+      },
+      {
+        id: 14,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนด <code>info</code> ดังนี้`,
+        code: `info = {'2301170':('Comp prog',3),
+        '2301172':('Comp prog lab',1),
+        '2301260':('Prog tech',4)}`,
+        ask2: `ตัวเลือกใดสร้าง dictionary ที่มี key เป็น<strong>รหัสวิชา</strong> และ value เป็น<strong>ชื่อวิชา</strong>?
+ผลที่ต้องการ: <code>{'2301170':'Comp prog','2301172':'Comp prog lab','2301260':'Prog tech'}</code>`,
+        choices: [
+          { key: 'A', text: `{k:v[0] for k,v in info.items()}` },
+          { key: 'B', text: `{k:v[1] for k,v in info.items()}` },
+          { key: 'C', text: `{i:info[i][1] for i in info.keys()}` },
+          { key: 'D', text: `{i[0]:i[1] for i in info.values()}` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
+        ],
+        answer: 'A',
+        explanation: `
+          <p>value แต่ละตัวคือ tuple (ชื่อวิชา, หน่วยกิต) — ชื่อวิชาอยู่ index 0</p>
+          <ul>
+            <li><strong>A:</strong> <strong>k = รหัสวิชา, v[0] = ชื่อวิชา</strong> ✓</li>
+            <li><strong>B:</strong> v[1] = หน่วยกิต → ได้ {'2301170':3,...} ไม่ใช่ชื่อวิชา ✗</li>
+            <li><strong>C:</strong> info[i][1] ก็คือหน่วยกิตเช่นกัน ✗</li>
+            <li><strong>D:</strong> info.values() ให้ tuple → i[0]:i[1] ทำให้ชื่อวิชาเป็น key ไม่ใช่รหัส ✗</li>
+            <li><strong>E:</strong> ข้อ A ถูก</li>
+          </ul>
+        `
+      },
+      {
+        id: 15,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        premise: `กำหนด dictionary ชื่อ <code>regist</code> ที่เก็บ รหัสวิชา เป็น key และ จำนวนหน่วยกิต เป็น value`,
+        code: `regist = {2301170:3, 2301172:1, 2301117:4, 2301104:3}`,
+        ask2: `ตัวเลือกใดเป็นคำสั่ง<strong>ลบ</strong>สมาชิกที่มี key เป็น <code>2301170</code>?
+ผลที่ต้องการ: <code>{2301172:1, 2301117:4, 2301104:3}</code>`,
+        choices: [
+          { key: 'A', text: `del(regist[2301170])` },
+          { key: 'B', text: `del(regist[0])` },
+          { key: 'C', text: `regist.del(2301170)` },
+          { key: 'D', text: `remove(regist[2301170])` },
+          { key: 'E', text: `ไม่มีตัวเลือกใดถูก` }
+        ],
+        answer: 'A',
+        explanation: `
+          <p>ลบสมาชิกใน dictionary ใช้ del dict[key] หรือ dict.pop(key)</p>
+          <ul>
+            <li><strong>A:</strong> <strong>del(regist[2301170])</strong> = del regist[2301170] — วงเล็บไม่มีผลต่อการทำงาน ✓</li>
+            <li><strong>B:</strong> ไม่มี key 0 ใน regist (ไม่ใช่ index) → <code>KeyError</code> ✗</li>
+            <li><strong>C:</strong> dictionary ไม่มีเมธอด <code>.del()</code> → <code>AttributeError</code> ✗</li>
+            <li><strong>D:</strong> Python ไม่มีฟังก์ชัน <code>remove()</code> แบบนี้ → <code>NameError</code> ✗</li>
+            <li><strong>E:</strong> ข้อ A ถูก</li>
+          </ul>
+        `
+      },
+
+      {
+        id: 16,
+        cat: 'tuple_dict',
+        catLabel: 'Tuple & Dict',
+        ask: 'ผลลัพธ์ที่<strong>พิมพ์ออกมา</strong>จากโปรแกรมต่อไปนี้คือข้อใด?',
+        code: `dd = {x: len(x) for x in 'Hello my students'.split()}\nprint(dd)`,
+        choices: [
+          { key: 'A', text: `{'Hello': 5, 'my': 2, 'students': 8}` },
+          { key: 'B', text: `{'H': 1, 'e': 1, 'l': 2, 'o': 1}` },
+          { key: 'C', text: `['Hello', 'my', 'students']` },
+          { key: 'D', text: `{'Hello': 'my', 'students': 8}` },
+          { key: 'E', text: 'เกิด Error' }
+        ],
+        answer: 'A',
+        explanation: `
+          <p><code>split()</code> แยก string <code>'Hello my students'</code> ออกเป็น 3 คำ แล้วสร้าง dict comprehension โดยใช้คำเป็น <strong>key</strong> และ <code>len(คำ)</code> เป็น <strong>value</strong></p>
+          <ul>
+            <li><strong>A: ✓</strong> <code>{'Hello': 5, 'my': 2, 'students': 8}</code> — 'Hello' มี 5 ตัว, 'my' มี 2 ตัว, 'students' มี 8 ตัว</li>
+            <li><strong>B ✗:</strong> จะได้แบบนี้ถ้าวนลูปทีละ <em>ตัวอักษร</em> ไม่ใช่ทีละคำ</li>
+            <li><strong>C ✗:</strong> <code>split()</code> คืน list แต่ dict comprehension <code>{...}</code> สร้าง dict ไม่ใช่ list</li>
+            <li><strong>D ✗:</strong> value ผิด ไม่ใช่ชื่อคำถัดไป</li>
+            <li><strong>E ✗:</strong> โค้ดถูกต้อง ไม่เกิด Error</li>
+          </ul>
+        `
+      },
+
+            /* ========================================================
+         CATEGORY 2: OOP & PYGAME (Questions 17 - 46)
+         ======================================================== */
+      {
+        id: 17,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'ในระบบพิกัดหน้าจอ (Display Coordinates) ของ Pygame',
+        ask: '<strong>จุดกำเนิด (0, 0)</strong> และ <strong>ทิศทางการเพิ่มขึ้นของแกน X และ Y</strong> ถูกกำหนดไว้อย่างไร?',
+        choices: [
+          { key: 'A', text: 'จุด (0, 0) อยู่ตรงกลางหน้าจอ | แกน X ไปทางขวา (+), แกน Y ชี้ขึ้นบน (+)' },
+          { key: 'B', text: 'จุด (0, 0) อยู่ที่มุมซ้ายล่าง | แกน X ไปทางขวา (+), แกน Y ชี้ขึ้นบน (+)' },
+          { key: 'C', text: 'จุด (0, 0) อยู่ที่มุมซ้ายบน | แกน X ไปทางขวา (+), แกน Y ชี้ลงล่าง (+)' },
+          { key: 'D', text: 'จุด (0, 0) อยู่ที่มุมขวาบน | แกน X ไปทางซ้าย (+), แกน Y ชี้ลงล่าง (+)' },
+          { key: 'E', text: 'จุด (0, 0) กำหนดเองได้ตามขนาดหน้าต่างของ Section 3' }
+        ],
+        answer: 'C',
+        explanation: `
+          <p>ระบบพิกัดของคอมพิวเตอร์กราฟิกส์และ Pygame มีมาตรฐานดังนี้:</p>
+          <ul>
+            <li><strong>จุดกำเนิด (0, 0):</strong> อยู่ที่มุมซ้ายบนสุดของหน้าต่างเกม (Top-Left Corner)</li>
+            <li><strong>แกน X:</strong> มีค่าเพิ่มขึ้นเมื่อเลื่อนไปทางขวา (+X)</li>
+            <li><strong>แกน Y:</strong> มีค่าเพิ่มขึ้นเมื่อเลื่อนลงด้านล่าง (+Y) ซึ่งต่างจากแกนคาร์ทีเซียนในคณิตศาสตร์</li>
+          </ul>
+        `
+      },
+      {
+        id: 18,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'ในสถาปัตยกรรม 12 ขั้นตอนมาตรฐานของ Pygame',
+        ask: 'เพราะเหตุใดจึงต้องโหลดรูปภาพและเสียง (Assets) ใน <strong>ส่วนที่ 4 (ก่อนเข้าลูปหลัก while True:)</strong> แทนที่จะโหลดภายในลูป?',
+        choices: [
+          { key: 'A', text: 'เพราะ Pygame ไม่อนุญาตให้เรียกคำสั่ง <code>pygame.image.load</code> ภายในลูป while' },
+          { key: 'B', text: 'เพื่อประหยัดหน่วยความจำ และป้องกันเกมกระตุกจากการอ่านไฟล์จากดิสก์ซ้ำๆ ทุกๆ เฟรม' },
+          { key: 'C', text: 'เพราะตัวแปร <code>window</code> จะไม่รู้จักตำแหน่งของไฟล์หากไม่โหลดใน Section 4' },
+          { key: 'D', text: 'เพื่อให้ระบบเสียงทำงานแบบ Asynchronous ได้โดยอัตโนมัติ' },
+          { key: 'E', text: 'เพื่อให้วัตถุ Rect คำนวณตำแหน่งเริ่มต้นที่จุดกึ่งกลางได้ทันที' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>การโหลดไฟล์ภาพหรือเสียง (I/O Operation) จาก Hard Drive ลง RAM ใช้เวลาประมวลผลสูง:</p>
+          <ul>
+            <li>หากนำคำสั่ง <code>pygame.image.load()</code> ไปใส่ไว้ในลูปหลัก โปรแกรมจะอ่านไฟล์จากดิสก์ซ้ำๆ 30-60 ครั้งต่อวินาที ทำให้เกมกระตุกอย่างหนัก (Frame Drop) และเกิดปัญหา Memory Leak</li>
+            <li>ดังนั้นกฎเหล็กคือ: <strong>โหลดทรัพยากรทุกชิ้นเพียงครั้งเดียว (Load Once) ก่อนเริ่มลูปเกมเสมอ</strong></li>
+          </ul>
+        `
+      },
+      {
+        id: 19,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'ในลูปแสดงผลกราฟิกส์ของเกม (Section 11)',
+        ask: 'หากลืมเรียกคำสั่ง <code>window.fill(BLACK)</code> ก่อนที่จะวาดวัตถุที่กำลังเคลื่อนที่ จะส่งผลให้เกิดปรากฏการณ์ใดขึ้นบนหน้าจอ?',
+        choices: [
+          { key: 'A', text: 'โปรแกรมจะหยุดทำงานและแจ้งเตือน <code>PygameError: display not cleared</code>' },
+          { key: 'B', text: 'วัตถุจะไม่ปรากฏบนหน้าจอเลย เพราะหน้าจอจะกลายเป็นสีดำทั้งหมด' },
+          { key: 'C', text: 'วัตถุจะเคลื่อนที่ตามปกติ แต่จะทิ้งรอยภาพของเฟรมก่อนหน้าลากยาวเป็นทาง (Smearing / Ghosting)' },
+          { key: 'D', text: 'เฟรมเรตของเกมจะตกลงจนกลายเป็น 0 FPS' },
+          { key: 'E', text: 'ระบบจะสลับสีของวัตถุเป็นสีตรงข้ามโดยอัตโนมัติ' }
+        ],
+        answer: 'C',
+        explanation: `
+          <p>หน้าต่างของ Pygame ทำงานแบบแผ่นผ้าใบ (Canvas):</p>
+          <ul>
+            <li>เมื่อเราวาดวัตถุลงไป พิกเซลสีจะถูกเขียนทับลงบนบัฟเฟอร์หน้าจอ</li>
+            <li>หากในเฟรมถัดมา วัตถุขยับไปพิกัดใหม่แต่เราไม่ได้ล้างหน้าจอด้วย <code>window.fill()</code> รูปภาพในตำแหน่งเดิมจะไม่ถูกลบออก ทำให้เกิดรอยภาพซ้อนลากยาวตามทิศทางการเคลื่อนที่ (Ghosting Artifact)</li>
+          </ul>
+        `
+      },
+      {
+        id: 20,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'ในการพัฒนาเกมด้วย Pygame มีการเรียกใช้ <code>clock = pygame.time.Clock()</code>',
+        ask: 'วัตถุประสงค์หลักของการเรียกคำสั่ง <code>clock.tick(FRAMES_PER_SECOND)</code> ในแต่ละรอบของลูปเกมคือข้อใด?',
+        choices: [
+          { key: 'A', text: 'นับเวลาถอยหลังเพื่อจับเวลาในการเล่นเกม' },
+          { key: 'B', text: 'ควบคุมอัตราการรีเฟรชหน้าจอให้คงที่ (เช่น 30 FPS) เพื่อให้เกมวิ่งด้วยความเร็วสม่ำเสมอบนทุกเครื่อง' },
+          { key: 'C', text: 'ซิงโครไนซ์จังหวะเสียงดนตรีประกอบให้ตรงกับการกดปุ่มของผู้เล่น' },
+          { key: 'D', text: 'ป้องกันไม่ให้โปรแกรมใช้สัญญาณอินเทอร์เน็ตมากเกินไป' },
+          { key: 'E', text: 'บันทึกเวลาที่ผู้เล่นทำคะแนนสูงสุดลงไฟล์' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>หากไม่มี <code>clock.tick()</code> ลูป <code>while True:</code> จะทำงานเร็วที่สุดเท่าที่ CPU เครื่องนั้นจะรันได้:</p>
+          <ul>
+            <li>เครื่องคอมพิวเตอร์ที่เร็วมาก เกมจะวิ่งเร็วเกินจนผู้เล่นมองไม่ทัน</li>
+            <li><code>clock.tick(FRAMES_PER_SECOND)</code> ทำหน้าที่หน่วงเวลาสลีปให้ความเร็วในแต่ละรอบของลูปมีอัตราคงที่ ทำให้การเคลื่อนที่ของตัวละครมีความเร็วเท่ากันทุกเครื่องคอมพิวเตอร์</li>
+          </ul>
+        `
+      },
+      {
+        id: 21,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'การตรวจจับอินพุตคีย์บอร์ดจากผู้เล่น',
+        ask: 'หากต้องการตรวจจับ <strong>"การกด Spacebar 1 ครั้ง เพื่อกระโดด (Single Trigger)"</strong> ควรเลือกใช้คำสั่งในข้อใด?',
+        choices: [
+          { key: 'A', text: '<code>keys = pygame.key.get_pressed(); if keys[pygame.K_SPACE]:</code>' },
+          { key: 'B', text: 'ใน event loop: <code>if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:</code>' },
+          { key: 'C', text: 'ใน event loop: <code>if event.type == pygame.MOUSEBUTTONDOWN:</code>' },
+          { key: 'D', text: '<code>if pygame.key.get_focused() == pygame.K_SPACE:</code>' },
+          { key: 'E', text: '<code>if clock.tick() == pygame.K_SPACE:</code>' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>การจัดการอินพุตคีย์บอร์ดใน Pygame มี 2 แบบสำคัญ:</p>
+          <ul>
+            <li><strong>Event Queue (ข้อ B):</strong> ตรวจจับเหตุการณ์ <code>event.type == pygame.KEYDOWN</code> เหมาะสำหรับการกด "ครั้งเดียวต่อการกระทำ" เช่น การยิงกระสุน 1 นัด, การกระโดด, การเปิดเมนู</li>
+            <li><strong>State Polling (ข้อ A):</strong> ใช้ <code>pygame.key.get_pressed()</code> เพื่อตรวจว่าปุ่ม "กำลังถูกกดค้างอยู่หรือไม่" เหมาะสำหรับการเดินต่อเนื่องของตัวละคร</li>
+          </ul>
+        `
+      },
+      {
+        id: 22,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'มีตำแหน่งคลิกเมาส์ <code>event.pos</code> และสี่เหลี่ยมของปุ่ม <code>targetRect</code>',
+        ask: 'เมธอดใดของ <code>pygame.Rect</code> ที่ใช้ตรวจสอบว่า <strong>"จุดพิกัดเมาส์คลิกโดนพื้นที่ปุ่มหรือไม่"</strong> ได้ถูกต้อง?',
+        choices: [
+          { key: 'A', text: '<code>targetRect.colliderect(event.pos)</code>' },
+          { key: 'B', text: '<code>targetRect.collidepoint(event.pos)</code>' },
+          { key: 'C', text: '<code>pygame.mouse.collides(targetRect)</code>' },
+          { key: 'D', text: '<code>targetRect.contains(pygame.mouse)</code>' },
+          { key: 'E', text: '<code>event.pos.intersects(targetRect)</code>' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>เมธอดตรวจสอบการชนของ <code>pygame.Rect</code>:</p>
+          <ul>
+            <li><code>rect.collidepoint((x, y))</code>: ใช้ตรวจสอบว่า "จุดพิกัดเดี่ยว (Point)" อยู่ภายในพื้นที่สี่เหลี่ยมหรือไม่ นิยมใช้ตรวจสอบการคลิกเมาส์บนปุ่ม</li>
+            <li><code>rect.colliderect(anotherRect)</code>: ใช้ตรวจสอบการทับซ้อนกันระหว่าง "สี่เหลี่ยม 2 รูป (Rect กับ Rect)" นิยมใช้ตรวจการชนกันของ Sprite หรือกระสุนกับศัตรู</li>
+          </ul>
+        `
+      },
+      {
+        id: 23,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'พิจารณาคุณสมบัติของออบเจกต์ <code>pygame.Rect</code>',
+        ask: 'ข้อใดอธิบายคุณสมบัติ <strong>"Virtual Attributes"</strong> (เช่น <code>right</code>, <code>bottom</code>, <code>center</code>) ได้ถูกต้องที่สุด?',
+        choices: [
+          { key: 'A', text: 'เมื่อปรับค่า <code>rect.right = 600</code> ตัว Rect จะปรับเปลี่ยนค่า <code>rect.left</code> ให้โดยอัตโนมัติเพื่อคงความกว้างเดิมไว้' },
+          { key: 'B', text: 'เป็นแอตทริบิวต์ที่มองไม่เห็นบนหน้าจอ และไม่สามารถอ่านค่าออกมาเป็นตัวเลขได้' },
+          { key: 'C', text: 'ต้องประกาศคำสั่ง <code>import virtual</code> ก่อนจึงจะสามารถใช้งานได้' },
+          { key: 'D', text: 'ค่าพิกัดเสมือนจะรีเซ็ตกลับไปที่ (0, 0) เสมอหลังจบลูป while True' },
+          { key: 'E', text: 'ใช้สำหรับเก็บรูปภาพเสมือนที่ยังไม่ได้โหลดลงหน่วยความจำ' }
+        ],
+        answer: 'A',
+        explanation: `
+          <p>วัตถุ <code>pygame.Rect</code> มีคุณสมบัติพิเศษเรียกว่า Virtual Attributes เช่น <code>right</code>, <code>bottom</code>, <code>center</code>, <code>centerx</code>, <code>topleft</code>:</p>
+          <ul>
+            <li>เมื่อเรากำหนดค่าใหม่ให้แอตทริบิวต์เหล่านี้ เช่น <code>rect.right = 600</code> วัตถุ Rect จะคำนวณและเลื่อนค่า <code>left</code> ให้สอดคล้องกับขนาดความกว้างเดิมของรูปทันทีโดยอัตโนมัติ ช่วยลดความยุ่งยากในการคำนวณตำแหน่ง</li>
+          </ul>
+        `
+      },
+      {
+        id: 24,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'ในการประกาศคลาสของภาษา Python เมธอดคอนสตรักเตอร์มักเขียนเป็น <code>def __init__(self, ...):</code>',
+        ask: 'พารามิเตอร์ <code>self</code> ที่ปรากฏเป็นตัวแรก มีบทบาทและความสำคัญอย่างไร?',
+        choices: [
+          { key: 'A', text: 'เป็นคำสงวนที่ใช้ชี้ไปยังคลาสแม่ (Superclass)' },
+          { key: 'B', text: 'เป็นตัวแทนอ้างอิงถึง Instance ปัจจุบันที่กำลังถูกสร้างขึ้น เพื่อใช้กำหนดและเข้าถึงแอตทริบิวต์เฉพาะตัว' },
+          { key: 'C', text: 'ทำหน้าที่คืนค่าผลลัพธ์ของคลาสกลับไปยังโปรแกรมหลักแบบเดียวกับคำสั่ง return' },
+          { key: 'D', text: 'กำหนดให้คลาสนั้นทำงานแบบ Private เพื่อไม่ให้ไฟล์อื่นเข้าถึงข้อมูลได้' },
+          { key: 'E', text: 'เป็นฟังก์ชันพิเศษสำหรับลบหน่วยความจำเมื่อออบเจกต์ถูกทำลาย' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>ใน Python <code>self</code> คือตัวแปรอ้างอิงถึงออบเจกต์ตัวนั้นๆ โดยตรง:</p>
+          <ul>
+            <li>เมื่อเรียกสร้าง <code>b = Ball(window)</code> Python จะส่งอินสแตนซ์ของ Ball ตัวนั้นเข้าไปเป็นอาร์กิวเมนต์ตัวแรกในชื่อ <code>self</code> เสมอ</li>
+            <li>คำสั่งเช่น <code>self.x = 100</code> จึงเป็นการสร้างแอตทริบิวต์ <code>x</code> ให้กับออบเจกต์ตัวนั้นๆ อย่างเป็นอิสระจากออบเจกต์ตัวอื่น</li>
+          </ul>
+        `
+      },
+      {
+        id: 25,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'พิจารณา Special / Dunder Method ในภาษา Python',
+        ask: 'เมธอดพิเศษ <code>__str__(self)</code> ในคลาสของ Python จะถูกเรียกให้ทำงานโดยอัตโนมัติในสถานการณ์ใด?',
+        choices: [
+          { key: 'A', text: 'เมื่อต้องการเปรียบเทียบขนาดของออบเจกต์ 2 ตัว' },
+          { key: 'B', text: 'เมื่อมีการสั่ง <code>print(obj)</code> หรือแปลงออบเจกต์เป็นสตริงด้วย <code>str(obj)</code>' },
+          { key: 'C', text: 'เมื่อโปรแกรมเกิด Error และต้องการแสดงข้อความเตือน' },
+          { key: 'D', text: 'เมื่อต้องการต่อข้อความสตริง 2 ข้อความด้วยเครื่องหมาย +' },
+          { key: 'E', text: 'เมื่อส่งออบเจกต์เข้าฟังก์ชัน <code>len()</code>' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><code>__str__(self)</code> เป็น Special/Dunder Method ของ Python:</p>
+          <ul>
+            <li>มีหน้าที่คืนค่าข้อความสตริง (Readable representation) ที่อธิบายสถานะของออบเจกต์นั้น</li>
+            <li>จะถูกเรียกอัตโนมัติเมื่อเราส่งออบเจกต์เข้าฟังก์ชัน <code>print()</code> หรือ <code>str()</code> เช่น <code>print(my_account)</code> จะแสดงผลตามที่รีเทิร์นจาก <code>__str__</code></li>
+          </ul>
+        `
+      },
+      {
+        id: 26,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'การจัดการกลุ่มวัตถุใน Pygame',
+        ask: 'ข้อใดคือประโยชน์หลักของการสร้างคลาสสืบทอดจาก <code>pygame.sprite.Sprite</code> แล้วนำไปใส่ไว้ใน <code>pygame.sprite.Group</code>?',
+        choices: [
+          { key: 'A', text: 'ทำให้เกมสามารถรันได้โดยไม่ต้องใช้โมดูล <code>pygame.display</code>' },
+          { key: 'B', text: 'สามารถเรียก <code>group.update()</code> และ <code>group.draw(window)</code> เพื่อสั่งการวัตถุทั้งหมดพร้อมกันได้ในบรรทัดเดียว' },
+          { key: 'C', text: 'ช่วยแปลงภาพ 2 มิติให้กลายเป็นภาพ 3 มิติโดยอัตโนมัติ' },
+          { key: 'D', text: 'ป้องกันไม่ให้เกิดการชนกันระหว่างตัวละคร' },
+          { key: 'E', text: 'ทำให้ไม่ต้องกำหนดค่า <code>self.image</code> และ <code>self.rect</code> ในคลาสลูก' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><code>pygame.sprite.Group</code> เป็นคอนเทนเนอร์ที่ทรงพลังมากใน Pygame:</p>
+          <ul>
+            <li>เมื่อคลาสลูกมี <code>self.image</code> และ <code>self.rect</code> แล้วใส่ลงกลุ่ม เราสามารถสั่ง <code>group.update()</code> เพื่อให้สไปรต์ทุกตัวในกลุ่มขยับตำแหน่ง และสั่ง <code>group.draw(window)</code> เพื่อวาดทุกตัวลงหน้าต่างได้ในคำสั่งเดียว</li>
+            <li>นอกจากนี้ยังใช้เมธอด <code>pygame.sprite.groupcollide()</code> เพื่อตรวจจับการชนของกลุ่มวัตถุได้อย่างสะดวกรวดเร็ว</li>
+          </ul>
+        `
+      },
+      {
+        id: 27,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'ตามสไลด์การออกแบบ State Machine ของ <code>SimpleButton</code>',
+        ask: 'เมื่อผู้ใช้คลิกเมาส์ค้างบนปุ่ม (State Armed) แล้ว <strong>ลากเมาส์เลื่อนออกไปนอกขอบเขตของปุ่ม</strong> ก่อนปล่อยมือ ปุ่มจะเปลี่ยนไปอยู่ในสถานะใด?',
+        choices: [
+          { key: 'A', text: '<code>STATE_IDLE</code>' },
+          { key: 'B', text: '<code>STATE_ARMED</code>' },
+          { key: 'C', text: '<code>STATE_DISARMED</code>' },
+          { key: 'D', text: '<code>STATE_CLICKED</code>' },
+          { key: 'E', text: '<code>STATE_DISABLED</code>' }
+        ],
+        answer: 'C',
+        explanation: `
+          <p>State Machine ของ SimpleButton มีการออกแบบรับมือพฤติกรรมผู้ใช้ดังนี้:</p>
+          <ul>
+            <li><strong>STATE_IDLE:</strong> ปล่อยเมาส์ปกติ</li>
+            <li><strong>STATE_ARMED:</strong> กดคลิกเมาส์ค้างอยู่บนปุ่ม พร้อมทำงานหากปล่อยมือ</li>
+            <li><strong>STATE_DISARMED:</strong> ผู้ใช้กดคลิกค้างไว้ แล้วเปลี่ยนใจเลื่อนเมาส์หนีออกนอกปุ่ม หากปล่อยเมาส์ตอนอยู่นอกปุ่ม การกดจะถูกยกเลิก (ไม่เกิด Action)</li>
+          </ul>
+        `
+      },
+      {
+        id: 28,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'ในการสร้างปุ่ม <code>oButton = SimpleButton(..., callBack=myFunction)</code>',
+        ask: 'เพราะเหตุใดเราจึงต้องส่งชื่อฟังก์ชัน <code>myFunction</code> โดย <strong>ไม่มีวงเล็บ <code>()</code> ต่อท้าย</strong>?',
+        choices: [
+          { key: 'A', text: 'เพราะเป็นกฎของภาษา Python ที่ห้ามใส่วงเล็บในการส่งพารามิเตอร์' },
+          { key: 'B', text: 'เพื่อส่งการอ้างอิง (Reference) ของฟังก์ชันไปให้ปุ่มเก็บไว้เรียกใช้ตอนคลิก หากใส่วงเล็บฟังก์ชันจะถูกสั่งรันทันทีขณะสร้างปุ่ม' },
+          { key: 'C', text: 'เพราะ SimpleButton รับเฉพาะสตริงชื่อฟังก์ชัน ไม่สามารถรับออบเจกต์ฟังก์ชันได้' },
+          { key: 'D', text: 'เพื่อป้องกันไม่ให้เกิดความสับสนกับเมธอด <code>__init__</code>' },
+          { key: 'E', text: 'เพื่อให้ฟังก์ชันทำงานแบบ Recursive' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>นี่คือหัวใจของแนวคิด Callback Function:</p>
+          <ul>
+            <li><code>myFunction</code> (ไม่มีวงเล็บ) = การส่ง <strong>ตัวฟังก์ชัน (Function Object Reference)</strong> ไปเป็นข้อมูลให้ปุ่มเก็บไว้เรียกใช้ในอนาคตเมื่อเกิดเหตุการณ์คลิก</li>
+            <li><code>myFunction()</code> (มีวงเล็บ) = การสั่งให้ฟังก์ชันนั้น <strong>ประมวลผลทันทีในบรรทัดนั้น</strong> และส่งผลลัพธ์ที่ได้ (มักเป็น <code>None</code>) ไปให้ปุ่มแทน ซึ่งจะทำงานผิดวัตถุประสงค์</li>
+          </ul>
+        `
+      },
+      {
+        id: 29,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'การออกแบบซอฟต์แวร์ด้วยโมเดล UML (Unified Modeling Language)',
+        ask: 'ข้อใดอธิบายความแตกต่างระหว่าง <strong>Class Diagram</strong> และ <strong>Sequence Diagram</strong> ใน UML ได้ถูกต้องที่สุด?',
+        choices: [
+          { key: 'A', text: 'Class Diagram แสดงโครงสร้างเชิงสถิต (Static: คลาสและความสัมพันธ์) | Sequence Diagram แสดงลำดับการเรียกเมธอดตามเวลา (Dynamic)' },
+          { key: 'B', text: 'Class Diagram ใช้สำหรับภาษา C++ เท่านั้น | Sequence Diagram ใช้สำหรับ Python' },
+          { key: 'C', text: 'Class Diagram แสดงเฉพาะข้อมูลตัวเลข | Sequence Diagram แสดงรูปภาพกราฟิกส์' },
+          { key: 'D', text: 'ทั้งสองไดอะแกรมเหมือนกันทุกประการ ต่างกันแค่สีของเส้นที่ใช้เขียน' },
+          { key: 'E', text: 'Sequence Diagram เขียนก่อนเริ่มเขียนโค้ด | Class Diagram เขียนหลังทำโปรแกรมเสร็จแล้วเท่านั้น' }
+        ],
+        answer: 'A',
+        explanation: `
+          <p>ความแตกต่างของแบบจำลอง UML ในวิชาเขียนโปรแกรม:</p>
+          <ul>
+            <li><strong>Class Diagram:</strong> แสดงโครงสร้างแบบสถิต (Static Model) เช่น รายชื่อ Attribute, Method, และความสัมพันธ์ เช่น การสืบทอด (is-a) หรือการประกอบเข้าด้วยกัน (has-a)</li>
+            <li><strong>Sequence Diagram:</strong> แสดงพฤติกรรมแบบพลวัต (Dynamic Interaction) โดยระบุว่าออบเจกต์แต่ละตัวส่งข้อความหรือเรียกเมธอดตอบโต้กันในลำดับก่อนหลังอย่างไรตามแกนเวลาแนวตั้ง</li>
+          </ul>
+        `
+      },
+      {
+        id: 30,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'ในโครงสร้างสถาปัตยกรรม OOP ของเกม (เช่น Dodge the Asteroids หรือ Higher-Lower)',
+        ask: 'คลาสระดับนอกสุดอย่าง <code>Main</code> ทำหน้าที่อะไรตามหลักการ <strong>Delegation Pattern</strong>?',
+        choices: [
+          { key: 'A', text: 'คำนวณแต้มและตัดสินผลแพ้ชนะทั้งหมดภายในตัวคนเดียว' },
+          { key: 'B', text: 'รับ Event จาก Pygame แล้วส่งต่อ (Delegate) ให้ออบเจกต์ผู้จัดการเกม (Game Object) จัดการตรรกะ โดย Main ไม่ลงไปยุ่งกับกติกาของเกม' },
+          { key: 'C', text: 'คอยบันทึกไฟล์ภาพหน้าจอลงดิสก์ทุกครั้งที่ตัวละครเดิน' },
+          { key: 'D', text: 'สร้างชุดข้อมูล List สุ่มตัวเลขแล้วส่งให้อินเทอร์เน็ตเซิร์ฟเวอร์' },
+          { key: 'E', text: 'เขียนโค้ดแทนคลาสลูกทั้งหมดเพื่อลดจำนวนไฟล์' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>หลักการ Delegation (การมอบหมายหน้าที่) ในการออกแบบ OOP:</p>
+          <ul>
+            <li>คลาส <code>Main</code> จะทำหน้าที่เพียงเป็นผู้ประสานงานระดับนอกสุด (Coordinator) คอยดักรับอีเวนต์จากหน้าต่าง Pygame แล้วส่งต่อให้ออบเจกต์เกม เช่น <code>oGame.handleEvent(event)</code> และ <code>oGame.draw()</code></li>
+            <li>การแยกหน้าที่เช่นนี้ทำให้โค้ดเป็นระเบียบ (Separation of Concerns) หากต้องการเปลี่ยนกติกาเกม ก็แก้เฉพาะในคลาส Game โดยไม่ต้องแตะต้องไฟล์ Main</li>
+          </ul>
+        `
+      },
+      {
+        id: 31,
+        cat: 'pygame_oop',
+        catLabel: 'OOP & Pygame',
+        premise: 'กำหนดลิสต์เก็บวิดเจ็ต <code>widgets = [button1, slider1, checkbox1]</code> แล้ววนลูปสั่ง <code>for w in widgets: w.handleEvent(event); w.draw()</code>',
+        ask: 'รูปแบบการทำงานนี้สะท้อนถึงหลักการพื้นฐานข้อใดของ <strong>Object-Oriented Programming (OOP)</strong>?',
+        choices: [
+          { key: 'A', text: '<strong>Polymorphism</strong> (ภาวะพหุสัณฐาน)' },
+          { key: 'B', text: '<strong>Inheritance</strong> เท่านั้น' },
+          { key: 'C', text: '<strong>Encapsulation</strong> เพียงอย่างเดียว' },
+          { key: 'D', text: '<strong>Recursion</strong>' },
+          { key: 'E', text: '<strong>Data Hiding</strong>' }
+        ],
+        answer: 'A',
+        explanation: `
+          <p><strong>Polymorphism (ภาวะพหุสัณฐาน):</strong> คือความสามารถของออบเจกต์ต่างคลาสกันในการตอบสนองต่อคำสั่งหรือชื่อเมธอดเดียวกัน (<code>handleEvent</code>, <code>draw</code>) ในแบบฉบับของตัวเอง</p>
+          <p>โปรแกรมหลักไม่จำเป็นต้องเขียน <code>if type == button: ... elif type == slider: ...</code> แต่สามารถสั่ง <code>w.draw()</code> บนวิดเจ็ตทุกชนิดได้อย่างสม่ำเสมอและยืดหยุ่น</p>
+        `
+      },
+
+      /* ========================================================
+         CATEGORY 3: ARTIFICIAL INTELLIGENCE (Questions 31 - 45)
+         ======================================================== */
+      {
+        id: 32,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'การจัดหมวดหมู่วิทยาการด้านปัญญาประดิษฐ์',
+        ask: 'ข้อใดอธิบายขอบเขตและความสัมพันธ์ระหว่าง <strong>AI</strong>, <strong>Machine Learning (ML)</strong>, และ <strong>Deep Learning (DL)</strong> ตามแผนภาพเวนน์ได้ถูกต้องที่สุด?',
+        choices: [
+          { key: 'A', text: 'AI, ML, และ DL เป็นเทคโนโลยีที่แยกขาดจากกันโดยสิ้นเชิง ไม่มีส่วนใดซ้อนทับกัน' },
+          { key: 'B', text: 'Deep Learning เป็นสับเซตของ Machine Learning และ Machine Learning เป็นสับเซตของ AI (DL ⊂ ML ⊂ AI)' },
+          { key: 'C', text: 'Machine Learning เป็นคำครอบคลุมกว้างสุด โดยมี AI เป็นสับเซตย่อยอยู่ภายใน' },
+          { key: 'D', text: 'Deep Learning คือการเขียนโปรแกรมแบบ Rule-based ส่วน AI คือโครงข่ายประสาทเทียม' },
+          { key: 'E', text: 'AI คือซอฟต์แวร์ประมวลผลคำ ส่วน Machine Learning คือฮาร์ดแวร์กราฟิกการ์ด' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>ความสัมพันธ์แบบลำดับขั้น (Venn Diagram) ของวิทยาการ AI:</p>
+          <ul>
+            <li><strong>Artificial Intelligence (AI):</strong> ขอบเขตที่กว้างที่สุด ครอบคลุมระบบคอมพิวเตอร์ที่เลียนแบบสติปัญญาของมนุษย์ (รวมทั้ง Rule-based และ Expert Systems)</li>
+            <li><strong>Machine Learning (ML):</strong> สาขาย่อยของ AI ที่เรียนรู้แพทเทิร์นจากข้อมูลโดยไม่ต้องฮาร์ดโค้ดกฎเกณฑ์ทั้งหมด</li>
+            <li><strong>Deep Learning (DL):</strong> สาขาย่อยของ ML ที่เน้นการใช้ Deep Artificial Neural Networks (โครงข่ายประสาทเทียมหลายชั้นลึก) เพื่อวิเคราะห์ข้อมูลซับซ้อน เช่น ภาพและเสียง</li>
+          </ul>
+        `
+      },
+      {
+        id: 33,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'ระดับวิวัฒนาการของระบบปัญญาประดิษฐ์ (Evolution Stages of AI)',
+        ask: 'ในปัจจุบัน (ปี 2024-2026) ปัญญาประดิษฐ์ที่เราใช้งานทั่วไป เช่น ChatGPT, Gemini, Siri, Claude หรือ AlphaGo จัดอยู่ใน <strong>ระดับพัฒนาการใดของ AI</strong>?',
+        choices: [
+          { key: 'A', text: '<strong>Artificial General Intelligence (AGI)</strong> หรือ Strong AI' },
+          { key: 'B', text: '<strong>Artificial Super Intelligence (ASI)</strong>' },
+          { key: 'C', text: '<strong>Artificial Narrow Intelligence (ANI)</strong> หรือ Weak AI' },
+          { key: 'D', text: '<strong>Conscious AI</strong> (ปัญญาประดิษฐ์ที่มีจิตสำนึกรับรู้ตนเอง)' },
+          { key: 'E', text: '<strong>Biological AI</strong>' }
+        ],
+        answer: 'C',
+        explanation: `
+          <p>ระดับพัฒนาการของปัญญาประดิษฐ์แบ่งเป็น 3 ขั้น:</p>
+          <ul>
+            <li><strong>1. Artificial Narrow Intelligence (ANI / Weak AI):</strong> คือระดับของ AI ทั้งหมดในปัจจุบัน มีความเชี่ยวชาญเฉพาะด้านตามที่ถูกเทรนมา (เช่น เล่นหมากรุก, สร้างภาพ, แปลงภาษา) แต่ไม่สามารถคิดวิเคราะห์ข้ามศาสตร์ได้เหมือนมนุษย์</li>
+            <li><strong>2. Artificial General Intelligence (AGI):</strong> AI ที่มีสติปัญญาและความยืดหยุ่นเทียบเท่ามนุษย์ในทุกทักษะ (ยังอยู่ในขั้นวิจัย)</li>
+            <li><strong>3. Artificial Super Intelligence (ASI):</strong> AI ที่มีสติปัญญาเหนือกว่ามนุษย์ทุกคนรวมกันในทุกมิติ (ยังเป็นแนวคิดในอนาคต)</li>
+          </ul>
+        `
+      },
+      {
+        id: 34,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'สถาบันการเงินต้องการสร้างโมเดลทำนายว่าผู้ขอกู้จะ <strong>"ผิดนัดชำระหนี้หรือไม่" (Default / No Default)</strong> โดยมีข้อมูลประวัติและผลลัพธ์ในอดีตมาให้ใช้เทรน',
+        ask: 'งานนี้จัดเป็นการเรียนรู้ของ Machine Learning ในรูปแบบใด?',
+        choices: [
+          { key: 'A', text: 'Unsupervised Learning (Clustering)' },
+          { key: 'B', text: 'Supervised Learning (Classification)' },
+          { key: 'C', text: 'Reinforcement Learning' },
+          { key: 'D', text: 'Self-Supervised Generative Pre-training' },
+          { key: 'E', text: 'Association Rule Mining' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><strong>Supervised Learning (การเรียนรู้แบบมีผู้สอน):</strong></p>
+          <ul>
+            <li>ลักษณะเด่นคือชุดข้อมูลมี <strong>Label (ป้ายกำกับคำตอบเป้าหมาย)</strong> ในอดีตให้โมเดลเรียนรู้</li>
+            <li>โจทย์นี้ต้องการทำนายคำตอบเป็นกลุ่มประเภท (ผิดนัด หรือ ไม่ผิดนัด) จึงจัดเป็นงานประเภท <strong>Classification (การจำแนกประเภท)</strong></li>
+            <li>(หากทำนายค่าตัวเลขต่อเนื่อง เช่น ยอดเงินกู้ จะเรียกว่า Regression)</li>
+          </ul>
+        `
+      },
+      {
+        id: 35,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'หน่วยงานประปาต้องการจัดกลุ่มพฤติกรรมการใช้น้ำของผู้ใช้ทั่วประเทศ โดย <strong>ไม่มีการกำหนดชื่อกลุ่มล่วงหน้าและไม่มีคำตอบเฉลย (Unlabeled)</strong>',
+        ask: 'งานลักษณะนี้จัดเป็น Machine Learning แบบใด?',
+        choices: [
+          { key: 'A', text: 'Supervised Learning' },
+          { key: 'B', text: 'Unsupervised Learning (Clustering)' },
+          { key: 'C', text: 'Reinforcement Learning' },
+          { key: 'D', text: 'Supervised Regression' },
+          { key: 'E', text: 'Policy Optimization' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><strong>Unsupervised Learning (การเรียนรู้แบบไม่มีผู้สอน):</strong></p>
+          <ul>
+            <li>ข้อมูลไม่มี Label หรือคำตอบเฉลยล่วงหน้า</li>
+            <li>โมเดลจะทำหน้าที่ค้นหาความคล้ายคลึง โครงสร้าง หรือรูปแบบที่ซ่อนอยู่ (Hidden Pattern) เพื่อจัดกลุ่มข้อมูลที่มีพฤติกรรมใกล้เคียงกัน เรียกว่า <strong>Clustering (การแบ่งกลุ่ม)</strong> เช่น อัลกอริทึม K-Means</li>
+          </ul>
+        `
+      },
+      {
+        id: 36,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'ระบบควบคุมสปริงเกลอร์รดน้ำอัตโนมัติ ที่เรียนรู้ผ่านการได้รับแต้มบวก (Reward) เมื่อดินชุ่มพอดี และโดนหักแต้ม (Penalty) เมื่อใช้น้ำสิ้นเปลือง',
+        ask: 'ระบบนี้ทำงานตามแนวคิดการเรียนรู้ของ Machine Learning ในข้อใด?',
+        choices: [
+          { key: 'A', text: 'Supervised Learning' },
+          { key: 'B', text: 'Reinforcement Learning (การเรียนรู้แบบเสริมกำลัง)' },
+          { key: 'C', text: 'Unsupervised Learning' },
+          { key: 'D', text: 'Prompt Engineering' },
+          { key: 'E', text: 'Rule-based Expert System' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><strong>Reinforcement Learning (RL):</strong></p>
+          <ul>
+            <li>อาศัยความสัมพันธ์ระหว่าง <strong>Agent (ตัวแทน)</strong> กับ <strong>Environment (สภาพแวดล้อม)</strong></li>
+            <li>Agent ทำการทดลองปฏิบัติการ (Action) เพื่อสังเกตสถานะใหม่ (State) และรับผลตอบรับเป็นรางวัลหรือการลงโทษ (Reward / Penalty)</li>
+            <li>เป้าหมายคือการเรียนรู้กลยุทธ์ (Policy) ที่สะสมรางวัลรวมให้ได้มากที่สุด เช่นเดียวกับระบบฝึกเล่นเกม AlphaGo หรือระบบหุ่นยนต์อัตโนมัติ</li>
+          </ul>
+        `
+      },
+      {
+        id: 37,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'การเปรียบเทียบกระบวนทัศน์ระหว่างแบบจำลองปัญญาประดิษฐ์ 2 กลุ่มใหญ่',
+        ask: 'ข้อใดเปรียบเทียบความแตกต่างระหว่าง <strong>Discriminative AI</strong> และ <strong>Generative AI</strong> ได้อย่างถูกต้องตามหลักการ?',
+        choices: [
+          { key: 'A', text: 'Discriminative AI มุ่งเน้นการจำแนก/ทำนายข้อมูลเดิม | Generative AI มุ่งเน้นการสร้างสรรค์ข้อมูลเนื้อหาขึ้นมาใหม่' },
+          { key: 'B', text: 'Discriminative AI ใช้กับข้อความเท่านั้น | Generative AI ใช้กับไฟล์เสียงเท่านั้น' },
+          { key: 'C', text: 'Discriminative AI มีความคิดสร้างสรรค์มากกว่า Generative AI' },
+          { key: 'D', text: 'Discriminative AI ทำงานโดยไม่ต้องใช้ชุดข้อมูลเทรน' },
+          { key: 'E', text: 'Generative AI ไม่สามารถทำให้เกิดภาพหรือข้อความได้' }
+        ],
+        answer: 'A',
+        explanation: `
+          <p>ความแตกต่างเชิงรากฐานของโมเดล AI ทั้งสองแบบ:</p>
+          <ul>
+            <li><strong>Discriminative AI:</strong> เรียนรู้เส้นแบ่งการตัดสินใจเพื่อทำนายหรือแยกแยะ เช่น ตรวจว่าภาพนี้เป็นหมาหรือแมว, อีเมลนี้เป็นสแปมหรือไม่ ($P(Y|X)$)</li>
+            <li><strong>Generative AI:</strong> เรียนรู้การกระจายของข้อมูลเพื่อสังเคราะห์สิ่งใหม่ที่คล้ายคลึงกับชุดข้อมูลเดิม เช่น สร้างภาพใหม่ แต่งเพลง เขียนบทความ ($P(X, Y)$ หรือ $P(X)$)</li>
+          </ul>
+        `
+      },
+      {
+        id: 38,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'วิวัฒนาการของแบบจำลองภาษาและมัลติมีเดียในยุคใหม่',
+        ask: 'คำว่า <strong>"Multimodal AI"</strong> (เช่น GPT-4o, Gemini 1.5/2.0) มีความหมายตรงกับข้อใดมากที่สุด?',
+        choices: [
+          { key: 'A', text: 'โมเดลที่ทำงานบนคอมพิวเตอร์หลายเครื่องพร้อมกันผ่านระบบคลาวด์' },
+          { key: 'B', text: 'โมเดลที่สามารถรับอินพุตและสร้างเอาต์พุตได้หลากหลายรูปแบบสื่อ (ข้อความ, ภาพ, เสียง, วิดีโอ) ร่วมกันในโมเดลเดียว' },
+          { key: 'C', text: 'โมเดลที่มีการเปลี่ยนโหมดประหยัดพลังงานแบตเตอรี่ได้อัตโนมัติ' },
+          { key: 'D', text: 'โมเดลที่ไม่จำเป็นต้องผ่านขั้นตอนการ Fine-tuning' },
+          { key: 'E', text: 'โมเดลที่สามารถเขียนโค้ดได้เพียงภาษาเดียว' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><strong>Multimodal AI:</strong></p>
+          <ul>
+            <li>คำว่า "Modality" หมายถึงรูปแบบของสื่อหรือข้อมูล เช่น ข้อความ (Text), รูปภาพ (Image), เสียงพูด (Audio), หรือวิดีโอ (Video)</li>
+            <li>โมเดลแบบ Multimodal ได้รับการออกแบบให้สามารถประมวลผล ทำความเข้าใจ และเชื่อมโยงข้อมูลจากสื่อหลายประเภทพร้อมกันได้อย่างลื่นไหลภายในโครงสร้างโมเดลตัวเดียว</li>
+          </ul>
+        `
+      },
+      {
+        id: 39,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'ในแนวคิดระบบปัญญาประดิษฐ์ยุคใหม่ (Agentic Workflows)',
+        ask: 'คำว่า <strong>"Multi-Agent Systems" (Agentic AI)</strong> หมายถึงระบบในข้อใด?',
+        choices: [
+          { key: 'A', text: 'การเพิ่มจำนวนหน้าจอคอมพิวเตอร์ให้โปรแกรมเมอร์ทำงานเร็วขึ้น' },
+          { key: 'B', text: 'การรวมตัวกันของ AI หลายเอเจนต์ที่มีหน้าที่เฉพาะทางต่างกัน เพื่อแบ่งงานและช่วยกันแก้โจทย์ที่ซับซ้อน' },
+          { key: 'C', text: 'การใช้อัลกอริทึมเข้ารหัสลับในการรักษาความปลอดภัยของฐานข้อมูล' },
+          { key: 'D', text: 'การใช้ AI ตัวเดียวตอบคำถามผู้ใช้พร้อมกันหลายล้านคน' },
+          { key: 'E', text: 'ระบบต่อต้านไวรัสบนระบบปฏิบัติการวินโดวส์' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><strong>Multi-Agent Systems (MAS):</strong></p>
+          <ul>
+            <li>แทนที่จะใช้ AI ตัวเดียวทำทุกอย่าง ระบบจะแบ่งบทบาทให้ AI แต่ละตัวมีความเชี่ยวชาญเฉพาะ (เช่น Agent วางแผน, Agent สรุปข้อมูล, Agent เขียนโค้ด, Agent ตรวจสอบความถูกต้อง)</li>
+            <li>AI เหล่านี้จะส่งต่อข้อมูล พูดคุย และตรวจทานงานซึ่งกันและกันแบบมีขั้นตอน (Autonomous Collaboration) เพื่อแก้ปัญหาที่มีความซับซ้อนสูง</li>
+          </ul>
+        `
+      },
+      {
+        id: 40,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'การนำเทคโนโลยี Machine Learning ไปประยุกต์ใช้งานจริงในระดับ Production',
+        ask: 'ข้อใดจัดเป็นความเข้าใจผิดที่อันตรายที่สุด (<strong>Pitfall</strong>) ในการนำแบบจำลอง Machine Learning ไปประยุกต์ใช้งานจริง?',
+        choices: [
+          { key: 'A', text: 'การคาดหวังว่าโมเดล ML จะต้องมีความแม่นยำ 100% ตลอดเวลา และไม่ต้องคอยตรวจสอบเมื่อข้อมูลจริงในอนาคตเปลี่ยนแปลง' },
+          { key: 'B', text: 'การบันทึก Log การตัดสินใจของโมเดลเก็บไว้ตรวจสอบย้อนหลัง' },
+          { key: 'C', text: 'การนำผู้เชี่ยวชาญที่เป็นมนุษย์มาร่วมตรวจสอบความถูกต้องก่อนตัดสินใจ' },
+          { key: 'D', text: 'การทดสอบโมเดลกับข้อมูลชุดทดสอบ (Test set) ที่โมเดลไม่เคยเห็นมาก่อน' },
+          { key: 'E', text: 'การทำความสะอาดข้อมูลเพื่อลดค่าผิดปกติก่อนนำไปเทรน' }
+        ],
+        answer: 'A',
+        explanation: `
+          <p>หลุมพรางสำคัญของ Machine Learning:</p>
+          <ul>
+            <li>โมเดล ML ทำงานบนพื้นฐานสถิติและความน่าจะเป็น <strong>ไม่มีโมเดลใดมีความแม่นยำ 100% เสมอไป</strong></li>
+            <li>ข้อมูลในโลกความเป็นจริงมีการเปลี่ยนแปลงตลอดเวลา (Concept Drift / Distribution Shift) หากไม่ตรวจสอบอย่างสม่ำเสมอ ประสิทธิภาพของโมเดลจะตกลงและอาจนำไปสู่การตัดสินใจที่ผิดพลาดร้ายแรง</li>
+          </ul>
+        `
+      },
+      {
+        id: 41,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'ตามเอกสารการบรรยายเรื่อง AI Ethics & Governance',
+        ask: 'ข้อใดอธิบายความแตกต่างระหว่าง <strong>"Ethical AI"</strong> และ <strong>"Responsible AI"</strong> ได้อย่างชัดเจนที่สุด?',
+        choices: [
+          { key: 'A', text: 'Ethical AI เป็นกรอบแนวคิดเชิงปรัชญาและคุณค่า ("เราควรทำอะไร?") | Responsible AI คือการแปลงแนวคิดไปสู่นโยบายและการปฏิบัติจริง ("เราจะทำอย่างไรให้ปลอดภัย?")' },
+          { key: 'B', text: 'Ethical AI สำหรับหน่วยงานรัฐเท่านั้น | Responsible AI สำหรับบริษัทเอกชน' },
+          { key: 'C', text: 'Responsible AI เป็นเรื่องของกฎหมายลิขสิทธิ์ | Ethical AI เป็นเรื่องของความเร็วอินเทอร์เน็ต' },
+          { key: 'D', text: 'Ethical AI เลิกใช้แล้วในปัจจุบันและถูกแทนที่ด้วย Responsible AI ทั้งหมด' },
+          { key: 'E', text: 'ทั้งสองคำมีความหมายเดียวกันทุกประการและไม่มีความแตกต่างในทางปฏิบัติ' }
+        ],
+        answer: 'A',
+        explanation: `
+          <p>การเปรียบเทียบตามกรอบมาตรฐาน:</p>
+          <ul>
+            <li><strong>Ethical AI (เชิงปรัชญาและคุณค่า):</strong> เน้นการตั้งคำถามเชิงคุณธรรม เช่น ความเป็นธรรม (Fairness), การเคารพสิทธิมนุษยชน ("What should we do?")</li>
+            <li><strong>Responsible AI (เชิงปฏิบัติและการกำกับดูแล):</strong> เน้นการนำหลักการทางจริยธรรมมาแปลงเป็นกระบวนการตรวจสอบที่เป็นรูปธรรม (Governance, Audit, Risk Assessment, HITL) ในทุกขั้นตอนการพัฒนา ("How do we implement it responsibly?")</li>
+          </ul>
+        `
+      },
+      {
+        id: 42,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'ระบบ AI คัดกรองเรซูเม่ของบริษัท ตัดสิทธิ์ใบสมัครของผู้สมัครหญิงออกจากตำแหน่งวิศวกรโดยอัตโนมัติ ทำให้เสียโอกาสในการได้รับการจ้างงาน',
+        ask: 'เหตุการณ์นี้จัดเป็นอันตรายของ AI (<strong>AI Harm</strong>) ในหมวดหมู่ใด?',
+        choices: [
+          { key: 'A', text: 'Quality-of-Service Harm' },
+          { key: 'B', text: 'Allocative Harm (อันตรายจากการจัดสรรโอกาสและทรัพยากร)' },
+          { key: 'C', text: 'Interpersonal Harm' },
+          { key: 'D', text: 'Social System Harm' },
+          { key: 'E', text: 'Physical Harm' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>ประเภทของความเสียหายจาก AI (Harms of AI):</p>
+          <ul>
+            <li><strong>Allocative Harm:</strong> เกิดขึ้นเมื่อระบบ AI กีดกันหรือจัดสรรทรัพยากร โอกาส หรือสิทธิประโยชน์ที่สำคัญในชีวิตอย่างไม่เป็นธรรม เช่น การรับเข้าทำงาน, การอนุมัติเงินกู้, หรือการได้รับทุนการศึกษา</li>
+            <li><strong>Quality-of-Service Harm:</strong> เกิดขึ้นเมื่อระบบทำงานให้คนบางกลุ่มได้มีประสิทธิภาพต่ำกว่ากลุ่มอื่น เช่น ระบบตรวจจับใบหน้าทำงานได้แย่กับคนผิวสี</li>
+          </ul>
+        `
+      },
+      {
+        id: 43,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'ที่มาของความลำเอียงในระบบปัญญาประดิษฐ์ (Sources of AI Bias)',
+        ask: 'ข้อใดอธิบายความแตกต่างระหว่าง <strong>Systemic Bias (อคติเชิงระบบ)</strong> กับ <strong>Data Bias (อคติจากข้อมูล)</strong> ได้อย่างถูกต้อง?',
+        choices: [
+          { key: 'A', text: 'Systemic Bias เกิดจากข้อผิดพลาดของซีพียู | Data Bias เกิดจากระบบปฏิบัติการ' },
+          { key: 'B', text: 'Systemic Bias เกิดจากความเหลื่อมล้ำเชิงโครงสร้างและประวัติศาสตร์ในสังคม | Data Bias เกิดจากชุดข้อมูลที่เก็บมาไม่สมดุลหรือไม่เป็นตัวแทนที่ดี' },
+          { key: 'C', text: 'Data Bias แก้ไขไม่ได้ แต่ Systemic Bias สามารถแก้ได้ด้วยการกดปุ่ม Restart' },
+          { key: 'D', text: 'Systemic Bias เกิดขึ้นเฉพาะกับ Generative AI เท่านั้น' },
+          { key: 'E', text: 'Data Bias คือการที่ AI มีความคิดเป็นของตัวเอง' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>ที่มาของอคติ (Sources of Bias):</p>
+          <ul>
+            <li><strong>Systemic Bias (อคติเชิงระบบ):</strong> มาจากค่านิยม อคติ หรือความไม่เท่าเทียมที่มีอยู่ในโครงสร้างสังคมและประวัติศาสตร์ของมนุษย์อยู่แล้ว</li>
+            <li><strong>Data Bias (อคติจากข้อมูล):</strong> เกิดจากกระบวนการเก็บรวบรวมข้อมูลที่ไม่รอบด้าน ตัวอย่างไม่เป็นตัวแทนของประชากรจริง (Unrepresentative Sampling) หรือมีการติดป้ายกำกับที่ไม่ถูกต้อง</li>
+          </ul>
+        `
+      },
+      {
+        id: 44,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'ในการนำ AI ไปประยุกต์ใช้กับงานที่มีความเสี่ยงสูง (High-Stakes Applications) เช่น การวินิจฉัยโรค หรือการพิจารณาคดีในศาล',
+        ask: 'เพราะเหตุใดจึงต้องนำแนวคิด <strong>"Human-in-the-Loop" (HITL)</strong> มาบังคับใช้เสมอ?',
+        choices: [
+          { key: 'A', text: 'เพื่อช่วยแปลงสกุลไฟล์วิดีโอบนโทรศัพท์มือถือ' },
+          { key: 'B', text: 'เพื่อให้มนุษย์ผู้เชี่ยวชาญยังคงมีอำนาจตรวจสอบ เป็นผู้ตัดสินใจขั้นสุดท้าย และรับผิดชอบตามกฎหมาย' },
+          { key: 'C', text: 'เพื่อช่วยจัดเรียงไอคอนบนหน้าจอคอมพิวเตอร์' },
+          { key: 'D', text: 'เพื่อตั้งเวลานาฬิกาปลุกตอนเช้า' },
+          { key: 'E', text: 'เพื่อช่วยคำนวณสูตรคูณแม่ 2 ถึง 12' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><strong>Human-in-the-Loop (HITL):</strong></p>
+          <ul>
+            <li>คือการกำหนดให้ต้องมี "มนุษย์ผู้เชี่ยวชาญ" คอยตรวจสอบ กำกับดูแล และเป็นผู้ตัดสินใจขั้นสุดท้าย (Final Decision Maker)</li>
+            <li>มีความจำเป็นอย่างยิ่งยวดในบริบทที่มีความเสี่ยงสูง (High-Stakes Applications) เช่น การวินิจฉัยโรคผู้ป่วย, การพิจารณาคดีความ, หรือระบบขีปนาวุธ เพื่อรักษาความรับผิดชอบทางกฎหมายและจริยธรรม</li>
+          </ul>
+        `
+      },
+      {
+        id: 45,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'ตามเอกสาร Boost Productivity with AI Prompting',
+        ask: 'องค์ประกอบหลัก 4 ประการในการเขียนคำสั่ง (<strong>Anatomy of a Good Prompt</strong>) เพื่อให้ได้ผลลัพธ์แม่นยำที่สุด ประกอบด้วยอะไรบ้าง?',
+        choices: [
+          { key: 'A', text: 'Username, Password, Token, Endpoint' },
+          { key: 'B', text: '<strong>Role</strong> (บทบาท), <strong>Task</strong> (ภารกิจ), <strong>Context</strong> (บริบท/เงื่อนไข), และ <strong>Output Format</strong> (รูปแบบผลลัพธ์)' },
+          { key: 'C', text: 'Python, Pygame, NumPy, Pandas' },
+          { key: 'D', text: 'Introduction, Body, Conclusion, Citation' },
+          { key: 'E', text: 'Model, Temperature, Top-P, Frequency' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p>โครงสร้าง Prompt ที่มีประสิทธิภาพสูงสุดประกอบด้วย 4 ส่วนสำคัญ:</p>
+          <ol>
+            <li><strong>Role:</strong> กำหนดบทบาทหรือความเชี่ยวชาญให้ AI (เช่น "คุณคือวิศวกรซอฟต์แวร์ผู้เชี่ยวชาญ")</li>
+            <li><strong>Task:</strong> บอกสิ่งที่ต้องการให้ทำอย่างเจาะจงชัดเจน (Action Verb)</li>
+            <li><strong>Context:</strong> ให้ข้อมูลภูมิหลัง เงื่อนไข ข้อจำกัด หรือกลุ่มเป้าหมาย</li>
+            <li><strong>Output Format:</strong> ระบุรูปแบบการแสดงผลที่ต้องการอย่างชัดเจน (เช่น JSON, ตาราง Markdown, Bullet points)</li>
+          </ol>
+        `
+      },
+      {
+        id: 46,
+        cat: 'ai',
+        catLabel: 'Artificial Intelligence',
+        premise: 'เทคนิคการเขียนคำสั่งที่ระบุให้โมเดล AI <em>"จงคิดและแสดงขั้นตอนการแก้ปัญหาทีละสเต็ป (Think step by step)"</em>',
+        ask: 'เทคนิคนี้มีชื่อเรียกว่าอะไร และช่วยเพิ่มประสิทธิภาพด้านใดให้แก่ AI?',
+        choices: [
+          { key: 'A', text: 'Zero-shot Prompting ช่วยให้ AI ตอบสั้นลง' },
+          { key: 'B', text: '<strong>Chain-of-Thought (CoT) Prompting</strong> ช่วยให้ AI ไล่เรียงตรรกะทีละขั้น ลดอาการหลอน (Hallucination) และเพิ่มความแม่นยำในการคำนวณ' },
+          { key: 'C', text: 'Role-Playing Prompting ช่วยให้ AI มีอารมณ์ขัน' },
+          { key: 'D', text: 'Prompt Inversion ช่วยในการแฮกระบบรักษาความปลอดภัย' },
+          { key: 'E', text: 'Negative Prompting ใช้ลบคำที่ไม่ต้องการออกจากรูปภาพเท่านั้น' }
+        ],
+        answer: 'B',
+        explanation: `
+          <p><strong>Chain-of-Thought (CoT) Prompting:</strong></p>
+          <ul>
+            <li>เป็นเทคนิคที่กระตุ้นให้โมเดลภาษาแบ่งกระบวนการคิดออกเป็นขั้นตอนย่อยๆ (Reasoning Steps) ก่อนจะสรุปคำตอบสุดท้าย</li>
+            <li>ช่วยเพิ่มความแม่นยำอย่างมีนัยสำคัญในงานที่ต้องใช้คณิตศาสตร์ ตรรกศาสตร์ หรือการวิเคราะห์โค้ดที่ซับซ้อน และช่วยลดโอกาสที่ AI จะด่วนสรุปคำตอบที่ผิดเพี้ยน (Hallucination)</li>
+          </ul>
+        `
+      }
+    ];
+
+    // State Tracking
+    const quizState = {
+      activeCategory: 'all',
+      answers: {},
+      correctCount: 0,
+      wrongCount: 0
+    };
+
+    // Render Question Cards into Flow
+    function renderQuestions() {
+      const container = document.getElementById('quiz-flow-container');
+      container.innerHTML = '';
+
+      const filtered = quizState.activeCategory === 'all'
+        ? QUIZ_DATA
+        : QUIZ_DATA.filter(q => q.cat === quizState.activeCategory);
+
+      filtered.forEach((q) => {
+        const card = document.createElement('article');
+        card.className = 'question-card';
+        card.id = `card-${q.id}`;
+
+        const isAnswered = !!quizState.answers[q.id];
+        const answerInfo = quizState.answers[q.id];
+
+        if (isAnswered) {
+          card.classList.add(answerInfo.isCorrect ? 'status-correct' : 'status-wrong');
+        }
+
+        // Top Meta Tags
+        const metaDiv = document.createElement('div');
+        metaDiv.className = 'q-meta';
+        metaDiv.innerHTML = `
+          <div class="q-tag-group">
+            <span class="q-num-tag">ข้อที่ ${q.id}</span>
+            <span class="q-cat-tag">${q.catLabel}</span>
+          </div>
+          <span class="q-status-badge ${isAnswered ? (answerInfo.isCorrect ? 'correct' : 'wrong') : ''}" id="badge-${q.id}">
+            ${isAnswered ? (answerInfo.isCorrect ? '✓ ตอบถูกต้อง' : `✗ ตอบผิด (เฉลยข้อ ${q.answer})`) : ''}
+          </span>
+        `;
+        card.appendChild(metaDiv);
+
+        // Structured Question Title (Premise + Code + Question)
+        const qContent = document.createElement('div');
+        qContent.className = 'q-content';
+        let questionHtml = '';
+        if (q.premise) {
+          questionHtml += `<div class="q-premise">${q.premise}</div>`;
+        }
+        // ask (before code) OR ask2 (after code)
+        if (q.ask) {
+          questionHtml += `<div class="q-ask">${q.ask}</div>`;
+        }
+        qContent.innerHTML = questionHtml;
+        card.appendChild(qContent);
+
+        // Optional Code Snippet
+        if (q.code) {
+          const pre = document.createElement('pre');
+          pre.className = 'code-block';
+          pre.textContent = q.code;
+          card.appendChild(pre);
+        }
+
+        // ask2: question that appears AFTER the code block
+        if (q.ask2) {
+          const askDiv = document.createElement('div');
+          askDiv.className = 'q-ask q-ask-after-code';
+          askDiv.innerHTML = q.ask2;
+          card.appendChild(askDiv);
+        }
+
+        // Choices List
+        const choicesDiv = document.createElement('div');
+        choicesDiv.className = 'choices-list';
+
+        q.choices.forEach(c => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'choice-btn';
+
+          if (isAnswered) {
+            btn.classList.add('locked');
+            if (c.key === q.answer) {
+              btn.classList.add('is-correct');
+            } else if (c.key === answerInfo.choice && !answerInfo.isCorrect) {
+              btn.classList.add('is-wrong');
+            } else {
+              btn.classList.add('is-dimmed');
+            }
+          }
+
+          // Auto-wrap plain code snippets in <code> tags if text looks like code
+          let displayText = c.text;
+          if (!displayText.includes('<')) {
+            const isMultiLine = displayText.includes('\n');
+            const isCode = isMultiLine ||
+              /^\s*(x|y|d|m|D|D1|D2|regist|info|fruits|dancers|sports|gentlemen|total|new_fruits|dd)\s*[=\[]/.test(displayText) ||
+              /^\s*(del|print|for|if)\b/.test(displayText) ||
+              /^\s*\{[^:}]+:/.test(displayText) ||
+              /^\s*gentlemen\s*=/.test(displayText) ||
+              /^\{'[A-Za-z]/.test(displayText);
+            if (isCode) {
+              const escaped = displayText
+                .replace(/&/g,'&amp;')
+                .replace(/</g,'&lt;')
+                .replace(/>/g,'&gt;');
+              if (isMultiLine) {
+                displayText = `<code class="choice-code-block">${escaped}</code>`;
+              } else {
+                displayText = `<code class="choice-code-inline">${escaped}</code>`;
+              }
+            }
+          }
+
+          btn.innerHTML = `
+            <span class="choice-key">${c.key}</span>
+            <span class="choice-text">${displayText}</span>
+          `;
+
+          btn.onclick = () => handleChoiceClick(q.id, c.key, q.answer);
+          choicesDiv.appendChild(btn);
+        });
+        card.appendChild(choicesDiv);
+
+        // Explanation Box
+        const expDiv = document.createElement('div');
+        expDiv.className = `explanation-box ${isAnswered ? 'show' : ''}`;
+        expDiv.id = `exp-${q.id}`;
+        expDiv.innerHTML = `
+          <h4>เฉลยละเอียดและหลักคิด:</h4>
+          ${q.explanation}
+        `;
+        card.appendChild(expDiv);
+
+        container.appendChild(card);
+      });
+
+      updateStatsUI();
+    }
+
+    // Handle User Click Option
+    function handleChoiceClick(questionId, chosenKey, correctKey) {
+      if (quizState.answers[questionId]) return;
+
+      const isCorrect = (chosenKey === correctKey);
+      quizState.answers[questionId] = { choice: chosenKey, isCorrect: isCorrect };
+
+      if (isCorrect) {
+        quizState.correctCount++;
+      } else {
+        quizState.wrongCount++;
+      }
+
+      const card = document.getElementById(`card-${questionId}`);
+      if (card) {
+        const badge = document.getElementById(`badge-${questionId}`);
+        const exp = document.getElementById(`exp-${questionId}`);
+
+        if (isCorrect) {
+          card.classList.add('status-correct');
+          badge.className = 'q-status-badge correct';
+          badge.textContent = '✓ ตอบถูกต้อง';
+        } else {
+          card.classList.add('status-wrong');
+          badge.className = 'q-status-badge wrong';
+          badge.textContent = `✗ ตอบผิด (เฉลยข้อ ${correctKey})`;
+        }
+
+        const buttons = card.querySelectorAll('.choice-btn');
+        buttons.forEach(btn => {
+          btn.classList.add('locked');
+          const keySpan = btn.querySelector('.choice-key');
+          const letter = keySpan ? keySpan.textContent.trim() : '';
+
+          if (letter === correctKey) {
+            btn.classList.add('is-correct');
+          } else if (letter === chosenKey && !isCorrect) {
+            btn.classList.add('is-wrong');
+          } else {
+            btn.classList.add('is-dimmed');
+          }
+        });
+
+        exp.classList.add('show');
+      }
+
+      updateStatsUI();
+    }
+
+    // Switch Category Tab
+    function filterCategory(categoryKey, targetBtn) {
+      quizState.activeCategory = categoryKey;
+
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      if (targetBtn) {
+        targetBtn.classList.add('active');
+      }
+
+      const titles = {
+        'all': 'คลังข้อสอบรวมทั้งหมด (45 ข้อ)',
+        'tuple_dict': 'หมวดที่ 1: Tuple & Dictionary (15 ข้อ)',
+        'pygame_oop': 'หมวดที่ 2: Object-Oriented Programming & Pygame (15 ข้อ)',
+        'ai': 'หมวดที่ 3: ปัญญาประดิษฐ์และจริยธรรม AI (15 ข้อ)'
+      };
+      document.getElementById('summary-category-title').textContent = titles[categoryKey] || 'คลังข้อสอบ';
+
+      renderQuestions();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Update Counter Stats
+    function updateStatsUI() {
+      const totalOverall = QUIZ_DATA.length;
+      const answeredTotal = Object.keys(quizState.answers).length;
+      const progressPercent = Math.round((answeredTotal / totalOverall) * 100);
+
+      document.getElementById('stat-answered').textContent = answeredTotal;
+      document.getElementById('stat-total').textContent = totalOverall;
+      document.getElementById('stat-progress-bar').style.width = `${progressPercent}%`;
+
+      document.getElementById('count-correct').textContent = quizState.correctCount;
+      document.getElementById('count-wrong').textContent = quizState.wrongCount;
+      document.getElementById('count-remaining').textContent = totalOverall - answeredTotal;
+    }
+
+    // Results Modal
+    function openResultsModal() {
+      const total = QUIZ_DATA.length;
+      const answered = Object.keys(quizState.answers).length;
+      const percent = Math.round((quizState.correctCount / total) * 100);
+
+      document.getElementById('modal-score-display').textContent = `${quizState.correctCount} / ${total}`;
+      
+      let subText = `ตอบถูก ${quizState.correctCount} ข้อ คิดเป็น ${percent}%`;
+      if (answered < total) {
+        subText += ` (ยังทำไม่ครบ เหลืออีก ${total - answered} ข้อ)`;
+      }
+      document.getElementById('modal-sub-display').textContent = subText;
+
+      const cats = [
+        { key: 'tuple_dict', label: 'Tuple & Dictionary' },
+        { key: 'pygame_oop', label: 'OOP & Pygame' },
+        { key: 'ai', label: 'Artificial Intelligence' }
+      ];
+
+      const breakdownContainer = document.getElementById('modal-cat-breakdown');
+      breakdownContainer.innerHTML = '';
+
+      cats.forEach(c => {
+        const catQuestions = QUIZ_DATA.filter(q => q.cat === c.key);
+        let correctInCat = 0;
+        let answeredInCat = 0;
+
+        catQuestions.forEach(q => {
+          if (quizState.answers[q.id]) {
+            answeredInCat++;
+            if (quizState.answers[q.id].isCorrect) correctInCat++;
+          }
+        });
+
+        const row = document.createElement('div');
+        row.className = 'cat-breakdown-row';
+        row.innerHTML = `
+          <span>${c.label} (${catQuestions.length} ข้อ):</span>
+          <strong>${correctInCat} / ${catQuestions.length} (ทำแล้ว ${answeredInCat})</strong>
+        `;
+        breakdownContainer.appendChild(row);
+      });
+
+      document.getElementById('modal-summary').classList.add('open');
+    }
+
+    function closeResultsModal() {
+      document.getElementById('modal-summary').classList.remove('open');
+    }
+
+    function resetQuiz() {
+      if (confirm('คุณต้องการรีเซ็ตคำตอบเพื่อเริ่มทำใหม่ทั้งหมดใช่หรือไม่?')) {
+        quizState.answers = {};
+        quizState.correctCount = 0;
+        quizState.wrongCount = 0;
+        renderQuestions();
+      }
+    }
+
+    document.getElementById('modal-summary').addEventListener('click', function(e) {
+      if (e.target === this) closeResultsModal();
+    });
+
+    // Initialize
+    renderQuestions();
+  </script>
+</body>
+</html>
